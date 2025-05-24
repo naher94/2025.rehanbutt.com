@@ -8,16 +8,16 @@
 # Site settings
 title: Rehan Butt
 email: me@rehanbutt.com
-year: 2024
-site-title: 2024 Year in Review
+year: 2025
+site-title: 2025 Year in Review
 description: > # this means to ignore newlines until "baseurl:"
   As we bid farewell to 2024, let's review the year and the path it carved. I spoke at a conference and earned my second film credit. I took part in several industry events, enhancing existing skills and learning new ones. Put together a "Making Of" for my year in review series, shipped some awesome new software products and took some amazing photos during my travels.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 mainurl: "https://rehanbutt.com"
-url: "https://2024.rehanbutt.com" # the base hostname & protocol for your site
+url: "https://2025.rehanbutt.com" # the base hostname & protocol for your site
 keywords: >
-  year in review,2024,yearly recap,devzgn,devzgner,personal review, personal recap,recap 2024,Design,UX,UI,webdev,branding,portfolio,site
+  year in review,2025,yearly recap,devzgn,devzgner,personal review, personal recap,recap 2025,Design,UX,UI,webdev,branding,portfolio,site
 
 # Build settings
 markdown: kramdown

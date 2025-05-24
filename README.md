@@ -1,3 +1,3 @@
-# 2024 Year in Review
+# 2025 Year in Review
 
-## Check it out! Enjoy! [2024.rehanbutt.com](https://2024.rehanbutt.com)
+## Check it out! Enjoy! [2025.rehanbutt.com](https://2025.rehanbutt.com)
