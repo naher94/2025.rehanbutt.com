@@ -1,0 +1,233 @@
+.favorite-things{
+  margin-block-start: 5em;
+  @include breakpoint(small only){
+    font-size: 0.5em;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  .fave-content-wrapper{
+    position: relative;
+  }
+  .header-wrapper{
+    position: absolute;
+    height: 100%;
+    h2{
+      font-family: $fraunces;
+      margin-bottom: 0;
+      text-align: center;
+      width: 50%;
+      line-height: 0.8;
+      span{
+        display: block;
+        &.year-number{
+          margin-inline-start: 0.75em;
+          letter-spacing: 0.75em;
+          font-size: 0.8em;
+        }
+        &.main-title{
+          text-transform: uppercase;
+          font-size: 1.5em;
+          font-weight: $fraunces-black;
+          @include breakpoint(small only){
+            font-size: 1em
+          }
+        }
+      }
+    }
+  }
+  .wheel{
+    aspect-ratio: 1/1;
+    // height of this element assumes all the circles are vertically laid out
+  }
+  .hovered{
+    //Specifics touch
+    @media (pointer: fine) {
+      animation-play-state: paused !important;
+    }
+  }
+  .show-hide{
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .mobile-description-wrapper{
+    display: none;
+    margin-block-start: 3em;
+    // Mobile device and touch is what the below says
+    @include breakpoint(small only){
+      @media (not (pointer: fine)) {
+        display: block;
+      }
+    }
+    .description-tooltip{
+      width: 100%;
+      margin: 0;
+      margin-inline-start: 0;
+      position: relative;
+      display: none;
+    }
+  }
+  .fave-circle{
+    .description-tooltip{
+      // On mobile and touch hide the OG descriptions
+      @include breakpoint(small only){
+        @media (not (pointer: fine)) {
+          display: none;
+        }
+      }
+    }
+  }
+  .description-tooltip{
+    position: absolute;
+    padding: 0.75em;
+    margin-block-start: 0.5em;
+    border-radius: $tile-radius-medium;
+    background: rgba($pure-white,0.5);
+    visibility: hidden;
+    width: 150%;
+    margin-inline-start: -25%;
+    --blur: 10px;
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+    box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.75);
+    z-index: 2;
+    @media (prefers-color-scheme:dark){
+      background: rgba($pure-white,0.15);
+    }
+    @include breakpoint(small only){
+      font-size: 2em;
+      width: 200%;
+      margin-inline-start: -50%;
+    }
+    span{
+      font-family: $fraunces;
+      font-weight: $fraunces-bold;
+      margin-block-end: 0.25em;
+      line-height: 1.2;
+    }
+    p{
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+      font-size: 1em;
+    }
+  }
+  .fave-circle {
+    width: 10em;
+    aspect-ratio: 1/1;
+    border-radius: $pill-radius;
+    box-sizing: content-box;
+    offset-path: circle(35% at 50% 50%);
+    offset-rotate: 0deg;
+    position: relative;
+    background-color: orange;
+    @include breakpoint(small only){
+      width: 12em;
+      offset-path: circle(38% at 50% 50%);
+    }
+    &:hover{
+      z-index: 100;
+      .description-tooltip{
+        visibility: visible;
+      }
+    }
+    &.highlight{
+      outline: 5px solid $signature-teal;
+      outline-offset: 5px;
+      .description-tooltip{
+        visibility: visible;
+      }
+    }
+    .image-wrapper{
+      width: inherit;
+      border-radius: $pill-radius;
+      overflow: hidden;
+    }
+    @mixin color-opacity($color){
+      @media (prefers-color-scheme: dark){
+        background-color: rgba($color, 0.75);
+      }
+    }
+    &.actions{
+      background-color: #ffcbcb;
+      @include color-opacity(#ffcbcb);
+    }
+    &.organic-dried-strawberries{
+      background-color: #c2e3fd;
+      @include color-opacity(#c2e3fd);
+    }
+    &.bic-cristal-renew{
+      background-color: #ebd5ff;
+      @include color-opacity(#ebd5ff);
+    }
+    &.jetlag-the-game{
+      background-color: #ffe382;
+      @include color-opacity(#ffe382);
+    }
+    &.lessons-in-chemistry{
+      background-color: #93c0d9;
+      @include color-opacity(#93c0d9);
+    }
+    &.ltt-scribedriver{
+      background-color: #ffe1ba;
+      @include color-opacity(#ffe1ba);
+    }
+    &.the-art-of-monsters-inc{
+      background-color: #b5b8e4;
+      @include color-opacity(#b5b8e4);
+    }
+  }
+  
+  --anim-time: 40s;
+  @media (prefers-reduced-motion) {
+    --anim-time: 100s;
+  }
+  $numb: 7; //The number of circles/elements we have
+  
+  //Starts each circle with an offset
+  @for $i from 1 through $numb {
+    $offset: percentage(($i - 1) / $numb);
+    @keyframes load-#{$i} {
+      from {
+        offset-distance: 100% / $numb * $i;
+      }
+      to {
+        offset-distance: 100% / $numb * $i + 100%;
+      }
+    }
+    .circle-#{$i} {
+      animation: load-#{$i} var(--anim-time) linear infinite;
+      offset-distance: 100% / $numb * $i;
+    }
+  }
+}
+.shimmer {
+  text-align: center;
+  display: inline-block;
+  color:white;
+  background: #000000 -webkit-gradient(linear, 100% 0, 0 0, from(#000000), color-stop(0.5, #626262), to(#000000));
+  background-position: -4em top;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4em 100%;
+  @media (prefers-color-scheme: dark){
+    background: #ffffff -webkit-gradient(linear, 100% 0, 0 0, from(#ffffff), color-stop(0.5, #626262), to(#ffffff));
+    background-position: -4em top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation-name: shimmer;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-background-size: 4em 100%;
+  }
+}
+@keyframes shimmer {
+  0% { background-position: -4em top; }
+  70% { background-position: 12.5em top; }
+  100% { background-position: 12.5em top; }
+}

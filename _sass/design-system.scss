@@ -1,0 +1,230 @@
+// Design System
+body {
+  font-family: $lato;
+  font-weight: $lato-regular;
+  font-size: $base-font-size; // = 1em
+  color: semantic-color(text);
+  overflow-x: hidden;
+  @include breakpoint(small only) {
+    font-size: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: semantic-color(page-bg);
+  }
+}
+
+::selection {
+  background: semantic-color(selection-background);
+}
+
+h1, h2, h3, h4 {
+  font-family: $zilla;
+}
+
+h1{
+  font-size: 3em;
+  line-height: 0.9em;
+  font-weight: $zilla-bold;
+}
+
+h2{
+  font-size: 3.5em;
+  font-weight: $zilla-medium;
+  @include breakpoint(small only) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+h3{
+  font-size: 2.5em;
+}
+h4{
+  font-size: 1.5em;
+}
+
+p{
+  padding-left: 5em;
+  padding-right: 5em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  @include breakpoint(small only) {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
+ul {
+  padding-left: 5em;
+  padding-right: 5em;
+  @include breakpoint(small only) {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
+.content-wrapper{
+  padding-top: 3em;
+  @include breakpoint(small only) {
+    padding-top: 1em;
+  }
+}
+
+.hero{
+  overflow: hidden;
+  position: relative;
+  .hero-image{
+    img{
+      position: relative;
+    }
+  }
+}
+
+.hero-background-image{
+  position: relative;
+  max-width: 1800px;
+  margin: 0 auto;
+  img{
+    position: absolute;
+    padding-left: 2em;
+    padding-right: 2em;
+    @include breakpoint(small only) {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+  }
+}
+
+.date-stamp{
+  font-size: 1.6em;
+  margin-top: 0;
+  font-weight: $zilla-regular;
+  font-family: $zilla;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.content-button {
+  width: 100%;
+  font-size: 1.5em;
+  color: $pure-white;
+  padding: 1em;
+  text-align: center;
+  border-radius: $pill-radius;
+  transition: $run;
+}
+
+.post-callout{ //should be renamed post call out large
+  margin: 2rem 0;
+  font-size: 2.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  line-height: 1.3em;
+}
+
+.post-callout-medium{
+  margin: 2rem 0;
+  font-size: 2em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  line-height: 1.3em;
+  font-weight: $lato-bold;
+  font-style: italic;
+  @include breakpoint(small only) {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+}
+
+.post-callout-small{
+  margin: 2rem 0;
+  font-size: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  line-height: 1.3em;
+}
+
+
+//******* A Tag Underline Expand Styling
+@mixin link-expand {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  color: semantic-color(link);
+  padding: 0 1px;
+  transition: $run;
+
+  &::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 11%;
+    left: 0;
+    bottom: 0;
+    background-color: semantic-color(link);
+    transition: $run;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    color: $pure-white;
+  }
+
+  &:hover::after {
+    height: 100%;
+  }
+}
+
+
+
+
+
+p, li, h3{
+  a {
+    @include link-expand();
+  }
+}
+
+
+//******* End of A Tag Underline Expand Styling
+@mixin swipe-underline($color,$inline-hover) {
+  display: inline;
+  background: linear-gradient($color, $color);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 10px; 
+  transition: background-size .3s;
+  @if $inline-hover {
+    &:hover{
+      background-size: 100% 10px;
+    }
+  }
+}
+
+//// Use when you want to trigger the over from a different element
+@mixin swipe-underline-hover($is-important) {
+  @if $is-important {
+    background-size: 100% 10px !important;
+  }
+  @else{
+    background-size: 100% 10px;
+  }
+}
+
+@mixin squiggly-underline($underline-color) {
+  background: linear-gradient(to bottom, $underline-color 0%, $underline-color 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+  text-decoration: none;
+  &:hover{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='#12abc4' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+  }
+}
+
+

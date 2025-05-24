@@ -1,0 +1,137 @@
+.film-credit{
+  margin-block: 10em;
+  @include breakpoint(small only){
+    margin-block-end: 1em;
+    margin-block-start: 12em;
+  }
+  .content-card{
+    border-radius: $tile-radius-medium;
+    padding: 1em;
+    padding-inline: 3em;
+    background: url(/img/film-credit/shark-blur.jpg);
+    background-size: cover;
+    background-position: bottom;
+    @include breakpoint(small only){
+      padding: 2em;
+    }
+    .poster-area{
+      margin-block: -4em;
+      position: relative;
+      @include breakpoint(small only){
+        margin-block: 0;
+        margin-block-start: -8em;
+        margin-block-end: 6em;
+      }
+      .poster{
+        rotate: 5deg;
+        z-index: 2;
+        img:not(.pua):not(.heihei){
+          max-width: 15em;
+          border-radius: $tile-radius;
+          box-shadow: $centered-shadow rgba($pure-black, 0.5);
+          @include breakpoint(small only){
+            max-width: 13em;
+          }
+        }
+        .pua{
+          position: absolute;
+          rotate: 34deg;
+          top: -5.9em;
+          left: -9em;
+          opacity: 0;
+          transition: $sprint;
+          @media (prefers-reduced-motion) {
+            transition: $jog;
+          }
+          @include breakpoint(small only){
+            top: -4.3em;
+          }
+        }
+        .heihei{
+          position: absolute;
+          transition: $sprint;
+          bottom: 0;
+          left: 0;
+          rotate: 180deg;
+          opacity: 0;
+          z-index: -1;
+          @media (prefers-reduced-motion) {
+            transition: $jog;
+          }
+          @include breakpoint(small only){
+            left: -2.5em;
+          }
+        }
+      }
+      .poster2, .poster3{
+        position: absolute;
+        z-index: 1;
+        transition: $sprint;
+        @media (prefers-reduced-motion) {
+          transition: $jog;
+        }
+        img:not(.pua):not(.heihei){
+          max-width: 11em;
+          @include breakpoint(small only){
+            max-width: 8em;
+          }
+        }
+      }
+      .poster2{
+        top: -4em;
+        left: 0;
+        rotate: -5deg;
+        transform-origin: bottom right;
+      }
+      .poster3{
+        bottom: -3em;
+        right: 1em;
+        rotate: 13deg;
+        transform-origin: bottom left;
+      }
+    }
+    .text-area{
+      color: $pure-white;
+      svg{
+        fill: $pure-white;
+      }
+      p{
+        padding: 0;
+        margin: 0;
+        line-height: 1.2;
+        margin-block-start: 0.5em;
+      }
+    }
+    &:hover{
+      .poster2{
+        rotate: -7deg;
+      }
+      .poster3{
+        rotate: 15deg;
+      }
+      .poster{
+        .pua{
+          left: -0.5em;
+          transition: $sprint;
+          opacity: 1;
+          @media (prefers-reduced-motion) {
+            transition: $jog;
+          }
+        }
+        .heihei{
+          transition: $sprint;
+          opacity: 1;
+          bottom: -3em;
+          left: -4em;
+          rotate: 224deg;
+          @media (prefers-reduced-motion) {
+            transition: $jog;
+          }
+          @include breakpoint(small only){
+            left: -3em;
+          }
+        }
+      }
+    }
+  }
+}

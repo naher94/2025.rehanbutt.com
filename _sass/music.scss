@@ -1,0 +1,341 @@
+$cassette-case-color: pink;
+$cassette-punchouts: semantic-color(page-bg); //should be page-bg
+.music{
+  font-family: $montserrat;
+  .music-child{
+    position: relative;
+  }
+  .title-wrapper{
+    margin-block: 2em;
+    h2{
+      font-family: $montserrat;
+      font-weight: $montserrat-black;
+      font-size: 5rem;
+      line-height: 4rem;
+      margin-top: 0.1em;
+      @include breakpoint(small only){
+        font-size: 3.5rem;
+        line-height: 2.5rem;
+        margin-bottom: 0;
+      }
+      .hrs{
+        font-weight: $montserrat-light;
+      }
+      .description{
+        font-size: 3rem;
+        display: block;
+        @include breakpoint(small only) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .tape-svg-wrapper{
+    position: absolute;
+    width: 100%;
+    @include breakpoint(small only){
+      display: none;
+    }
+    .tape-svg{
+      position: absolute;
+      // Only works in Chrome
+      &:hover{
+        path{
+          d: path("M329.409157,172.029115 C307.247041,131.918085 260.882169,108.028915 190.31454,100.361606 C84.4630963,88.8606429 -13.9904569,165.406749 6.79693874,321.473546 C27.5843343,477.540342 119.611934,669.322992 190.31454,660.077469 C261.017145,650.831945 339.351731,503.909359 493.636878,500.087038 C647.922026,496.264718 704.299597,675.764518 759.342018,798.098636 C814.384438,920.432754 919.574536,903.386163 976.767553,889.031332 C1098.97376,858.358893 1102.1502,573.643006 1008.42243,507.517656 C954.692565,469.610998 839.110383,471.039068 846.428316,383.444462 C853.74625,295.849855 966.976961,346.670725 1034.27632,310.593677 C1101.57567,274.516629 1098.51435,183.227225 1001.88554,121.18657 C706.688102,-68.3453194 432.233199,-12.3244685 448.780701,188.200966");
+        }
+      }
+      path{
+        transition: $jog;
+      }
+    }
+  }
+  .cassette-row{
+    @include breakpoint(small only){
+      justify-content: normal;
+    }
+    .cassette-wrapper{
+      &:nth-of-type(odd){
+        rotate: -2deg;
+        .cassette{
+          rotate: 180deg;
+        }
+      }
+      &:nth-of-type(even){
+        rotate: 3deg;
+        margin-block-end: 1em;
+        @include breakpoint(small only){
+          //Faking .small-offset-2
+          margin-left: 16.6666666667%;
+        }
+      }
+    }
+  }
+  .cassette-wrapper{
+    &:nth-of-type(odd){
+      a{
+        &:hover{
+          rotate: -2deg;
+        }
+      }
+    }
+    &:nth-of-type(even){
+      a{
+        &:hover{
+          rotate: 2deg;
+        }
+      }
+    }
+    a{
+      color: semantic-color(text);
+      transition: $sprint;
+      @media (prefers-reduced-motion) {
+        transition: $jog;
+      }
+      &:hover{
+        scale: 1.05;
+      }
+    }
+    .song-details{
+      background-color: rgba(#B4B4B4, 0.1);
+      --blur: 10px;
+      -webkit-backdrop-filter: blur(var(--blur));
+      backdrop-filter: blur(var(--blur));
+      border-radius: $tile-radius;
+      margin-block-end: 0.5em;
+      padding-inline: 1.5em;
+      padding-block: 1em;
+      font-size: 0.8em;
+      .song-name{
+        font-weight: $montserrat-black;
+        font-size: 1.20em;
+        svg{
+          g{
+            g{
+              fill: semantic-color(text);
+            }
+          }
+        }
+      }
+      .artist-name{
+        font-weight: $montserrat-medium;
+      }
+    }
+    .cassette{
+      aspect-ratio: 3/2;
+      border-radius: $tile-radius;
+      padding-inline: 1.5em;
+      padding-block-start: 1.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $cassette-case-color;
+      position: relative;
+      @include breakpoint(small only){
+        padding-inline: 1em;
+        padding-block-start: 1em;
+      }
+      .screw{
+        aspect-ratio: 1/1;
+        background-color: rgba($pure-black, 0.25);
+        width: 0.5em;
+        border-radius: $pill-radius;
+        position: absolute;
+        --inline-spacing: 1em;
+        --block-spacing: 0.75em;
+        @include breakpoint(small only){
+          --inline-spacing: 0.5em;
+          --block-spacing: 0.5em;
+        }
+        &__1{
+          top: var(--block-spacing);
+          left: var(--inline-spacing);
+        }
+        &__2{
+          top: var(--block-spacing);
+          right: var(--inline-spacing);
+        }
+        &__3{
+          bottom: var(--block-spacing);
+          left: var(--inline-spacing);
+        }
+        &__4{
+          bottom: var(--block-spacing);
+          right: var(--inline-spacing);
+        }
+      }
+      .sticker{
+        position: relative;
+        flex-grow: 1;
+        margin-block-end: 0.5em;
+        border-radius: $tile-radius;
+        background-color: black;
+        background-image: url("../img/music/kelly-time.jpg");
+        background-size: cover;
+      }
+      .reel-window{
+        background-color: $cassette-case-color;
+        border-radius: $pill-radius;
+        padding: 0.5em;
+        display: inline-flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: fit-content;
+        margin: auto;
+        bottom: 50%;
+        transform: translateY(50%);
+        --animation-time: 15s;
+        @media (prefers-reduced-motion) {
+          --animation-time: 30s;
+        }
+        .reel-left, .reel-right{
+          border-radius: $pill-radius;
+          width: 2em;
+          height: 2em;
+          background-color: $cassette-punchouts;
+          display: inline-block;
+          @keyframes rotate{
+            to{
+              rotate: 0deg;
+            }
+            from{
+              rotate: 360deg;
+            }
+          }
+          svg{
+            animation: var(--animation-time) rotate linear infinite;
+            animation-direction: alternate;
+            @media (prefers-color-scheme: dark){
+              g{
+                g{
+                  fill: #5c5c5c;
+                }
+              }
+            }
+          }
+        }
+        .window{
+          background-color: $cassette-punchouts;
+          margin-inline: 0.5em;
+          width: 4em;
+          border-radius: 5px;
+          position: relative;
+          overflow: hidden;
+          .spool1, .spool2{
+            aspect-ratio: 1/1;
+            border-radius: $pill-radius;
+            position: absolute;
+            background-color: #45220C;
+            border: 3px solid #261306;
+            width: 6em;
+          }
+          @keyframes spool1-scale{
+            from{
+              scale: 1;
+            }
+            to{
+              scale: 0.75;
+            }
+          }
+          @keyframes spool2-scale{
+            from{
+              scale: 0.75;
+            }
+            to{
+              scale: 1;
+            }
+          }
+          .spool1{
+            top: -100%;
+            left: -115%;
+            animation: var(--animation-time) spool1-scale linear infinite;
+            animation-direction: alternate;
+          }
+          .spool2{
+            top: -100%;
+            right: -115%;
+            scale: 0.75;
+            animation: var(--animation-time) spool2-scale linear infinite;
+            animation-direction: alternate;
+          }
+        }
+      }
+      .bump-out{
+        background-color: rgba($pure-black, 0.05);
+        clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+        margin-inline: 2em;
+        padding-block-start: 1em;
+        padding-block-end: 0.25em;
+        padding-inline: 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include breakpoint(small only){
+          padding-block-start: 0.75em;
+        }
+        .left, .right{
+          .circle{
+            border-radius: $pill-radius;
+            aspect-ratio: 1/1;
+            width: 1em;
+            background-color: $cassette-punchouts;
+            display: inline-block;
+            @include breakpoint(small only){
+              width: 0.75em;
+            }
+          }
+          .pill{
+            border-radius: $pill-radius;
+            aspect-ratio: 2/1;
+            width: 0.75em;
+            background-color: $cassette-punchouts;
+            display: inline-block;
+            vertical-align: top;
+            @include breakpoint(small only){
+              width: 0.5em;
+            }
+          }
+        }
+        .left{
+          .circle{
+            margin-inline-end: 0.25em;
+          }
+        }
+        .right{
+          .circle{
+            margin-inline-start: 0.25em;
+          }
+        }
+      }
+      @mixin cassette-setter($color,$image) {
+        $cassette-case-color: $color;
+        background-color: $cassette-case-color;
+        @media (prefers-color-scheme: dark) {
+          background-color: mix($pure-black, $cassette-case-color, 30%);
+        }
+        .reel-window{
+          background-color: $cassette-case-color;
+          @media (prefers-color-scheme: dark) {
+            background-color: mix($pure-black, $cassette-case-color, 30%);
+          }
+        }
+        .sticker{
+          background-image: url("../img/music/" + $image);
+        }
+      }
+      &.fn-up-the-disco{
+        @include cassette-setter(#edbba1,"jt-everything-i-thought-it-was.png");
+
+      }
+      &.liar-feat-fireboy-dml, &.infinity-sex{
+        @include cassette-setter(#edbba1,"jt-everything-i-thought-it-was.png");
+      }
+      &.california-lullaby{
+        @include cassette-setter(#954546,"california-lullaby.jpg");
+      }
+      &.cheeky{
+        @include cassette-setter(#8d7e77,"cheeky.jpg");
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<section class="music grid-container" id="music" aria-label="Music Section">
+  <div class="grid-x music-child">
+    <div class="grid-x cell title-wrapper medium-order-2 align-center">
+      <!-- As of December 3rd -->
+      <h2 class="cell shrink">9,130<span class="hrs">mins</span> <span class="description">of music listened to</span></h2>
+    </div>
+    <div class="tape-svg-wrapper">
+      {%- include_relative img/music/tape.svg -%}
+    </div>
+    <div class="cell grid-x cassette-row grid-padding-x medium-order-1 align-center">
+      {% assign songs_order = site.songs | sort: 'play-count' | reverse %}
+      {%- for song in songs_order limit:2 -%}
+        {% capture song-card %}
+          <div class="cell song-details grid-x">
+            <div class="cell song-name">{{song.song-name}} {% include_relative img/music/share-arrow.svg %}</div>
+            <div class="cell grid-x align-justify">
+              <div class="cell shrink artist-name">{{song.artist}}</div>
+              <div class="cell shrink">{{song.play-count}} plays</div>
+            </div>
+          </div>
+          <div class="cassette cell {{song.song-name | replace: ' ', '-' | remove: '.' | remove: '(' | remove: ')' | remove: '*' |remove: "'" | downcase}}">
+            <div class="screw screw__1"></div>
+            <div class="screw screw__2"></div>
+            <div class="screw screw__3"></div>
+            <div class="screw screw__4"></div>
+            <div class="sticker">
+              <div class="reel-window">
+                <div class="reel-left">{% include_relative img/music/reel-teeth.svg %}</div>
+                <div class="window">
+                  <div class="spool1"></div>
+                  <div class="spool2"></div>
+                </div>
+                <div class="reel-right">{% include_relative img/music/reel-teeth.svg %}</div>
+              </div>
+            </div>
+            <div class="bump-out">
+              <div class="left">
+                <div class="circle"></div>
+                <div class="pill"></div>
+              </div>
+              <div class="right">
+                <div class="pill"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        {% endcapture %}
+      <div class="cassette-wrapper cell grid-x small-10 medium-4">
+        {%- include external-link.html link=song.link content=song-card css-class="grid-x cell" -%}
+      </div>
+      {%- endfor -%}
+    </div>
+    <div class="cell grid-x cassette-row grid-padding-x medium-order-3">
+      {% assign songs_order = site.songs | sort: 'play-count' | reverse %}
+      {%- for song in songs_order offset:2 -%}
+        {% capture song-card %}
+          <div class="cell song-details grid-x">
+            <div class="cell song-name">{{song.song-name}} {% include_relative img/music/share-arrow.svg %}</div>
+            <div class="cell grid-x align-justify">
+              <div class="cell shrink artist-name">{{song.artist}}</div>
+              <div class="cell shrink">{{song.play-count}} plays</div>
+            </div>
+          </div>
+          <div class="cassette cell {{song.song-name | replace: ' ', '-' | downcase}}">
+            <div class="screw screw__1"></div>
+            <div class="screw screw__2"></div>
+            <div class="screw screw__3"></div>
+            <div class="screw screw__4"></div>
+            <div class="sticker">
+              <div class="reel-window">
+                <div class="reel-left">{% include_relative img/music/reel-teeth.svg %}</div>
+                <div class="window">
+                  <div class="spool1"></div>
+                  <div class="spool2"></div>
+                </div>
+                <div class="reel-right">{% include_relative img/music/reel-teeth.svg %}</div>
+              </div>
+            </div>
+            <div class="bump-out">
+              <div class="left">
+                <div class="circle"></div>
+                <div class="pill"></div>
+              </div>
+              <div class="right">
+                <div class="pill"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        {% endcapture %}
+      <div class="cassette-wrapper cell grid-x small-10 medium-4">
+        {%- include external-link.html link=song.link content=song-card css-class="grid-x cell" -%}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

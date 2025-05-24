@@ -1,0 +1,106 @@
+.speaking{
+  margin-block: 10rem;
+  @include breakpoint(small only){
+    margin-block-end: 3rem;
+  }
+  .shape-container{
+    background-color: semantic-color(speaking-card-bg);
+    border-radius: $tile-radius;
+    padding: 1rem;
+    &.header-shape{
+      background-color: #46C2F3;
+      @media (prefers-color-scheme: dark) {
+        background-color: #3b778f;
+      }
+    }
+    &.color-block{
+      background-color: #9B20D1;
+      @media (prefers-color-scheme: dark) {
+        background-color: #6a2987;
+      }
+    }
+    &.logo-shape{
+      background-color: #F36C3C;
+      @media (prefers-color-scheme: dark) {
+        background-color: #af593b;
+      }
+      svg{
+        width: 4em;
+        fill: white;
+      }
+    }
+    &.photo-shape{
+      padding: 0;
+      overflow: hidden;
+    }
+    &.headshot-shape{
+      background: url(/img/speaking/stage-background.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      .headshot-wrapper{
+        position: absolute;
+        bottom: 0;
+        right: -4em;
+      }
+      img{
+        // position: absolute;
+        // bottom: 0;
+        // right: -3em;
+        width: 20em;
+      }
+      @include breakpoint(small only){
+        height: 11em;
+      }
+    }
+  }
+  .grid-margin-y > .cell{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;   
+  }
+  .grid-margin-x > .cell{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  h2{
+    font-family: $big-shoulders;
+    font-weight: $big-shoulders-regular;
+    line-height: 1;
+    margin-bottom: 0;
+    @include breakpoint(small only){
+      font-size: 3em;
+    }
+    span{
+      display: block;
+    }
+    span:first-of-type{
+      font-weight: $big-shoulders-bold;
+      font-size: 0.5em;
+    }
+  }
+  .talk-shape{
+    @include breakpoint(small only){
+      // TODO Seems to solve the weird grid offset of the cells on mobile as it relates to grid-margin-x; but feels hacky
+      flex: auto;
+    }
+    h3{
+      font-size: 1.25em;
+      line-height: 1.2;
+      font-weight: $zilla-bold;
+    }
+    p{
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+      font-size: 0.75em;
+    }
+  }
+  .small-order-7{
+    order: 7;
+  }
+  @media print, screen and (min-width: 40em){
+    .medium-order-7{
+      order: 7;
+    }
+  }
+}

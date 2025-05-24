@@ -1,0 +1,34 @@
+<section class="favorite-things" id="favorite-things" aria-label="Favorite Things Section">
+  <div class="grid-container">
+    <div class="fave-content-wrapper">
+      <div class="grid-x cell header-wrapper align-center align-middle">
+        <h2 class="shimmer">
+          <span class="year-number">2024</span>
+          <span class="main-title">Favorite Things</span>
+        </h2>
+      </div>
+      <div class="cell wheel">
+        {%- for thing in site.fave-things -%}
+        {% assign class-name = thing.name | replace: " ", "-" | downcase | remove: "." %}
+        <div class="fave-circle circle-{{forloop.index}} {{class-name}}">
+          <div class="image-wrapper">
+            <img src="../img/fave-things/{{thing.image}}" alt="{{thing.image-alt}}">
+          </div>
+          <div class="description-tooltip">
+            <span>{{thing.name}}</span>
+            <p>{{thing.description}}</p>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="mobile-description-wrapper grid-x cell">
+      {%- for thing in site.fave-things -%}
+      <div class="description-tooltip cell fave-description-{{forloop.index}}">
+        <span>{{thing.name}}</span>
+        <p>{{thing.description}}</p>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,467 @@
+$element-border: 1px solid rgba($pure-black, 0.1);
+.website{
+  @include breakpoint(small only){
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  margin-top: 2rem;
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  .browser-chrome{
+    background-color: semantic-color(browser-chrome-bg);
+    border-radius: $tile-radius-big;
+    padding: 1em;
+    border: $element-border;
+    .top-bar{
+      padding: 0;
+      margin-block-end: 1em;
+      background-color: transparent;
+    }
+    .control-container{
+      margin-inline-end: 1em;
+      .close, .minimize, .expand{
+        aspect-ratio: 1/1;
+        width: 1em;
+        border-radius: $pill-radius;
+        border: $element-border;
+      }
+      .close{
+        background-color: #FF3B30;
+      }
+      .minimize{
+        background-color: #FFCC00;
+      }
+      .expand{
+        background-color: #34C759;
+      }
+      div{
+        &:not(:last-of-type){
+          margin-inline-end: 0.5em;
+        }
+      }
+    }
+    .address-bar{
+      background-color: semantic-color(page-bg);
+      border: $element-border;
+      border-radius: $pill-radius;
+      padding-block: 0.25em;
+      padding-inline: 0.5em;
+      a{
+        color: semantic-color(text);
+        margin-inline-start: 0.25em;
+      }
+      svg{
+        width: 1.5em;
+        &:not(.honey-dew){
+          path{
+            fill: semantic-color(text);
+          }
+        }
+      }
+      .address-right{
+        .refresh-svg{
+          &:hover{
+            rotate: 360deg;
+            transition: $run;
+          }
+        }
+      }
+    }
+    .content-area{
+      background-color: semantic-color(page-bg);
+      border-radius: $tile-radius;
+      padding: 1em;
+      .easter-egg-container{
+        //Needed for the bleed over
+        scale: 1.15;
+        margin-block-start: 1em;
+        margin-block-end: 3em;
+        //Needed for the bleed over
+        @include breakpoint(small only){
+          scale: 1;
+          margin-block-start: 0;
+          margin-block-end: 1em;
+        }
+        .small-order-7{
+          order: 7;
+        }
+        .egg-container{
+          position: relative;
+          transform-origin: bottom center;
+          transition: $sprint;
+          &:hover{
+            animation: wave-animation 2s;
+            @media (prefers-reduced-motion) {
+              animation: wave-animation 6s;
+            }
+            &.car-horn{
+              img{
+                top: -7em;
+                scale: 1;
+                transition: $run;
+                opacity: 1;
+              }
+            }
+          }
+          $egg-size: 12em;
+          @include breakpoint(small only){
+            font-size: 0.50em;
+          }
+          &:nth-of-type(1){
+            .easter-egg-graphic{
+              width: $egg-size;
+            }
+          }
+          &:nth-of-type(2), &:nth-of-type(3){
+            .easter-egg-graphic{
+              width: $egg-size * 0.9;
+            }
+          }
+          &:nth-of-type(4), &:nth-of-type(5){
+            .easter-egg-graphic{
+              width: $egg-size * 0.8;
+            }
+          }
+          &:nth-of-type(6), &:nth-of-type(7){
+            .easter-egg-graphic{
+              width: $egg-size * 0.7;
+            }
+          }
+          // $overlay-offset: -3em;
+          --overlay-offset: -3em;
+          @include breakpoint(small only){
+            --overlay-offset: -4em;
+          }
+          $rotate-offset: 7deg;
+          &:nth-of-type(1){
+            margin-inline: var(--overlay-offset);
+          }
+          &:nth-of-type(even){
+            margin-inline-start: var(--overlay-offset);
+          }
+          &:nth-of-type(odd){
+            margin-inline-end: var(--overlay-offset);
+          }
+          &:nth-of-type(2){
+            margin-inline-start: var(--overlay-offset);
+            rotate: -1*$rotate-offset;
+          }
+          &:nth-of-type(3){
+            margin-inline-end: var(--overlay-offset);
+            rotate: 1*$rotate-offset;
+          }
+          &:nth-of-type(4){
+            margin-inline-start: var(--overlay-offset);
+            rotate: -2*$rotate-offset;
+          }
+          &:nth-of-type(5){
+            margin-inline-end: var(--overlay-offset);
+            rotate: 2*$rotate-offset;
+          }
+          &:nth-of-type(6){
+            rotate: -3*$rotate-offset;
+          }
+          &:nth-of-type(7){
+            rotate: 3*$rotate-offset;
+          }
+          [class$='-svg']{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 5em;
+          }
+          &.main-egg{
+            z-index: 4;
+            .keyhole-svg{
+              path{
+                fill: white;
+              }
+            }
+          }
+          &.car-horn{
+            z-index: 3;
+            img{
+              position: absolute;
+              left: 0;
+              top: 0;
+              z-index: -1;
+              scale: 0.5;
+              transition: $run;
+              opacity: 0;
+            }
+            .easter-egg-graphic{
+              path{
+                fill: #FF4752;
+              }
+            }
+          }
+          &.code-snoop{
+            z-index: 3;
+            .easter-egg-graphic{
+              path{
+                fill: #B649EF;
+              }
+            }
+          }
+          &.paddington{
+            z-index: 2;
+            .easter-egg-graphic{
+              path{
+                fill: #FFB615;
+              }
+            }
+          }
+          &.konami{
+            z-index: 2;
+            .easter-egg-graphic{
+              path{
+                fill: #48E43B;
+              }
+            }
+          }
+          &.peace{
+            .easter-egg-graphic{
+              path{
+                fill: #6E89FF;
+              }
+            }
+          }
+          &.check-list{
+            .easter-egg-graphic{
+              path{
+                fill: #F4E800;
+              }
+            }
+          }
+        }
+      }
+      h2{
+        font-family: $lato;
+        font-weight: $lato-black;
+        font-size: 2em;
+        @include breakpoint(small only){
+          padding: 0;
+        }
+      }
+      .text-content{
+        margin-block-end: 1em;
+        p{
+          font-size: 1.25em;
+          line-height: 1.4;
+          @include breakpoint(small only){
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+  .site-container{
+    .sub-section{
+      background-color: semantic-color(website-sub-section-bg);
+      border: solid 1px rgba($navy-black, 0.25);
+      border-radius: $tile-radius;
+      padding: 1em;
+      @include breakpoint(small only){
+        margin-top: 0.625rem;
+        margin-bottom: 0.625rem;
+      }
+    }
+    .by-numbers, .pop-container-wrapper{
+      margin-inline-end: 1em;
+      @include breakpoint(small only){
+        margin-inline-end: 0;
+      }
+      .title{
+        border-bottom: solid 1px semantic-color(website-divider);
+        padding-bottom: 0.5em;
+        h3{
+          font-family: $lato;
+          font-weight: $lato-black;
+          font-size: 1.2em;
+        }
+      }
+      .big-total{
+        border-bottom: solid 1px semantic-color(website-divider);
+        padding: 0.5em 0;
+        .numb{
+          font-size: 3em;
+          font-weight: $lato-black;
+          line-height: 1.2;
+          margin-bottom: -0.25em;
+        }
+      }
+      .busy-day{
+        border-bottom: solid 1px semantic-color(website-divider);
+        padding: 0.5em 0;
+        .busy-label{
+          font-weight: $lato-black;
+          font-size: 1.2em;
+          margin-top: -0.25em;
+        }
+      }
+      .country-visits{
+        padding-top: 0.5em;
+        .country-label{
+          font-weight: $lato-black;
+          margin-bottom: 0.5em;
+        }
+        .country-container{
+          margin-top: 0.25em;
+          .country-wrapper{
+            .flag{
+              margin-right: 0.25em;
+            }
+            p{
+              display: inline-block;
+            }
+            .number{
+              font-weight: $lato-bold;
+            }
+          }
+        }
+      }
+    }
+    .popular-pages{
+      h3{
+        font-family: $lato;
+        font-weight: $lato-black;
+        font-size: 1.25rem;
+        margin-bottom: 0;
+        span{
+          display: block;
+          font-size: 0.6em;
+          font-weight: $lato-regular;
+        }
+      }
+      .divider{
+        border-bottom: solid 1px semantic-color(website-divider);
+        @include breakpoint(small only){
+          margin-block: 0.5em;
+        }
+      }
+      .pop-page{
+        p{
+          line-height: 1.2;
+        }
+        .page-name{
+          font-weight: $lato-bold;
+        }
+        .page-details{
+          font-size: 0.75em;
+        }
+      }
+    }
+    .breakdown-section{
+      .sub-section{
+        &:nth-of-type(2){
+          @include breakpoint(medium up){
+            margin-block: 1em;
+          }
+        }
+        &:last-of-type{
+          @include breakpoint(small only){
+            margin-bottom: 0;
+          }
+        }
+      }
+      h3{
+        font-size: 1em;
+        font-family: $lato;
+        font-weight: $lato-black;
+        line-height: 1;
+        margin-bottom: 0.5em;
+      }
+      .bar-chart{
+        display: flex;
+        .bar-segment{
+          background-color: rgba($navy-black, 0.1);
+          border: solid 1px rgba($navy-black, 0.25);
+          padding: 0.5em;
+          min-width: fit-content;
+          border-radius: 5px;
+          @media (prefers-color-scheme: dark){
+            background-color: rgba($pure-white, 0.1);
+            border: solid 1px rgba($pure-white, 0.25);
+          }
+        }
+      }
+      .code-cleaning{
+        h3{
+          margin-bottom: 0.25em;
+        }
+        .description{
+          line-height: 1.2;
+          font-size: 0.75em;
+          margin-block-end: 0.5em;
+        }
+        .bar-chart{
+          .bar-segment{
+            &.plus-code{
+              width: 1%;
+              margin-inline-end: 0.25em;
+            }
+            &.minus-code{
+              width: 99%;
+            }
+            p{
+              font-weight: $lato-bold;
+            }
+          }
+        }
+      }
+      .referrers{
+        .bar-chart{
+          .row-1{
+            margin-block-end: 0.25em;
+            @include breakpoint(small only){
+              margin-block-end: 0;
+            }
+          }
+          .bar-segment{
+            &:nth-of-type(2){
+              margin-inline: 0 !important;
+            }
+            &:nth-of-type(odd){
+              margin-inline-end: 0.25em;
+              @include breakpoint(small only){
+                margin-inline-end: 0;
+              }
+            }
+            @include breakpoint(small only){
+              margin-block-end: 0.25em;
+            }
+          }
+        }
+      }
+      .device-breakdown, .referrers{
+        .bar-chart{
+          .bar-segment{
+            &:nth-of-type(2){
+              margin-inline: 0.25em;
+            }
+            p{
+              line-height: 1.2;
+              &:first-of-type{
+                font-weight: $lato-bold;
+              }
+              &:last-of-type{
+                font-size: 0.75em;
+              }
+            }
+            &.desktop{
+              width: 85%;
+            }
+            &.mobile{
+              width: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

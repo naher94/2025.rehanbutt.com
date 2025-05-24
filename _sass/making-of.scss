@@ -1,0 +1,112 @@
+.making-of{
+  margin-top: 5rem;
+  --card-spacing: 3em;
+  @include breakpoint(small only){
+    --card-spacing: 1.5em;
+    margin-top: 0;
+  }
+  .content-area{
+    border-radius: $tile-radius-big;
+    background-color: semantic-color(making-of-bg);
+    overflow: hidden;
+    @include breakpoint(small only){
+      border-radius: $tile-radius-medium;
+    }
+    .text-area{
+      padding: var(--card-spacing);
+      background-color: semantic-color(making-of-header-bg);
+      font-family: $merriweather;
+      .divider{
+        background-color: semantic-color(text);
+        border-radius: 500px;
+        content: '';
+        height: 0.1rem;
+        width: 3em;
+        margin-block-end: 1.5em;
+      }
+      h2{
+        font-family: $merriweather;
+        font-weight: $merriweather-bold;
+        @include breakpoint(small only){
+          font-size: 2.75em;
+          padding: 0;
+        }
+        span{
+          display: block;
+          &:first-of-type{
+            font-family: $big-shoulders;
+            font-weight: $big-shoulders-regular;
+            font-size: 0.4em;
+            text-transform: uppercase;
+            margin-block-end: -0.5em;
+            @include breakpoint(small only){
+              font-size: 0.5em;
+            }
+          }
+        }
+      }
+      p{
+        padding: 0;
+        margin: 0;
+        font-size: 1.25em;
+        margin-block-end: 1.25em;
+        @include breakpoint(small only){
+          font-size: 1em;
+        }
+      }
+      a{
+        display: inline-block;
+        padding-inline: 1.75em;
+        padding-block: 0.5em;
+        background-color: semantic-color(making-of-button-bg);
+        font-family: $lato;
+        color: $pure-white;
+        border-radius: $tile-radius;
+        transition: $sprint;
+        &:hover{
+          background-color: $navy-black-d4;
+        }
+      }
+    }
+    .image-area{
+      padding-inline: var(--card-spacing);
+      padding-block-start: var(--card-spacing);
+      .lightmode-flip{
+        @media (prefers-color-scheme: dark) {
+          display: none;
+        } 
+      }
+      .darkmode-flip{
+        display: none;
+        @media (prefers-color-scheme: dark) {
+          display: block;
+        } 
+      }
+      .cell{
+        @include breakpoint(small only){
+          padding-right: 0.2rem;
+          padding-left: 0.2rem;
+        }
+        &:first-of-type{
+          padding-left: 0;
+        }
+        &:last-of-type{
+          padding-right: 0;
+        }
+      }
+      // Reduces the spacing between hero screenshots
+      @include breakpoint(small only) {
+        .grid-padding-x > .cell{
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+        }
+        .grid-padding-x > .cell:first-of-type{
+          padding-left: 0.625rem;
+        }
+        .grid-padding-x > .cell:last-of-type{
+          padding-right: 0.625rem;
+        }
+      }
+    }
+  }
+}

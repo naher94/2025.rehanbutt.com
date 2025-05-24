@@ -1,0 +1,236 @@
+.travel{
+  --mobile-overlap: -10em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @include breakpoint(small only) {
+    margin-top: 1rem;
+  }
+  font-family: $montserrat;
+  font-weight: $montserrat-regular;
+  h2{
+    font-family: $montserrat;
+    font-weight: $montserrat-bold;
+    font-size: 2em;
+  }
+  .column{
+    flex-direction: column;
+    //Mobile styling for the cross column overlap
+    @include breakpoint(small only){
+      &:not(:first-of-type){
+        .boarding-card{
+          &:first-of-type{
+            margin-top: var(--mobile-overlap);
+          }
+        }
+      }
+    }
+  }
+  .boarding-card.title-card{
+    background: linear-gradient(#F79868,#F15F63);
+  }
+  .boarding-card{
+    background: linear-gradient(#22a47b,#004a49);
+    aspect-ratio: 3/2;
+    //-0.75em value to shift the circle up and down
+    -webkit-mask-image: radial-gradient(circle 35px at 50% -0.75em ,#0000 98%,#000);
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    border-radius: 15px;
+    padding: 1em;
+    transition: $sprint;
+    @include breakpoint(small only){
+      padding: 1.5em;
+    }
+    &:hover{
+      transform: translateY(-1em);
+    }
+    .content-area{
+      height: fit-content;
+    }
+    &:not(:first-of-type){
+      margin-top: -7em;
+      @include breakpoint(small only){
+        margin-top: var(--mobile-overlap);
+      }
+    }
+    &:last-of-type{
+      border-bottom: 5px solid rgba($pure-black, 0.1);
+      flex-grow: 2;
+    }
+    .icon-wrapper{
+      height: fit-content;
+      aspect-ratio: 1/1;
+    }
+    .departure, .arrival{
+      span{
+        &:first-of-type{
+          font-weight: $montserrat-bold;
+          font-size: 2em;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+        &:last-of-type{
+          font-size: 0.75em;
+          margin-block-start: -0.25em;
+          @include breakpoint(small only){
+            font-size: 1em;
+          }
+        }
+      }
+    }
+    .stat-label{
+      span{
+        &:first-of-type{
+          font-weight: $montserrat-bold;
+          font-size: 2em;
+          line-height: 1.2;
+        }
+        &:last-of-type{
+          font-size: 0.75em;
+          margin-block-start: -0.25em;
+          @include breakpoint(small only){
+            font-size: 1em;
+          }
+        }
+      }
+    }
+    .stat-value{
+      span{
+        font-weight: $montserrat-regular;
+        font-size: 2em;
+        line-height: 1.2;
+      }
+    }
+
+    .arrival{
+      text-align: right;
+    }
+    span{
+      display: block;
+    }
+    .icon-wrapper{
+      svg{
+        fill: currentColor;
+      }
+    }
+    // Per card styling
+    $alaska-gradient: linear-gradient(#2273A4,#00274A);
+    $lufthansa-gradient: linear-gradient(#FFC510,#997712);
+    $united-gradient: linear-gradient(#47c7ea,#042159);
+    $amtrak-gradient: linear-gradient(#06537E,#022031);
+    $grey-gradient: linear-gradient(#5C5F71,#000000);
+    $qatar-gradient: linear-gradient(#8E2157,#3c0c22);
+    $egypt-gradient: linear-gradient(#0b67b2,#0b183b);
+    $movenpick-gradient: linear-gradient(#8c7343,#574829);
+    &.bur-sea, &.sea-bur{
+      background: $alaska-gradient;
+      color: $pure-white;
+    }
+    &.lax-ewr{
+      background: $united-gradient;
+      color: $pure-white;
+    }
+    &.nyc-dc, &.dc-nyc{
+      background: $amtrak-gradient;
+      color: $pure-white;
+    }
+    &.bwi-lax{
+      background: $united-gradient;
+      color: $pure-white;
+    }
+    &.bur-sfo, &.sfo-bur{
+      background: $united-gradient;
+      color: $pure-white;
+    }
+    &.lax-den, &.den-lax{
+      background: $united-gradient;
+      color: $pure-white;
+    }
+    &.lax-fra, &.fra-prg, &.bud-fra, &.fra-lax{
+      background: $lufthansa-gradient;
+      color: $pure-black;
+    }
+    &.lax-iad, &.ewr-lax{
+      background: $united-gradient;
+      color: $pure-white;
+    }
+    &.prg-vie, &.vie-bud{
+      background: $grey-gradient;
+      color: $pure-white;
+    }
+    &.lax-doh, &.doh-lax, &.cai-doh{
+      background: $qatar-gradient;
+      color: $pure-white;
+    }
+    &.lxr-esn, &.esn-edf, &.edf-kom, &.kom-asw{
+      background: $movenpick-gradient;
+      color: $pure-white;
+    }
+    &.doh-cai, &.cai-lxr, &.asw-cai{
+      background: $egypt-gradient;
+      color: $pure-white;
+    }
+  }
+  .flighty-credit{
+    font-weight: $montserrat-bold;
+    .stat-label{
+      span.card-title{
+        font-weight: $montserrat-bold;
+        font-size: 2em;
+        line-height: 1.2;
+        margin-block-start: 0;
+      }
+      span.subline{
+        line-height: 1.5;
+        font-size: 0.75em;
+        margin-block-start: -0.25em;
+        font-weight: $montserrat-regular;
+        @include breakpoint(small only){
+          font-size: 1em;
+        }
+      }
+    }
+    .icon-wrapper{
+      border-radius: $tile-radius;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      width: 1.75em;
+    }
+    a{
+      &:hover{
+        .link-cta{
+          background-color: rgba(#fff, 0.15);
+        }
+      }
+    }
+    .link-cta{
+      padding-inline: 0.75em;
+      padding-block: 0.25em;
+      background-color: rgba(#fff, 0.1);
+      border-radius: $tile-radius;
+      color: $pure-white;
+      font-family: $lato;
+      font-weight: $lato-bold;
+      width: fit-content;
+      font-size: 0.8em;
+      transition: $sprint;
+      @include breakpoint(small only){
+        width: auto;
+        margin-block-start: 1em;
+        padding-inline: 1.25em;
+        padding-block: 0.5em;
+        font-size: 1em;
+      }
+      .text-bit{
+        text-wrap: balance;
+        line-height: 1.2;
+      }
+      svg{
+        margin-inline-start: 0.25em;
+        height: 1.5em;
+        display: flex;
+        fill: #fff;
+      }
+    }
+  }
+}

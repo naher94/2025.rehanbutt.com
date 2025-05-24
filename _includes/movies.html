@@ -1,0 +1,132 @@
+<section class="movies" id="movies" aria-label="Movies Section">
+  <div class="grid-container">
+    <div class="grid-x cell title-container">
+      <div class="grid-x cell">
+        <div class="cell">
+          <h2>film log</h2>
+        </div>
+      </div>
+    </div>
+    <div class="grid-x content-area">
+      <div class="top-picks grid-x cell align-justify">
+        <div class="poster-container grid-x cell small-12 medium-shrink align-middle">
+          <div class="cell shrink poster-box small-order-1">
+            <div class="poster grid-x cell poster-barbie">
+              <img src="/img/movies/fallguy.jpg" alt="The Fall Guy Poster">
+              <img src="/img/movies/fall-guy-thumbs-up.webp" alt="Fall Guy Thumbs up animation" class="fallguy-gif">
+              <div class="kernel-container">
+                {% include_relative img/movies/popcorn.svg %}
+                {% include_relative img/movies/popcorn.svg %}
+                {% include_relative img/movies/popcorn.svg %}
+              </div>
+            </div>
+          </div>
+          <div class="cell shrink poster-box small-order-2">
+            <div class="poster grid-x cell poster-deadpool">
+              <img src="/img/movies/deadpool.jpg" alt="Marvel's Deadpool & Wolverine Poster">
+            </div>
+          </div>
+          <div class="cell shrink poster-box small-order-3">
+            <div class="poster grid-x cell poster-wildrobot">
+              <img src="/img/movies/wildrobot.jpg" alt="The Wild Robot Poster">
+            </div>
+          </div>
+        </div>
+        <div class="cell grid-x picks-list auto align-right">
+          <h3>top picks</h3>
+          {% assign top_picks = "The Fall Guy,Deadpool & Wolverine,The Wild Robot,Inside Out 2,Rise of the Planet of the Apes" | split: ',' %}
+          {%- for movie in top_picks -%}
+          <div class="list-item cell grid-x align-middle">
+            <p class="cell shrink">{{movie}}</p>
+            <div class="popcorn-number cell shrink align-middle align-center">
+              {% include_relative img/movies/popcorn.svg %}
+              <p class="cell">{{forloop.index}}</p>
+            </div>
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="divider-container grid-x cell align-right">
+        <div class="cell shrink">
+          <div class="divider-line"></div>
+        </div>
+      </div>
+      <div class="stats-container grid-x cell align-right">
+        <div class="statistic total-watched cell medium-shrink grid-x align-middle">
+          <div class="cell shrink icon-container align-center align-middle">
+            {% include_relative img/movies/popcorn.svg %}
+            {% include_relative img/movies/film.svg %}
+          </div>
+          <div class="text-container">
+            <p class="number">119</p>
+            <p>featured films watched</p>
+            <!-- As of Dec 31th -->
+          </div>
+        </div>
+        <div class="statistic rewatched cell medium-shrink grid-x align-middle">
+          <div class="cell shrink icon-container align-center align-middle">
+            {% include_relative img/movies/popcorn.svg %}
+            {% include_relative img/movies/history.svg %}
+          </div>
+          <div class="text-container">
+            <p class="number">43%</p>
+            <p>were rewatches</p>
+          </div>
+        </div>
+        <div class="statistic busy-day cell medium-shrink grid-x">
+          <div class="cell shrink icon-container align-center align-middle">
+            {% include_relative img/movies/popcorn.svg %}
+            {% include_relative img/movies/timer.svg %}
+          </div>
+          <div class="text-container cell shrink">
+            <p class="number">Nov 3rd</p> 
+            <p>busiest watch days with 8 movies</p>
+          </div>
+        </div>
+        <div class="statistic first-watch cell medium-shrink grid-x">
+          <div class="cell shrink icon-container align-center align-middle">
+            {% include_relative img/movies/popcorn.svg %}
+            {% include_relative img/movies/ranking-star.svg %}
+          </div>
+          <div class="text-container">
+            <p class="number">Knives Out</p> 
+            <p>1st watched</p>
+          </div>
+        </div>
+        <div class="statistic watch-gap cell medium-shrink grid-x">
+          <div class="cell shrink icon-container align-center align-middle">
+            {% include_relative img/movies/popcorn.svg %}
+            {% include_relative img/movies/gap.svg %}
+          </div>
+          <div class="text-container">
+            <p class="number">68 days</p> 
+            <p>biggest watch gap</p>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="cell popcorn-bucket grid-x align-justify align-middle">
+        <div class="cell medium-shrink title grid-x align-center">
+          <img class="cell small-3 medium-shrink" src="/img/movies/popcornbucket.svg" alt="Illustration of a fallen over popcorn bucket">
+          The year of the popcorn bucket!
+        </div>
+        <div class="cell medium-shrink">
+          {% capture collection-cta-content %}
+          <div class="link-cta grid-x cell small-12 medium-shrink align-middle align-justify">
+            <div class="cell small-10 medium-shrink ryan">
+              Ryan Reynolds has declared 'War of the Popcorn Buckets.'
+            </div>
+            <div class="cell shrink">
+              {% include_relative img/events/arrow-right.svg %}
+            </div>
+          </div>
+          {% endcapture %}
+          {%- include external-link.html link="https://www.cnn.com/2024/06/01/entertainment/ryan-reynolds-deadpool-popcorn-buckets/index.html" content=collection-cta-content css-class="" -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

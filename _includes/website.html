@@ -1,0 +1,170 @@
+<section class="website" id="website" aria-label="Website Update Section">
+  <div class="grid-container">
+    <div class="grid-x browser-chrome">
+      <div class="top-bar grid-x cell">
+        <div class="control-container grid-x cell shrink">
+          <div class="close cell shrink"></div>
+          <div class="minimize cell shrink"></div>
+          <div class="expand cell shrink"></div>
+        </div>
+        <div class="address-bar cell grid-x auto">
+          <div class="address-left grid-x cell auto align-middle">
+            <div class="cell shrink grid-x">
+              {% include_relative img/website/lock.svg %}
+            </div>
+            <div class="cell shrink">
+              {%- include external-link.html link="https://rehanbutt.com/" content="rehanbutt.com" css-class="" -%}
+            </div>
+          </div>
+          <div class="address-right cell shrink align-middle grid-x">
+            {% include_relative img/website/honey-dew.svg %}
+            {% include_relative img/website/refresh.svg %}
+          </div>
+        </div>
+      </div>
+      <div class="content-area grid-x cell">
+        <div class="easter-egg-container grid-x cell align-center align-bottom">
+          <div class="egg-container main-egg cell shrink small-order-4">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/keyhole.svg %}
+          </div>
+          <div class="egg-container car-horn cell shrink small-order-3">
+            <img src="/img/website/bunny-ears.svg" alt="Bunny Ears">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/horn.svg %}
+          </div>
+          <div class="egg-container code-snoop cell shrink small-order-5">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/code.svg %}
+          </div>
+          <div class="egg-container paddington cell shrink small-order-2">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/bread.svg %}
+          </div>
+          <div class="egg-container konami cell shrink small-order-6">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/game-controller.svg %}
+          </div>
+          <div class="egg-container peace cell shrink small-order-1">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/peace.svg %}
+          </div>
+          <div class="egg-container check-list cell shrink small-order-7">
+            {% include_relative img/website/egg.svg %}
+            {% include_relative img/website/check-list.svg %}
+          </div>
+        </div>
+        <div class="text-content cell">
+          <h2>Web Updates</h2>
+          <p>This year, as part of my website updates, Easter Eggs and Resources received a major upgrade. Easter Eggs got a new home to see which have been unlocked and Resources received better ways to discover items. Explore my site and discover all these updates and much more!</p>
+        </div>
+        <div class="grid-x site-container cell">
+          <!-- Data as of Dec 31st -->
+          <div class="cell sub-section medium-shrink by-numbers">
+            <div class="title">
+              <h3>By the Numbers</h3>
+            </div>
+            <div class="big-total">
+              <p class="numb">19.7K</p>
+              <p>Total site visits 2024</p>
+            </div>
+            <div class="busy-day">
+              <p>March 10th</p>
+              <p class="busy-label">Busiest Visit Day</p>
+            </div>
+            <div class="country-visits">
+              <p class="country-label">Most page views by country</p>
+              {% assign country-list = "(🇺🇸|United States|13520),(🇬🇧|United Kingdom|1399),(🇵🇱|Poland|916),(🇹🇷|Turkey|436),(🇮🇳|India|418)" | remove: "(" | remove: ")" | split: ',' %}
+              {% for country in country-list %}
+              {% assign each = country | split: '|' %}
+              <div class="country-container grid-x">
+                <div class="country-wrapper cell grid-x align-justify">
+                  <div class="left-section cell shrink">
+                    <p class="flag">{{each[0]}}</p>
+                    <p class="country-name">{{each[1]}}</p>
+                  </div>
+                  <div class="right-section cell shrink">
+                    <p class="number">{{each[2]}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="grid-x cell medium-shrink pop-container-wrapper">
+            <div class="popular-pages cell sub-section medium-auto align-justify grid-y">
+            <h3>
+              Most Popular Pages
+              <span>*excluding top level pages</span>
+            </h3>
+            {% assign popular-pages = "(Product Principles|article|556),(Tesla Watch App|project|445),(Istanbul|photography|428),(Environmental Conditions|project|373),(My Tech Go Tos|resource|318)" | remove: "(" | remove: ")" | split: ',' %}
+            {%- for popular-page in popular-pages -%}
+            {% assign each = popular-page | split: '|' %}
+            <div class="divider"></div>
+            <div class="pop-page">
+              <p class="page-name">{{each[0]}}</p>
+              <div class="page-details grid-x align-justify">
+                <p>{{each[1]}}</p>
+                <p>{{each[2]}}</p>
+              </div>
+            </div>
+            {%- endfor -%}
+            </div>
+          </div>
+          <div class="cell medium-auto grid-y breakdown-section">
+            <div class="cell sub-section referrers">
+              <h3>Top Referrers</h3>
+              <div class="bar-chart grid-x cell">
+                <div class="grid-x cell row-1">
+                  <div class="bar-segment cell small-12 medium-auto">
+                    <p>Direct</p>
+                    <p>rehanbutt.com · 11409</p>
+                  </div>
+                  <div class="bar-segment cell small-12 medium-auto">
+                    <p>Jekyll</p>
+                    <p>jekyllrb.com · 2004</p>
+                  </div>
+                </div>
+                <div class="grid-x cell">
+                  <div class="bar-segment cell small-12 medium-auto">
+                    <p>Google</p>
+                    <p>google.com · 1366</p>
+                  </div>
+                  <div class="bar-segment cell small-12 medium-auto">
+                    <p>Drive Tesla</p>
+                    <p>driveteslacanada.ca · 180</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell sub-section code-cleaning">
+              <h3>Code Cleaning</h3>
+              <p class="description">Eliminated a significant amount of unused code and optimized the remaining sections for efficiency.</p>
+              <div class="bar-chart">
+                <div class="bar-segment plus-code">
+                  <p>+16</p>
+                </div>
+                <div class="bar-segment minus-code">
+                  <p>-43,908</p>
+                </div>
+              </div>
+            </div>
+            <div class="cell sub-section device-breakdown">
+              <h3>Device Breakdown</h3>
+              <div class="bar-chart">
+                <div class="bar-segment desktop">
+                  <p>85%</p>
+                  <p>Desktop</p>
+                </div>
+                <div class="bar-segment mobile">
+                  <p>15%</p>
+                  <p>Mobile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

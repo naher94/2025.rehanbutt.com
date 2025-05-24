@@ -1,0 +1,22 @@
+<section class="skills grid-container" id="skills" aria-label="New Skills Section">
+  <div class="grid-x content-area">
+    <div class="cell text-hero">
+      <h2 class="visually-hidden">Skills</h2>
+      <svg viewBox="0 0 26 18">
+        <text x="-0.5" y="17">Skills</text>
+      </svg>
+      <div class="tag-container">
+        {% assign skills-list = "Design Ops,Product Management,Systems Design,Mentoring,Data Analysis,Discovery Research,Product Development,Web Dev" | split: ',' %}
+        {%- for skill in skills-list -%}
+          <div class="pill pill__{{forloop.index}}">
+            <div class="gradient gradient__{{forloop.index}}"></div>
+            <div class="text">{{skill}}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="grid-x text-container cell">
+      <p>Continued to level up my skills and acquired some new ones this year.</p>
+    </div>
+  </div>
+</section>
