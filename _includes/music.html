@@ -1,11 +1,18 @@
-<section class="music grid-container" id="music" aria-label="Music Section">
-  <h1>music</h1>
+<section class="music grid-container align-middle" id="music" aria-label="Music Section">
+  <h1>
+    <!-- music -->
+    <span class="text-fit">
+      <span><span>music</span></span>
+      <span aria-hidden="true">music</span>
+    </span>
+  </h1>
+
   <div class="total-listen">
     <p><span>212</span>hrs</p>
     <p>of music listened to</p>
   </div>
   
-  <div class="grid-x">
+  <div class="grid-x list-wrapper align-justify">
   {%- for song in site.songs -%}
     <div class="song-container cell medium-3 grid-x">
       <div class="text-container cell grid-x">
