@@ -15,6 +15,7 @@
   <div class="grid-x list-wrapper align-justify">
   {%- for song in site.songs -%}
     <div class="song-container cell medium-3 grid-x">
+      {% capture song-content %}
       <div class="text-container cell grid-x">
         <div class="cell grid-x align-middle">
           <h2 class="shrink">{{ song.title }}</h2>
@@ -37,6 +38,8 @@
           <img src="../img/music/{{ song.album-cover }}" alt="Album cover for {{ song.title }} by {{ song.artist }}">
         </div>
       </div>
+      {% endcapture %}
+      {%- include external-link.html link=song.link content=song-content css-class="grid-x cell" -%}
     </div>
   {%- endfor -%}
   </div>

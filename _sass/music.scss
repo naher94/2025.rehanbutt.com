@@ -63,6 +63,15 @@
     &:nth-of-type(5){
       rotate: -16deg;
     }
+    a{
+      color: semantic-color(text);
+      &:hover{
+        .cover{
+          transform: rotateY(-40deg);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
     .text-container{
       background-color: rgba(#ffffff, 0.5);
       padding: 0.5em;
@@ -96,13 +105,6 @@
       align-items: center;
       // TODO figure out best way to add background color for each case
       background-color: rgba(70, 29, 157, 0.4);
-      &:hover{
-        // TODO on hover of the a tag then trigger this.. this CSS will have to move
-        .cover{
-          transform: rotateY(-40deg);
-          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-        }
-      }
       // NOTE .blur-container is only needed due to a Safari bug when you use backdrop-filter / other filters on a parent element, it can break 3D transforms like rotateY() on child elements.
       .blur-container{
         backdrop-filter: blur(10px);
@@ -204,7 +206,7 @@
         .center-circle{
           width: 2em;
           aspect-ratio: 1/1;
-          background: black;
+          background: black; //TODO make this the came color as the case color
           border-radius: 10000px;
           position: absolute;
           top: 50%;
