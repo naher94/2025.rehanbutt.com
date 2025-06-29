@@ -20,8 +20,12 @@
           <p class="play-count cell shrink">{{ song.play-count }} plays</p>
         </div>
       </div>
-      <div class="album-case">
-        <img src="../img/music/{{ song.album-cover }}" alt="Album cover for {{ song.title }} by {{ song.artist }}">
+      <div class="cd-case">
+        <div class="spine"></div>
+        <!-- TODO put a CD behind the cover -->
+        <div class="cover">
+          <img src="../img/music/{{ song.album-cover }}" alt="Album cover for {{ song.title }} by {{ song.artist }}">
+        </div>
       </div>
     </div>
   {%- endfor -%}
