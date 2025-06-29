@@ -1,10 +1,10 @@
 <section class="music grid-container align-middle" id="music" aria-label="Music Section">
-  <h1>
+  <h2>
     <span class="text-fit">
       <span><span>music</span></span>
       <span aria-hidden="true">music</span>
     </span>
-  </h1>
+  </h2>
 
   <div class="total-listen">
     <p><span>212</span>hrs</p>
@@ -17,7 +17,7 @@
       {% capture song-content %}
       <div class="text-container cell grid-x">
         <div class="cell grid-x align-middle">
-          <h2 class="shrink">{{ song.title }}</h2>
+          <h3 class="shrink">{{ song.title }}</h3>
           <div class="shrink">
             {%- include_relative img/music/share-arrow.svg -%}
           </div>

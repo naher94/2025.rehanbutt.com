@@ -1,7 +1,7 @@
 .music{
   font-family: $poppins;
   position: relative;
-  h1{
+  h2{
     font-family: $poppins;
     font-weight: $poppins-extrabold;
     text-transform: uppercase;
@@ -85,7 +85,7 @@
       box-shadow: $centered-shadow rgba($pure-black, 0.25);
       margin-block-end: 0.5em;
       backdrop-filter: blur(10px);
-      h2{
+      h3{
         font-size: 1em;
         font-weight: $poppins-bold;
         margin-bottom: 0;
