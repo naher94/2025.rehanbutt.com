@@ -243,10 +243,11 @@
         rgba(255, 255, 255, 0.2) 0%,
         rgba(255, 255, 255, 0.1) 100%
       );
+      box-shadow: 1px 0 7px -1px rgba(0, 0, 0, 0.1) inset;
       // box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.1),
       //   inset 0px 0px 7px 0px rgba(0, 0, 0, 0.2),
       //   inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
-      background-color: rgba(70, 29, 157, 0.20);
+      background-color: var(--cd-case-color);
       width: 1em;
       height: 70%;
       margin-right: 0.5em;
