@@ -50,18 +50,24 @@
     }
     &:nth-of-type(1){
       rotate: -5deg;
+      --cd-case-color: rgba(70, 29, 157, 0.4);
+      // TODO update these to match album cover images
     }
     &:nth-of-type(2){
       rotate: -10deg;
+      --cd-case-color: rgba(211, 15, 15, 0.4);
     }
     &:nth-of-type(3){
       rotate: 13deg;
+      --cd-case-color: rgba(188, 226, 19, 0.4);
     }
     &:nth-of-type(4){
       rotate: 8deg;
+      --cd-case-color: rgba(29, 106, 157, 0.4);
     }
     &:nth-of-type(5){
       rotate: -16deg;
+      --cd-case-color: rgba(224, 12, 196, 0.4);
     }
     a{
       color: semantic-color(text);
@@ -103,8 +109,7 @@
       display: flex;
       border-radius: 15px;
       align-items: center;
-      // TODO figure out best way to add background color for each case
-      background-color: rgba(70, 29, 157, 0.4);
+      background-color: var(--cd-case-color);
       // NOTE .blur-container is only needed due to a Safari bug when you use backdrop-filter / other filters on a parent element, it can break 3D transforms like rotateY() on child elements.
       .blur-container{
         backdrop-filter: blur(10px);
@@ -117,12 +122,10 @@
         border-radius: 15px;
       }
       .cd{
-        // background: red;
         width: calc(100% - 1.5em - 0.5em - 1em);
         aspect-ratio: 1/1;
         position: absolute;
         right: 1em;
-        // border-radius: 100%;
         --diameter: 200px;
         --c-white: #fff;
         /* naming things is hard */
@@ -142,9 +145,6 @@
         --c-stale-beige: #eef6d3;
         --c-light-moss-green: #a7dda7;
         flex: 0 0 auto;
-        // position: relative;
-        // width: var(--diameter);
-        // height: var(--diameter);
         border-radius: 9999px;
         border: 5px solid var(--c-gainsboro);
         bacground-color: var(--c-mid-gray);
@@ -206,7 +206,8 @@
         .center-circle{
           width: 2em;
           aspect-ratio: 1/1;
-          background: black; //TODO make this the came color as the case color
+          background-color: var(--cd-case-color);
+          backdrop-filter: blur(10px);
           border-radius: 10000px;
           position: absolute;
           top: 50%;
