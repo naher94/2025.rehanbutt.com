@@ -1,3 +1,30 @@
 <section class="music grid-container" id="music" aria-label="Music Section">
-  Music section here
+  <h1>music</h1>
+  <div class="total-listen">
+    <p><span>212</span>hrs</p>
+    <p>of music listened to</p>
+  </div>
+  
+  <div class="grid-x">
+  {%- for song in site.songs -%}
+    <div class="song-container cell medium-3 grid-x">
+      <div class="text-container cell grid-x">
+        <div class="cell grid-x align-middle">
+          <h2 class="shrink">{{ song.title }}</h2>
+          <div class="shrink">
+            {%- include_relative img/music/share-arrow.svg -%}
+          </div>
+        </div>
+        <div class="cell grid-x align-justify">
+          <p class="artist cell shrink">{{ song.artist }}</p>
+          <p class="play-count cell shrink">{{ song.play-count }} plays</p>
+        </div>
+      </div>
+      <div class="album-case">
+        <img src="../img/music/{{ song.album-cover }}" alt="Album cover for {{ song.title }} by {{ song.artist }}">
+      </div>
+    </div>
+  {%- endfor -%}
+  </div>
+
 </section>
