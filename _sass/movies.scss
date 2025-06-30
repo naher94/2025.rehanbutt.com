@@ -91,7 +91,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
       }
       .poster{
         position: relative;
-        padding: 0.5em; //TODO spacing around posters
+        // padding: 0.5em; //TODO spacing around posters
         img{
           border-radius: $tile-radius;
           box-shadow: $centered-shadow rgba($pure-black, 0.5);
@@ -123,14 +123,11 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
         //   font-size: 2em;
         // }
         h3{
-          // font-family: $big-shoulders;
-          // font-weight: $big-shoulders-black;
           font-weight: $montserrat-bold;
           font-size: 2em;
           margin-bottom: 0.5em;
         }
         .list-item{
-          // text-align: right;
           font-family: $montserrat;
           font-weight: $montserrat-bold;
           // justify-content: flex-end;
@@ -282,9 +279,6 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
       }
       p{
         font-family: $montserrat;
-        // font-weight: $montserrat-black;
-        // font-family: $big-shoulders;
-        // font-weight: $big-shoulders-semibold;
         margin: 0;
         padding: 0;
         line-height: 1;
@@ -315,7 +309,6 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
         transition: $sprint;
         svg{
           width: 2.5em;
-          // box-shadow: 0 0 10px -5px rgba($pure-black, 0.25);
           &:first-of-type{
             filter: drop-shadow(0 0 10px rgba(0,0,0,0.25));
             // TODO figure out alternative as there is a Safari rendering bug with this
