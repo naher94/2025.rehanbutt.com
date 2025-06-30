@@ -15,72 +15,72 @@ $popcorn-yellow3: #F6F0C9;
     font-family: $big-shoulders;
     position: relative;
     color: $pure-white;
+    padding: 2em;
     .top-picks{
       .poster-box{
-        margin-inline-end: -1.5em; //create the left to right poster overlap effect
+        // margin-inline-end: -1.5em; //create the left to right poster overlap effect
         @include breakpoint(small only) {
-          margin-inline-end: -3em;
+          // margin-inline-end: -3em;
           font-size: 1.5em;
         }
         &:nth-of-type(1){
-          z-index: 4;
+          // z-index: 4;
           .poster{
-            max-width: 15em;
-            rotate: -10deg;
-            transform-origin: top right;
-            position: relative;
-            .kernel-container{
-              position: absolute;
-              bottom: 0;
-              z-index: -1;
-              svg{
-                position: absolute;
-                &:nth-of-type(1){
-                  width: 4em;
-                  left: -3em;
-                  bottom: 6em;
-                  rotate: 12deg;
-                  path{
-                    fill: $popcorn-yellow3;
-                  }
-                }
-                &:nth-of-type(2){
-                  width: 7em;
-                  left: -3.5em;
-                  bottom: -3em;
-                }
-                &:nth-of-type(3){
-                  width: 3em;
-                  left: 4em;
-                  bottom: -4em;
-                  rotate: 6deg;
-                  path{
-                    fill: $popcorn-yellow2;
-                  }
-                }
-              }
-            }
+            // max-width: 15em;
+            // rotate: -10deg;
+            // transform-origin: top right;
+            // position: relative;
+            // .kernel-container{
+            //   position: absolute;
+            //   bottom: 0;
+            //   z-index: -1;
+            //   svg{
+            //     position: absolute;
+            //     &:nth-of-type(1){
+            //       width: 4em;
+            //       left: -3em;
+            //       bottom: 6em;
+            //       rotate: 12deg;
+            //       path{
+            //         fill: $popcorn-yellow3;
+            //       }
+            //     }
+            //     &:nth-of-type(2){
+            //       width: 7em;
+            //       left: -3.5em;
+            //       bottom: -3em;
+            //     }
+            //     &:nth-of-type(3){
+            //       width: 3em;
+            //       left: 4em;
+            //       bottom: -4em;
+            //       rotate: 6deg;
+            //       path{
+            //         fill: $popcorn-yellow2;
+            //       }
+            //     }
+            //   }
+            // }
           }
         }
         &:nth-of-type(2){
-          z-index: 3;
+          // z-index: 3;
           .poster{
-            max-width: 12em;
-            rotate: -5deg;
+            // max-width: 12em;
+            // rotate: -5deg;
             transform-origin: top right;
           }
         }
         &:nth-of-type(3){
-          max-width: 9em;
+          // max-width: 9em;
         }
       }
+      .poster-column{
+        // height: 100%;
+      }
       .poster-container{
-        margin-block-start: -10em;
+        // margin-block-start: -10em;
         padding-inline-start: $content-padding;
-        @include breakpoint(small only) {
-          margin-block-start: -16em;
-          padding-inline: $content-padding;
-        }
       }
       .poster{
         position: relative;
@@ -163,6 +163,7 @@ $popcorn-yellow3: #F6F0C9;
             }
           }
           &:nth-of-type(5){
+            margin-block-end: 0;
             svg{
               path{
                 fill: $popcorn-yellow3;

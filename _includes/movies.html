@@ -1,16 +1,9 @@
 <section class="movies grid-container" id="movies" aria-label="Movies Section">
-  <!-- <div class="grid-container"> -->
-    <!-- <div class="grid-x cell title-container">
-      <div class="grid-x cell">
-        <div class="cell">
-          <h2>film log</h2>
-        </div>
-      </div>
-    </div> -->
-    <div class="grid-x card1">
-      <h2>film log</h2>
-      <div class="top-picks grid-x cell align-justify">
-        <div class="cell grid-x picks-list auto">
+  <div class="grid-x card1">
+    <div class="top-picks grid-x cell align-justify">
+      <div class="cell grid-x auto">
+        <h2 class="cell">film log</h2>
+        <div class="cell grid-x picks-list align-self-bottom">
           <h3>top picks</h3>
           {% assign top_picks = "The Fall Guy,Deadpool & Wolverine,The Wild Robot,Inside Out 2,Rise of the Planet of the Apes" | split: ',' %}
           {%- for movie in top_picks -%}
@@ -23,86 +16,90 @@
           </div>
           {%- endfor -%}
         </div>
-        <div class="poster-container grid-x cell small-12 medium-shrink align-middle">
-          <div class="cell shrink poster-box small-order-1">
-            <div class="poster grid-x cell poster-barbie">
-              <img src="/img/movies/fallguy.jpg" alt="The Fall Guy Poster">
-              <img src="/img/movies/fall-guy-thumbs-up.webp" alt="Fall Guy Thumbs up animation" class="fallguy-gif">
-              <div class="kernel-container">
-                {% include_relative img/movies/popcorn.svg %}
-                {% include_relative img/movies/popcorn.svg %}
-                {% include_relative img/movies/popcorn.svg %}
-              </div>
-            </div>
+      </div>
+
+      <div class="poster-container grid-x cell small-12 medium-8">
+        <div class="cell small-8 poster-box">
+          <div class="poster grid-x cell poster-barbie">
+            <img src="/img/movies/fallguy.jpg" alt="The Fall Guy Poster">
+            <img src="/img/movies/fall-guy-thumbs-up.webp" alt="Fall Guy Thumbs up animation" class="fallguy-gif">
+            <!-- <div class="kernel-container">
+              {% include_relative img/movies/popcorn.svg %}
+              {% include_relative img/movies/popcorn.svg %}
+              {% include_relative img/movies/popcorn.svg %}
+            </div> -->
           </div>
-          <div class="cell shrink poster-box small-order-2">
+        </div>
+        
+        <div class="cell small-4 grid-x poster-column">
+          <div class="cell poster-box">
             <div class="poster grid-x cell poster-deadpool">
               <img src="/img/movies/deadpool.jpg" alt="Marvel's Deadpool & Wolverine Poster">
             </div>
           </div>
-          <div class="cell shrink poster-box small-order-3">
+          <div class="cell poster-box">
             <div class="poster grid-x cell poster-wildrobot">
               <img src="/img/movies/wildrobot.jpg" alt="The Wild Robot Poster">
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="grid-x card2">
-      <div class="stats-container grid-x cell align-right">
-        <div class="statistic total-watched cell medium-shrink grid-x align-middle">
-          <div class="cell shrink icon-container align-center align-middle">
-            {% include_relative img/movies/popcorn.svg %}
-            {% include_relative img/movies/film.svg %}
-          </div>
-          <div class="text-container">
-            <p class="number">119</p>
-            <p>featured films watched</p>
-            <!-- As of Dec 31th -->
-          </div>
-        </div>
-        <div class="statistic rewatched cell medium-shrink grid-x align-middle">
-          <div class="cell shrink icon-container align-center align-middle">
-            {% include_relative img/movies/popcorn.svg %}
-            {% include_relative img/movies/history.svg %}
-          </div>
-          <div class="text-container">
-            <p class="number">43%</p>
-            <p>were rewatches</p>
-          </div>
-        </div>
-        <div class="statistic busy-day cell medium-shrink grid-x">
-          <div class="cell shrink icon-container align-center align-middle">
-            {% include_relative img/movies/popcorn.svg %}
-            {% include_relative img/movies/timer.svg %}
-          </div>
-          <div class="text-container cell shrink">
-            <p class="number">Nov 3rd</p> 
-            <p>busiest watch days with 8 movies</p>
-          </div>
-        </div>
-        <div class="statistic first-watch cell medium-shrink grid-x">
-          <div class="cell shrink icon-container align-center align-middle">
-            {% include_relative img/movies/popcorn.svg %}
-            {% include_relative img/movies/ranking-star.svg %}
-          </div>
-          <div class="text-container">
-            <p class="number">Knives Out</p> 
-            <p>1st watched</p>
-          </div>
-        </div>
-        <div class="statistic watch-gap cell medium-shrink grid-x">
-          <div class="cell shrink icon-container align-center align-middle">
-            {% include_relative img/movies/popcorn.svg %}
-            {% include_relative img/movies/gap.svg %}
-          </div>
-          <div class="text-container">
-            <p class="number">68 days</p> 
-            <p>biggest watch gap</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="grid-x card2">
+    <div class="stats-container grid-x cell align-right">
+      <div class="statistic total-watched cell medium-shrink grid-x align-middle">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/film.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">119</p>
+          <p>featured films watched</p>
+          <!-- As of Dec 31th -->
+        </div>
+      </div>
+      <div class="statistic rewatched cell medium-shrink grid-x align-middle">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/history.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">43%</p>
+          <p>were rewatches</p>
+        </div>
+      </div>
+      <div class="statistic busy-day cell medium-shrink grid-x">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/timer.svg %}
+        </div>
+        <div class="text-container cell shrink">
+          <p class="number">Nov 3rd</p> 
+          <p>busiest watch days with 8 movies</p>
+        </div>
+      </div>
+      <div class="statistic first-watch cell medium-shrink grid-x">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/ranking-star.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">Knives Out</p> 
+          <p>1st watched</p>
+        </div>
+      </div>
+      <div class="statistic watch-gap cell medium-shrink grid-x">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/gap.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">68 days</p> 
+          <p>biggest watch gap</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
