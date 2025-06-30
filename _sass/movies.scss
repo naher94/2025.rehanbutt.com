@@ -329,4 +329,14 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
       }
     }
   }
+  .card3{
+    background-color: #313131; //TODO make semantic
+    padding: $card-padding;
+    border-radius: $card-border-radius;
+    color: $pure-white;
+    p{
+      padding: 0;
+      margin: 0;
+    }
+  }
 }
