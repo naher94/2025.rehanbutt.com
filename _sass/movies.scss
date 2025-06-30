@@ -2,6 +2,8 @@ $content-padding: 1em;
 $popcorn-yellow1: #F4F8C7;
 $popcorn-yellow2: #EFE8A5;
 $popcorn-yellow3: #F6F0C9;
+$card-padding: 2em;
+$card-border-radius: $tile-radius-big; //TODO check this radius is right
 
 .movies{
   margin-top: 15rem;
@@ -15,12 +17,12 @@ $popcorn-yellow3: #F6F0C9;
     text-transform: uppercase;
   }
   .card1{
-    border-radius: $tile-radius-big; //TODO check this radius is right
+    border-radius: $card-border-radius;
     background-color: #313131;
     font-family: $big-shoulders;
     position: relative;
     color: $pure-white;
-    padding: 2em;
+    padding: $card-padding;
     .top-picks{
       .poster-box{
         // margin-inline-end: -1.5em; //create the left to right poster overlap effect
@@ -183,17 +185,21 @@ $popcorn-yellow3: #F6F0C9;
     }
   }
   .card2{
-        .stats-container{
+    background-color: #EFEFEF; //TODO make semantic
+    padding: $card-padding;
+    border-radius: $card-border-radius;
+
+    .stats-container{
       font-size: 1.35em;
-      padding-inline: $content-padding;
-      text-shadow: 0 0 20px black;
+      // padding-inline: $content-padding;
+      // text-shadow: 0 0 20px black;
       @include breakpoint(small only) {
         font-size: 3em;
         padding: 1em;
       }
       .statistic{
-        margin-inline-start: 2em;
-        margin-block-start: 2em;
+        // margin-inline-start: 2em;
+        // margin-block-start: 2em;
         @include breakpoint(small only){
           margin-inline-start: 0;
         }
@@ -275,8 +281,10 @@ $popcorn-yellow3: #F6F0C9;
         }
       }
       p{
-        font-family: $big-shoulders;
-        font-weight: $big-shoulders-semibold;
+        font-family: $montserrat;
+        font-weight: $montserrat-black;
+        // font-family: $big-shoulders;
+        // font-weight: $big-shoulders-semibold;
         margin: 0;
         padding: 0;
         line-height: 1;
@@ -307,6 +315,11 @@ $popcorn-yellow3: #F6F0C9;
         transition: $sprint;
         svg{
           width: 2.5em;
+          // box-shadow: 0 0 10px -5px rgba($pure-black, 0.25);
+          &:first-of-type{
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.25));
+            // TODO figure out alternative as there is a Safari rendering bug with this
+          }
           &:last-of-type{
             width: 1.25em;
             position: absolute;
