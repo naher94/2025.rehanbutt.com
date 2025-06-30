@@ -39,6 +39,15 @@
       grid-column-end: span 3;
       grid-row-start: row-start;
       grid-row-end: span 4;
+      .image-wrapper{
+        // TODO fix this gradient its not looking great
+        background:
+          radial-gradient(circle at 75% 0, rgba(#874FFF, 1) 0%, rgba(#874FFF, 0) 100%),
+          radial-gradient(circle at 100% 60%, rgba(#FF7237, 1) 0%, rgba(#FF7237, 0) 100%),
+          radial-gradient(circle at 10% 90%, rgba(#24CB71, 1) 0%, rgba(#24CB71, 0) 100%),
+          #00B6FF;
+
+      }
       .logo-wrapper{
         padding: 1em;
         display: flex;
