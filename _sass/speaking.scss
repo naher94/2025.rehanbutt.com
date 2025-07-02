@@ -44,6 +44,7 @@
       // overflow: hidden;
       // clip-path: inset(0 round var(--photo-radius));
       mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
+      // TODO add a wrapper around this to make sure the box shadow actually shows
       svg, img{
         animation: image-anim linear both;
         animation-timeline: view(block);
