@@ -14,8 +14,8 @@ body {
 }
 
 ::selection {
-  background: semantic-color(selection-background);
-  //TODO not defined which is causing the Gissue #4
+  // background: semantic-color(selection-background);
+  //TODO not defined which is causing the Gissue #4 seems like selection was active just not visible
 }
 
 .content-wrapper{
