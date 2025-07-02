@@ -11,6 +11,20 @@
     --col-middle: 7;
     --photo-radius: 30px;
     --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    @keyframes image-anim {
+      from{
+        // filter: blur(20px) grayscale(80%);
+        filter: blur(10px);
+        scale: 1.25;
+      }
+      to {
+        // filter: blur(0) grayscale(0%);
+        filter: blur(0);
+        scale: 1;
+        // rotate: -2deg;
+        // TODO figure out a cool animation here
+      }
+    }
     p{
       margin: 0;
       padding: 0;
@@ -24,9 +38,19 @@
       }
     .image-wrapper{
       aspect-ratio: 1/1;
-      background-color: crimson;
+      background-color: $pure-black;
       border-radius: var(--photo-radius);
       box-shadow: var(--image-wrapper-shadow);
+      // overflow: hidden;
+      // clip-path: inset(0 round var(--photo-radius));
+      mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
+      svg, img{
+        animation: image-anim linear both;
+        animation-timeline: view(block);
+        // animation-range: contain 25% contain 75%;
+        // animation-range: contain 0% contain 25%;
+        animation-range: entry 0% entry-crossing 100%;
+      }
     }
     .talk-intro{
       grid-column-start: col-start;
