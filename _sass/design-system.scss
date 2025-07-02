@@ -15,6 +15,7 @@ body {
 
 ::selection {
   background: semantic-color(selection-background);
+  //TODO not defined which is causing the Gissue #4
 }
 
 .content-wrapper{
