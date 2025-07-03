@@ -20,7 +20,7 @@ body {
 
 // Debugging visual item
 img:not([alt]), img[alt=""] {
-  border: 5px dashed #c00; /* Example: 5px dashed red border */
+  border: 5px dashed red;
 }
 
 .content-wrapper{
