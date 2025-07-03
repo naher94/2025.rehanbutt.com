@@ -41,12 +41,12 @@
       background-color: $pure-black;
       border-radius: var(--photo-radius);
       box-shadow: var(--image-wrapper-shadow);
-      // overflow: hidden;
+      overflow: hidden;
       // clip-path: inset(0 round var(--photo-radius));
-      mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
+      // mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
       // TODO add a wrapper around this to make sure the box shadow actually shows
       svg, img{
-        animation: image-anim linear both;
+        // animation: image-anim linear both;
         animation-timeline: view(block);
         // animation-range: contain 25% contain 75%;
         // animation-range: contain 0% contain 25%;
@@ -148,6 +148,40 @@
       .image-wrapper{
         margin-block-start: 1em;
         grid-column-start: auto;
+        grid-column-end: span 3;
+      }
+    }
+    .anyone-design{
+      grid-column-start: col-start;
+      grid-column-end: span 7;
+      grid-row-start: 20;
+      grid-row-end: span 5;
+      aspect-ratio: 3/2;
+    }
+    .beauty-beast{
+      grid-column-start: 8;
+      // grid-column-end: span 5;
+      grid-column-end: -1;
+      grid-row-start: 25;
+      grid-row-end: span 4;
+      aspect-ratio: 3/2;
+    }
+    .audience-comments{
+      grid-column-start: col-start;
+      grid-column-end: span 6;
+      grid-row-start: 25;
+      grid-row-end: span 7;
+      display: grid;
+      grid-template-columns: subgrid;
+      h3, p {
+        grid-column: 1 / -1; // Make p tags span all columns (full width)
+      }
+      p{
+        hanging-punctuation: first;
+        // TODO figure out why this is not working in Safari
+      }
+      .moscone{
+        grid-column-start: 1;
         grid-column-end: span 3;
       }
     }
