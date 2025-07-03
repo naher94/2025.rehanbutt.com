@@ -18,6 +18,11 @@ body {
   //TODO not defined which is causing the Gissue #4 seems like selection was active just not visible
 }
 
+// Debugging visual item
+img:not([alt]), img[alt=""] {
+  border: 5px dashed #c00; /* Example: 5px dashed red border */
+}
+
 .content-wrapper{
   padding-top: 3em;
   @include breakpoint(small only) {
