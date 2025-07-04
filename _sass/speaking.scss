@@ -124,10 +124,10 @@
       grid-column-start: span 5;
       grid-column-end: var(--col-middle);
       grid-row-start: 11;
-      grid-row-end: span 3;
+      grid-row-end: span 4;
       // justify-self: end; //TODO see if I need this after adding the image
       .image-wrapper{
-        aspect-ratio: 2/1;
+        aspect-ratio: 3/2;
       }
     }
     .thank-you{
@@ -169,10 +169,34 @@
       grid-template-columns: subgrid;
       .text-wrapper {
         grid-column: 1 / -1; // To span all columns (full width)
-        background-color: crimson;
       }
       p{
         hanging-punctuation: first;
+        
+        span{
+          font-weight: $space-grotesk-bold;
+          // --blur: 20px;
+          // --orbit-radius: 10px;
+          --blur: 1em;
+          --orbit-radius: 0.75em;
+          --angle1: 0deg;
+          --angle2: 120deg;
+          --angle3: 240deg;
+          --opacity: 0.9;
+          $color1: #32C5FF;
+          $color2: #FFC800;
+          $color3: #FF0000;
+          animation:
+            orbit1 6s linear infinite,
+            orbit2 6s linear infinite,
+            orbit3 6s linear infinite,
+            blur-pulse 2s ease-in-out infinite alternate;
+          color: white;
+          text-shadow:
+            calc(cos(var(--angle1)) * var(--orbit-radius)) calc(sin(var(--angle1)) * var(--orbit-radius)) var(--blur) rgba($color1, var(--opacity)),
+            calc(cos(var(--angle2)) * var(--orbit-radius)) calc(sin(var(--angle2)) * var(--orbit-radius)) var(--blur) rgba($color2, var(--opacity)),
+            calc(cos(var(--angle3)) * var(--orbit-radius)) calc(sin(var(--angle3)) * var(--orbit-radius)) var(--blur) rgba($color3, var(--opacity));
+        }
       }
       .moscone{
         grid-column-start: 1;
@@ -185,5 +209,53 @@
       padding: 0;
       margin: 0;
     }
+  }
+}
+
+@property --angle1 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --angle2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 120deg; /* 1/3 of 360 */
+}
+
+@property --angle3 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 240deg; /* 2/3 of 360 */
+}
+
+@property --blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 60px;
+}
+
+@keyframes orbit1 {
+  to { --angle1: 360deg; }
+}
+
+@keyframes orbit2 {
+  to { --angle2: 480deg; } /* 360 + 120 to keep offset */
+}
+
+@keyframes orbit3 {
+  to { --angle3: 600deg; } /* 360 + 240 */
+}
+
+@keyframes spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes blur-pulse {
+  to{
+    --blur: 1.25em;
   }
 }
