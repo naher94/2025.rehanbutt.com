@@ -277,12 +277,6 @@
   to { --angle3: 600deg; } /* 360 + 240 */
 }
 
-@keyframes spin {
-  to {
-    --angle: 360deg;
-  }
-}
-
 @keyframes blur-pulse {
   to{
     --blur: 1.25em;
