@@ -12,13 +12,29 @@
     gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
   }
-
+  .text-card{
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: $tile-radius-big;
+    padding: 2rem;
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 5/6;
+    z-index: 2;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); //centering vertically and horizontally
+    background-color: $pure-white;
+    rotate: 2deg;
+  }
   .thumbnail {
     position: relative;
     aspect-ratio: 1;
     overflow: hidden;
-    border-radius: $tile-radius;
+    border-radius: $tile-radius-big;
+    z-index: 1;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: #2a2a2a;

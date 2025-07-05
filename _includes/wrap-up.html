@@ -2,6 +2,38 @@
   <div class="grid-container">
     <div class="grid-x gallery" id="gallery">
       <!-- You can now add images directly in HTML with custom classes for different layouts -->
+      <div class="text-card">
+        <h2>Title of the text card</h2>
+        this is the card where the text lives
+        <div class="grid-x align-center">
+          <div class="share-area cell grid-x align-middle small-10 medium-shrink align-justify">
+            <div class="words cell shrink">
+              <p class="enjoyed">Enjoyed my year in review?</p>
+              <p>Share it with your network.</p>
+            </div>
+            <div class="icon-wrapper cell grid-x shrink align-self-stretch">
+              <div class="link-wrapper cell small-6 align-self-bottom">
+                <a rel="noopener" target="_blank" href="https://www.threads.net/intent/post?text=Check%20out%20%40naher94%20awesome%20year%20in%20review!%20{{ site.url }}">
+                  <div class="share-item">
+                    {%- include_relative img/lastly/threads.svg -%}
+                  </div>
+                  <span class="visually-hidden">Opens a new window</span>
+                </a>
+                {% include_relative img/lastly/paperclip.svg %}
+              </div>
+              <div class="link-wrapper cell  small-6 align-self-top">
+                <a rel="noopener" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}" target="_blank">
+                  <div class="share-item">
+                    {%- include_relative img/lastly/linkedin.svg -%}
+                  </div>
+                  <span class="visually-hidden">Opens a new window</span>
+                </a>
+                {% include_relative img/lastly/paperclip.svg %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="thumbnail" data-index="0">
         <img src="https://picsum.photos/800/800?random=1" alt="Image 1">
       </div>
@@ -22,48 +54,15 @@
       </div>
     </div>
 
-<!-- Animation overlay for background fade -->
-<div class="animation-overlay" id="animationOverlay"></div>
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    <button class="close-btn" id="closeBtn">&times;</button>
-    <button class="nav-btn prev-btn" id="prevBtn">‹</button>
-    <button class="nav-btn next-btn" id="nextBtn">›</button>
-    <img id="lightboxImg" src="" alt="">
-    <div class="counter" id="counter"></div>
-  </div>
-</div>
-
-
-
-
-    <div class="grid-x align-center">
-      <div class="share-area cell grid-x align-middle small-10 medium-shrink align-justify">
-        <div class="words cell shrink">
-          <p class="enjoyed">Enjoyed my year in review?</p>
-          <p>Share it with your network.</p>
-        </div>
-        <div class="icon-wrapper cell grid-x shrink align-self-stretch">
-          <div class="link-wrapper cell small-6 align-self-bottom">
-            <a rel="noopener" target="_blank" href="https://www.threads.net/intent/post?text=Check%20out%20%40naher94%20awesome%20year%20in%20review!%20{{ site.url }}">
-              <div class="share-item">
-                {%- include_relative img/lastly/threads.svg -%}
-              </div>
-              <span class="visually-hidden">Opens a new window</span>
-            </a>
-            {% include_relative img/lastly/paperclip.svg %}
-          </div>
-          <div class="link-wrapper cell  small-6 align-self-top">
-            <a rel="noopener" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}" target="_blank">
-              <div class="share-item">
-                {%- include_relative img/lastly/linkedin.svg -%}
-              </div>
-              <span class="visually-hidden">Opens a new window</span>
-            </a>
-            {% include_relative img/lastly/paperclip.svg %}
-          </div>
-        </div>
+    <!-- Animation overlay for background fade -->
+    <div class="animation-overlay" id="animationOverlay"></div>
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+        <button class="nav-btn next-btn" id="nextBtn">›</button>
+        <img id="lightboxImg" src="" alt="">
+        <div class="counter" id="counter"></div>
       </div>
     </div>
   </div>
