@@ -5,6 +5,7 @@ footer{
   background-color: #F7F7F7;
   $flip-clock-spacing: 1rem;
   $flip-clock-perspective: 1200px;
+  --flip-card-width: 100%;
   .number-container{
     margin-block-start: -9em;
   }
@@ -36,10 +37,9 @@ footer{
       transform: perspective($flip-clock-perspective) rotateX(0deg);
       width: 100%;
       aspect-ratio: 1/1;
-      // TODO make this relative scaling     
       overflow: initial;
-      transform-origin: 50% 17.37rem;
-      // TODO make this computed value scaling
+      transform-origin: 50% calc(var(--flip-card-width) + 8px);
+      // TODO make this computed value scaling 8px is half of 1rem
       animation: clock-flip 6s linear 2s 1 alternate forwards;
       animation-timeline: view(block);
       animation-range: contain 15% contain 50%;
@@ -50,21 +50,18 @@ footer{
       border-radius: $tile-radius-big;
       overflow: hidden;
       width: 100%;
-      aspect-ratio: 1/1;
-      // height: 270px;
-      // TODO make this relative scaling     
+      aspect-ratio: 1/1;    
       &:last-of-type {
         position: absolute;
         top: 0;
         width: 100%;
-        // width: 270px;
-        // height: 270px;
+        height: var(--flip-card-width); // Set explicitly to fix an issue in Safari
         aspect-ratio: 1 / 1;
         transform: rotateX(.5turn);
         background-color: #F8F0E3;
         z-index: 2;
         .text-fit{
-          // transform: translate(0, -50%);
+          transform: translate(0, -50%);
         }
       }
     }
