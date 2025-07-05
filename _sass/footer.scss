@@ -9,14 +9,13 @@ footer{
   .static-number{
     font-family: $big-shoulders;
     font-weight: $big-shoulders-black;
-    aspect-ratio: 2/3;
     font-size: 15rem;
     border-radius: $tile-radius-big;
     line-height: 1;
     position: relative;
     .number-top, .number-bottom{
       background-color: #F8F0E3;
-      aspect-ratio: 6/6;
+      aspect-ratio: 1/1;
       border-radius: $tile-radius-big;
       overflow: hidden;
       box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
