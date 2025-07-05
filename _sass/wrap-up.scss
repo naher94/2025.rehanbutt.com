@@ -36,17 +36,29 @@
       object-fit: cover;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
-  }
-
-  /* Special grid layouts for variety */
-  .thumbnail.wide {
-    grid-column: span 2;
-    aspect-ratio: 2/1;
-  }
-
-  .thumbnail.tall {
-    grid-row: span 2;
-    aspect-ratio: 1/2;
+    &[data-index="0"] {
+      grid-column: 1;
+    }
+    &[data-index="1"] {
+      grid-column: 2;
+    }
+    &[data-index="2"] {
+      grid-column: 4 / span 2;
+      aspect-ratio: 2/1;
+    }
+    &[data-index="3"] {
+      grid-row: 2;
+      grid-column: 1 / span 2;
+      aspect-ratio: 2/1;
+    }
+    &[data-index="4"] {
+      grid-row: 2;
+      grid-column: 4;
+    }
+    &[data-index="5"] {
+      grid-row: 2;
+      grid-column: 5;
+    }
   }
 
   .lightbox {
