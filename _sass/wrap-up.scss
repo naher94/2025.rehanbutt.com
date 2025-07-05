@@ -227,19 +227,11 @@
 
   .share-area{
     background-color: semantic-color(lastly-share-area);
-    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
-    padding-block: 0.5em;
-    margin-block-start: 3em;
-    @include breakpoint(small only){
-      font-size: 1rem;
-      justify-content: center;
-      aspect-ratio: 1/1;
-      rotate: -3deg;
-    }
+    // padding-block: 0.5em;
     .words{
-      padding-inline: 1em;
-      padding-block: 0.5em;
-      font-size: 1.25em;
+      // padding-inline: 1em;
+      // padding-block: 0.5em;
+      font-size: 1em;
       @include breakpoint(small only){
         text-align: center;
       }
@@ -256,44 +248,25 @@
     }
     .link-wrapper{
       transition: $sprint;
-      .paperclip-svg{
-        position: absolute;
-        width: 0.75em;
-      }
+      // aspect-ratio: 1/1;
       &:nth-of-type(1){
-        rotate: -6deg;
+        // rotate: -6deg;
         &:hover{
           rotate: -12deg;
         }
-        .paperclip-svg{
-          rotate: 180deg;
-          bottom: -1.75em;
-          left: 0.5em;
-          @include breakpoint(small only){
-            left: 1em;
-          }
-        }
       }
       &:nth-of-type(2){
-        rotate: 3deg;
+        // rotate: 3deg;
         &:hover{
           rotate: 9deg;
         }
         .share-item{
-          margin-inline-start: 0.5em;
-        }
-        .paperclip-svg{
-          top: -1.75em;
-          left: 1em;
-          @include breakpoint(small only){
-            left: 2em;
-          }
+          // margin-inline-start: 0.5em;
         }
       }
     }
     .share-item{
       aspect-ratio: 1/1;
-      background-color: semantic-color(lastly-post-it);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -301,7 +274,6 @@
       padding: 0.25em;
       color: $pure-black;
       width: 2.5em;
-      box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
       svg{
         width: 100%;
         path{
