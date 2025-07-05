@@ -35,11 +35,10 @@ footer{
       transform: perspective($flip-clock-perspective) rotateX(-180deg);
       width: 270px;
       height: 270px;
+      // TODO make this relative scaling     
       overflow: initial;
-      // transform-origin: bottom;
-      // transform-origin: 50% 102%;
-      // transform-origin: 50% (15rem + $flip-clock-spacing/2);
       transform-origin: 50% 17.25rem;
+      // TODO make this computed value scaling     
       animation: 6s linear 2s infinite alternate clock-flip;
     }
     .face {
@@ -48,7 +47,7 @@ footer{
       overflow: hidden;
       width: 270px;
       height: 270px;
-      // TODO this does not seem to work seems related to overflow hidden WHYYYY      
+      // TODO make this relative scaling     
       &:last-of-type {
         position: absolute;
         top: 0;
