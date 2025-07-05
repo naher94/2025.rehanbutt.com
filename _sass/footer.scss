@@ -37,8 +37,10 @@ footer{
       overflow: initial;
       transform-origin: 50% 17.37rem;
       // TODO make this computed value scaling
-      // animation: 6s linear 2s infinite alternate clock-flip;
       animation: clock-flip 6s linear 2s 1 alternate forwards;
+      animation-timeline: view(block);
+      animation-range: contain 25% contain 75%;
+      // TODO figure out the fall back for this scroll animation
     }
     .face {
       backface-visibility: hidden;
