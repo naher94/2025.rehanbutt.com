@@ -1,26 +1,46 @@
 <section class="wrap-up" id="wrap-up" aria-label="Wrap Up Section">
   <div class="grid-container">
-    <div class="grid-x">
-      <div class="post-it-wrapper cell medium-4">
-        <div class="post-it">
-          <h2>See you 2024</h2>
-          <p>Farewell, 2024 — thank you for the memories, lessons, and joy. As we welcome 2025, let's look forward to a year filled with new opportunities, happiness, and endless adventures. May this year bring you success, laughter, and moments to treasure. Here's to embracing the journey ahead. Happy New Year!</p>
-        </div>
+    <div class="grid-x gallery" id="gallery">
+      <!-- You can now add images directly in HTML with custom classes for different layouts -->
+      <div class="thumbnail" data-index="0">
+        <img src="https://picsum.photos/800/800?random=1" alt="Image 1">
       </div>
-      <div class="polaroid-wrapper pw1 cell medium-4">
-        <div class="polaroid">
-          <img src="img/lastly/pyramids.jpg" alt="A photo of me in front of the Pyramids of Giza">
-          <div class="caption">Visited the Pyramids</div>
-          {% include_relative img/lastly/paperclip.svg %}
-        </div>
+      <div class="thumbnail wide" data-index="1">
+        <img src="https://picsum.photos/800/600?random=2" alt="Image 2">
       </div>
-      <div class="polaroid-wrapper pw2 cell medium-4">
-        <div class="polaroid">
-          <img src="img/lastly/mike-sulley-me.jpg" alt="A photo of me Next to Mike and Sulley from Monsters Inc. at the Pixar Campus">
-          <div class="caption">1st visit to Pixar HQ!</div>
-        </div>
+      <div class="thumbnail" data-index="2">
+        <img src="https://picsum.photos/600/800?random=3" alt="Image 3">
+      </div>
+      <div class="thumbnail tall" data-index="3">
+        <img src="https://picsum.photos/800/800?random=4" alt="Image 4">
+      </div>
+      <div class="thumbnail" data-index="4">
+        <img src="https://picsum.photos/800/600?random=5" alt="Image 5">
+      </div>
+      <div class="thumbnail" data-index="5">
+        <img src="https://picsum.photos/600/800?random=6" alt="Image 6">
+      </div>
+      <div class="thumbnail" data-index="6">
+        <img src="https://picsum.photos/800/800?random=7" alt="Image 7">
       </div>
     </div>
+
+<!-- Animation overlay for background fade -->
+<div class="animation-overlay" id="animationOverlay"></div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+    <button class="nav-btn next-btn" id="nextBtn">›</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="counter" id="counter"></div>
+  </div>
+</div>
+
+
+
+
     <div class="grid-x align-center">
       <div class="share-area cell grid-x align-middle small-10 medium-shrink align-justify">
         <div class="words cell shrink">
