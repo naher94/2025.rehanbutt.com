@@ -1,55 +1,56 @@
 <footer>
   <div class="grid-container">
 
-    <div class="grid-x align-center grid-margin-x">
-      
-      {% assign number-list = "2,0,2" | split: ',' %}
-      {%- for number in number-list -%}
-      <div class="static-number cell grid-x small-6 medium-3">
-        <div class="number-top cell">
-          <span class="text-fit">
-            <span><span>{{number}}</span></span>
-            <span aria-hidden="true">{{number}}</span>
-          </span>
-        </div>
-        <div class="number-bottom cell">
-          <span class="text-fit">
-            <span><span>{{number}}</span></span>
-            <span aria-hidden="true">{{number}}</span>
-          </span>
-        </div>
-      </div>
-      {%- endfor -%}
+    <div class="grid-x cell">
+      <div class="grid-x cell number-container align-center grid-margin-x">
 
-      <div class="static-number cell grid-x small-6 medium-3">
-        <div class="number-top cell">
-          <span class="text-fit">
-            <span><span>6</span></span>
-            <span aria-hidden="true">6</span>
-          </span>
-        </div>
-        <div class="number-bottom cell">
-          <span class="text-fit">
-            <span><span>5</span></span>
-            <span aria-hidden="true">5</span>
-          </span>
-        </div>
-        <div class="number-top number-top2">
-          <div class="face">
+        {% assign number-list = "2,0,2" | split: ',' %}
+        {%- for number in number-list -%}
+        <div class="static-number cell grid-x small-6 medium-3">
+          <div class="number-top cell">
             <span class="text-fit">
-              <span><span>5</span></span>
-              <span aria-hidden="true">5</span>
+              <span><span>{{number}}</span></span>
+              <span aria-hidden="true">{{number}}</span>
             </span>
           </div>
-          <div class="face">
+          <div class="number-bottom cell">
+            <span class="text-fit">
+              <span><span>{{number}}</span></span>
+              <span aria-hidden="true">{{number}}</span>
+            </span>
+          </div>
+        </div>
+        {%- endfor -%}
+
+        <div class="static-number cell grid-x small-6 medium-3">
+          <div class="number-top cell">
             <span class="text-fit">
               <span><span>6</span></span>
               <span aria-hidden="true">6</span>
             </span>
           </div>
+          <div class="number-bottom cell">
+            <span class="text-fit">
+              <span><span>5</span></span>
+              <span aria-hidden="true">5</span>
+            </span>
+          </div>
+          <div class="number-top number-top2">
+            <div class="face">
+              <span class="text-fit">
+                <span><span>5</span></span>
+                <span aria-hidden="true">5</span>
+              </span>
+            </div>
+            <div class="face">
+              <span class="text-fit">
+                <span><span>6</span></span>
+                <span aria-hidden="true">6</span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
 
     <div class="grid-x align-justify footer-footer align-middle">

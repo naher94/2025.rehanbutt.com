@@ -1,11 +1,14 @@
 footer{
   color: semantic-color(footer-text);
   padding-bottom: 5rem;
-  padding-top: 5rem;
-  margin-top: 5rem;
+  // padding-top: 5rem;
+  margin-top: 15em;
   background-color: #F7F7F7;
   $flip-clock-spacing: 1rem;
   $flip-clock-perspective: 1200px;
+  .number-container{
+    margin-block-start: -9em;
+  }
   .static-number{
     font-family: $big-shoulders;
     font-weight: $big-shoulders-black;
@@ -13,6 +16,7 @@ footer{
     border-radius: $tile-radius-big;
     line-height: 1;
     position: relative;
+    width: 100%;
     .number-top, .number-bottom{
       background-color: #F8F0E3;
       aspect-ratio: 1/1;
@@ -31,8 +35,8 @@ footer{
       top: 0;
       transform-style: preserve-3d;
       transform: perspective($flip-clock-perspective) rotateX(0deg);
-      width: 270px;
-      height: 270px;
+      width: 100%;
+      aspect-ratio: 1/1;
       // TODO make this relative scaling     
       overflow: initial;
       transform-origin: 50% 17.37rem;
@@ -46,14 +50,16 @@ footer{
       backface-visibility: hidden;
       border-radius: $tile-radius-big;
       overflow: hidden;
-      width: 270px;
-      height: 270px;
+      width: 100%;
+      aspect-ratio: 1/1;
+      // height: 270px;
       // TODO make this relative scaling     
       &:last-of-type {
         position: absolute;
         top: 0;
-        width: 270px;
-        height: 270px;
+        // width: 270px;
+        // height: 270px;
+        aspect-ratio: 1 / 1;
         transform: rotateX(.5turn);
         background-color: #F8F0E3;
         z-index: 2;
