@@ -327,6 +327,15 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     padding: $card-padding;
     border-radius: $card-border-radius;
     color: $pure-white;
+    h2{
+      margin-bottom: 0;
+    }
+    h3{
+      font-family: $montserrat;
+      text-transform: uppercase;
+      font-size: 1.3em;
+      margin-bottom: 0;
+    }
     p{
       padding: 0;
       margin: 0;
