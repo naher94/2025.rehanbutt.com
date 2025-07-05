@@ -1,7 +1,6 @@
 footer{
   color: semantic-color(footer-text);
   padding-bottom: 5rem;
-  // padding-top: 5rem;
   margin-top: 15em;
   background-color: #F7F7F7;
   $flip-clock-spacing: 1rem;
@@ -43,7 +42,7 @@ footer{
       // TODO make this computed value scaling
       animation: clock-flip 6s linear 2s 1 alternate forwards;
       animation-timeline: view(block);
-      animation-range: contain 25% contain 75%;
+      animation-range: contain 15% contain 50%;
       // TODO figure out the fall back for this scroll animation
     }
     .face {
@@ -57,6 +56,7 @@ footer{
       &:last-of-type {
         position: absolute;
         top: 0;
+        width: 100%;
         // width: 270px;
         // height: 270px;
         aspect-ratio: 1 / 1;
@@ -64,7 +64,7 @@ footer{
         background-color: #F8F0E3;
         z-index: 2;
         .text-fit{
-          transform: translate(0, -50%);
+          // transform: translate(0, -50%);
         }
       }
     }
