@@ -340,5 +340,68 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
       padding: 0;
       margin: 0;
     }
+    .poster-stack-wrapper{
+      margin-block-start: 4rem;
+    }
+    .poster-stack{
+      position: relative;
+      transition: $run;
+      &:hover{
+        .first-film{
+          top: -8rem;
+          rotate: 3deg;
+          svg{
+            transition: $run;
+            rotate: 360deg;
+            &:first-of-type{
+              z-index: -1;
+              top: -1.75rem;
+              left: -2rem;
+            }
+            &:last-of-type{
+              right: -0.5em;
+              top: 6rem;
+            }
+          }
+        }
+      }
+      img{
+        border-radius: $tile-radius-medium;
+        box-shadow: $pure-black $centered-shadow;
+      }
+      .sequel-poster{
+        z-index: 3;
+        position: relative;
+      }
+      .first-film{
+        transition: $run;
+        transform-origin: 100% 50%;
+        position: absolute;
+        width: 90%;
+        top: -1.5rem;
+        z-index: 2;
+        left: 50%;
+        transform: translateX(-50%);
+        svg{
+          transition: $run;
+          position: absolute;
+          rotate: 180deg;
+          &:first-of-type{
+            width: 6rem;
+            z-index: -1;
+            top: 2rem;
+            left: 2rem;
+            path{
+              fill: $popcorn-yellow2;
+            }
+          }
+          &:last-of-type{
+            width: 5rem;
+            right: 2em;
+            top: 6rem;
+          }
+        }
+      }
+    }
   }
 }
