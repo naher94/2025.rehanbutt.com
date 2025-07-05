@@ -4,12 +4,12 @@ footer{
   padding-top: 5rem;
   margin-top: 5rem;
   background-color: #F7F7F7;
-  $flip-clock-spacing: 0.05em;
+  $flip-clock-spacing: 1rem;
   .static-number{
     font-family: $big-shoulders;
     font-weight: $big-shoulders-black;
     aspect-ratio: 2/3;
-    font-size: 15em;
+    font-size: 15rem;
     border-radius: $tile-radius-big;
     line-height: 1;
     position: relative;
@@ -37,7 +37,8 @@ footer{
       overflow: initial;
       // transform-origin: bottom;
       // transform-origin: 50% 102%;
-      transform-origin: 50% (13.5rem + $flip-clock-spacing/2);
+      // transform-origin: 50% (15rem + $flip-clock-spacing/2);
+      transform-origin: 50% 17.25rem;
       animation: 6s linear 2s infinite alternate clock-flip;
     }
     .face {
