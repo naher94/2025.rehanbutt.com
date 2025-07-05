@@ -29,7 +29,7 @@ footer{
     }
     .number-top2{
       position: absolute;
-      background-color: orange;
+      // background-color: orange;
       top: 0;
       transform-style: preserve-3d;
       transform: perspective($flip-clock-perspective) rotateX(-180deg);
@@ -54,7 +54,8 @@ footer{
         width: 270px;
         height: 270px;
         transform: rotateX(.5turn);
-        background: #d14730;
+        // background: #d14730;
+        background-color: #F8F0E3;
         z-index: 2;
         .text-fit{
           transform: translate(0, -50%);
