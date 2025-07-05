@@ -4,6 +4,7 @@ footer{
   padding-top: 5rem;
   margin-top: 5rem;
   background-color: #F7F7F7;
+  $flip-clock-spacing: 0.05em;
   .static-number{
     font-family: $big-shoulders;
     font-weight: $big-shoulders-black;
@@ -20,7 +21,7 @@ footer{
       box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     }
     .number-bottom{
-      margin-block-start: 0.05em;
+      margin-block-start: $flip-clock-spacing;
       .text-fit{
         transform: translate(0, -50%);
       }
@@ -33,15 +34,18 @@ footer{
       transform: perspective(900px) rotateX(-180deg);
       width: 270px;
       height: 270px;
-      transform-origin: bottom;
       overflow: initial;
+      // transform-origin: bottom;
       // transform-origin: 50% 102%;
-      // transform-origin: 50% (100% + $flip-spacing/2);
+      transform-origin: 50% (13.5rem + $flip-clock-spacing/2);
       animation: 6s linear 2s infinite alternate clock-flip;
     }
     .face {
       backface-visibility: hidden;
       border-radius: $tile-radius-big;
+      overflow: hidden;
+      width: 270px;
+      height: 270px;
       // TODO this does not seem to work seems related to overflow hidden WHYYYY      
       &:last-of-type {
         position: absolute;
@@ -51,6 +55,9 @@ footer{
         transform: rotateX(.5turn);
         background: #d14730;
         z-index: 2;
+        .text-fit{
+          transform: translate(0, -50%);
+        }
       }
     }
 
