@@ -30,14 +30,15 @@ footer{
       position: absolute;
       top: 0;
       transform-style: preserve-3d;
-      transform: perspective($flip-clock-perspective) rotateX(-180deg);
+      transform: perspective($flip-clock-perspective) rotateX(0deg);
       width: 270px;
       height: 270px;
       // TODO make this relative scaling     
       overflow: initial;
-      transform-origin: 50% 17.25rem;
-      // TODO make this computed value scaling     
-      animation: 6s linear 2s infinite alternate clock-flip;
+      transform-origin: 50% 17.37rem;
+      // TODO make this computed value scaling
+      // animation: 6s linear 2s infinite alternate clock-flip;
+      animation: clock-flip 6s linear 2s 1 alternate forwards;
     }
     .face {
       backface-visibility: hidden;
