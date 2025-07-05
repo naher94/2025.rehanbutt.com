@@ -35,7 +35,6 @@
         font-family: $space-grotesk;
         font-weight: $space-grotesk-bold;
         text-wrap: pretty;
-        // margin-block-start: 0.5em;
         font-size: 2em;
       }
     .image-wrapper{
@@ -125,7 +124,6 @@
       grid-column-end: var(--col-middle);
       grid-row-start: 11;
       grid-row-end: span 4;
-      // justify-self: end; //TODO see if I need this after adding the image
       .image-wrapper{
         aspect-ratio: 3/2;
       }
