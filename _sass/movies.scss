@@ -195,8 +195,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
         padding: 1em;
       }
       .statistic{
-        // margin-inline-start: 2em;
-        // margin-block-start: 2em;
+        margin: 0.5em;
         @include breakpoint(small only){
           margin-inline-start: 0;
         }
@@ -328,6 +327,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     border-radius: $card-border-radius;
     color: $pure-white;
     position: relative;
+    overflow: hidden; //for the watermark elements
     h2{
       margin-bottom: 0;
     }
