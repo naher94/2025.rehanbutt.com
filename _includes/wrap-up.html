@@ -59,10 +59,12 @@
     <div class="lightbox" id="lightbox">
       <div class="lightbox-content">
         <button class="close-btn" id="closeBtn">{%- include_relative img/lastly/times.svg -%}</button>
-        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
-        <button class="nav-btn next-btn" id="nextBtn">›</button>
+        <button class="nav-btn prev-btn" id="prevBtn">{%- include_relative img/lastly/chevron-left.svg -%}</button>
+        <button class="nav-btn next-btn" id="nextBtn">{%- include_relative img/lastly/chevron-right.svg -%}</button>
         <img id="lightboxImg" src="" alt="">
+        <!-- TODO add alt tag to images -->
         <div class="counter" id="counter"></div>
+        <!-- TODO update counter to caption -->
       </div>
     </div>
   </div>
