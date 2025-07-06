@@ -1,5 +1,3 @@
-// $(document).foundation();
-
 // For flip clock footer
 const footer = document.querySelector('footer');
 const flipCardWidth = document.querySelector('.static-number').getBoundingClientRect().width;
