@@ -94,6 +94,7 @@ function openLightbox(index, thumbnailElement) {
     });
     // Pre-load lightbox image
     lightboxImg.src = images[index];
+    updateCounter();
     lightboxImg.style.width = finalWidth + "px";
     lightboxImg.style.height = finalHeight + "px";
     // When lightbox image is loaded, prepare for seamless transition
@@ -116,7 +117,6 @@ function openLightbox(index, thumbnailElement) {
             if (animatingImg.parentNode) {
               document.body.removeChild(animatingImg);
             }
-            updateCounter();
             isAnimating = false;
           }, 800); // Wait for fade-out to complete
         }, 200); // Extra delay before fade starts
