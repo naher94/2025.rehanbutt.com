@@ -87,9 +87,6 @@
     }
   }
 
-
-
-  
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -147,6 +144,7 @@
   }
 
   .lightbox {
+    // TODO Check if this will resolve the slight shift when the thumbnail closes
     // scrollbar-gutter: stable;
     position: fixed;
     top: 0;
@@ -188,13 +186,6 @@
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
     }
-  }
-
-  .animating-image {
-    position: fixed;
-    z-index: 1001;
-    border-radius: 8px;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .close-btn {
@@ -255,11 +246,20 @@
     padding: 0.5em 1em;
     margin-block-start: 0.5em;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    // position: absolute;
-    // bottom: -40px;
-    // left: 50%;
-    // transform: translateX(-50%);
+    // TODO maybe need to adjust the positioning here when the caption is longer than a single line, eg mobile.. might need to be calculated on the fly
+    position: absolute;
+    bottom: -3em;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     font-size: 1rem;
   }
 }
+
+// This needs to sit outside of .wrap-up as the image inserted at the root
+.animating-image {
+    position: fixed !important;
+    z-index: 1001;
+    border-radius: 40px;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
