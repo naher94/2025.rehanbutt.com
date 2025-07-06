@@ -6,14 +6,6 @@
     margin-bottom: 3rem;
     font-size: 1.25em;
   }
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-  }
   .text-card{
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     border-radius: $tile-radius-big;
@@ -93,6 +85,18 @@
         }
       }
     }
+  }
+
+
+
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
   }
   .thumbnail {
     position: relative;
