@@ -15,7 +15,7 @@
     position: relative;
   }
   .text-card{
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     border-radius: $tile-radius-big;
     padding: 2rem;
     position: absolute;
@@ -103,7 +103,7 @@
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: #2a2a2a;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     &:hover{
       // transform: scale(1.05);
       // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -143,6 +143,7 @@
   }
 
   .lightbox {
+    // scrollbar-gutter: stable;
     position: fixed;
     top: 0;
     left: 0;
@@ -164,7 +165,7 @@
     }
     img {
       border-radius: 40px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
       display: block;
     }
   }
@@ -249,12 +250,12 @@
     border-radius: 40px;
     padding: 0.5em 1em;
     margin-block-start: 0.5em;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     // position: absolute;
     // bottom: -40px;
     // left: 50%;
     // transform: translateX(-50%);
     color: white;
     font-size: 1rem;
-    // opacity: 0.8;
   }
 }

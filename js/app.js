@@ -7,6 +7,16 @@ footer.style.setProperty('--flip-card-width', `${flipCardWidth}px`);
 
 
 
+// Add this near your images array:
+const captions = [
+  "Caption for image 1",
+  "Caption for image 2",
+  "Caption for image 3",
+  "Caption for image 4",
+  "Caption for image 5",
+  "Caption for image 6"
+  // Add more captions as needed, matching the number/order of your images
+];
 
 let currentImageIndex = 0;
 let isAnimating = false;
@@ -211,9 +221,11 @@ function switchToImage(index) {
     lightboxImg.style.height = finalHeight + "px";
   };
 }
-// Update counter display
+// Update counter display to show caption and set alt text
 function updateCounter() {
-  counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+  const caption = captions[currentImageIndex] || "";
+  counter.textContent = caption;
+  lightboxImg.alt = caption;
 }
 // Event listeners
 closeBtn.addEventListener("click", closeLightbox);
