@@ -185,7 +185,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     background-color: #EFEFEF; //TODO make semantic
     padding: $card-padding;
     border-radius: $card-border-radius;
-
+    margin-block: 2em;
     .stats-container{
       font-size: 1.35em;
       // padding-inline: $content-padding;
