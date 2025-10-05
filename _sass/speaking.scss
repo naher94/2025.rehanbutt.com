@@ -76,7 +76,11 @@
           radial-gradient(circle at 100% 60%, rgba(#FF7237, 1) 0%, rgba(#FF7237, 0) 100%),
           radial-gradient(circle at 10% 90%, rgba(#24CB71, 1) 0%, rgba(#24CB71, 0) 100%),
           #00B6FF;
-
+        background:
+          radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1 / 1) 0%, color(display-p3 0.529 0.31 1 / 0) 100%),
+          radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216 / 1) 0%, color(display-p3 1 0.447 0.216 / 0) 100%),
+          radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443 / 1) 0%, color(display-p3 0.141 0.796 0.443 / 0) 100%),
+          color(display-p3 0 0.714 1);
       }
       .logo-wrapper{
         padding: 1em;
