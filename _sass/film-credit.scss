@@ -1,137 +1,85 @@
-.film-credit{
+.film-credit {
   margin-block: 10em;
-  @include breakpoint(small only){
+
+  @include breakpoint(small only) {
     margin-block-end: 1em;
     margin-block-start: 12em;
   }
-  .content-card{
-    border-radius: $tile-radius-medium;
-    padding: 1em;
-    padding-inline: 3em;
-    background: url(/img/film-credit/shark-blur.jpg);
-    background-size: cover;
-    background-position: bottom;
-    @include breakpoint(small only){
-      padding: 2em;
-    }
-    .poster-area{
-      margin-block: -4em;
+
+  .content-card {
+    .container {
+      --center-radius: 12.5rem;
+      --buffer: 1.5rem;
+      --start-angle: 120deg;
+      --edge-spacing: 2rem;
+
       position: relative;
-      @include breakpoint(small only){
-        margin-block: 0;
-        margin-block-start: -8em;
-        margin-block-end: 6em;
-      }
-      .poster{
-        rotate: 5deg;
-        z-index: 2;
-        img:not(.pua):not(.heihei){
-          max-width: 15em;
-          border-radius: $tile-radius;
-          box-shadow: $centered-shadow rgba($pure-black, 0.5);
-          @include breakpoint(small only){
-            max-width: 13em;
-          }
-        }
-        .pua{
-          position: absolute;
-          rotate: 34deg;
-          top: -5.9em;
-          left: -9em;
-          opacity: 0;
-          transition: $sprint;
-          @media (prefers-reduced-motion) {
-            transition: $jog;
-          }
-          @include breakpoint(small only){
-            top: -4.3em;
-          }
-        }
-        .heihei{
-          position: absolute;
-          transition: $sprint;
-          bottom: 0;
-          left: 0;
-          rotate: 180deg;
-          opacity: 0;
-          z-index: -1;
-          @media (prefers-reduced-motion) {
-            transition: $jog;
-          }
-          @include breakpoint(small only){
-            left: -2.5em;
-          }
-        }
-      }
-      .poster2, .poster3{
-        position: absolute;
-        z-index: 1;
-        transition: $sprint;
-        @media (prefers-reduced-motion) {
-          transition: $jog;
-        }
-        img:not(.pua):not(.heihei){
-          max-width: 11em;
-          @include breakpoint(small only){
-            max-width: 8em;
-          }
-        }
-      }
-      .poster2{
-        top: -4em;
-        left: 0;
-        rotate: -5deg;
-        transform-origin: bottom right;
-      }
-      .poster3{
-        bottom: -3em;
-        right: 1em;
-        rotate: 13deg;
-        transform-origin: bottom left;
-      }
+      width: calc(var(--center-radius) * 2);
+      height: calc(var(--center-radius) * 2);
     }
-    .text-area{
-      color: $pure-white;
-      svg{
-        fill: $pure-white;
-      }
-      p{
-        padding: 0;
-        margin: 0;
-        line-height: 1.2;
-        margin-block-start: 0.5em;
-      }
+
+    .center-circle {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #00bfff;
     }
-    &:hover{
-      .poster2{
-        rotate: -7deg;
-      }
-      .poster3{
-        rotate: 15deg;
-      }
-      .poster{
-        .pua{
-          left: -0.5em;
-          transition: $sprint;
-          opacity: 1;
-          @media (prefers-reduced-motion) {
-            transition: $jog;
-          }
-        }
-        .heihei{
-          transition: $sprint;
-          opacity: 1;
-          bottom: -3em;
-          left: -4em;
-          rotate: 224deg;
-          @media (prefers-reduced-motion) {
-            transition: $jog;
-          }
-          @include breakpoint(small only){
-            left: -3em;
-          }
-        }
-      }
+
+    .satellite {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc((var(--center-radius) + var(--buffer) + var(--satellite-radius)) * -1));
+      transform-origin: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    /* keep content level */
+    .satellite-content {
+      transform: rotate(calc(var(--angle) * -1));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .satellite-label {
+      color: #fff;
+      font-size: 1.25rem;
+    }
+
+    /* Example satellites */
+    .satellite[data-label="X"] {
+      --satellite-radius: 5.3rem;
+      background: #000;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+    }
+
+    .satellite[data-label="Y"] {
+      --satellite-radius: 3.4rem;
+      background: #f33;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+    }
+
+    .satellite[data-label="A"] {
+      --satellite-radius: 2.8rem;
+      background: #fa0;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+    }
+
+    .satellite[data-label="B"] {
+      --satellite-radius: 2rem;
+      background: #66f;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+    }
+
   }
 }

@@ -1,24 +1,77 @@
 <section class="film-credit" id="film-credit" aria-label="Film Credit Section">
   <div class="grid-container">
-    <div class="grid-x cell content-card align-middle align-justify">
-      <div class="cell medium-6 poster-area align-center grid-x">
-        <div class="poster cell shrink">
-          <img src="/img/film-credit/main-poster.jpg" alt="Moana 2 poster with Moana and Maui on the canoe">
+    <div class="grid-x cell content-card align-middle align-center">
+      <div class="container" id="fc-container">
+        <div class="center-circle"></div>
+        <div class="satellite" data-label="X">
+          <div class="satellite-content">
+            <div class="satellite-label">X</div>
+          </div>
         </div>
-        <div class="poster poster2 cell shrink">
-          <img src="/img/film-credit/poster-big2.jpg" alt="Moana 2 poster with Maui's hook and Moana's oar in the shape of a 2">
-          <img class="heihei" src="/img/film-credit/heihei.png" alt="Hei Hei being Hei Hei">
+        <div class="satellite" data-label="Y">
+          <div class="satellite-content">
+            <div class="satellite-label">Y</div>
+          </div>
         </div>
-        <div class="poster poster3 cell shrink">
-          <img class="pua" src="/img/film-credit/pua-slide.png" alt="A scared Pua sliding down">
-          <img src="/img/film-credit/poster-sail.jpg" alt="Moana 2 poster with Moana swinging from the sail of her canoe">
+        <div class="satellite" data-label="A">
+          <div class="satellite-content">
+            <div class="satellite-label">A</div>
+          </div>
         </div>
-      </div>
-      <div class="cell medium-5 text-area">
-        <h2 class="visually-hidden">Moana 2</h2>
-        {%- include_relative img/film-credit/moana2-logo.svg -%}
-        <p>Thrilled to share I have received my second film credit with Moana 2! If you haven't seen it yet, make sure to check it out and let me know when you spot my name in the credits. And while you're at it, say hi to Pua and Hei Hei for me!</p>
+        <div class="satellite" data-label="B">
+          <div class="satellite-content">
+            <div class="satellite-label">B</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const container = document.getElementById("fc-container");
+  const satellites = [...document.querySelectorAll(".satellite")];
+
+  // Convert any CSS length (rem, em, etc.) to pixels
+  const toPx = (el, varName) => {
+    const val = getComputedStyle(el).getPropertyValue(varName).trim();
+    if (!val) return 0;
+    const tmp = document.createElement("div");
+    tmp.style.width = val;
+    tmp.style.position = "absolute";
+    tmp.style.visibility = "hidden";
+    el.appendChild(tmp);
+    const px = parseFloat(getComputedStyle(tmp).width);
+    tmp.remove();
+    return px;
+  };
+
+  function positionSatellites() {
+    const cs = getComputedStyle(container);
+    const startAngle = parseFloat(cs.getPropertyValue("--start-angle")) || 0;
+    const edgeSpacing = toPx(container, "--edge-spacing");
+    const centerRadius = toPx(container, "--center-radius");
+    const buffer = toPx(container, "--buffer");
+
+    let angle = startAngle;
+    satellites.forEach((sat, i) => {
+      const r1 = centerRadius + buffer + toPx(sat, "--satellite-radius");
+      sat.style.setProperty("--angle", `${angle}deg`);
+      if (i < satellites.length - 1) {
+        const next = satellites[i + 1];
+        const r2 = centerRadius + buffer + toPx(next, "--satellite-radius");
+        const c =
+          edgeSpacing +
+          toPx(sat, "--satellite-radius") +
+          toPx(next, "--satellite-radius");
+        const cos = (r1 * r1 + r2 * r2 - c * c) / (2 * r1 * r2);
+        const dTheta =
+          (Math.acos(Math.max(-1, Math.min(1, cos))) * 180) / Math.PI;
+        angle -= dTheta;
+      }
+    });
+  }
+
+  positionSatellites();
+  window.addEventListener("resize", positionSatellites);
+</script>
