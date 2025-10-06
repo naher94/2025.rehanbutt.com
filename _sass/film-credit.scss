@@ -8,14 +8,15 @@
 
   .content-card {
     .container {
-      --center-radius: 12.5rem;
-      --buffer: 1.5rem;
-      --start-angle: 120deg;
+      --center-radius: 18rem;
+      --buffer: 3rem;
+      --start-angle: 130deg;
       --edge-spacing: 2rem;
 
       position: relative;
       width: calc(var(--center-radius) * 2);
       height: calc(var(--center-radius) * 2);
+      margin-inline-start: -10rem;
     }
 
     .center-circle {
@@ -54,28 +55,28 @@
 
     /* Example satellites */
     .satellite[data-label="X"] {
-      --satellite-radius: 5.3rem;
+      --satellite-radius: 2.25rem;
       background: #000;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
     }
 
     .satellite[data-label="Y"] {
-      --satellite-radius: 3.4rem;
+      --satellite-radius: 3.5rem;
       background: #f33;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
     }
 
     .satellite[data-label="A"] {
-      --satellite-radius: 2.8rem;
+      --satellite-radius: 5rem;
       background: #fa0;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
     }
 
     .satellite[data-label="B"] {
-      --satellite-radius: 2rem;
+      --satellite-radius: 7rem;
       background: #66f;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
