@@ -63,11 +63,6 @@
       height: 100%;
     }
 
-    .satellite-label {
-      color: #fff;
-      font-size: 1.25rem;
-    }
-
     /* Example satellites */
     .satellite[data-label="X"] {
       --satellite-radius: 2.25rem;
@@ -92,9 +87,13 @@
 
     .satellite[data-label="B"] {
       --satellite-radius: 7rem;
-      background: #66f;
+      background: $pure-black;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
+      .satellite-content{
+        padding: 1.5rem;
+        padding-bottom: 2.25rem;
+      }
     }
 
   }
