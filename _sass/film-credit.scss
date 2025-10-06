@@ -66,7 +66,7 @@
     /* Example satellites */
     .satellite[data-label="X"] {
       --satellite-radius: 2.25rem;
-      background: #000;
+      background: #09dd6c;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
     }
