@@ -1,0 +1,45 @@
+const container = document.getElementById("fc-container");
+const satellites = [...document.querySelectorAll(".satellite")];
+
+// Convert any CSS length (rem, em, etc.) to pixels
+const toPx = (el, varName) => {
+  const val = getComputedStyle(el).getPropertyValue(varName).trim();
+  if (!val) return 0;
+  const tmp = document.createElement("div");
+  tmp.style.width = val;
+  tmp.style.position = "absolute";
+  tmp.style.visibility = "hidden";
+  el.appendChild(tmp);
+  const px = parseFloat(getComputedStyle(tmp).width);
+  tmp.remove();
+  return px;
+};
+
+function positionSatellites() {
+  const cs = getComputedStyle(container);
+  const startAngle = parseFloat(cs.getPropertyValue("--start-angle")) || 0;
+  const edgeSpacing = toPx(container, "--edge-spacing");
+  const centerRadius = toPx(container, "--center-radius");
+  const buffer = toPx(container, "--buffer");
+
+  let angle = startAngle;
+  satellites.forEach((sat, i) => {
+    const r1 = centerRadius + buffer + toPx(sat, "--satellite-radius");
+    sat.style.setProperty("--angle", `${angle}deg`);
+    if (i < satellites.length - 1) {
+      const next = satellites[i + 1];
+      const r2 = centerRadius + buffer + toPx(next, "--satellite-radius");
+      const c =
+        edgeSpacing +
+        toPx(sat, "--satellite-radius") +
+        toPx(next, "--satellite-radius");
+      const cos = (r1 * r1 + r2 * r2 - c * c) / (2 * r1 * r2);
+      const dTheta =
+        (Math.acos(Math.max(-1, Math.min(1, cos))) * 180) / Math.PI;
+      angle -= dTheta;
+    }
+  });
+}
+
+positionSatellites();
+window.addEventListener("resize", positionSatellites);
