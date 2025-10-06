@@ -24,6 +24,21 @@
       inset: 0;
       border-radius: 50%;
       background: #00bfff;
+      align-items: center;
+      display: flex;
+      img{
+        rotate: 6deg;
+        scale: 0.75;
+        border-radius: $tile-radius-medium;
+        overflow: hidden;
+        box-shadow: $pure-black $soft-shadow;
+        &:first-of-type{
+          position: absolute;
+          rotate: -4deg;
+          scale: 0.6;
+          margin-inline-start: -12rem;
+        }
+      }
     }
 
     .satellite {
