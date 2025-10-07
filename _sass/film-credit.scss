@@ -1,4 +1,8 @@
 .film-credit {
+  --spring-duration: 600ms;  /* animation length */
+  --spring-angle: 2deg;     /* max overshoot */
+  --spring-ease: cubic-bezier(.18,.9,.32,1.15); /* springy easing (slight overshoot) */
+  
   margin-block: 10em;
 
   @include breakpoint(small only) {
@@ -80,6 +84,20 @@
       align-items: center;
       width: 100%;
       height: 100%;
+      transition: $sprint;
+      &:hover{
+        // rotate: 10deg;
+        animation: springRotate var(--spring-duration) var(--spring-ease) both;
+      }
+    }
+
+    @keyframes springRotate {
+      0%   { rotate:0; }
+      20%  { rotate: var(--spring-angle); }   /* first overshoot */
+      45%  { rotate:calc(var(--spring-angle) * -0.75); } /* counter-overshoot */
+      70%  { rotate:calc(var(--spring-angle) * 0.35); }  /* smaller bounce */
+      100%  { rotate:calc(var(--spring-angle) * -0.12); } /* tiny bounce */
+    /*   100% { transform: rotate(0); } */
     }
 
     /* Example satellites */
