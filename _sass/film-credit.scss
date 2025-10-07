@@ -25,18 +25,37 @@
       border-radius: 50%;
       background: #00bfff;
       align-items: center;
+      justify-content: center;
       display: flex;
-      img{
+      margin-inline-start: -2rem;
+      .poster-wrapper{
+        align-items: center;
+        display: flex;
+      }
+      .main-wrapper{
         rotate: 6deg;
-        scale: 0.75;
+        width: 27rem;
+        margin-block-start: var(--credit-description-height);
+        p{
+          margin-block-start: 1rem;
+          margin-bottom: 0;
+          margin-inline: 0.5rem;
+          line-height: 1.3;
+        }
+      }
+      img{
         border-radius: $tile-radius-medium;
-        overflow: hidden;
         box-shadow: $pure-black $soft-shadow;
-        &:first-of-type{
+        overflow: hidden;
+        &.main{
+          width: 27rem;
+        }
+        &.secondary{
           position: absolute;
           rotate: -4deg;
-          scale: 0.6;
-          margin-inline-start: -12rem;
+          width: 22rem;
+          margin-inline-start: -8rem;
+          margin-block-end: 3rem;
         }
       }
     }

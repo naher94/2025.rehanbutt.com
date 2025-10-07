@@ -43,3 +43,15 @@ function positionSatellites() {
 
 positionSatellites();
 window.addEventListener("resize", positionSatellites);
+
+
+// Gets the height of the description text and sets the variable to offset vertical centering
+function updateHeight() {
+  const el = document.getElementById('credit-description');
+  if (el) {
+    document.documentElement.style.setProperty('--credit-description-height', `${el.offsetHeight}px`);
+  }
+}
+
+window.addEventListener('resize', updateHeight);
+updateHeight();
