@@ -6,6 +6,7 @@
     gap: 1em;
     --photo-radius: 30px;
     --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    --col-middle: 7;
     h3 {
       font-family: $space-grotesk;
       font-weight: $space-grotesk-bold;
@@ -17,6 +18,7 @@
       padding: 0;
       font-size: 1rem;
       margin-block-end: 0.5rem;
+      text-wrap: pretty;
     }
     .image-wrapper {
       aspect-ratio: 1/1;
@@ -69,7 +71,7 @@
       // grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
       grid-template-rows: repeat(32, [row-start] 1fr [row-end]);
       // gap: 1em;
-      --col-middle: 7;
+      // --col-middle: 7;
       // --photo-radius: 30px;
       // --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 
@@ -362,7 +364,7 @@
         background: linear-gradient(180deg,rgba(106, 255, 232, 1) 0%, rgba(0, 205, 236, 1) 100%);
       }
       .sketch-mockup{
-        grid-column-start: 1;
+        grid-column-start: col-start;
         grid-column-end: 5;
         grid-row-start: 3;
         grid-row-end: span 3;
@@ -380,6 +382,66 @@
         .tag{
           background-color: rgba($pure-black, 0.1);
         }
+      }
+    }
+  }
+  .speaking-design-summit{
+    background: linear-gradient(to bottom right, #1D2127, #373C43);
+    color: white;
+    padding-block: 5em;
+    .the-grid {
+      grid-template-rows: repeat(16, [row-start] 1fr [row-end]);
+      .talk-intro{
+        grid-column-start: var(--col-middle);
+        // TODO figure out why this is not working
+        // grid-column-end: col-end;
+        grid-column-end: 13;
+        grid-row-start: 5;
+        grid-row-end: span 4;
+        // grid-row-start: 2;
+        // grid-row-end: span 3;
+      }
+      .dds-logo{
+        padding: 2em;
+        background:
+          radial-gradient(circle at 75% 0, rgba(#874FFF, 1) 0%, rgba(#874FFF, 0) 100%),
+          radial-gradient(circle at 100% 60%, rgba(#FF7237, 1) 0%, rgba(#FF7237, 0) 100%),
+          radial-gradient(circle at 10% 90%, rgba(#24CB71, 1) 0%, rgba(#24CB71, 0) 100%),
+          #00B6FF;
+        background:
+          radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1 / 1) 0%, color(display-p3 0.529 0.31 1 / 0) 100%),
+          radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216 / 1) 0%, color(display-p3 1 0.447 0.216 / 0) 100%),
+          radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443 / 1) 0%, color(display-p3 0.141 0.796 0.443 / 0) 100%),
+          color(display-p3 0 0.714 1);
+        grid-column-start: var(--col-middle);
+        grid-column-end: span 3;
+        grid-row-start: 2;
+        grid-row-end: span 3;
+      }
+      .disney-d-logo{
+        padding: 1.5em;
+        background: linear-gradient(180deg,rgba(7, 7, 41, 1) 0%, rgba(20, 76, 163, 1) 100%);
+        grid-column-start: span 2;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 1;
+        grid-row-end: span 2;
+      }
+      .tag-wrapper{
+        grid-column-start: span 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        align-self: end;
+        justify-self: end;
+        text-align: right;
+        text-wrap: pretty;
+      }
+      .duo-smile{
+        grid-column-start: col-start;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 3;
+        grid-row-end: span 5;
+        aspect-ratio: 1400/1048;
       }
     }
   }
