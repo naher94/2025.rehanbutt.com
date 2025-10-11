@@ -1,52 +1,35 @@
-.speaking{
-  background: linear-gradient(to bottom right, #1D2127, #373C43);
-  color: white;
+.speaking {
   font-family: $space-grotesk;
-  padding-block: 5em;
-  .the-grid{
+  .the-grid {
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
-    grid-template-rows: repeat(32, [row-start] 1fr [row-end]);
     gap: 1em;
-    --col-middle: 7;
     --photo-radius: 30px;
     --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-    @keyframes image-anim {
-      from{
-        // filter: blur(20px) grayscale(80%);
-        filter: blur(10px);
-        scale: 1.25;
-      }
-      to {
-        // filter: blur(0) grayscale(0%);
-        filter: blur(0);
-        scale: 1;
-        // rotate: -2deg;
-        // TODO figure out a cool animation here
-      }
+    h3 {
+      font-family: $space-grotesk;
+      font-weight: $space-grotesk-bold;
+      text-wrap: pretty;
+      font-size: 2em;
     }
-    p{
+    p {
       margin: 0;
       padding: 0;
       font-size: 1rem;
       margin-block-end: 0.5rem;
     }
-    h3{
-        font-family: $space-grotesk;
-        font-weight: $space-grotesk-bold;
-        text-wrap: pretty;
-        font-size: 2em;
-      }
-    .image-wrapper{
+    .image-wrapper {
       aspect-ratio: 1/1;
       background-color: $pure-black;
       border-radius: var(--photo-radius);
       box-shadow: var(--image-wrapper-shadow);
       overflow: hidden;
+
       // clip-path: inset(0 round var(--photo-radius));
       // mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
       // TODO add a wrapper around this to make sure the box shadow actually shows
-      svg, img{
+      svg,
+      img {
         // animation: image-anim linear both;
         animation-timeline: view(block);
         // animation-range: contain 25% contain 75%;
@@ -54,193 +37,350 @@
         animation-range: entry 0% entry-crossing 100%;
       }
     }
-    .talk-intro{
-      grid-column-start: col-start;
-      grid-column-end: var(--col-middle);
-      grid-row-start: row-start;
-      grid-row-end: span 10;
-      font-family: $space-grotesk;
-      h3{
-        margin-block-start: 0.5em;
+    .tag-wrapper {
+      margin-block-start: 0.5rem;
+
+      .tag {
+        display: inline-block;
+        background-color: rgba($pure-white, 0.2);
+        padding: 0.25em 0.5em;
+        border-radius: 0.5em;
+        font-weight: $space-grotesk-bold;
+        font-size: 1rem;
+        margin-block: 0.25rem;
       }
     }
-    .config{
-      grid-column-start: var(--col-middle);
-      grid-column-end: span 3;
-      grid-row-start: row-start;
-      grid-row-end: span 4;
-      .image-wrapper{
-        // TODO fix this gradient its not looking great
-        background:
-          radial-gradient(circle at 75% 0, rgba(#874FFF, 1) 0%, rgba(#874FFF, 0) 100%),
-          radial-gradient(circle at 100% 60%, rgba(#FF7237, 1) 0%, rgba(#FF7237, 0) 100%),
-          radial-gradient(circle at 10% 90%, rgba(#24CB71, 1) 0%, rgba(#24CB71, 0) 100%),
-          #00B6FF;
-        background:
-          radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1 / 1) 0%, color(display-p3 0.529 0.31 1 / 0) 100%),
-          radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216 / 1) 0%, color(display-p3 1 0.447 0.216 / 0) 100%),
-          radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443 / 1) 0%, color(display-p3 0.141 0.796 0.443 / 0) 100%),
-          color(display-p3 0 0.714 1);
-      }
-      .logo-wrapper{
-        padding: 1em;
-        display: flex;
-        justify-content: center; // centers horizontally
-        align-items: center;     // centers vertically
-      }
-      .tag-wrapper{
-        margin-block-start: 0.5rem;
-        .tag{
-          display: inline-block;
-          background-color: rgba($pure-white, 0.2);
-          padding: 0.25em 0.5em;
-          border-radius: 0.5em;
-          font-weight: $space-grotesk-bold;
-          font-size: 1rem;
-          margin-block: 0.25rem;
+    .logo-wrapper {
+      padding: 1em;
+      display: flex;
+      justify-content: center; // centers horizontally
+      align-items: center; // centers vertically
+    }
+  }
+
+  .speaking-config {
+    background: linear-gradient(to bottom right, #1D2127, #373C43);
+    color: white;
+    // font-family: $space-grotesk;
+    padding-block: 5em;
+
+    .the-grid {
+      // display: grid;
+      // grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(32, [row-start] 1fr [row-end]);
+      // gap: 1em;
+      --col-middle: 7;
+      // --photo-radius: 30px;
+      // --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+
+      @keyframes image-anim {
+        from {
+          // filter: blur(20px) grayscale(80%);
+          filter: blur(10px);
+          scale: 1.25;
+        }
+
+        to {
+          // filter: blur(0) grayscale(0%);
+          filter: blur(0);
+          scale: 1;
+          // rotate: -2deg;
+          // TODO figure out a cool animation here
         }
       }
-    }
-    .figma-logo{
-      grid-column-start: 10;
-      grid-column-end: span 2;
-      grid-row-start: 3;
-      grid-row-end: span 2;
-      .logo-wrapper{
-        padding: 1em;
-        display: flex;
-        justify-content: center; // centers horizontally
-        align-items: center;     // centers vertically
-        background-color: $pure-black;
-        svg{
-          width: 3em;
+
+      // p {
+      //   margin: 0;
+      //   padding: 0;
+      //   font-size: 1rem;
+      //   margin-block-end: 0.5rem;
+      // }
+
+      // h3 {
+      //   font-family: $space-grotesk;
+      //   font-weight: $space-grotesk-bold;
+      //   text-wrap: pretty;
+      //   font-size: 2em;
+      // }
+
+      // .image-wrapper {
+      //   aspect-ratio: 1/1;
+      //   background-color: $pure-black;
+      //   border-radius: var(--photo-radius);
+      //   box-shadow: var(--image-wrapper-shadow);
+      //   overflow: hidden;
+
+      //   // clip-path: inset(0 round var(--photo-radius));
+      //   // mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
+      //   // TODO add a wrapper around this to make sure the box shadow actually shows
+      //   svg,
+      //   img {
+      //     // animation: image-anim linear both;
+      //     animation-timeline: view(block);
+      //     // animation-range: contain 25% contain 75%;
+      //     // animation-range: contain 0% contain 25%;
+      //     animation-range: entry 0% entry-crossing 100%;
+      //   }
+      // }
+
+      .talk-intro {
+        grid-column-start: col-start;
+        grid-column-end: var(--col-middle);
+        grid-row-start: row-start;
+        grid-row-end: span 10;
+        font-family: $space-grotesk;
+
+        h3 {
+          margin-block-start: 0.5em;
         }
       }
-    }
-    .team-photo{
-      grid-column-start: 10;
-      grid-column-end: span 3;
-      grid-row-start: 7;
-      grid-row-end: span 3;
-    }
-    .stage-photo{
-      grid-column-start: span 5;
-      grid-column-end: var(--col-middle);
-      grid-row-start: 11;
-      grid-row-end: span 4;
-      .image-wrapper{
+
+      .config {
+        grid-column-start: var(--col-middle);
+        grid-column-end: span 3;
+        grid-row-start: row-start;
+        grid-row-end: span 4;
+
+        .image-wrapper {
+          // TODO fix this gradient its not looking great
+          background:
+            radial-gradient(circle at 75% 0, rgba(#874FFF, 1) 0%, rgba(#874FFF, 0) 100%),
+            radial-gradient(circle at 100% 60%, rgba(#FF7237, 1) 0%, rgba(#FF7237, 0) 100%),
+            radial-gradient(circle at 10% 90%, rgba(#24CB71, 1) 0%, rgba(#24CB71, 0) 100%),
+            #00B6FF;
+          background:
+            radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1 / 1) 0%, color(display-p3 0.529 0.31 1 / 0) 100%),
+            radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216 / 1) 0%, color(display-p3 1 0.447 0.216 / 0) 100%),
+            radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443 / 1) 0%, color(display-p3 0.141 0.796 0.443 / 0) 100%),
+            color(display-p3 0 0.714 1);
+        }
+
+        // .logo-wrapper {
+        //   padding: 1em;
+        //   display: flex;
+        //   justify-content: center; // centers horizontally
+        //   align-items: center; // centers vertically
+        // }
+
+        // .tag-wrapper {
+        //   margin-block-start: 0.5rem;
+
+        //   .tag {
+        //     display: inline-block;
+        //     background-color: rgba($pure-white, 0.2);
+        //     padding: 0.25em 0.5em;
+        //     border-radius: 0.5em;
+        //     font-weight: $space-grotesk-bold;
+        //     font-size: 1rem;
+        //     margin-block: 0.25rem;
+        //   }
+        // }
+      }
+
+      .figma-logo {
+        grid-column-start: 10;
+        grid-column-end: span 2;
+        grid-row-start: 3;
+        grid-row-end: span 2;
+
+        .logo-wrapper {
+          padding: 1em;
+          display: flex;
+          justify-content: center; // centers horizontally
+          align-items: center; // centers vertically
+          background-color: $pure-black;
+
+          svg {
+            width: 3em;
+          }
+        }
+      }
+
+      .team-photo {
+        grid-column-start: 10;
+        grid-column-end: span 3;
+        grid-row-start: 7;
+        grid-row-end: span 3;
+      }
+
+      .stage-photo {
+        grid-column-start: span 5;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 11;
+        grid-row-end: span 4;
+
+        .image-wrapper {
+          aspect-ratio: 3/2;
+        }
+      }
+
+      .thank-you {
+        grid-column-start: var(--col-middle);
+        grid-column-end: span 5;
+        grid-row-start: 12;
+        grid-row-end: span 6;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: repeat(4, [row-start] auto [row-end]);
+
+        .text-wrapper {
+          grid-column: 1 / -1; // Span all columns (full width)
+        }
+
+        .image-wrapper {
+          grid-column-start: auto;
+          grid-column-end: span 3;
+        }
+      }
+
+      .anyone-design {
+        grid-column-start: col-start;
+        grid-column-end: span 7;
+        grid-row-start: 20;
+        grid-row-end: span 5;
         aspect-ratio: 3/2;
       }
-    }
-    .thank-you{
-      grid-column-start: var(--col-middle);
-      grid-column-end: span 5;
-      grid-row-start: 12;
-      grid-row-end: span 6;
-      display: grid;
-      grid-template-columns: subgrid;
-      grid-template-rows: repeat(4, [row-start] auto [row-end]);
-      .text-wrapper {
-        grid-column: 1 / -1; // Span all columns (full width)
+
+      .beauty-beast {
+        grid-column-start: 8;
+        grid-column-end: -1;
+        grid-row-start: 25;
+        grid-row-end: span 4;
+        aspect-ratio: 3/2;
       }
-      .image-wrapper{
-        grid-column-start: auto;
-        grid-column-end: span 3;
+
+      .audience-comments {
+        grid-column-start: col-start;
+        grid-column-end: span 6;
+        grid-row-start: 25;
+        grid-row-end: span 5;
+        display: grid;
+        grid-template-columns: subgrid;
+
+        .text-wrapper {
+          grid-column: 1 / -1; // To span all columns (full width)
+        }
+
+        p {
+          hanging-punctuation: first;
+
+          span {
+            font-weight: $space-grotesk-bold;
+            // --blur: 20px;
+            // --orbit-radius: 10px;
+            --blur: 1em;
+            --orbit-radius: 0.75em;
+            --angle1: 0deg;
+            --angle2: 120deg;
+            --angle3: 240deg;
+            --opacity: 0.9;
+            $color1: #32C5FF;
+            $color2: #FFC800;
+            $color3: #FF0000;
+            animation:
+              orbit1 6s linear infinite,
+              orbit2 6s linear infinite,
+              orbit3 6s linear infinite,
+              blur-pulse 2s ease-in-out infinite alternate;
+            color: white;
+            text-shadow:
+              calc(cos(var(--angle1)) * var(--orbit-radius)) calc(sin(var(--angle1)) * var(--orbit-radius)) var(--blur) rgba($color1, var(--opacity)),
+              calc(cos(var(--angle2)) * var(--orbit-radius)) calc(sin(var(--angle2)) * var(--orbit-radius)) var(--blur) rgba($color2, var(--opacity)),
+              calc(cos(var(--angle3)) * var(--orbit-radius)) calc(sin(var(--angle3)) * var(--orbit-radius)) var(--blur) rgba($color3, var(--opacity));
+          }
+        }
       }
-    }
-    .anyone-design{
-      grid-column-start: col-start;
-      grid-column-end: span 7;
-      grid-row-start: 20;
-      grid-row-end: span 5;
-      aspect-ratio: 3/2;
-    }
-    .beauty-beast{
-      grid-column-start: 8;
-      grid-column-end: -1;
-      grid-row-start: 25;
-      grid-row-end: span 4;
-      aspect-ratio: 3/2;
-    }
-    .audience-comments{
-      grid-column-start: col-start;
-      grid-column-end: span 6;
-      grid-row-start: 25;
-      grid-row-end: span 5;
-      display: grid;
-      grid-template-columns: subgrid;
-      .text-wrapper {
-        grid-column: 1 / -1; // To span all columns (full width)
-      }
-      p{
-        hanging-punctuation: first;
-        
-        span{
-          font-weight: $space-grotesk-bold;
-          // --blur: 20px;
-          // --orbit-radius: 10px;
-          --blur: 1em;
-          --orbit-radius: 0.75em;
-          --angle1: 0deg;
-          --angle2: 120deg;
-          --angle3: 240deg;
-          --opacity: 0.9;
-          $color1: #32C5FF;
-          $color2: #FFC800;
-          $color3: #FF0000;
-          animation:
-            orbit1 6s linear infinite,
-            orbit2 6s linear infinite,
-            orbit3 6s linear infinite,
-            blur-pulse 2s ease-in-out infinite alternate;
-          color: white;
-          text-shadow:
-            calc(cos(var(--angle1)) * var(--orbit-radius)) calc(sin(var(--angle1)) * var(--orbit-radius)) var(--blur) rgba($color1, var(--opacity)),
-            calc(cos(var(--angle2)) * var(--orbit-radius)) calc(sin(var(--angle2)) * var(--orbit-radius)) var(--blur) rgba($color2, var(--opacity)),
-            calc(cos(var(--angle3)) * var(--orbit-radius)) calc(sin(var(--angle3)) * var(--orbit-radius)) var(--blur) rgba($color3, var(--opacity));
+
+      .closing {
+        grid-column-start: col-start;
+        grid-column-end: -1;
+        grid-row-start: 30;
+        grid-row-end: -1;
+        display: grid;
+        grid-template-columns: subgrid;
+
+        .moscone {
+          grid-column-start: 1;
+          grid-column-end: span 3;
+        }
+
+        .stage {
+          aspect-ratio: 2/1;
+          grid-row: 1 / -1;
+          grid-column: 4 / 10;
+        }
+
+        .text-cell {
+          grid-row: 1 / -1;
+          grid-column: 10 / -1;
+          aspect-ratio: 1/1;
+          background-color: $pure-black;
+          border-radius: var(--photo-radius);
+          box-shadow: var(--image-wrapper-shadow);
+          justify-content: center; // centers horizontally
+          align-items: center;
+          display: flex;
+          padding: 1.5em;
+
+          h3 {
+            font-size: 1.75em;
+            line-height: 1.2;
+            margin-bottom: 0;
+          }
         }
       }
     }
-    .closing{
-      grid-column-start: col-start;
-      grid-column-end: -1;
-      grid-row-start: 30;
-      grid-row-end: -1;
-      display: grid;
-      grid-template-columns: subgrid;
-      .moscone{
-        grid-column-start: 1;
-        grid-column-end: span 3;
-      }
-      .stage{
-        aspect-ratio: 2/1;
-        grid-row: 1 / -1;
-        grid-column: 4 / 10;
-      }
-      .text-cell{
-        grid-row: 1 / -1;
-        grid-column: 10 / -1;
-        aspect-ratio: 1/1;
-        background-color: $pure-black;
-        border-radius: var(--photo-radius);
-        box-shadow: var(--image-wrapper-shadow);
-        justify-content: center; // centers horizontally
-        align-items: center;
-        display: flex;
-        padding: 1.5em;
-        h3{
-          font-size: 1.75em;
-          line-height: 1.2;
-          margin-bottom: 0;
-        }
+
+    .config-footer {
+      margin-block-start: 2em;
+
+      p {
+        padding: 0;
+        margin: 0;
       }
     }
   }
-  .config-footer{
-    margin-block-start: 2em;
-    p{
-      padding: 0;
-      margin: 0;
+
+  .speaking-siggraph {
+    padding-block: 5em;
+
+    .the-grid {
+      // TODO could probs make it 7
+      grid-template-rows: repeat(8, [row-start] 1fr [row-end]);
+
+      .talk-intro {
+        grid-column-start: 5;
+        grid-column-end: span 8;
+        grid-row-start: 4;
+        grid-row-end: span 4;
+      }
+      .siggraph-logo{
+        grid-column-start: span 2;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        background: linear-gradient(180deg,rgba(106, 255, 232, 1) 0%, rgba(0, 205, 236, 1) 100%);
+      }
+      .sketch-mockup{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: span 3;
+        aspect-ratio: 500/333;
+      }
+      .qa{
+        grid-column-start: 5;
+        grid-column-end: span 5;
+        grid-row-start: span 3;
+        grid-row-end: 4;
+        aspect-ratio: 1462/688;
+        align-self: end;
+      }
+      .tag-wrapper{
+        .tag{
+          background-color: rgba($pure-black, 0.1);
+        }
+      }
     }
   }
 }
@@ -254,13 +394,15 @@
 @property --angle2 {
   syntax: "<angle>";
   inherits: false;
-  initial-value: 120deg; /* 1/3 of 360 */
+  initial-value: 120deg;
+  /* 1/3 of 360 */
 }
 
 @property --angle3 {
   syntax: "<angle>";
   inherits: false;
-  initial-value: 240deg; /* 2/3 of 360 */
+  initial-value: 240deg;
+  /* 2/3 of 360 */
 }
 
 @property --blur {
@@ -270,19 +412,29 @@
 }
 
 @keyframes orbit1 {
-  to { --angle1: 360deg; }
+  to {
+    --angle1: 360deg;
+  }
 }
 
 @keyframes orbit2 {
-  to { --angle2: 480deg; } /* 360 + 120 to keep offset */
+  to {
+    --angle2: 480deg;
+  }
+
+  /* 360 + 120 to keep offset */
 }
 
 @keyframes orbit3 {
-  to { --angle3: 600deg; } /* 360 + 240 */
+  to {
+    --angle3: 600deg;
+  }
+
+  /* 360 + 240 */
 }
 
 @keyframes blur-pulse {
-  to{
+  to {
     --blur: 1.25em;
   }
 }
