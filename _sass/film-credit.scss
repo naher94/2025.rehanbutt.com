@@ -21,6 +21,12 @@
       width: calc(var(--center-radius) * 2);
       height: calc(var(--center-radius) * 2);
       margin-inline-start: -10rem;
+      // TODO see if I should keep this
+      // &:hover{
+      //   .secondary{
+      //     rotate: -10deg;
+      //   }
+      // }
     }
 
     .center-circle {
@@ -57,9 +63,11 @@
         &.secondary{
           position: absolute;
           rotate: -4deg;
-          width: 22rem;
+          width: 21rem;
           margin-inline-start: -8rem;
           margin-block-end: 3rem;
+          transform-origin: bottom right;
+          transition: $sprint;
         }
       }
     }
@@ -86,7 +94,6 @@
       height: 100%;
       transition: $sprint;
       &:hover{
-        // rotate: 10deg;
         animation: springRotate var(--spring-duration) var(--spring-ease) both;
       }
     }
