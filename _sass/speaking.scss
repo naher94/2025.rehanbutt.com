@@ -459,20 +459,16 @@
         align-self: end;
       }
       .dss-me{
-        // grid-column-start: col-start;
-        
-        grid-column-start: span 5;
+        grid-column-start: col-start;
         grid-column-end: 6;
         grid-row-start: 14;
         grid-row-end: 17;
         // aspect-ratio: 1400/933;
-        aspect-ratio: auto;
-        // aspect-ratio: 5/3;
         display: flex;
         // TODO why isn't the image filling the height?
         img{
-          // display: none;
-          align-self: end;
+          display: none;
+          // align-self: end;
         }
       }
       .dss-team{
