@@ -443,6 +443,44 @@
         grid-row-end: span 5;
         aspect-ratio: 1400/1048;
       }
+      .thank-you{
+        grid-column-start: col-start;
+        grid-column-end: 6;
+        grid-row-start: 11;
+        grid-row-end: span 3;
+        text-align: right;
+      }
+      .dss-bb{
+        grid-column-start: 6;
+        grid-column-end: span 5;
+        grid-row-start: 10;
+        grid-row-end: span 4;
+        aspect-ratio: 1400/933;
+        align-self: end;
+      }
+      .dss-me{
+        // grid-column-start: col-start;
+        
+        grid-column-start: span 5;
+        grid-column-end: 6;
+        grid-row-start: 14;
+        grid-row-end: 17;
+        // aspect-ratio: 1400/933;
+        aspect-ratio: auto;
+        // aspect-ratio: 5/3;
+        display: flex;
+        // TODO why isn't the image filling the height?
+        img{
+          // display: none;
+          align-self: end;
+        }
+      }
+      .dss-team{
+        grid-column-start: span 3;
+        grid-column-end: 13;
+        grid-row-start: 14;
+        grid-row-end: span 3;
+      }
     }
   }
 }
