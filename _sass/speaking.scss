@@ -307,9 +307,12 @@
         }
 
         .stage {
-          aspect-ratio: 2/1;
+          // aspect-ratio: 2/1;
+          aspect-ratio: auto;
           grid-row: 1 / -1;
           grid-column: 4 / 10;
+          // TODO figure out how to remove the height
+          height: 277.5px;
         }
 
         .text-cell {
@@ -463,12 +466,13 @@
         grid-column-end: 6;
         grid-row-start: 14;
         grid-row-end: 17;
+        aspect-ratio: auto;
+        // TODO figure out how to remove this height
+        height: 277.5px;
         // aspect-ratio: 1400/933;
         display: flex;
-        // TODO why isn't the image filling the height?
         img{
-          display: none;
-          // align-self: end;
+          align-self: end;
         }
       }
       .dss-team{
