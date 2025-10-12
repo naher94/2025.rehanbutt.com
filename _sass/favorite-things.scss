@@ -51,7 +51,7 @@
         grid-column-start: 2;
         grid-column-end: span 2;
         grid-row-start: 1;
-        padding: 0.25em;
+        padding: 0.5em;
         display: flex;
         align-items: center;
         div{
@@ -72,7 +72,7 @@
           line-height: normal;
         }
       }
-      @mixin flipper{
+      @mixin flip{
         .image-wrapper{
           grid-column-start: 3;
           grid-column-end: span 1;
@@ -83,8 +83,7 @@
           grid-row-start: 1;
         }
       }
-      // @apply flipper;
-      
+      // Add a class for each fave thing      
       &.strawberries{
         grid-column-start: 2;
         grid-row-start: 1;
@@ -92,9 +91,8 @@
       &.bic{
         grid-column-start: 1;
         grid-row-start: 3;
-        @include flipper;
+        @include flip;
       }
-      // TODO add for each item
     }
   }
 }
