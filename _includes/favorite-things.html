@@ -4,18 +4,6 @@
       <div class="title-cell grid-cell">
         <h2>Favorite <span>Things</span></h2>
       </div>
-      
-      <div class="grid-cell item-container uno">
-        <div class="image-wrapper">
-          <img src="../img/fave-things/dried-strawberries.png" alt="Nuts.com Dried Organic Strawberries">
-        </div>
-        <div class="description-wrapper">
-          <div>
-            <h3>Organic Dried Strawberries</h3>
-            <p>Sweet and delicious, these dried strawberries make a great snack!</p>
-          </div>
-        </div>
-      </div>
 
       {%- for item in site.fave-things -%}
       <div class="grid-cell item-container {{item.css-class}}">
@@ -31,21 +19,10 @@
       </div>
       {%- endfor -%}
 
-      <div class="grid-cell item-container dos dos-flip">
-        <div class="image-wrapper">
-          <img src="../img/fave-things/dried-strawberries.png" alt="Nuts.com Dried Organic Strawberries">
-        </div>
-        <div class="description-wrapper">
-          <div>
-            <h3>Organic Dried Strawberries</h3>
-            <p>Sweet and delicious, these dried strawberries make a great snack!</p>
-          </div>
-        </div>
+      <div class="heart-wrapper">
+      {%- include_relative img/fave-things/heart.svg -%}
       </div>
+
     </div>
   </div>
 </section>
-
-
-<!-- loop and add flip and start value in css now that I have a class to the item front matter instead -->
-<!-- make a mix in for flip -->

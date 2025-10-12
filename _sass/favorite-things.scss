@@ -39,6 +39,24 @@
         }
       }
     }
+    .heart-wrapper{
+      grid-column-start: 7;
+      grid-column-end: span 4;
+      grid-row-start: 3;
+      grid-row-end: span 4;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      position: relative;
+      svg{
+        width: 49rem;
+        position: absolute;
+        top: -4rem;
+        left: -2rem;
+        path{
+          stroke-width: 8px;
+        }
+      }
+    }
     .item-container{
       grid-column-end: span 3;
       grid-row-end: span 1;
@@ -89,8 +107,8 @@
         grid-row-start: 1;
       }
       &.bic{
-        grid-column-start: 1;
-        grid-row-start: 3;
+        grid-row-start: 5;
+        grid-column-start: 8;
         @include flip;
       }
     }
