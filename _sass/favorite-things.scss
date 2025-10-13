@@ -44,7 +44,7 @@
       grid-column-end: span 4;
       grid-row-start: 3;
       grid-row-end: span 4;
-      aspect-ratio: 1/1;
+      // aspect-ratio: 1/1;
       overflow: hidden;
       position: relative;
       svg{
@@ -111,6 +111,11 @@
         grid-column-start: 8;
         @include flip;
       }
+    }
+    .seat-filler{
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      aspect-ratio: 1/1;
     }
   }
 }
