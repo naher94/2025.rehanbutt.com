@@ -19,8 +19,14 @@
       </div>
       {%- endfor -%}
 
-      <!-- TODO write js to automate this seat-filling thing -->
-      <div class="grid-cell seat-filler"></div>
+      <!-- TODO update for mobile -->
+      <!-- (Row | Col) -->
+      {% assign seat-filler-list = "(1|1),(3|8),(3|9),(3|10)" | remove: "(" | remove: ")" | split: ',' %}
+      {% for item in seat-filler-list %}
+      {% assign each = item | split: '|' %}
+        <div class="grid-cell seat-filler" style="grid-row-start: {{each[0]}}; grid-column-start: {{each[1]}};"></div>
+      {% endfor %}
+      <!-- <div class="grid-cell seat-filler"></div> -->
       
       <div class="heart-wrapper">
       {%- include_relative img/fave-things/heart.svg -%}

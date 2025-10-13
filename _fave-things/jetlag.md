@@ -5,4 +5,5 @@ description: "'We play games where the world is our board.' - Think Amazing Race
 image: jetlag.png
 image-alt: Jetlag logo with the YouTube logo and a thumbnail from the show
 background-color: ffe382
+css-class: jetlag
 ---

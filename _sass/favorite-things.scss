@@ -111,6 +111,10 @@
         grid-column-start: 8;
         @include flip;
       }
+      &.jetlag{
+        grid-row-start: 6;
+        grid-column-start: 4;
+      }
     }
     .seat-filler{
       grid-column: 1 / span 1;
