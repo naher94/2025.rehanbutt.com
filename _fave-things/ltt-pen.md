@@ -5,4 +5,5 @@ description: A classic bolt action pen with an upcycled twist.
 image: ltt-pen.png
 image-alt: Photo of the LTT Scribedriver bolt action pen
 background-color: ffe1ba
+css-class: ltt-pen
 ---

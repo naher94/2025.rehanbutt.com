@@ -6,6 +6,7 @@
   }
   .fave-grid{
     display: grid;
+    // Update the JS values for row and col
     grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
     grid-template-columns: repeat(10, [col-start] 1fr [col-end]);
     gap: 0.25em;

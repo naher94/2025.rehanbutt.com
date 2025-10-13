@@ -5,4 +5,5 @@ description: A series following an aspiring chemist in a world that insists wome
 image: lessons-chemistry.png
 image-alt: Posters from the Lessons in Chemistry mini-series
 background-color: 93c0d9
+css-class: lessons-chemistry
 ---
