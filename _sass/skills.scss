@@ -1,179 +1,70 @@
-.skills{
-  @include breakpoint(small only){
+.skills {
+  position: relative;
+  --skill-height: 3em;
+  @include breakpoint(small only) {
     margin-block: 3rem;
     margin-block-start: 5em;
   }
-  .text-hero{
-    position: relative;
-  }
-  svg {
-    width: 100%;
-    text-transform: uppercase;
-    font-family: $big-shoulders;
-    font-weight: $big-shoulders-thin;
-    fill: semantic-color(text);  
-    @include breakpoint(small only){
-      font-size: 20px; //needed to have the scale 100% width as 20px is the body size on medium and up screen sizes
-    }
-  }
-  .tag-container{
+
+  .stripe-container {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    @include breakpoint(small only){
-      grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    // TODO update rows to the number of skills
+    grid-template-rows: repeat(4, var(--skill-height));
+    .stripe {
+      grid-column-start: 1;
+      grid-column-end: span 1;
+      &__0 {
+        grid-row: 1 / span 1;
+        background-color: red;
+      }
+      &__1 {
+        grid-row: 2 / span 1;
+        background-color: blue;
+      }
+      &__2 {
+        grid-row: 3 / span 1;
+        background-color: green;
+      }
+      &__3 {
+        grid-row: 4 / span 1;
+        background-color: purple;
+      }
     }
-    align-items: center;
-    gap: 0.5em;
-    padding: 3em 2em;
-    @include breakpoint(small only){
-      font-size: 0.5em;
-    }
-    .pill{
-      border-radius: $pill-radius;
-      padding: 0.5em 1.5em;
-      width: fit-content;
-      height: fit-content;
-      font-weight: $lato-black;
-      font-size: 1.5em;
+  }
+  .content-area {
+    outline: solid black 20px;
+    // border: solid black 20px;
 
-      overflow: hidden;
-      color: white;
-      --blur: 10px;
-      -webkit-backdrop-filter: blur(var(--blur));
-      backdrop-filter: blur(var(--blur));
-      position: relative;
-      .gradient {
-        --size: 10em;
-        --speed: 5s;
-        --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
-        width: var(--size);
-        aspect-ratio: 1/1;
-        filter: blur(calc(var(--size) / 5));
-        background-image: linear-gradient(hsl(222, 84, 60), hsl(164, 79, 71));
-        animation: rotate var(--speed) var(--easing) alternate infinite;
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        &__1{
-          background-image: linear-gradient(hsl(160.85, 84.55%, 60.16%), hsl(197.23, 80.56%, 44.59%));
-          animation-delay: 0.5s;
-        }
-        &__2{
-          background-image: linear-gradient(#70dd27, #ffcb00);
-          animation-delay: 1s;
-        }
-        &__4{
-          background-image: linear-gradient(hsl(340.85, 100%, 56.41%), hsl(360, 80.94%, 56.96%));
-        }
-        &__5{
-          background-image: linear-gradient(hsl(122.55, 84.55%, 60.16%), hsl(164, 79%, 71%));
-        }
-        &__6{
-          background-image: linear-gradient(#9d27dd, #f700ff);
-          animation-delay: 0.5s;
-        }
-        &__7{
-          background-image: linear-gradient(#dd2727, #ff8000);
-          animation-delay: 0.25s;
-        }
-        &__8{
-          background-image: linear-gradient(#6034b3, #0073ff);
-        }
-      }
-      .text {
-        position: relative;
-        z-index: 2;
-      }
-      &__1{
-        grid-column: 5 / 8;
-        grid-row: 1 / 2;
-      }
-      &__2{
-        grid-column: 1 / 4;
-        grid-row: 4 / 5;
-        @include breakpoint(small only){
-          grid-column: 1 / 6;
-        }
-      }
-      &__3{
-        grid-column: 2 / 5;
-        grid-row: 2 / 3;
-        @include breakpoint(small only){
-          grid-column: 2 / 6;
-        }
-      }
-      &__4{
-        grid-column: 6 / 8;
-        grid-row: 3 / 4;
-        @include breakpoint(small only){
-          grid-column: 7 / 9;
-        }
-      }
-      &__5{
-        grid-column: 6 / 9;
-        grid-row: 8 / 9;
-        @include breakpoint(small only){
-          grid-row: 6 / 7;
-        }
-      }
-      &__6{
-        grid-column: 6 / 9;
-        grid-row: 5 / 6;
-        justify-self: end;
-        @include breakpoint(small only){
-          grid-column: 5 / 9;
-        }
-      }
-      &__7{
-        grid-column: 2 / 5;
-        grid-row: -3 / -2;
-        @include breakpoint(small only){
-          grid-column: 2 / 6;
-          grid-row: -2/-1;
-        }
-      }
-      &__8{
-        grid-column: 4 / 6;
-        grid-row: 6 / 7;
-        @include breakpoint(small only){
-          grid-row: 3 / 4;
-          grid-column: 4 / 7;
+    border-radius: $tile-radius-big;
+    .skill-tags-container{
+      z-index: 2;
+      .skill-tag{
+        font-size: 2em;
+        // height: var(--skill-height);
+        .skill{
+          display: inline-block;
+          border-radius: 0 $tile-radius-medium $tile-radius-medium 0;
+          padding-inline: 0.5em;
+          &__0 {
+            background-color: red;
+          }
+          &__1 {
+            background-color: blue;
+          }
+          &__2 {
+            background-color: green;
+          }
+          &__3 {
+            background-color: purple;
+          }
         }
       }
     }
-  }
-  .text-container{
-    p{
-      padding: 0;
-      margin: 0;
-      font-size: 1.75em;
-      text-align: justify;
-      width: 100%;
-      @include breakpoint(small only){
-        font-size: 1.25em;
-        line-height: normal;
-      }
-      &::after {
-        content: ""; /* Add an invisible element to trigger justification */
-        display: inline-block;
-        width: 100%; /* Stretch it to occupy full width */
-      }
-    }
-  }
-}
-@keyframes rotate{
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

@@ -1,22 +1,33 @@
-<section class="skills grid-container" id="skills" aria-label="New Skills Section">
-  <div class="grid-x content-area">
-    <div class="cell text-hero">
-      <h2 class="visually-hidden">Skills</h2>
-      <svg viewBox="0 0 26 18">
-        <text x="-0.5" y="17">Skills</text>
-      </svg>
-      <div class="tag-container">
-        {% assign skills-list = "Design Ops,Product Management,Systems Design,Mentoring,Data Analysis,Discovery Research,Product Development,Web Dev" | split: ',' %}
-        {%- for skill in skills-list -%}
-          <div class="pill pill__{{forloop.index}}">
-            <div class="gradient gradient__{{forloop.index}}"></div>
-            <div class="text">{{skill}}</div>
+<section class="skills" id="skills" aria-label="New Skills Section">
+  {% assign skills-list = "Design Ops,Public Speaking,Mentoring,Web Dev" | split: ',' %}
+  <div class="stripe-container">
+    {%- for item in skills-list -%}
+      <div class="stripe stripe__{{ forloop.index0 }}"></div>
+    {%- endfor -%}
+  </div>
+  <div class="grid-container">
+    <div class="grid-x content-area">
+      <div class="cell skill-tags-container shrink">
+        {%- for item in skills-list -%}
+          <div class="skill-tag skill-tag__{{ forloop.index0 }}">
+            <div class="skill skill__{{ forloop.index0 }}">
+              {{ item }}
+            </div>
           </div>
         {%- endfor -%}
       </div>
-    </div>
-    <div class="grid-x text-container cell">
-      <p>Continued to level up my skills and acquired some new ones this year.</p>
+      <div class="hero-text cell auto">
+        Skills Learning Knowlege
+      </div>
     </div>
   </div>
 </section>
+
+
+<!-- {% assign skills-list = "Design Ops,Product Management,Systems Design,Mentoring,Data Analysis,Discovery Research,Product Development,Web Dev" | split: ',' %}
+{%- for skill in skills-list -%}
+  <div class="pill pill__{{forloop.index}}">
+    <div class="gradient gradient__{{forloop.index}}"></div>
+    <div class="text">{{skill}}</div>
+  </div>
+{%- endfor -%} -->
