@@ -1,21 +1,33 @@
 .skills {
   position: relative;
   --skill-height: 3em;
+  --skill-padding: 0.25em;
+  --outline-thickness: 10px;
+  font-family: $poppins;
+  font-weight: $poppins-bold;
+  text-transform: uppercase;
+  margin-block: 5rem;
+
   @include breakpoint(small only) {
     margin-block: 3rem;
     margin-block-start: 5em;
   }
 
   .stripe-container {
+    z-index: 5;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1170px 1fr;
     // TODO update rows to the number of skills
-    grid-template-rows: repeat(4, var(--skill-height));
+    grid-template-rows: repeat(4, 1fr);
+    // grid-template-rows: repeat(4, calc(2 * var(--skill-padding) + var(--skill-height)));
+    margin-block: calc(-1 * var(--outline-thickness));
+
     .stripe {
       grid-column-start: 1;
       grid-column-end: span 1;
@@ -38,21 +50,32 @@
     }
   }
   .content-area {
-    outline: solid black 20px;
+    outline: solid black var(--outline-thickness);
     // border: solid black 20px;
 
     border-radius: $tile-radius-big;
     .skill-tags-container{
       z-index: 2;
+      margin-block: calc(-1 * var(--outline-thickness));
       .skill-tag{
-        font-size: 2em;
+        font-size: 3em;
+        line-height: 1;
         // height: var(--skill-height);
+        &__2{
+          // TODO figure out how to make this work
+          z-index: 3;
+        }
+        &__3{
+          z-index: 2;
+        }
         .skill{
           display: inline-block;
           border-radius: 0 $tile-radius-medium $tile-radius-medium 0;
           padding-inline: 0.5em;
+          padding-block: var(--skill-padding);
           &__0 {
             background-color: red;
+            outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
           &__1 {
             background-color: blue;
@@ -62,6 +85,8 @@
           }
           &__3 {
             background-color: purple;
+            outline: solid semantic-color(page-bg) var(--outline-thickness);
+
           }
         }
       }
