@@ -1,3 +1,15 @@
+@property --stop {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
+@property --stop1 {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
 .favorite-things{
   margin-block-start: 5em;
   color: $pure-black;
@@ -18,6 +30,17 @@
         background-color: transparent;
       }
     }
+
+    // TODO make this a mixin?
+    .ripple {
+      transition: --stop 0.5s, --stop1 1s;
+      background: radial-gradient(circle at bottom left,rgba(255, 255, 255, 1) var(--stop1), rgba(33, 105, 222, 1) var(--stop1), rgba(33, 105, 222, 1) var(--stop), rgba(255, 255, 255, 1) var(--stop));
+      &:hover {
+        --stop: 100%;
+        --stop1: 100%;
+      }
+    }
+
     .title-cell{
       grid-column-start: 4;
       grid-column-end: span 4;
@@ -120,6 +143,18 @@
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
       aspect-ratio: 1/1;
+      &__0{
+        grid-row-start: 3;
+        grid-column-start: 2;
+      }
+      &__1{
+        grid-row-start: 3;
+        grid-column-start: 2;
+      }
+      &__2{
+        grid-row-start: 3;
+        grid-column-start: 2;
+      }
     }
   }
 }
