@@ -55,9 +55,11 @@
 
     border-radius: $tile-radius-big;
     .skill-tags-container{
+      position: relative; // create a stacking context for child z-index values
       z-index: 2;
       margin-block: calc(-1 * var(--outline-thickness));
       .skill-tag{
+        position: relative; // so z-index on modifiers (e.g. &__2) takes effect
         font-size: 3em;
         line-height: 1;
         // height: var(--skill-height);
