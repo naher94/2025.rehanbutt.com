@@ -91,6 +91,7 @@
         .skill-wrapper{
           display: inline-block;
           position: relative;
+          cursor: pointer;
           &:hover{
             .skill{
               transform: translateX(-90px);
@@ -118,7 +119,7 @@
           padding-block: var(--skill-padding);
           transition: $sprint;
           // margin-inline-end: 0.25em;
-          cursor: pointer;
+          // cursor: pointer;
           z-index: 2;
           position: relative;
           &__0 {
