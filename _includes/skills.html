@@ -1,5 +1,5 @@
 <section class="skills" id="skills" aria-label="New Skills Section">
-  {% assign skills-list = "Design Ops,Public Speaking,Mentoring,Web Dev" | split: ',' %}
+  {% assign skills-list = "Public Speaking,Mentoring,Design Operations,Systems Design,Design Evangelism" | split: ',' %}
   <div class="stripe-container">
     {%- for item in skills-list -%}
       <div class="stripe stripe__{{ forloop.index0 }}"></div>
@@ -16,8 +16,14 @@
           </div>
         {%- endfor -%}
       </div>
-      <div class="hero-text cell auto">
-        Skills Learning Knowlege
+      <div class="hero-text-container cell auto grid-x align-center align-middle">
+        <div class="hero-text cell shrink">
+          <h2>
+            <span>Learning</span>
+            <span>Knowledge</span>
+            <span>Skills</span>
+          </h2>
+        </div>
       </div>
     </div>
   </div>
