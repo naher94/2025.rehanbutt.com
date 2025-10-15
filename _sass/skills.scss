@@ -94,12 +94,13 @@
           cursor: pointer;
           &:hover{
             .skill{
-              transform: translateX(-90px);
+              transform: translateX(calc(calc(1.25em + var(--skill-padding))* -1));
             }
           }
           img{
             // TODO replace with better unit
             width: 90px;
+            width: calc(1.25em + var(--skill-padding));
             position: absolute;
             top: 0;
             right: 0;
