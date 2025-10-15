@@ -80,21 +80,50 @@
         &__3{
           z-index: 2;
         }
+        &:first-of-type, &:last-of-type{
+          img{
+            outline: solid semantic-color(page-bg) var(--outline-thickness);
+            // TODO update to relative units
+            box-shadow: -40px 0px 0px 0px rgba(255, 255, 255, 1);
+            // box-shadow: -40px 0px 0px 0px rgb(255, 128, 0);
+          }
+        }
+        .skill-wrapper{
+          display: inline-block;
+          position: relative;
+          &:hover{
+            .skill{
+              transform: translateX(-90px);
+            }
+          }
+          img{
+            // TODO replace with better unit
+            width: 90px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: $tile-radius-medium;
+            // z-index: 2;
+            // &:first-of-type, &:last-of-type{
+            //   outline: solid semantic-color(page-bg) var(--outline-thickness);
+            //   // TODO update to relative units
+            //   box-shadow: -40px 0px 0px 0px rgba(255, 255, 255, 1);
+            // }
+          }
+        }
         .skill{
           display: inline-block;
           border-radius: 0 $tile-radius-medium $tile-radius-medium 0;
           padding-inline: 0.5em;
           padding-block: var(--skill-padding);
           transition: $sprint;
-          margin-inline-end: 0.25em;
+          // margin-inline-end: 0.25em;
           cursor: pointer;
-          &:hover{
-            padding-inline-start: 0.75em;
-            margin-inline-end: 0;
-          }
+          z-index: 2;
+          position: relative;
           &__0 {
             background-color: var(--row-color-1);
-            outline: solid semantic-color(page-bg) var(--outline-thickness);
+            // outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
           &__1 {
             background-color: var(--row-color-2);
@@ -107,7 +136,7 @@
           }
           &__4{
             background-color: var(--row-color-5);
-            outline: solid semantic-color(page-bg) var(--outline-thickness);
+            // outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
         }
       }

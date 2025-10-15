@@ -10,8 +10,11 @@
       <div class="cell skill-tags-container shrink">
         {%- for item in skills-list -%}
           <div class="skill-tag skill-tag__{{ forloop.index0 }}">
-            <div class="skill skill__{{ forloop.index0 }}">
-              {{ item }}
+            <div class="skill-wrapper">
+              <div class="skill skill__{{ forloop.index0 }}">
+                {{ item }}
+              </div>
+              <img src="../img/speaking/pixar-wdas-team.jpg" alt="REPLACE this">
             </div>
           </div>
         {%- endfor -%}
