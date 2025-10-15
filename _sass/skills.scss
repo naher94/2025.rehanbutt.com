@@ -98,19 +98,11 @@
             }
           }
           img{
-            // TODO replace with better unit
-            width: 90px;
             width: calc(1.25em + var(--skill-padding));
             position: absolute;
             top: 0;
             right: 0;
             border-radius: $tile-radius-medium;
-            // z-index: 2;
-            // &:first-of-type, &:last-of-type{
-            //   outline: solid semantic-color(page-bg) var(--outline-thickness);
-            //   // TODO update to relative units
-            //   box-shadow: -40px 0px 0px 0px rgba(255, 255, 255, 1);
-            // }
           }
         }
         .skill{
