@@ -69,17 +69,17 @@
       z-index: 2;
       margin-block: calc(-1 * var(--outline-thickness));
       .skill-tag{
-        position: relative; // so z-index on modifiers (e.g. &__2) takes effect
+        // position: relative; // so z-index on modifiers (e.g. &__2) takes effect
         font-size: 3em;
         line-height: 1;
         // height: var(--skill-height);
-        &__2{
-          // TODO figure out how to make this work
-          z-index: 3;
-        }
-        &__3{
-          z-index: 2;
-        }
+        // &__2{
+        //   // TODO figure out how to make this work
+        //   z-index: 3;
+        // }
+        // &__3{
+        //   z-index: 2;
+        // }
         &:first-of-type, &:last-of-type{
           img{
             outline: solid semantic-color(page-bg) var(--outline-thickness);
@@ -92,6 +92,7 @@
           display: inline-block;
           position: relative;
           cursor: pointer;
+          // color: $pure-white;
           &:hover{
             .skill{
               transform: translateX(calc(calc(1.25em + var(--skill-padding))* -1));
@@ -148,6 +149,12 @@
               font-size: 2.5em;
             }
           }
+        }
+        p{
+          line-height: 1.2;
+          font-weight: $poppins-regular;
+          text-transform: none;
+          margin-bottom: 0;
         }
       }
     }
