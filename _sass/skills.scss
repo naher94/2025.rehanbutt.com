@@ -111,13 +111,10 @@
           padding-inline: 0.5em;
           padding-block: var(--skill-padding);
           transition: $sprint;
-          // margin-inline-end: 0.25em;
-          // cursor: pointer;
           z-index: 2;
           position: relative;
           &__0 {
             background-color: var(--row-color-1);
-            // outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
           &__1 {
             background-color: var(--row-color-2);
@@ -130,7 +127,6 @@
           }
           &__4{
             background-color: var(--row-color-5);
-            // outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
         }
       }
