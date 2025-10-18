@@ -1,20 +1,23 @@
 <section class="skills" id="skills" aria-label="New Skills Section">
   {% assign skills-list = "Public Speaking,Mentoring,Design Operations,Systems Design,Design Evangelism" | split: ',' %}
+  {%- assign skills-list2 = site.skills | sort: "sort-order" -%}
   <div class="stripe-container">
-    {%- for item in skills-list -%}
+    {%- for item in skills-list2 -%}
       <div class="stripe stripe__{{ forloop.index0 }}"></div>
     {%- endfor -%}
   </div>
   <div class="grid-container">
     <div class="grid-x content-area">
       <div class="cell skill-tags-container shrink">
-        {%- for item in skills-list -%}
+        {%- for item in skills-list2 -%}
           <div class="skill-tag skill-tag__{{ forloop.index0 }}">
             <div class="skill-wrapper">
               <div class="skill skill__{{ forloop.index0 }}">
-                {{ item }}
+                {{ item.title }}
               </div>
-              <img src="../img/speaking/pixar-wdas-team.jpg" alt="REPLACE this">
+              <div class="image-wrapper">
+                <img src="../img/skills/{{item.image}}" alt="{{item.image-alt}}">
+              </div>
             </div>
           </div>
         {%- endfor -%}
@@ -28,6 +31,7 @@
           </h2>
           <p>This is where the description goes do do do. TODO update this text.</p>
         </div>
+        <div class="icon-wrapper">+</div>
       </div>
     </div>
   </div>
