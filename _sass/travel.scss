@@ -11,14 +11,77 @@
     font-family: $poppins;
     font-weight: $poppins-bold;
     font-size: 2em;
+    color: $pure-white;
   }
   .travel-card{
     background-color: rebeccapurple;
     border-radius: $tile-radius-medium;
     padding: 1rem;
+    box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.5);
+    &.canada-card{
+      background-color: #E02020;
+      background-color: color-mix(in srgb, #E02020 90%, $pure-white 10%);
+      background-image: url('/img/travel/van-skyline.jpg');
+      background-blend-mode: multiply;
+      
+      // background-color: color-mix(in srgb, #E02020 45%, #ffffff 5%);
+      // background-blend-mode: color-burn;
+
+      background-size: cover;
+      background-position: center;
+    }
+    a{
+      font-size: 1rem;
+      &:hover{
+        .tag{
+          background-color: rgba($pure-black, 0.75);
+        }
+      }
+      .tag{
+        display: inline-block;
+        background-color: rgba($pure-black, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: $tile-radius;
+        padding: 0.25em 0.5em;
+        color: $pure-white;
+        transition: $sprint;
+        svg{
+          width: 12px;
+          height: 12px;
+          &:first-of-type{
+            margin-inline-end: 0.15rem;
+          }
+          &:last-of-type{
+            margin-inline-start: 0.15rem;
+          }
+          path{
+            fill: $pure-white;
+          }
+        }
+      }
+    }
   }
   .overview{
-    background-color: black;
+    background-color: #1E1E1E;
+    padding-inline: 0.9375rem;
+    padding-block: calc(0.9375rem * 2);
+    border-radius: 50px;
+  }
+  .stat-wrapper{
+    min-height: 30rem;
+  }
+  .stats{
+    .line-item{
+      color: $pure-white;
+      border-bottom: 1px solid rgba($pure-white, 0.25);
+      padding-block: 0.25rem;
+      .value{
+        font-weight: $poppins-bold;
+      }
+      .label{
+        color: rgba($pure-white, 0.5);
+      }
+    }
   }
   .tag-wrapper{
     display: flex;
@@ -27,9 +90,11 @@
     .city-tag{
       display: inline-block;
       padding: 0.25em 0.5em;
-      background: red;
+      background-color: rgba($pure-white, 0.5);
+      backdrop-filter: blur(10px);
       border-radius: $tile-radius;
       font-size: 1rem;
+      color: $pure-black;
     }
   }
 }

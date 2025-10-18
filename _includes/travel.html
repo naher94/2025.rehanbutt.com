@@ -1,8 +1,18 @@
 <section class="travel" id="travel" aria-label="Travel Section">
   <div class="grid-container">
     <div class="grid-x grid-margin-x overview">
-      <div class="medium-4 cell">
+      <div class="medium-4 cell grid-x stat-wrapper">
         <h2>Travel Log</h2>
+        <div class="stats grid-x cell align-self-bottom">
+          {% assign array-list = "(4D 5H|Flight Time),(D|F),(H|J),(a|2),(a|2)" | remove: "(" | remove: ")" | split: ',' %}
+          {% for item in array-list %}
+          {% assign each = item | split: '|' %}
+          <div class="line-item cell grid-x align-justify">
+            <div class="value cell shrink">{{each[0]}}</div>
+            <div class="label cell shrink">{{each[1]}}</div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       <div class="medium-4 cell travel-card">
         <h3>United States</h3>
@@ -15,12 +25,25 @@
         </div>
       </div>
       <div class="medium-4 cell grid-x grid-margin-y">
-        <div class="travel-card cell">
-          <h3>Canada</h3>
-          <div class="tag-wrapper">
-            <div class="city-tag">Vancouver</div>
+        
+        <div class="travel-card cell grid-x canada-card">
+          <div class="cell">
+            <h3>Canada</h3>
+            <div class="tag-wrapper">
+              <div class="city-tag">Vancouver</div>
+            </div>
+          </div>
+          <div class="cell align-self-bottom">
+            <a href="">
+              <div class="tag">
+                {% include_relative img/travel/utensils.svg %}
+                Food Recommendations
+                {% include_relative img/travel/share-arrow.svg %}
+              </div>
+            </a>
           </div>
         </div>
+
         <div class="travel-card cell">
           <h3>Japan</h3>
           <div class="tag-wrapper">
