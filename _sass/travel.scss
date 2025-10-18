@@ -34,7 +34,7 @@
       font-size: 1rem;
       &:hover{
         .tag{
-          background-color: rgba($pure-black, 0.75);
+          background-color: rgba($pure-black, 0.25);
         }
       }
       .tag{
@@ -90,11 +90,11 @@
     .city-tag{
       display: inline-block;
       padding: 0.25em 0.5em;
-      background-color: rgba($pure-white, 0.5);
+      background-color: rgba($pure-white, 0.25);
       backdrop-filter: blur(10px);
       border-radius: $tile-radius;
       font-size: 1rem;
-      color: $pure-black;
+      color: $pure-white;
     }
   }
 }
