@@ -12,6 +12,7 @@
   --row-color-3: #47BE16;
   --row-color-4: #E19B23;
   --row-color-5: #23B6E1;
+  --accent-color: #E5E5E5;
 
   @include breakpoint(small only) {
     margin-block: 3rem;
@@ -60,41 +61,79 @@
     }
   }
   .content-area {
-    outline: solid $navy-black var(--outline-thickness);
-    // border: solid black 20px;
-
+    // outline: solid $navy-black var(--outline-thickness);
+    outline: solid var(--accent-color) var(--outline-thickness);
     border-radius: $tile-radius-big;
+    // TODO update to dynamically create
+    border-radius: 56px;
     .skill-tags-container{
       position: relative; // create a stacking context for child z-index values
       z-index: 2;
       margin-block: calc(-1 * var(--outline-thickness));
       .skill-tag{
-        position: relative; // so z-index on modifiers (e.g. &__2) takes effect
+        // position: relative; // so z-index on modifiers (e.g. &__2) takes effect
         font-size: 3em;
         line-height: 1;
         // height: var(--skill-height);
-        &__2{
-          // TODO figure out how to make this work
-          z-index: 3;
+        // &__2{
+        //   // TODO figure out how to make this work
+        //   z-index: 3;
+        // }
+        // &__3{
+        //   z-index: 2;
+        // }
+        &:first-of-type, &:last-of-type{
+          .image-wrapper{
+            outline: solid semantic-color(page-bg) var(--outline-thickness);
+            // TODO update to relative units
+            box-shadow: -0.8em -0.25em 0 0 semantic-color(page-bg);
+            // box-shadow: -40px 0px 0px 0px rgb(255, 128, 0);
+          }
         }
-        &__3{
-          z-index: 2;
+        &:last-of-type{
+          .image-wrapper{
+            box-shadow: -0.8em 0.25em 0 0 semantic-color(page-bg);
+          }
+        }
+        .skill-wrapper{
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+          // color: $pure-white;
+          &:hover{
+            // TODO sequentially animate each item? and if I hover on one of them then pause the animation
+            .skill{
+              transform: translateX(calc(calc(1.25em + var(--skill-padding))* -1));
+            }
+          }
+          .image-wrapper{
+            display: flex;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: $pill-radius;
+            overflow: hidden;
+            img{
+              // width: calc(1.25em + var(--skill-padding));
+              // TODO pick a radius
+              // border-radius: $tile-radius-medium;
+              // border-radius: $pill-radius;
+            }
+          }
         }
         .skill{
           display: inline-block;
+          // TODO pick a radius
           border-radius: 0 $tile-radius-medium $tile-radius-medium 0;
+          border-radius: 0 $pill-radius $pill-radius 0;
           padding-inline: 0.5em;
           padding-block: var(--skill-padding);
           transition: $sprint;
-          margin-inline-end: 0.25em;
-          cursor: pointer;
-          &:hover{
-            padding-inline-start: 0.75em;
-            margin-inline-end: 0;
-          }
+          z-index: 2;
+          position: relative;
           &__0 {
             background-color: var(--row-color-1);
-            outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
           &__1 {
             background-color: var(--row-color-2);
@@ -107,13 +146,14 @@
           }
           &__4{
             background-color: var(--row-color-5);
-            outline: solid semantic-color(page-bg) var(--outline-thickness);
           }
         }
       }
     }
     .hero-text-container{
       padding: 1rem;
+      z-index: 2;
+      position: relative;
       .hero-text{
         h2{
           font-family: $poppins;
@@ -129,6 +169,31 @@
               font-size: 2.5em;
             }
           }
+        }
+        p{
+          line-height: 1.2;
+          font-weight: $poppins-regular;
+          text-transform: none;
+          margin-bottom: 0;
+        }
+      }
+      .icon-wrapper{
+        aspect-ratio: 1/1;
+        background-color: var(--accent-color);
+        position: absolute;
+        width: 5rem;
+        top: 1rem;
+        right: 1rem;
+        border-radius: $pill-radius;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-size: 2.5em;
+        line-height: normal;
+        transition: $run;
+        cursor: pointer;
+        &:hover{
+          rotate: 180deg;
         }
       }
     }

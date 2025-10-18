@@ -33,3 +33,5 @@ collections:
     output: false
   travel:
     output: false
+  skills:
+    output: false
