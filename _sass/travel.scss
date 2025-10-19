@@ -18,17 +18,21 @@
     border-radius: $tile-radius-medium;
     padding: 1rem;
     box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
     &.canada-card{
       background-color: #E02020;
       background-color: color-mix(in srgb, #E02020 90%, $pure-white 10%);
       background-image: url('/img/travel/van-skyline.jpg');
       background-blend-mode: multiply;
-      
       // background-color: color-mix(in srgb, #E02020 45%, #ffffff 5%);
       // background-blend-mode: color-burn;
-
-      background-size: cover;
-      background-position: center;
+    }
+    &.japan-card{
+      // TODO update this image
+      background-color: rgb(162, 99, 224);
+      background-image: url('/img/travel/fuji-cap.jpg');
+      background-blend-mode: multiply;
     }
     a{
       font-size: 1rem;
