@@ -121,7 +121,8 @@
           border-radius: 0 $pill-radius $pill-radius 0;
           padding-inline: 0.5em;
           padding-block: var(--skill-padding);
-          transition: $sprint;
+          // transition: $sprint;
+          transition: $jog;
           z-index: 2;
           position: relative;
           &__0 {
