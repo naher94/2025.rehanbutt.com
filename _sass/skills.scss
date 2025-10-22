@@ -114,18 +114,10 @@
             right: 0;
             border-radius: $pill-radius;
             overflow: hidden;
-            img{
-              // width: calc(1.25em + var(--skill-padding));
-              // TODO pick a radius
-              // border-radius: $tile-radius-medium;
-              // border-radius: $pill-radius;
-            }
           }
         }
         .skill{
           display: inline-block;
-          // TODO pick a radius
-          border-radius: 0 $tile-radius-medium $tile-radius-medium 0;
           border-radius: 0 $pill-radius $pill-radius 0;
           padding-inline: 0.5em;
           padding-block: var(--skill-padding);
