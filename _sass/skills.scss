@@ -98,14 +98,14 @@
         .skill-wrapper{
           display: inline-block;
           position: relative;
-          cursor: pointer;
+          // cursor: pointer;
           // color: $pure-white;
-          &:hover{
-            // TODO sequentially animate each item? and if I hover on one of them then pause the animation
-            .skill{
-              transform: translateX(calc(calc(1.25em + var(--skill-padding))* -1));
-            }
-          }
+          // &:hover{
+          //   // TODO sequentially animate each item? and if I hover on one of them then pause the animation
+          //   .skill{
+          //     transform: translateX(calc(calc(1.25em + var(--skill-padding))* -1));
+          //   }
+          // }
           .image-wrapper{
             display: flex;
             height: 100%;
