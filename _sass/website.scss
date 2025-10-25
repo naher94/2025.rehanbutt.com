@@ -1,7 +1,9 @@
+$surface-border: solid 1px rgba($pure-black, 0.1);
+$surface-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.25);
 @mixin frosted-surface{
   background-color: rgba($pure-white, 0.7);
-  border: solid 1px rgba($pure-black, 0.1);
-  box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.25);
+  border: $surface-border;
+  box-shadow: $surface-shadow;
 }
 $content-padding: 2rem;
 $web-orange: #FA6400;
@@ -38,7 +40,8 @@ $web-orange2: #FF8D3D;
     }
   }
   .main-content{
-    padding: $content-padding;
+    padding-inline: $content-padding;
+    padding-block: calc($content-padding * 2);
     .callouts{
       $icon-padding: 0.75rem;
       $icon-size: 2rem;
@@ -50,6 +53,8 @@ $web-orange2: #FF8D3D;
           background-color: $web-orange2;
           border-radius: $pill-radius;
           margin-inline-end: 1rem;
+          border: $surface-border;
+          box-shadow: $surface-shadow;
           svg{
             width: $icon-size;
           }
@@ -66,5 +71,10 @@ $web-orange2: #FF8D3D;
         margin-block: 0.5rem;
       }
     }
+  }
+  .footer{
+    @include frosted-surface;
+    padding: $content-padding;
+    border-radius: calc($tile-radius + $content-padding) calc($tile-radius + $content-padding) 0 0;
   }
 }
