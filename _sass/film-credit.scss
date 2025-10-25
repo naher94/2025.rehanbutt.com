@@ -6,8 +6,7 @@
   margin-block: 10em;
 
   @include breakpoint(small only) {
-    margin-block-end: 1em;
-    margin-block-start: 12em;
+    margin-block-end: 12em;
   }
 
   .content-card {
@@ -21,6 +20,14 @@
       width: calc(var(--center-radius) * 2);
       height: calc(var(--center-radius) * 2);
       margin-inline-start: -10rem;
+
+      @include breakpoint(small only){
+        --center-radius: 8rem;
+        --buffer: 1rem;
+        --edge-spacing: 1rem;
+        margin-inline-start: -5rem;
+      }
+
       // TODO see if I should keep this
       // &:hover{
       //   .secondary{
@@ -38,6 +45,10 @@
       justify-content: center;
       display: flex;
       margin-inline-start: -2rem;
+      z-index: 2;
+      @include breakpoint(small only){
+        margin-inline-start: 0;
+      }
       .poster-wrapper{
         align-items: center;
         display: flex;
@@ -46,6 +57,9 @@
         rotate: 6deg;
         width: 27rem;
         margin-block-start: var(--credit-description-height);
+        @include breakpoint(small only){
+          width: 12rem;
+        }
         p{
           margin-block-start: 1rem;
           margin-bottom: 0;
@@ -57,8 +71,14 @@
         border-radius: $tile-radius-medium;
         box-shadow: $pure-black $soft-shadow;
         overflow: hidden;
+        @include breakpoint(small only){
+          border-radius: $tile-radius;
+        }
         &.main{
           width: 27rem;
+          @include breakpoint(small only){
+            width: 12rem;
+          }
         }
         &.secondary{
           position: absolute;
@@ -68,6 +88,11 @@
           margin-block-end: 3rem;
           transform-origin: bottom right;
           transition: $sprint;
+          @include breakpoint(small only){
+            width: 9rem;
+            margin-inline-start: -2rem;
+            margin-block-end: 2rem;
+          }
         }
       }
     }
@@ -113,6 +138,9 @@
       background: #09dd6c;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
+      @include breakpoint(small only){
+        --satellite-radius: 1.5rem;
+      }
     }
 
     .satellite[data-label="Y"] {
@@ -120,6 +148,9 @@
       background: #f33;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
+      @include breakpoint(small only){
+        --satellite-radius: 2rem;
+      }
     }
 
     .satellite[data-label="A"] {
@@ -127,6 +158,9 @@
       background: #fa0;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
+      @include breakpoint(small only){
+        --satellite-radius: 2.75rem;
+      }
     }
 
     .satellite[data-label="B"] {
@@ -134,9 +168,16 @@
       background: $pure-black;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
+      @include breakpoint(small only){
+        --satellite-radius: 4rem;
+      }
       .satellite-content{
         padding: 1.5rem;
         padding-bottom: 2.25rem;
+        @include breakpoint(small only){
+          padding: 1rem;
+          padding-bottom: 1.5rem;
+        }
       }
     }
 
