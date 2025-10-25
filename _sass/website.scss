@@ -11,7 +11,7 @@ $web-orange2: #FF8D3D;
 .website{
   background: linear-gradient(180deg,rgba($web-orange, 0.3) 0%, rgba($web-orange, 0.1) 100%);
   margin-top: 2rem;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: $space-grotesk;
   @include breakpoint(small only){
     overflow-x: clip;
@@ -24,6 +24,27 @@ $web-orange2: #FF8D3D;
   h2{
     font-family: $space-grotesk;
     font-weight: $space-grotesk-bold;
+  }
+  .grid-content{
+    position: relative;
+  }
+  .watermark-wrapper{
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    margin-left: -14%;
+    .watermark{
+      font-size: 25rem;
+      font-weight: $space-grotesk-bold;
+      color: rgba($web-orange, 0.05);
+      // color: red;
+      filter: blur(2px);
+      line-height: 1;
+      margin-top: -7%;
+    }
+  }
+  .header, .main-content, .footer{
+    z-index: 2;
   }
   .header{
     @include frosted-surface;
