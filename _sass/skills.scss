@@ -17,6 +17,7 @@
   @include breakpoint(small only) {
     margin-block: 3rem;
     margin-block-start: 5em;
+    --outline-thickness: 5px;
   }
 
   .stripe-container {
@@ -34,6 +35,10 @@
     grid-template-rows: repeat(5, 1fr);
     // grid-template-rows: repeat(4, calc(2 * var(--skill-padding) + var(--skill-height)));
     margin-block: calc(-1 * var(--outline-thickness));
+    @include breakpoint(small only){
+      grid-template-columns: 1fr 350px 1fr;
+      // TODO calculate the height
+    }
 
     .stripe {
       grid-column-start: 1;
@@ -66,6 +71,9 @@
     border-radius: $tile-radius-big;
     // TODO update to dynamically create
     border-radius: 56px;
+    @include breakpoint(small only){
+      border-radius: 32px;
+    }
     .skill-tags-container{
       position: relative; // create a stacking context for child z-index values
       z-index: 2;
@@ -74,6 +82,9 @@
         // position: relative; // so z-index on modifiers (e.g. &__2) takes effect
         font-size: 3em;
         line-height: 1;
+        @include breakpoint(small only){
+          font-size: 1.5em;
+        }
         // height: var(--skill-height);
         // &__2{
         //   // TODO figure out how to make this work
@@ -147,6 +158,9 @@
       padding: 1rem;
       z-index: 2;
       position: relative;
+      @include breakpoint(small only){
+        position: initial;
+      }
       .hero-text{
         h2{
           font-family: $poppins;
@@ -185,6 +199,11 @@
         line-height: normal;
         transition: $run;
         cursor: pointer;
+        @include breakpoint(small only){
+          font-size: 1.5em;
+          width: 3rem;
+          top: 0.5rem;
+        }
         &:hover{
           rotate: 180deg;
         }
