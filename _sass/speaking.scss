@@ -7,6 +7,10 @@
     --photo-radius: 30px;
     --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
     --col-middle: 7;
+    @include breakpoint(small only){
+      grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+      --col-middle: 4;
+    }
     h3 {
       font-family: $space-grotesk;
       font-weight: $space-grotesk-bold;
@@ -65,6 +69,9 @@
     color: white;
     // font-family: $space-grotesk;
     padding-block: 5em;
+    @include breakpoint(small only){
+      padding-block: 2em;
+    }
 
     .the-grid {
       // display: grid;
@@ -74,6 +81,9 @@
       // --col-middle: 7;
       // --photo-radius: 30px;
       // --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+      @include breakpoint (small only){
+        grid-template-rows: repeat(55, [row-start] 1fr [row-end]);
+      }
 
       @keyframes image-anim {
         from {
@@ -131,7 +141,11 @@
         grid-row-start: row-start;
         grid-row-end: span 10;
         font-family: $space-grotesk;
-
+        @include breakpoint(small only){
+          grid-column-end: col-end; // TODO why is this not working?
+          grid-column-end: 7;
+          grid-row-end: span 12;
+        }
         h3 {
           margin-block-start: 0.5em;
         }
@@ -142,6 +156,12 @@
         grid-column-end: span 3;
         grid-row-start: row-start;
         grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-row-start: 14;
+          grid-row-end: span 6;
+          grid-column-start: 3;
+          grid-column-end: span 4;
+        }
 
         .image-wrapper {
           // TODO fix this gradient its not looking great
@@ -184,7 +204,10 @@
         grid-column-end: span 2;
         grid-row-start: 3;
         grid-row-end: span 2;
-
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 13;
+        }
         .logo-wrapper {
           padding: 1em;
           display: flex;
@@ -203,6 +226,10 @@
         grid-column-end: span 3;
         grid-row-start: 7;
         grid-row-end: span 3;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 19;
+        }
       }
 
       .stage-photo {
@@ -210,6 +237,11 @@
         grid-column-end: var(--col-middle);
         grid-row-start: 11;
         grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-column-start: 2;
+          grid-column-end: 7;
+          grid-row-start: 23;
+        }
 
         .image-wrapper {
           aspect-ratio: 3/2;
@@ -224,6 +256,12 @@
         display: grid;
         grid-template-columns: subgrid;
         grid-template-rows: repeat(4, [row-start] auto [row-end]);
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: span 6;
+          grid-row-start: 26;
+          grid-row-end: span 7;
+        }
 
         .text-wrapper {
           grid-column: 1 / -1; // Span all columns (full width)
@@ -241,6 +279,11 @@
         grid-row-start: 20;
         grid-row-end: span 5;
         aspect-ratio: 3/2;
+        @include breakpoint(small only){
+          grid-column-end: span 6;
+          grid-row-start: 34;
+          grid-row-end: span 4;
+        }
       }
 
       .beauty-beast {
@@ -249,6 +292,12 @@
         grid-row-start: 25;
         grid-row-end: span 4;
         aspect-ratio: 3/2;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: 5;
+          grid-row-start: 38;
+          grid-row-end: span 3;
+        }
       }
 
       .audience-comments {
@@ -258,6 +307,10 @@
         grid-row-end: span 5;
         display: grid;
         grid-template-columns: subgrid;
+        @include breakpoint(small only){
+          grid-row-start: 42;
+          grid-row-end: span 10;
+        }
 
         .text-wrapper {
           grid-column: 1 / -1; // To span all columns (full width)
@@ -300,6 +353,10 @@
         grid-row-end: -1;
         display: grid;
         grid-template-columns: subgrid;
+        @include breakpoint(small only){
+          grid-row-start: 50;
+          grid-row-end: span 6;
+        }
 
         .moscone {
           grid-column-start: 1;
@@ -313,6 +370,11 @@
           grid-column: 4 / 10;
           // TODO figure out how to remove the height
           height: 277.5px;
+          @include breakpoint(small only){
+            grid-row: 2/3;
+            grid-column: 1/7;
+            height: initial;
+          }
         }
 
         .text-cell {
@@ -326,6 +388,9 @@
           align-items: center;
           display: flex;
           padding: 1.5em;
+          @include breakpoint(small only){
+            grid-column: 4/-1;
+          }
 
           h3 {
             font-size: 1.75em;
@@ -342,6 +407,7 @@
       p {
         padding: 0;
         margin: 0;
+        text-wrap: pretty;
       }
     }
   }
