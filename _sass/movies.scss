@@ -7,14 +7,17 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
 
 .movies{
   margin-top: 15rem;
-  // @include breakpoint(small only) {
-  //   margin-top: 3rem;
-  //   font-size: 0.5em;
-  // }
+  --card-padding: 2rem;
+  @include breakpoint(small only) {
+    --card-padding: 1rem;
+  }
   h2{
     font-family: $montserrat;
     font-weight: $montserrat-black;
     text-transform: uppercase;
+    @include breakpoint(small only){
+      font-size: 2em;
+    }
   }
   .card1{
     border-radius: $card-border-radius;
@@ -22,7 +25,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     font-family: $big-shoulders;
     position: relative;
     color: $pure-white;
-    padding: $card-padding;
+    padding: var(--card-padding);
     .top-picks{
       .poster-box{
         // margin-inline-end: -1.5em; //create the left to right poster overlap effect
@@ -86,8 +89,10 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
         // height: 100%;
       }
       .poster-container{
-        // margin-block-start: -10em;
         padding-inline-start: $content-padding;
+        @include breakpoint(small only){
+          padding-inline-start: 0;
+        }
       }
       .poster{
         position: relative;
@@ -183,16 +188,18 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
   }
   .card2{
     background-color: #EFEFEF; //TODO make semantic
-    padding: $card-padding;
+    padding: var(--card-padding);
     border-radius: $card-border-radius;
     margin-block: 2em;
+    @include breakpoint(small only){
+      margin-block: 1em;
+    }
     .stats-container{
       font-size: 1.35em;
       // padding-inline: $content-padding;
       // text-shadow: 0 0 20px black;
       @include breakpoint(small only) {
-        font-size: 3em;
-        padding: 1em;
+        font-size: 1em;
       }
       .statistic{
         margin: 0.5em;
@@ -323,7 +330,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
   }
   .card3{
     background-color: #313131; //TODO make semantic
-    padding: $card-padding;
+    padding: var(--card-padding);
     border-radius: $card-border-radius;
     color: $pure-white;
     position: relative;
@@ -349,6 +356,9 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
       font-size: 50rem;
       line-height: 0.75;
       color: rgba($pure-white, 0.1);
+      @include breakpoint(small only){
+        font-size: 35rem;
+      }
       &:first-of-type{
         top: -5rem;
         left: -5rem;
@@ -360,6 +370,10 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     }
     .poster-stack-wrapper{
       margin-block-start: 4rem;
+      @include breakpoint(small only){
+        gap: 3rem 0;
+        padding-bottom: 0.625rem;
+      }
     }
     .poster-stack{
       position: relative;

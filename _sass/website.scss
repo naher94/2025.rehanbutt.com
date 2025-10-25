@@ -5,9 +5,10 @@ $surface-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.25);
   border: $surface-border;
   box-shadow: $surface-shadow;
 }
-$content-padding: 2rem;
 $web-orange: #FF8D3D;
 .website{
+  --content-padding: 2rem;
+
   background: linear-gradient(180deg,rgba($web-orange, 0.4) 0%, rgba($web-orange, 0.1) 100%);
   margin-top: 2rem;
   overflow-x: hidden;
@@ -15,6 +16,7 @@ $web-orange: #FF8D3D;
   @include breakpoint(small only){
     overflow-x: clip;
     overflow-y: visible;
+    --content-padding: 1rem;
   }
   p{
     padding: 0;
@@ -47,9 +49,9 @@ $web-orange: #FF8D3D;
   }
   .header{
     @include frosted-surface;
-    padding: $content-padding;
+    padding: var(--content-padding);
     margin-top: -1px;
-    border-radius: 0 0 calc($tile-radius + $content-padding) calc($tile-radius + $content-padding);
+    border-radius: 0 0 calc($tile-radius + var(--content-padding)) calc($tile-radius + var(--content-padding));
     .content{
       @include frosted-surface;
       padding: 0.5rem 1rem;
@@ -60,11 +62,14 @@ $web-orange: #FF8D3D;
     }
   }
   .main-content{
-    padding-inline: $content-padding;
-    padding-block: calc($content-padding * 2);
+    padding-inline: var(--content-padding);
+    padding-block: calc(var(--content-padding) * 2);
     .callouts{
       $icon-padding: 0.75rem;
       $icon-size: 2rem;
+      @include breakpoint(small only){
+        margin-block-start: 2rem;
+      }
       .feature-container{
         font-weight: $space-grotesk-bold;
         .icon{
@@ -89,13 +94,16 @@ $web-orange: #FF8D3D;
         background-color: $pure-black;
         border-radius: $pill-radius;
         margin-block: 0.5rem;
+        @include breakpoint(small only){
+          height: 2rem;
+        }
       }
     }
   }
   .footer{
     @include frosted-surface;
-    padding: $content-padding;
-    border-radius: calc($tile-radius + $content-padding) calc($tile-radius + $content-padding) 0 0;
+    padding: var(--content-padding);
+    border-radius: calc($tile-radius + var(--content-padding)) calc($tile-radius + var(--content-padding)) 0 0;
     .stat-card{
       @include frosted-surface;
       padding: 0.5rem 1rem;
