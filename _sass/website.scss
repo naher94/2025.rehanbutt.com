@@ -10,7 +10,7 @@ $web-orange: #FF8D3D;
 .website{
   background: linear-gradient(180deg,rgba($web-orange, 0.4) 0%, rgba($web-orange, 0.1) 100%);
   margin-top: 2rem;
-  overflow-x: clip;
+  overflow-x: hidden;
   font-family: $space-grotesk;
   @include breakpoint(small only){
     overflow-x: clip;
