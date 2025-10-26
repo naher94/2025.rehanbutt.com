@@ -414,16 +414,27 @@
 
   .speaking-siggraph {
     padding-block: 5em;
+    @include breakpoint(small only){
+      padding-block: 2em;
+    }
 
     .the-grid {
       // TODO could probs make it 7
       grid-template-rows: repeat(8, [row-start] 1fr [row-end]);
-
+      @include breakpoint(small only){
+        grid-template-rows: repeat(16, [row-start] 1fr [row-end]);
+      }
       .talk-intro {
         grid-column-start: 5;
         grid-column-end: span 8;
         grid-row-start: 4;
         grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: -1;
+          grid-row-start: 5;
+          grid-row-end: span 10;
+        }
       }
       .siggraph-logo{
         grid-column-start: span 2;
@@ -431,6 +442,9 @@
         grid-row-start: 1;
         grid-row-end: span 2;
         background: linear-gradient(180deg,rgba(106, 255, 232, 1) 0%, rgba(0, 205, 236, 1) 100%);
+        @include breakpoint(small only){
+          grid-column-end: 3;
+        }
       }
       .sketch-mockup{
         grid-column-start: col-start;
@@ -438,6 +452,11 @@
         grid-row-start: 3;
         grid-row-end: span 3;
         aspect-ratio: 500/333;
+        @include breakpoint(small only){
+          grid-column-start: 3;
+          grid-column-end: 7;
+          grid-row-start: 2;
+        }
       }
       .qa{
         grid-column-start: 5;
@@ -446,6 +465,11 @@
         grid-row-end: 4;
         aspect-ratio: 1462/688;
         align-self: end;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 14;
+          grid-row-end: span 3;
+        }
       }
       .tag-wrapper{
         .tag{
