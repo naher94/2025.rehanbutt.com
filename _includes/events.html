@@ -1,44 +1,23 @@
 <section class="events" id="events" aria-label="Events Section">
   <div class="grid-container">
-    <div class="content-area">
+    <div class="content-area grid-x">
       {% assign events_order = site.events | sort: 'date' %}
-      <div class="logo-container logo-slider">
-        <div class="slide-track">
-          {% for event in events_order %}
-            <div class="grid-x align-bottom e-badge e-badge__{{event.event-name | replace: ' ', '-' | downcase}}">
-              <div class="cutout"></div>
-              <div class="lanyard"></div>
-              {{event.content}}
-            </div>
-          {% endfor %}
-          {% for event in events_order %}
-            <div class="grid-x align-bottom e-badge e-badge__{{event.event-name | replace: ' ', '-' | downcase}}" aria-hidden="true">
-              <div class="cutout"></div>
-              <div class="lanyard"></div>
-              {{event.content}}
-            </div>
-          {% endfor %}
+      <div class="bubbles-left cell medium-6">
+        left bubbles
+      </div>
+      <div class="text-container cell">
+        <div class="header-container">
+          <h2>Industry events</h2>
+        </div>
+        <div class="description-container">
+          <!-- TODO update this copy -->
+          <p>Got out to more industry events this year, every single one brought fresh inspiration.</p>
         </div>
       </div>
-      <div class="grid-x text-container align-justify align-bottom">
-        <div class="cell medium-shrink">
-          <h2><span>Knowledge.</span><span>Knowledge.</span>Knowledge.</h2>
-        </div>
-        <div class="cell medium-6 right-section grid-x align-right">
-          {% capture collection-cta-content %}
-          <div class="collection-cta grid-x cell medium-shrink align-middle align-justify">
-            <div class="cell medium-shrink small-10 copy-area">
-              Explore my conference recommendations
-            </div>
-            <div class="cell shrink">
-              {% include_relative img/events/arrow-right.svg %}
-            </div>
-          </div>
-          {% endcapture %}
-          {%- include external-link.html link="https://rehanbutt.com/resources/collection/conferences" content=collection-cta-content css-class="" -%}
-          <p>Participated in several industry events this year, gaining valuable insights and learning new things along the way.</p>
-        </div>
+      <div class="bubbles-right cell medium-6"">
+        right bubbles
       </div>
+      {%- include external-link.html link="https://rehanbutt.com/resources/collection/conferences" content=collection-cta-content css-class="" -%}
     </div>
   </div>
 </section>
