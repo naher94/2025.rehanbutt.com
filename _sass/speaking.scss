@@ -10,6 +10,7 @@
     @include breakpoint(small only){
       grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
       --col-middle: 4;
+      --photo-radius: 20px;
     }
     h3 {
       font-family: $space-grotesk;
@@ -482,8 +483,14 @@
     background: linear-gradient(to bottom right, #1D2127, #373C43);
     color: white;
     padding-block: 5em;
+    @include breakpoint(small only){
+      padding-block: 2em;
+    }
     .the-grid {
       grid-template-rows: repeat(16, [row-start] 1fr [row-end]);
+      @include breakpoint(small only){
+        grid-template-rows: repeat(24, [row-start] 1fr [row-end]);
+      }
       .talk-intro{
         grid-column-start: var(--col-middle);
         // TODO figure out why this is not working
@@ -493,6 +500,11 @@
         grid-row-end: span 4;
         // grid-row-start: 2;
         // grid-row-end: span 3;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: -1;
+          grid-row-end: span 6;
+        }
       }
       .dds-logo{
         padding: 2em;
@@ -510,6 +522,9 @@
         grid-column-end: span 3;
         grid-row-start: 2;
         grid-row-end: span 3;
+        @include breakpoint(small only){
+          align-self: end;
+        }
       }
       .disney-d-logo{
         padding: 1.5em;
@@ -518,6 +533,11 @@
         grid-column-end: var(--col-middle);
         grid-row-start: 1;
         grid-row-end: span 2;
+        @include breakpoint(small only){
+          grid-column-start: 2;
+          grid-column-end: span 2;
+          align-self: end;
+        }
       }
       .tag-wrapper{
         grid-column-start: span 3;
@@ -528,6 +548,11 @@
         justify-self: end;
         text-align: right;
         text-wrap: pretty;
+        @include breakpoint(small only){
+          margin-top: 0;
+          grid-column-end: 4;
+          grid-row-start: 3;
+        }
       }
       .duo-smile{
         grid-column-start: col-start;
@@ -535,6 +560,10 @@
         grid-row-start: 3;
         grid-row-end: span 5;
         aspect-ratio: 1400/1048;
+        @include breakpoint(small only){
+          grid-column-end: -1;
+          grid-row-start: 11;
+        }
       }
       .thank-you{
         grid-column-start: col-start;
@@ -542,6 +571,11 @@
         grid-row-start: 11;
         grid-row-end: span 3;
         text-align: right;
+        @include breakpoint(small only){
+          grid-column-end: 7;
+          grid-row-start: 16;
+          grid-row-end: span 5;
+        }
       }
       .dss-bb{
         grid-column-start: 6;
@@ -550,6 +584,12 @@
         grid-row-end: span 4;
         aspect-ratio: 1400/933;
         align-self: end;
+        @include breakpoint(small only){
+          grid-column-start: 3;
+          grid-column-end: 6;
+          grid-row-start: 21;
+          grid-row-end: span 2;
+        }
       }
       .dss-me{
         grid-column-start: col-start;
@@ -565,12 +605,25 @@
           align-self: end;
           // height: 100%;
         }
+        @include breakpoint(small only){
+          grid-column-end: 4;
+          grid-row-start: 23;
+          grid-row-end: span 3;
+          aspect-ratio: 3/2;
+          height: initial;
+        }
       }
       .dss-team{
         grid-column-start: span 3;
         grid-column-end: 13;
         grid-row-start: 14;
         grid-row-end: span 3;
+        @include breakpoint(small only){
+          grid-row-start: 23;
+          grid-row-end: span 3;
+          grid-column-start: span 2;
+          grid-column-end: -1;
+        }
       }
     }
   }
