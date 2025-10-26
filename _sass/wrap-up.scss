@@ -20,6 +20,10 @@
     transform: translate(-50%, -50%); //centering vertically and horizontally
     background-color: $pure-white;
     rotate: 2deg;
+    @include breakpoint(small only){
+      padding: 1rem;
+      width: 60%;
+    }
     h2{
       font-family: $poppins;
       font-weight: $poppins-bold;
@@ -27,11 +31,11 @@
     .share-area{
       align-self: flex-end;
       --share-item-spacing: 0.25em;
+      @include breakpoint(small only){
+        --share-item-spacing: 0.1em;
+      }
       .words{
         font-size: 1em;
-        @include breakpoint(small only){
-          text-align: center;
-        }
         p{
           line-height: 1.2;
         }
@@ -74,6 +78,9 @@
         padding: var(--share-item-spacing);
         color: $pure-black;
         width: 2.5em;
+        @include breakpoint(small only){
+          width: 1.25em;
+        }
         svg{
           width: 100%;
           path{
@@ -94,6 +101,9 @@
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    @include breakpoint(small only){
+      grid-template-columns: repeat(4);
+    }
   }
   .thumbnail {
     position: relative;
