@@ -587,8 +587,8 @@
         @include breakpoint(small only){
           grid-column-start: 3;
           grid-column-end: 6;
-          grid-row-start: 21;
-          grid-row-end: span 2;
+          grid-row-start: span 3;
+          grid-row-end: 23;
         }
       }
       .dss-me{
@@ -610,7 +610,7 @@
           grid-row-start: 23;
           grid-row-end: span 3;
           aspect-ratio: 3/2;
-          height: initial;
+          height: 118px;
         }
       }
       .dss-team{
