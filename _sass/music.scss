@@ -40,6 +40,9 @@
   .song-container{
     width: 20%;
     align-self: flex-start;
+    @include breakpoint(small only){
+      width: 45%;
+    }
     &:nth-of-type(even){
       align-self: flex-end;
       .text-container{
