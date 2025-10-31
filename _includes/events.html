@@ -1,11 +1,8 @@
 <section class="events" id="events" aria-label="Events Section">
   <div class="grid-container">
-    <div class="content-area grid-x">
+    <div class="content-area">
       {% assign events_order = site.events | sort: 'date' %}
-      <div class="bubbles-left cell medium-6">
-        left bubbles
-      </div>
-      <div class="text-container cell">
+      <div class="text-container">
         <div class="header-container">
           <h2>Industry events</h2>
         </div>
@@ -14,8 +11,15 @@
           <p>Got out to more industry events this year, every single one brought fresh inspiration.</p>
         </div>
       </div>
-      <div class="bubbles-right cell medium-6"">
-        right bubbles
+      <div class="bubbles-left">
+        <div class="bubble bubble__large">Config</div>
+        <div class="bubble bubble__medium">medium</div>
+        <div class="bubble bubble__small">small</div>
+      </div>
+      <div class="bubbles-right">
+        <div class="bubble bubble__large">large</div>
+        <div class="bubble bubble__medium">medium</div>
+        <div class="bubble bubble__small">small</div>
       </div>
       {%- include external-link.html link="https://rehanbutt.com/resources/collection/conferences" content=collection-cta-content css-class="" -%}
     </div>
