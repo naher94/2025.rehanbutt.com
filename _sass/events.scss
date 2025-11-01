@@ -30,15 +30,15 @@
       .bubble{
         &__large{
           left: -3rem;
-          // TODO update this gradient
-          background: radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1/1) 0%, color(display-p3 0.529 0.31 1/0) 100%), radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216/1) 0%, color(display-p3 1 0.447 0.216/0) 100%), radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443/1) 0%, color(display-p3 0.141 0.796 0.443/0) 100%), color(display-p3 0 0.714 1);
-          background: radial-gradient(circle farthest-corner at 100% 50%, #FF7237ff 0%, #ff743800 71%), radial-gradient(circle farthest-corner at 47% 0%, #874FFFff 18%, #8952ff00 74%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 4%, #ffbf0000 55%), radial-gradient(circle farthest-corner at 14% 79%, #24CB71ff 0%, #25cb7200 100%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
-          background: radial-gradient(circle farthest-corner at 84% 90% in oklch shorter hue, #FF7237ff 0%, #ff743800 71%), radial-gradient(circle farthest-corner at 59% 0%, #874FFFff 27%, #8952ff00 80%), radial-gradient(circle farthest-corner at 14% 79%, #24CB71ff 0%, #25cb7200 100%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
-          background: radial-gradient(circle farthest-corner at 100% 25% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 85% 96%, #874FFFff 0%, #8952ff00 63%), radial-gradient(circle farthest-corner at 14% 79%, #24CB71ff 0%, #25cb7200 59%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
-          background: radial-gradient(circle farthest-corner at 100% 25% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 64% 86%, #874FFFff 0%, #8952ff00 63%), radial-gradient(circle farthest-corner at 19% 76%, #24CB71ff 0%, #25cb7200 59%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
-          background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 65% 5%, #874FFFff 7%, #8952ff00 63%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(circle farthest-corner at 19% 76%, #24CB71ff 0%, #25cb7200 59%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
-          background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 67% 12%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 19% 76%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
-          background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 78% 17%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 24% 94%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
+          overflow: hidden;
+          &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: saturate(1.15);
+            z-index: -1;
+            background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 78% 17%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 24% 94%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
+            }
         }
         &__medium{
           right: 5rem;
@@ -68,19 +68,19 @@
           top: 25%;
           overflow: hidden;
           padding: 3.75rem;
-            &::before{
-              content: "";
-              position: absolute;
-              inset: 0;
-              filter: saturate(1.15);
-              z-index: -1;
-              background:
-                radial-gradient(circle at 30% 90%, rgb(255, 208, 67) 0%, rgba(255, 221, 122, 0) 70%),
-                radial-gradient(circle at 20% 30%, rgb(101, 255, 216) 0.42%,rgba(158, 240, 220, 0) 60%),   
-                radial-gradient(circle at 35% 20%, rgb(106, 205, 255), rgba(140, 216, 255, 0) 60%),
-                radial-gradient(circle at 60% 35%, rgb(144, 117, 255), rgba(176, 156, 255, 0) 60%),
-                radial-gradient(circle at 75% 55%, rgb(240, 44, 230), rgba(214, 124, 255, 0) 70%),
-                radial-gradient(circle at 60% 80%, rgb(255, 94, 177) 0%, rgba(255, 136, 197, 0) 70%);
+          &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: saturate(1.15);
+            z-index: -1;
+            background:
+              radial-gradient(circle at 30% 90%, rgb(255, 208, 67) 0%, rgba(255, 221, 122, 0) 70%),
+              radial-gradient(circle at 20% 30%, rgb(101, 255, 216) 0.42%,rgba(158, 240, 220, 0) 60%),   
+              radial-gradient(circle at 35% 20%, rgb(106, 205, 255), rgba(140, 216, 255, 0) 60%),
+              radial-gradient(circle at 60% 35%, rgb(144, 117, 255), rgba(176, 156, 255, 0) 60%),
+              radial-gradient(circle at 75% 55%, rgb(240, 44, 230), rgba(214, 124, 255, 0) 70%),
+              radial-gradient(circle at 60% 80%, rgb(255, 94, 177) 0%, rgba(255, 136, 197, 0) 70%);
             }
           }
         &__medium{
