@@ -20,6 +20,7 @@
       position: relative;
       grid-row: 1/1;
       align-self: center;
+      margin-block-start: -2rem;
     }
     .bubbles-left{
       grid-column-start: col-start;
@@ -29,6 +30,7 @@
       .bubble{
         &__large{
           left: -3rem;
+          background: radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1/1) 0%, color(display-p3 0.529 0.31 1/0) 100%), radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216/1) 0%, color(display-p3 1 0.447 0.216/0) 100%), radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443/1) 0%, color(display-p3 0.141 0.796 0.443/0) 100%), color(display-p3 0 0.714 1);
         }
         &__medium{
           right: 5rem;
@@ -37,6 +39,9 @@
         &__small{
           bottom: 3rem;
           left: 37%;
+          background: linear-gradient(215deg, rgba(221, 233, 255, 0) 55%, #dde9ff),
+                      linear-gradient(to bottom right, #ef4f85 30%, #a98be6 70%);
+
         }
       }
     }
@@ -53,10 +58,21 @@
         &__medium{
           bottom: -4rem;
           left: 15%;
+          background: radial-gradient(circle at 5% 50%, rgb(0, 205, 236) 10%, rgb(0, 0, 0) 100%);
+          svg{
+            fill: white;
+          }
         }
         &__small{
           top: -1rem;
           left: 12rem;
+          padding: 2.25rem;
+          background: linear-gradient(to bottom right in oklch, #376cc9,  #f9b116 90%);
+          background: radial-gradient(circle at 25% 40%,rgba(156, 81, 221, 1) 0%, rgba(255, 190, 0, 1) 100%);
+          background: radial-gradient(circle at 25% 40% in oklch, #f9b116, #376cc9 90%);
+          background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 100%);
+          background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 160%);
+          // TODO remove the unused background lines
         }
       }
     }
@@ -68,6 +84,7 @@
       align-items: center;
       justify-content: center;
       position: absolute;
+      padding: 1.5rem;
       animation: float 10s ease-in-out infinite;
       box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.25),
                   0px 1px 5px -5px rgba(0, 0, 0, 0.25);
