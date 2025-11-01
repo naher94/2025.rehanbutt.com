@@ -91,6 +91,9 @@ $semantic-colors:(
     music-text-bg: rgba($pure-white, 0.5),
     music-total-bg: rgba($pure-white, 0.6),
     music-total-border: rgba($pure-black, 0.1),
+    fave-border: #ccc,
+    skills-accent: #e5e5e5,
+    wrap-up-card-bg: $pure-white,
   ),
   dark:(
     page-bg: $navy-black-d3,
@@ -102,6 +105,9 @@ $semantic-colors:(
     music-text-bg: rgba($pure-white, 0.15),
     music-total-bg: rgba($navy-black, 0.6),
     music-total-border: rgba($pure-white, 0.2),
+    fave-border: $navy-black-d9,
+    skills-accent: $navy-black-l2,
+    wrap-up-card-bg: $navy-black,
   ),
 );
 

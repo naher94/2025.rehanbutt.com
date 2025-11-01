@@ -12,7 +12,7 @@
   --row-color-3: #47BE16;
   --row-color-4: #E19B23;
   --row-color-5: #23B6E1;
-  --accent-color: #E5E5E5;
+  --accent-color: #{semantic-color(skills-accent)};
 
   @include breakpoint(small only) {
     margin-block: 3rem;

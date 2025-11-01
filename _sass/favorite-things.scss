@@ -12,7 +12,7 @@
 
 .favorite-things{
   margin-block-start: 5em;
-  color: $pure-black;
+  color: semantic-color(text);
   @include breakpoint(small only){
     // font-size: 0.5em;
   }
@@ -21,8 +21,8 @@
     grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
     grid-template-columns: repeat(10, [col-start] 1fr [col-end]);
     gap: 0.25em;
-    background-color: #ccc;
-    outline: solid 0.25em #ccc;
+    background-color: semantic-color(fave-border);
+    outline: solid 0.25em semantic-color(fave-border);
     .grid-cell{
       background-color: semantic-color(page-bg);
       // If the same element also has the `item-container` class, remove the background

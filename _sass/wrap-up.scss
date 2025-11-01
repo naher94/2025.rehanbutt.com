@@ -18,7 +18,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); //centering vertically and horizontally
-    background-color: $pure-white;
+    background-color: semantic-color(wrap-up-card-bg);
     rotate: 2deg;
     @include breakpoint(small only){
       padding: 1rem;
