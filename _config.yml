@@ -27,8 +27,6 @@ plugins: [jekyll-sitemap]
 collections:
   songs:
     output: false
-  events:
-    output: false
   fave-things:
     output: false
   travel:

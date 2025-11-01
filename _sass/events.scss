@@ -7,18 +7,133 @@
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
+  .content-area{
+    display: grid;
+    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(1, 1fr);
+    --col-middle: 4;
+    height: 40rem;
+    .text-container{
+      grid-column-start: 2;
+      grid-column-end: 6;
+      z-index: 2;
+      position: relative;
+      grid-row: 1/1;
+      align-self: center;
+      margin-block-start: -2rem;
+    }
+    .bubbles-left{
+      grid-column-start: col-start;
+      grid-column-end: 4;
+      grid-row: 1/1;
+      position: relative;
+      .bubble{
+        &__large{
+          left: -3rem;
+          background: radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1/1) 0%, color(display-p3 0.529 0.31 1/0) 100%), radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216/1) 0%, color(display-p3 1 0.447 0.216/0) 100%), radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443/1) 0%, color(display-p3 0.141 0.796 0.443/0) 100%), color(display-p3 0 0.714 1);
+        }
+        &__medium{
+          right: 5rem;
+          top: -10rem;
+        }
+        &__small{
+          bottom: 3rem;
+          left: 37%;
+          background: linear-gradient(215deg, rgba(221, 233, 255, 0) 55%, #dde9ff),
+                      linear-gradient(to bottom right, #ef4f85 30%, #a98be6 70%);
+
+        }
+      }
+    }
+    .bubbles-right{
+      grid-column-start: 4;
+      grid-column-end: 7;
+      grid-row: 1/1;
+      position: relative;
+      .bubble{
+        &__large{
+          right: -3rem;
+          top: 25%;
+        }
+        &__medium{
+          bottom: -4rem;
+          left: 15%;
+          background: radial-gradient(circle at 5% 50%, rgb(0, 205, 236) 10%, rgb(0, 0, 0) 100%);
+          svg{
+            fill: white;
+          }
+        }
+        &__small{
+          top: -1rem;
+          left: 12rem;
+          padding: 2.25rem;
+          background: linear-gradient(to bottom right in oklch, #376cc9,  #f9b116 90%);
+          background: radial-gradient(circle at 25% 40%,rgba(156, 81, 221, 1) 0%, rgba(255, 190, 0, 1) 100%);
+          background: radial-gradient(circle at 25% 40% in oklch, #f9b116, #376cc9 90%);
+          background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 100%);
+          background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 160%);
+          // TODO remove the unused background lines
+        }
+      }
+    }
+    .bubble{
+      border-radius: $pill-radius;
+      background-color: aquamarine;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      padding: 1.5rem;
+      animation: float 10s ease-in-out infinite;
+      box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.25),
+                  0px 1px 5px -5px rgba(0, 0, 0, 0.25);
+      &__large{
+        width: 20rem;
+      }
+      &__medium{
+        width: 14rem;
+        animation-delay: 3s;
+      }
+      &__small{
+        width: 10rem;
+        animation-delay: 5s;
+      }
+    }
+  }
   .text-container{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     .header-container{
       display: inline-block;
-      background-color: red;
+      background-color: rgba($pure-white, 0.25);
+      border: solid 5px $pure-white;
       border-radius: $pill-radius;
-      padding: 1em 3em;
+      backdrop-filter: blur(10px);
+      padding: 1em 2.75em;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
     }
     h2{
       font-family: $poppins;
       font-weight: $poppins-extrabold;
       margin-bottom: 0;
       font-size: 4em;
+    }
+    .description-container{
+      background-color: rgba($pure-white, 0.25);
+      border: solid 5px $pure-white;
+      border-radius: $pill-radius;
+      backdrop-filter: blur(10px);
+      padding: 0.5em 1em;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+      width: 30rem;
+      margin-block-start: -1.5rem;
+      p{
+        margin: 0;
+        line-height: 1.25;
+      }
     }
   }
   a {
@@ -60,5 +175,14 @@
       display: flex;
     }
   }
-
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+      rotate: 0deg;
+    }
+    50% {
+      transform: translateY(-15px);
+      rotate: -10deg;
+    }
+  }
 }
