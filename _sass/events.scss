@@ -54,7 +54,23 @@
         &__large{
           right: -3rem;
           top: 25%;
-        }
+          overflow: hidden;
+          padding: 3.5rem;
+            &::before{
+              content: "";
+              position: absolute;
+              inset: 0;
+              filter: saturate(1.15);
+              z-index: -1;
+              background:
+                radial-gradient(circle at 30% 90%, rgb(255, 208, 67) 0%, rgba(255, 221, 122, 0) 70%),
+                radial-gradient(circle at 20% 30%, rgb(101, 255, 216) 0.42%,rgba(158, 240, 220, 0) 60%),   
+                radial-gradient(circle at 35% 20%, rgb(106, 205, 255), rgba(140, 216, 255, 0) 60%),
+                radial-gradient(circle at 60% 35%, rgb(144, 117, 255), rgba(176, 156, 255, 0) 60%),
+                radial-gradient(circle at 75% 55%, rgb(240, 44, 230), rgba(214, 124, 255, 0) 70%),
+                radial-gradient(circle at 60% 80%, rgb(255, 94, 177) 0%, rgba(255, 136, 197, 0) 70%);
+            }
+          }
         &__medium{
           bottom: -4rem;
           left: 15%;
