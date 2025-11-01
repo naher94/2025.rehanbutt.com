@@ -1,7 +1,7 @@
 .events {
   margin-top: 10rem;
   margin-block-end: 8rem;
-  color: semantic-colors(events-h2);
+  color: semantic-color(events-h2);
   font-family: $poppins;
   @include breakpoint(small only) {
     margin-top: 4rem;

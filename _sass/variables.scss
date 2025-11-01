@@ -88,6 +88,9 @@ $semantic-colors:(
     events-bg: #F1F1F1,
     events-h2: $navy-black,
     film-log-h2: #313131,
+    music-text-bg: rgba($pure-white, 0.5),
+    music-total-bg: rgba($pure-white, 0.6),
+    music-total-border: rgba($pure-black, 0.1),
   ),
   dark:(
     page-bg: $navy-black-d3,
@@ -96,6 +99,9 @@ $semantic-colors:(
     events-bg: $navy-black,
     events-h2: $pure-white,
     film-log-h2: $pure-white,
+    music-text-bg: rgba($pure-white, 0.15),
+    music-total-bg: rgba($navy-black, 0.6),
+    music-total-border: rgba($pure-white, 0.2),
   ),
 );
 

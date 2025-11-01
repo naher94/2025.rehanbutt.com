@@ -9,11 +9,11 @@
     margin-bottom: 0;
   }
   .total-listen{
-    background-color: rgba($pure-white, 0.6);
+    background-color: semantic-color(music-total-bg);
     backdrop-filter: blur(10px);
     padding-inline: 1em;
     padding-block: 0.25em;
-    border: 2px solid rgba($pure-black, 0.1);
+    border: 2px solid semantic-color(music-total-border);
     border-radius: $pill-radius;
     display: inline-block;
     position: absolute;
@@ -82,7 +82,7 @@
       }
     }
     .text-container{
-      background-color: rgba(#ffffff, 0.5);
+      background-color: semantic-color(music-text-bg);
       padding: 0.5em;
       border-radius: 15px;
       box-shadow: $centered-shadow rgba($pure-black, 0.25);
@@ -101,6 +101,13 @@
       }
       .play-count{
         font-weight: $poppins-light;
+      }
+      svg{
+        g{
+          g{
+            fill: semantic-color(text);
+          }
+        }
       }
     }
     .cd-case {
