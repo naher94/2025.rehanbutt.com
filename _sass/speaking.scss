@@ -508,22 +508,29 @@
       }
       .dds-logo{
         padding: 2em;
-        background:
-          radial-gradient(circle at 75% 0, rgba(#874FFF, 1) 0%, rgba(#874FFF, 0) 100%),
-          radial-gradient(circle at 100% 60%, rgba(#FF7237, 1) 0%, rgba(#FF7237, 0) 100%),
-          radial-gradient(circle at 10% 90%, rgba(#24CB71, 1) 0%, rgba(#24CB71, 0) 100%),
-          #00B6FF;
-        background:
-          radial-gradient(circle at 75% 0, color(display-p3 0.529 0.31 1 / 1) 0%, color(display-p3 0.529 0.31 1 / 0) 100%),
-          radial-gradient(circle at 100% 60%, color(display-p3 1 0.447 0.216 / 1) 0%, color(display-p3 1 0.447 0.216 / 0) 100%),
-          radial-gradient(circle at 10% 90%, color(display-p3 0.141 0.796 0.443 / 1) 0%, color(display-p3 0.141 0.796 0.443 / 0) 100%),
-          color(display-p3 0 0.714 1);
         grid-column-start: var(--col-middle);
         grid-column-end: span 3;
         grid-row-start: 2;
         grid-row-end: span 3;
         @include breakpoint(small only){
           align-self: end;
+        }
+        position: relative;
+        &::before{
+          content: "";
+          position: absolute;
+          inset: 0;
+          filter: saturate(1.15);
+          background:
+            radial-gradient(circle at 15% 90%, rgb(255, 208, 67) 0%, rgba(255, 221, 122, 0) 70%),
+            radial-gradient(circle at 20% 30%, rgb(101, 255, 216) 0.42%,rgba(158, 240, 220, 0) 60%),   
+            radial-gradient(circle at 35% 20%, rgb(106, 205, 255), rgba(140, 216, 255, 0) 60%),
+            radial-gradient(circle at 75% 10%, rgb(144, 117, 255), rgba(176, 156, 255, 0) 60%),
+            radial-gradient(circle at 75% 55%, rgb(240, 44, 230), rgba(214, 124, 255, 0) 70%),
+            radial-gradient(circle at 90% 80%, rgb(255, 94, 177) 0%, rgba(255, 136, 197, 0) 70%);
+        }
+        svg{
+          z-index: 2;
         }
       }
       .disney-d-logo{
