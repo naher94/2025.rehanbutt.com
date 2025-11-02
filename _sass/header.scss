@@ -1,21 +1,33 @@
 header{
   margin-block-start: 5rem;
   margin-block-end: 5rem;
+  --foundation-padding-x: 0.9375rem;
+  --foundation-padding-y: 0.625rem;
+
   .grid-container{
     max-width: 100rem;
+    background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
+    @include breakpoint(small only){
+      background: radial-gradient(circle at 50% 0%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
+    }
   }
   .number-container, .content-container, .title-container{
     border-radius: $tile-radius-medium;
-    background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
+    outline: solid semantic-color(page-bg) calc(var(--foundation-padding-x) * 2);
+    // background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
     padding: 1.5rem;
     color: $pure-white;
+    @include breakpoint(small only){
+      outline: solid semantic-color(page-bg) calc(var(--foundation-padding-y) * 2);
+      border-radius: $tile-radius;
+    }
   }
   .number-container{
     padding: 0;
     overflow: hidden;
     aspect-ratio: 424 / 464; 
     @include breakpoint (large up){
-      height: 30rem;
+      height: 30rem !important;
     }
     h1{
       display: none;
@@ -24,6 +36,9 @@ header{
       aspect-ratio: 424/464;
       width: 100%;
       fill: $pure-white;
+    }
+    @include breakpoint(small only){
+      order: 2;
     }
   }
   .content-container{
@@ -71,6 +86,9 @@ header{
         }
       }
     }
+    @include breakpoint(small only){
+      order: 3;
+    }
   }
   .title-container{
     display: flex;
@@ -99,6 +117,9 @@ header{
       font-size: 1.5rem;
       line-height: 1.2;
       width: 6rem;
+    }
+    @include breakpoint(small only){
+      order: 1;
     }
   }
 }
