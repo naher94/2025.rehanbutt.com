@@ -1,6 +1,9 @@
 header{
   margin-block-start: 5rem;
   margin-block-end: 5rem;
+  .grid-container{
+    max-width: 100rem;
+  }
   .number-container, .content-container, .title-container{
     border-radius: $tile-radius-medium;
     background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
@@ -17,10 +20,9 @@ header{
       display: none;
     }
     svg{
-      width: 100%;
-      // height: 100%;
-      fill: $pure-white;
       aspect-ratio: 424/464;
+      width: 100%;
+      fill: $pure-white;
     }
   }
   .content-container{
@@ -28,6 +30,9 @@ header{
     overflow: hidden;
     .description, .section-link{
       padding: 1.5rem;
+    }
+    .nav-wrapper{
+      border-top: solid 2px semantic-color(page-bg);
     }
     a{
       color: $pure-white;
@@ -37,18 +42,29 @@ header{
       font-weight: $poppins-bold;
       text-transform: uppercase;
       padding-block: 0.5em;
-      border-top: solid 2px semantic-color(page-bg);
       transition: $sprint;
       font-size: 1rem;
+      writing-mode: sideways-lr;
+      align-items: center;
+      &:not(:first-of-type){
+        border-left: solid 2px semantic-color(page-bg);
+      }
       svg{
-          fill: $pure-white;
-        }
+        fill: $pure-white;
+        transition: $sprint;
+      }
       &:hover{
         background-color: rgba($pure-black, 0.1);
-        letter-spacing: 2rem;
+        // letter-spacing: 0.5rem;
+        svg{
+          rotate: -10deg;
+          scale: 1.1;
+        }
       }
       .icon-wrapper{
         height: 1lh;
+        width: 1lh;
+        margin-bottom: 1em;
         svg{
           height: 1lh;
         }

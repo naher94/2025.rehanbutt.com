@@ -1,3 +1,4 @@
+<!-- TODO probs need a special layout for tablet that is different from desktop and mobile -->
 <header>
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
@@ -5,27 +6,28 @@
         <h1>25</h1>
         {% include_relative img/header/25.svg %}
       </div>
-      <div class="cell medium-auto content-container">
-        <div class="description">
+      <div class="grid-x cell medium-auto content-container">
+        <div class="description cell">
           {{site.description}}
         </div>
         <!-- TODO make sure this is in the right order -->
         <!-- name, icon-file, html-file-name -->
+        <div class="nav-wrapper cell grid-x">
         {% assign section-order = 
           "(movies|movie|movies),
           (music|music|music),
           (speaking|speaking|speaking),
           (speaking|speaking|speaking),
-          (speaking|speaking|speaking),
-          (speaking|speaking|speaking),
-          (speaking|speaking|speaking),
-          (speaking|speaking|speaking),
+          (favorites|speaking|speaking),
+          (Film Credit|speaking|speaking),
+          (events|speaking|speaking),
+          (favorite things|speaking|speaking),
           (speaking|speaking|speaking),
           (travel|plane|travel)"
           | remove: "(" | remove: ")" | split: ',' %}
         {%- for section in section-order -%}
         {% assign each-section = section | split: '|' %}
-        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify">
+        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify cell auto">
           <div class="cell shrink">{{each-section[0]}}</div>
           <div class="cell shrink icon-wrapper">
             {% assign icon_path = "img/header/" | append: each-section[1] | append: ".svg" %}
@@ -33,6 +35,7 @@
           </div>
         </a>
         {%- endfor -%}
+        </div>
       </div>
       <div class="cell medium-shrink title-container">
         <div class="logo cell shrink">
