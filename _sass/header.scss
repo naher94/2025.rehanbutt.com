@@ -92,9 +92,6 @@ header{
   }
   .title-container{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: right;
     .logo{
       #rehan-logo-header{
         height: 30px;
@@ -109,6 +106,9 @@ header{
           height: 22px;
         }
       }
+      @include breakpoint(small only){
+        order: 2;
+      }
     }
     .subtitle{
       font-family: $poppins;
@@ -116,10 +116,20 @@ header{
       text-transform: uppercase;
       font-size: 1.5rem;
       line-height: 1.2;
-      width: 6rem;
+      @include breakpoint(medium up){
+        width: 6rem;
+      }
+      @include breakpoint(small only){
+        order: 1;
+      }
     }
     @include breakpoint(small only){
       order: 1;
+    }
+    @include breakpoint(medium up){
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
     }
   }
 }
