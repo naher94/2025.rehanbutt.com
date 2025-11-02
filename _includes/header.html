@@ -6,13 +6,13 @@
         <h1>25</h1>
         {% include_relative img/header/25.svg %}
       </div>
-      <div class="grid-x cell medium-auto content-container">
+      <div class="grid-y cell medium-auto content-container">
         <div class="description cell">
           {{site.description}}
         </div>
         <!-- TODO make sure this is in the right order -->
         <!-- name, icon-file, html-file-name -->
-        <div class="nav-wrapper cell grid-x">
+        <div class="nav-wrapper cell medium-auto grid-x">
         {% assign section-order = 
           "(movies|movie|movies),
           (music|music|music),
