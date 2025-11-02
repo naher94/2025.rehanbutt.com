@@ -37,10 +37,11 @@ header{
       font-weight: $poppins-bold;
       text-transform: uppercase;
       padding-block: 0.5em;
-      border-top: solid 4px semantic-color(page-bg);
+      border-top: solid 2px semantic-color(page-bg);
       transition: $sprint;
+      font-size: 1rem;
       svg{
-          fill: white;
+          fill: $pure-white;
         }
       &:hover{
         background-color: rgba($pure-black, 0.1);

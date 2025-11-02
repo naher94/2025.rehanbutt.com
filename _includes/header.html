@@ -10,7 +10,19 @@
           {{site.description}}
         </div>
         <!-- TODO make sure this is in the right order -->
-        {% assign section-order = "(movies|movie|movies),(music|music|music),(travel|plane|travel)" | remove: "(" | remove: ")" | split: ',' %}
+        <!-- name, icon-file, html-file-name -->
+        {% assign section-order = 
+          "(movies|movie|movies),
+          (music|music|music),
+          (speaking|speaking|speaking),
+          (speaking|speaking|speaking),
+          (speaking|speaking|speaking),
+          (speaking|speaking|speaking),
+          (speaking|speaking|speaking),
+          (speaking|speaking|speaking),
+          (speaking|speaking|speaking),
+          (travel|plane|travel)"
+          | remove: "(" | remove: ")" | split: ',' %}
         {%- for section in section-order -%}
         {% assign each-section = section | split: '|' %}
         <a href="#{{each-section[2]}}" class="section-link grid-x align-justify">
