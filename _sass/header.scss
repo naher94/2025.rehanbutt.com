@@ -1,18 +1,62 @@
 header{
-
-  .logo{
-    #rehan-logo-header{
-      height: 30px;
-      transition: $sprint;
-      &:hover{
-        transform: scale(1.1);
+  margin-block-start: 5rem;
+  margin-block-end: 5rem;
+  .number-container, .content-container, .title-container{
+    border-radius: $tile-radius-medium;
+    background-color: rgb(66, 224, 255);
+    padding: 1.5rem;
+  }
+  .number-container{
+    padding: 0;
+    overflow: hidden;
+    // width: 19.9rem;
+    // TODO this aspect-ratio is not working as expect how to fix
+    aspect-ratio: 424/464;
+    h1{
+      display: none;
+    }
+    svg{
+      width: 100%;
+    }
+  }
+  .content-container{
+    .section-link{
+      font-family: $poppins;
+      font-weight: $poppins-bold;
+      text-transform: uppercase;
+      .icon-wrapper{
+        svg{
+          height: 100%;
+        }
       }
-      g{
-        fill:semantic-color(text); //Changes the color of my logo inline
+    }
+  }
+  .title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    .logo{
+      #rehan-logo-header{
+        height: 30px;
+        transition: $sprint;
+        &:hover{
+          transform: scale(1.1);
+        }
+        g{
+          fill:semantic-color(text); //Changes the color of my logo inline
+        }
+        @include breakpoint(small only){
+          height: 22px;
+        }
       }
-      @include breakpoint(small only){
-        height: 22px;
-      }
+    }
+    .subtitle{
+      font-family: $poppins;
+      font-weight: $poppins-bold;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      line-height: 1.2;
     }
   }
 }

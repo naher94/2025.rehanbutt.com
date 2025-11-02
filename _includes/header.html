@@ -1,15 +1,37 @@
 <header>
   <div class="grid-container">
-    <div class="grid-x cell align-justify title-area">
-      <div class="cell shrink subtitle">
-        year in review 2025
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-shrink number-container">
+        <h1>25</h1>
+        {% include_relative img/header/25.svg %}
       </div>
-      <div class="logo cell shrink">
-        <a target="_blank" rel="noopener" href="{{ site.mainurl }}/">
-          {% capture location %}header{% endcapture %}
-          {% include_relative img/rehan-logo.svg %}
-          <span class="visually-hidden">Opens a new window</span>
+      <div class="cell medium-auto content-container">
+        <div class="description">
+          {{site.description}}
+        </div>
+        {% assign section-order = "(movies|movie|movies),(music|music|music),(travel|plane|travel)" | remove: "(" | remove: ")" | split: ',' %}
+        {%- for section in section-order -%}
+        {% assign each-section = section | split: '|' %}
+        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify">
+          <div class="cell shrink">{{each-section[0]}}</div>
+          <div class="cell shrink icon-wrapper">
+            {% assign icon_path = "img/header/" | append: each-section[1] | append: ".svg" %}
+            {% include_relative {{ icon_path }} %}
+          </div>
         </a>
+        {%- endfor -%}
+      </div>
+      <div class="cell medium-2 title-container">
+        <div class="logo cell shrink">
+          <a target="_blank" rel="noopener" href="{{ site.mainurl }}/">
+            {% capture location %}header{% endcapture %}
+            {% include_relative img/rehan-logo.svg %}
+            <span class="visually-hidden">Opens a new window</span>
+          </a>
+        </div>
+        <div class="cell subtitle">
+          2025 year in review
+        </div>
       </div>
     </div>
   </div>
