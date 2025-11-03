@@ -3,7 +3,9 @@ header{
   margin-block-end: 5rem;
   --foundation-padding-x: 0.9375rem;
   --foundation-padding-y: 0.625rem;
-
+  @include breakpoint(small only){
+    margin-block-start: 2rem;
+  }
   .grid-container{
     max-width: 100rem;
     background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
@@ -15,7 +17,7 @@ header{
     border-radius: $tile-radius-medium;
     outline: solid semantic-color(page-bg) calc(var(--foundation-padding-x) * 2);
     padding: 1.5rem;
-    color: $pure-white;
+    color: semantic-color(page-bg);
     @include breakpoint(small only){
       outline: solid semantic-color(page-bg) calc(var(--foundation-padding-y) * 2);
       border-radius: $tile-radius;
@@ -34,7 +36,6 @@ header{
     svg{
       aspect-ratio: 424/464;
       width: 100%;
-      fill: $pure-white;
       fill: semantic-color(page-bg);
     }
     @include breakpoint(small only){
@@ -47,13 +48,18 @@ header{
     .description, .section-link{
       padding: 1.5rem;
     }
+    .description{
+      @include breakpoint(small only){
+        font-size: 1.25em;
+      }
+    }
     .nav-wrapper{
       @include breakpoint(medium up){
         border-top: solid 2px semantic-color(page-bg);
       }
     }
     a{
-      color: $pure-white;
+      color: semantic-color(page-bg);
     }
     .section-link{
       font-family: $poppins;
@@ -65,7 +71,7 @@ header{
       align-items: center;
       border-top: solid 2px semantic-color(page-bg);
       svg{
-        fill: $pure-white;
+        fill: semantic-color(page-bg);
         transition: $sprint;
       }
       &:hover{
@@ -113,7 +119,7 @@ header{
           transform: scale(1.1);
         }
         g{
-          fill:$pure-white; //Changes the color of my logo inline
+          fill:semantic-color(page-bg);; //Changes the color of my logo inline
         }
         @include breakpoint(small only){
           height: 22px;
