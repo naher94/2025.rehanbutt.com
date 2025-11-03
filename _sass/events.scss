@@ -13,20 +13,17 @@
     grid-template-rows: repeat(1, 1fr);
     --col-middle: 4;
     height: 40rem;
-    .text-container{
-      grid-column-start: 2;
-      grid-column-end: 6;
-      z-index: 2;
-      position: relative;
-      grid-row: 1/1;
-      align-self: center;
-      margin-block-start: -2rem;
+    @include breakpoint(small only){
+      grid-template-rows: repeat(3, 1fr);
     }
     .bubbles-left{
       grid-column-start: col-start;
       grid-column-end: 4;
       grid-row: 1/1;
       position: relative;
+      @include breakpoint(small only){
+        grid-column-end: -1;
+      }
       .bubble{
         &__large{
           left: -3rem;
@@ -63,6 +60,10 @@
       grid-column-end: 7;
       grid-row: 1/1;
       position: relative;
+      @include breakpoint(small only){
+        grid-column-start: 1;
+        grid-row: 3/4;
+      }
       .bubble{
         &__large{
           right: -3rem;
@@ -132,10 +133,23 @@
     }
   }
   .text-container{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    z-index: 2;
+    position: relative;
+    grid-row: 1/1;
+    align-self: center;
+    margin-block-start: -2rem;
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
+    @include breakpoint(small only){
+      grid-column-start: 1;
+      grid-column-end: -1;
+      grid-row: 2/3;
+      margin-block-start: 0;
+    }
     .header-container{
       display: inline-block;
       background-color: rgba($pure-white, 0.25);
@@ -144,12 +158,19 @@
       backdrop-filter: blur(10px);
       padding: 1em 2.75em;
       box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+      @include breakpoint(small only){
+        padding: 1.5em 1.5em;
+      }
     }
     h2{
       font-family: $poppins;
       font-weight: $poppins-extrabold;
       margin-bottom: 0;
       font-size: 4em;
+      @include breakpoint(small only){
+        line-height: 1;
+        font-size: 2.5em;
+      }
     }
     .description-container{
       background-color: rgba($pure-white, 0.25);
@@ -160,6 +181,10 @@
       box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
       width: 30rem;
       margin-block-start: -1.5rem;
+      @include breakpoint(small only){
+        margin-block-start: -1rem;
+        width: 80%;
+      }
       p{
         margin: 0;
         line-height: 1.25;
