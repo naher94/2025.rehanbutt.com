@@ -7,6 +7,7 @@
 
   @include breakpoint(small only) {
     margin-block-end: 12em;
+    overflow-x: clip;
   }
 
   .content-card {

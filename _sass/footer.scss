@@ -80,6 +80,9 @@ footer{
     font-family: $montserrat;
     font-weight: $montserrat-bold;
     margin-block-start: 6rem;
+    @include breakpoint(small only){
+      text-align: center;
+    }
     p{
       margin-bottom: 0;
       font-size: 1.25em;
@@ -96,6 +99,7 @@ footer{
           }
           @include breakpoint(small only){
             height: 40px;
+            margin-block-start: 1rem;
           }
         }
       }
