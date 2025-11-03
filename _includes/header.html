@@ -27,7 +27,7 @@
           | remove: "(" | remove: ")" | split: ',' %}
         {%- for section in section-order -%}
         {% assign each-section = section | split: '|' %}
-        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify cell auto">
+        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify cell medium-auto">
           <div class="cell shrink">{{each-section[0]}}</div>
           <div class="cell shrink icon-wrapper">
             {% assign icon_path = "img/header/" | append: each-section[1] | append: ".svg" %}

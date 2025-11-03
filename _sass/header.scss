@@ -14,7 +14,6 @@ header{
   .number-container, .content-container, .title-container{
     border-radius: $tile-radius-medium;
     outline: solid semantic-color(page-bg) calc(var(--foundation-padding-x) * 2);
-    // background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
     padding: 1.5rem;
     color: $pure-white;
     @include breakpoint(small only){
@@ -36,6 +35,7 @@ header{
       aspect-ratio: 424/464;
       width: 100%;
       fill: $pure-white;
+      fill: semantic-color(page-bg);
     }
     @include breakpoint(small only){
       order: 2;
@@ -48,7 +48,9 @@ header{
       padding: 1.5rem;
     }
     .nav-wrapper{
-      border-top: solid 2px semantic-color(page-bg);
+      @include breakpoint(medium up){
+        border-top: solid 2px semantic-color(page-bg);
+      }
     }
     a{
       color: $pure-white;
@@ -60,11 +62,8 @@ header{
       padding-block: 0.5em;
       transition: $sprint;
       font-size: 1rem;
-      writing-mode: sideways-lr;
       align-items: center;
-      &:not(:first-of-type){
-        border-left: solid 2px semantic-color(page-bg);
-      }
+      border-top: solid 2px semantic-color(page-bg);
       svg{
         fill: $pure-white;
         transition: $sprint;
@@ -84,6 +83,20 @@ header{
         svg{
           height: 1lh;
         }
+        @include breakpoint(small only){
+          margin-left: 1em;
+          margin-bottom: 0;
+        }
+      }
+      @include breakpoint(small only){
+        padding-block: 1em;
+      }
+      @include breakpoint(medium up){
+        writing-mode: sideways-lr;
+        &:not(:first-of-type){
+          border-left: solid 2px semantic-color(page-bg);
+        }
+        border-top: none;
       }
     }
     @include breakpoint(small only){
