@@ -28,6 +28,10 @@
         &__large{
           left: -3rem;
           overflow: hidden;
+          @include breakpoint(small only){
+            bottom: -2rem;
+            left: 1rem;
+          }
           &::before{
             content: "";
             position: absolute;
@@ -41,17 +45,28 @@
         &__medium{
           right: 5rem;
           top: -10rem;
+          padding: 3.25rem;
           background:
                     radial-gradient(circle at 50% 0%, rgba(243, 181, 2, 1), rgba(243, 181, 2, 0)),
                     radial-gradient(circle at 30% 30%, rgba(254, 254, 255, 0.5), rgba(254, 254, 255, 0) 50%),
                     #151F2B;
+          @include breakpoint(small only){
+            padding: 1.6rem;
+            top: initial;
+            right: 1rem;
+            bottom: 1rem;
+          }
         }
         &__small{
           bottom: 3rem;
           left: 37%;
           background: linear-gradient(215deg, rgba(221, 233, 255, 0) 55%, #dde9ff),
                       linear-gradient(to bottom right, #ef4f85 30%, #a98be6 70%);
-
+          @include breakpoint(small only){
+            padding: 1rem;
+            bottom: 8rem;
+            left: 60%;
+          }
         }
       }
     }
@@ -70,6 +85,11 @@
           top: 25%;
           overflow: hidden;
           padding: 3.75rem;
+          @include breakpoint(small only){
+            padding: 2rem;
+            right: 1rem;
+            top: 0%;
+          }
           &::before{
             content: "";
             position: absolute;
@@ -90,20 +110,27 @@
           bottom: -4rem;
           left: 15%;
           background: radial-gradient(circle at 5% 50%, rgb(0, 205, 236) 10%, rgb(0, 0, 0) 100%);
+          padding: 2.75rem;
           svg{
             fill: white;
+          }
+          @include breakpoint(small only){
+            padding: 1.25rem;
+            top: 1rem;
+            bottom: initial;
+            left: 1rem;
           }
         }
         &__small{
           top: -1rem;
           left: 12rem;
           padding: 2.25rem;
-          background: linear-gradient(to bottom right in oklch, #376cc9,  #f9b116 90%);
-          background: radial-gradient(circle at 25% 40%,rgba(156, 81, 221, 1) 0%, rgba(255, 190, 0, 1) 100%);
-          background: radial-gradient(circle at 25% 40% in oklch, #f9b116, #376cc9 90%);
-          background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 100%);
           background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 160%);
-          // TODO remove the unused background lines
+          @include breakpoint(small only){
+            padding: 1.25rem;
+            top: 8rem;
+            left: 6rem;
+          }
         }
       }
     }
@@ -121,14 +148,23 @@
                   0px 1px 5px -5px rgba(0, 0, 0, 0.25);
       &__large{
         width: 20rem;
+        @include breakpoint(small only){
+          width: 10rem;
+        }
       }
       &__medium{
         width: 14rem;
         animation-delay: 3s;
+        @include breakpoint(small only){
+          width: 7rem;
+        }
       }
       &__small{
         width: 10rem;
         animation-delay: 5s;
+        @include breakpoint(small only){
+          width: 5rem;
+        }
       }
     }
   }
