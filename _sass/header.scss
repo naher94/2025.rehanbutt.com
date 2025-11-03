@@ -113,7 +113,7 @@ header{
     display: flex;
     .logo{
       #rehan-logo-header{
-        height: 30px;
+        // height: 30px;
         transition: $sprint;
         &:hover{
           transform: scale(1.1);
@@ -123,6 +123,7 @@ header{
         }
         @include breakpoint(small only){
           height: 22px;
+          // TODO update to be a better unit maybe 1lh?
         }
       }
       @include breakpoint(small only){
