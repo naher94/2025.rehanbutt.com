@@ -141,10 +141,12 @@ header{
       }
       @include breakpoint(small only){
         order: 1;
+        font-size: 1rem;
       }
     }
     @include breakpoint(small only){
       order: 1;
+      align-items: center;
     }
     @include breakpoint(medium up){
       flex-direction: column;
