@@ -5,6 +5,7 @@
         <h2 class="cell">film log</h2>
         <div class="cell grid-x picks-list align-self-bottom">
           <h3>top picks</h3>
+          <!-- TODO update these movies -->
           {% assign top_picks = "The Fall Guy,Deadpool & Wolverine,The Wild Robot,Inside Out 2,Rise of the Planet of the Apes" | split: ',' %}
           {%- for movie in top_picks -%}
           <div class="list-item cell grid-x align-middle">
@@ -18,30 +19,21 @@
         </div>
       </div>
 
-      <div class="poster-container grid-x cell small-12 medium-8">
-        <div class="cell medium-8 poster-box">
-          <div class="poster grid-x cell poster-1">
-            <img src="/img/movies/fallguy.jpg" alt="The Fall Guy Poster">
-            <img src="/img/movies/fall-guy-thumbs-up.webp" alt="Fall Guy Thumbs up animation" class="fallguy-gif">
-            <!-- <div class="kernel-container">
-              {% include_relative img/movies/popcorn.svg %}
-              {% include_relative img/movies/popcorn.svg %}
-              {% include_relative img/movies/popcorn.svg %}
-            </div> -->
-          </div>
+      <div class="poster-container cell auto">
+        <div class="kernel-container">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/popcorn.svg %}
         </div>
-        
-        <div class="cell medium-4 grid-x poster-column">
-          <div class="cell poster-box small-6 medium-12">
-            <div class="poster grid-x cell poster-deadpool">
-              <img src="/img/movies/deadpool.jpg" alt="Marvel's Deadpool & Wolverine Poster">
-            </div>
-          </div>
-          <div class="cell poster-box small-6 medium-12">
-            <div class="poster grid-x cell poster-wildrobot">
-              <img src="/img/movies/wildrobot.jpg" alt="The Wild Robot Poster">
-            </div>
-          </div>
+        <div class="poster-box first-poster poster-1 poster">
+          <img class="poster-img" src="/img/movies/fallguy.jpg" alt="The Fall Guy Poster">
+          <img src="/img/movies/fall-guy-thumbs-up.webp" alt="Fall Guy Thumbs up animation" class="fallguy-gif">
+        </div>
+        <div class="poster-box second-poster poster-deadpool poster">
+            <img class="poster-img" src="/img/movies/deadpool.jpg" alt="Marvel's Deadpool & Wolverine Poster">
+        </div>
+        <div class="poster-box third-poster poster-wildrobot poster">
+          <img class="poster-img" src="/img/movies/wildrobot.jpg" alt="The Wild Robot Poster">
         </div>
 
       </div>
@@ -56,6 +48,7 @@
           {% include_relative img/movies/film.svg %}
         </div>
         <div class="text-container">
+          <!-- TODO update these stats -->
           <!-- Stats as of Dec 31th -->
           <p class="number">119</p>
           <p>featured films watched</p>
