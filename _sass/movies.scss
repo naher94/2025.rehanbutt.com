@@ -26,19 +26,9 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     position: relative;
     color: $pure-white;
     padding: var(--card-padding);
-    .poster{
-      .poster-img{
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 2/3;
-      }
-    }
     .top-picks{
       gap: 1rem;
       .poster-box{
-        @include breakpoint(small only) {
-          font-size: 1.5em;
-        }
         &:nth-of-type(1){
           // z-index: 4;
           .poster{
@@ -85,6 +75,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 1rem;
+        position: relative;
         .first-poster{
           grid-row: 1/-1;
           grid-column: 1/3;
@@ -99,6 +90,47 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
         }
         @include breakpoint(small only){
           padding-inline-start: 0;
+        }
+        .kernel-container{
+          grid-column: 1/-1;
+          grid-row: 1/-1;
+          svg{
+            position: absolute;
+            transition: $sprint;
+            &:nth-of-type(1){
+              width: 10em;
+              left: -6em;
+              top: 20%;
+              rotate: -6deg;
+            }
+            &:nth-of-type(2){
+              width: 6em;
+              top: -5em;
+              left: 8%;
+              path{
+                fill: $popcorn-yellow3;
+              }
+            }
+            &:nth-of-type(3){
+              width: 5em;
+              right: -4em;
+              bottom: 25%;
+              rotate: 40deg;
+              path{
+                fill: $popcorn-yellow2;
+              }
+            }
+            &:hover{
+              rotate: 10deg;
+            }
+          }
+        }
+      }
+      .poster{
+        .poster-img{
+          width: 100%;
+          height: 100%;
+          aspect-ratio: 2/3;
         }
       }
       .poster{
