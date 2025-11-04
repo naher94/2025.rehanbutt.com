@@ -5,6 +5,7 @@
         <h2 class="cell">film log</h2>
         <div class="cell grid-x picks-list align-self-bottom">
           <h3>top picks</h3>
+          <!-- TODO update these movies -->
           {% assign top_picks = "The Fall Guy,Deadpool & Wolverine,The Wild Robot,Inside Out 2,Rise of the Planet of the Apes" | split: ',' %}
           {%- for movie in top_picks -%}
           <div class="list-item cell grid-x align-middle">
@@ -47,6 +48,7 @@
           {% include_relative img/movies/film.svg %}
         </div>
         <div class="text-container">
+          <!-- TODO update these stats -->
           <!-- Stats as of Dec 31th -->
           <p class="number">119</p>
           <p>featured films watched</p>
