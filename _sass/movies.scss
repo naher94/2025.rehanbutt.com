@@ -28,48 +28,6 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     padding: var(--card-padding);
     .top-picks{
       gap: 1rem;
-      .poster-box{
-        &:nth-of-type(1){
-          // z-index: 4;
-          .poster{
-            // max-width: 15em;
-            // rotate: -10deg;
-            // transform-origin: top right;
-            // position: relative;
-            // .kernel-container{
-            //   position: absolute;
-            //   bottom: 0;
-            //   z-index: -1;
-            //   svg{
-            //     position: absolute;
-            //     &:nth-of-type(1){
-            //       width: 4em;
-            //       left: -3em;
-            //       bottom: 6em;
-            //       rotate: 12deg;
-            //       path{
-            //         fill: $popcorn-yellow3;
-            //       }
-            //     }
-            //     &:nth-of-type(2){
-            //       width: 7em;
-            //       left: -3.5em;
-            //       bottom: -3em;
-            //     }
-            //     &:nth-of-type(3){
-            //       width: 3em;
-            //       left: 4em;
-            //       bottom: -4em;
-            //       rotate: 6deg;
-            //       path{
-            //         fill: $popcorn-yellow2;
-            //       }
-            //     }
-            //   }
-            // }
-          }
-        }
-      }
       .poster-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
