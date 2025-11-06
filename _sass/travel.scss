@@ -73,6 +73,9 @@
   }
   .stat-wrapper{
     min-height: 30rem;
+    @include breakpoint(small only) {
+      min-height: initial;
+    }
   }
   .stats{
     .line-item{

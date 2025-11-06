@@ -414,7 +414,7 @@
       // TODO could probs make it 7
       grid-template-rows: repeat(8, [row-start] 1fr [row-end]);
       @include breakpoint(small only){
-        grid-template-rows: repeat(16, [row-start] 1fr [row-end]);
+        grid-template-rows: repeat(17, [row-start] 1fr [row-end]);
       }
       .talk-intro {
         grid-column-start: 5;
@@ -459,8 +459,8 @@
         align-self: end;
         @include breakpoint(small only){
           grid-column-start: 1;
-          grid-row-start: 14;
-          grid-row-end: span 3;
+          grid-row-start: span 3;
+          grid-row-end: -1;
         }
       }
       .tag-wrapper{
