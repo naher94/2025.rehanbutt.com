@@ -22,14 +22,12 @@
 
   .stripe-container {
     // TODO figure out a way to sort the hover state in conflict with the outline
-    // z-index: 5;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: grid;
-    // grid-template-columns: repeat(4, 1fr);
     grid-template-columns: 1fr 1170px 1fr;
     // TODO update rows to the number of skills
     grid-template-rows: repeat(5, 1fr);
@@ -67,10 +65,8 @@
     }
   }
   .content-area {
-    // outline: solid $navy-black var(--outline-thickness);
     outline: solid var(--accent-color) var(--outline-thickness);
     border-radius: $tile-radius-big;
-    // TODO update to dynamically create
     border-radius: 56px;
     @include breakpoint(small only){
       border-radius: 32px;
@@ -80,26 +76,15 @@
       z-index: 2;
       margin-block: calc(-1 * var(--outline-thickness));
       .skill-tag{
-        // position: relative; // so z-index on modifiers (e.g. &__2) takes effect
         font-size: 3em;
         line-height: 1;
         @include breakpoint(small only){
           font-size: 1.5em;
         }
-        // height: var(--skill-height);
-        // &__2{
-        //   // TODO figure out how to make this work
-        //   z-index: 3;
-        // }
-        // &__3{
-        //   z-index: 2;
-        // }
         &:first-of-type, &:last-of-type{
           .image-wrapper{
             outline: solid semantic-color(page-bg) var(--outline-thickness);
-            // TODO update to relative units
             box-shadow: -0.8em -0.25em 0 0 semantic-color(page-bg);
-            // box-shadow: -40px 0px 0px 0px rgb(255, 128, 0);
           }
         }
         &:last-of-type{
@@ -110,14 +95,6 @@
         .skill-wrapper{
           display: inline-block;
           position: relative;
-          // cursor: pointer;
-          // color: $pure-white;
-          // &:hover{
-          //   // TODO sequentially animate each item? and if I hover on one of them then pause the animation
-          //   .skill{
-          //     transform: translateX(calc(calc(1.25em + var(--skill-padding))* -1));
-          //   }
-          // }
           .image-wrapper{
             display: flex;
             height: 100%;
@@ -133,7 +110,6 @@
           border-radius: 0 $pill-radius $pill-radius 0;
           padding-inline: 0.5em;
           padding-block: var(--skill-padding);
-          // transition: $sprint;
           transition: $jog;
           z-index: 2;
           position: relative;
