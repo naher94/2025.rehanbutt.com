@@ -8,6 +8,9 @@ footer{
   --flip-card-width: 100%;
   .number-container{
     margin-block-start: -9em;
+    @include breakpoint(small only){
+      gap: 2rem 0;
+    }
   }
   .static-number{
     font-family: $big-shoulders;
