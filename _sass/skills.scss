@@ -79,7 +79,7 @@
         font-size: 3em;
         line-height: 1;
         @include breakpoint(small only){
-          font-size: 1.5em;
+          font-size: 1.8em;
         }
         &:first-of-type, &:last-of-type{
           .image-wrapper{
@@ -113,6 +113,9 @@
           transition: $jog;
           z-index: 2;
           position: relative;
+          @include breakpoint(small only){
+            padding-inline: 1rem 0.5em;
+          }
           &__0 {
             background-color: var(--row-color-1);
           }
