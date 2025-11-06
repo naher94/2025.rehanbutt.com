@@ -38,6 +38,7 @@
     @include breakpoint(small only){
       grid-template-columns: 1fr 350px 1fr;
       // TODO calculate the height
+      height: 7.5lh;
     }
 
     .stripe {
