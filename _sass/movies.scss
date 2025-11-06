@@ -81,6 +81,10 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
               width: 6em;
               top: -5em;
               left: 8%;
+              @include breakpoint(small only){
+                top: -2em;
+                
+              }
               path{
                 fill: $popcorn-yellow3;
               }
@@ -90,6 +94,10 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
               right: -4em;
               bottom: 25%;
               rotate: 40deg;
+              @include breakpoint(small only){
+                right: 1em;
+                bottom: -7%;
+              }
               path{
                 fill: $popcorn-yellow2;
               }
