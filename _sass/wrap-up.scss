@@ -14,7 +14,6 @@
     width: 40%;
     aspect-ratio: 5/6;
     z-index: 2;
-    top: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); //centering vertically and horizontally
@@ -22,7 +21,15 @@
     rotate: 2deg;
     @include breakpoint(small only){
       padding: 1rem;
-      width: 60%;
+      grid-row: 3;
+      grid-column: 1/3;
+      aspect-ratio: 1/1.25;
+      margin-top: -3em;
+      rotate: 1deg;
+      top: initial;
+      left: initial;
+      transform: initial;
+      width: initial;
     }
     h2{
       font-family: $poppins;
@@ -102,7 +109,8 @@
     margin: 0 auto;
     position: relative;
     @include breakpoint(small only){
-      grid-template-columns: repeat(4);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
     }
   }
   .thumbnail {
@@ -130,26 +138,51 @@
     }
     &[data-index="0"] {
       grid-column: 1;
+      @include breakpoint(small only){
+        grid-column: 2;
+        grid-row: 2;
+      }
     }
     &[data-index="1"] {
       grid-column: 2;
+      @include breakpoint(small only){
+        grid-column: 2;
+      }
     }
     &[data-index="2"] {
       grid-column: 4 / span 2;
       aspect-ratio: 2/1;
+      @include breakpoint(small only){
+        grid-column: 1/2;
+        grid-row: 1/3;
+        aspect-ratio: inherit;
+      }
     }
     &[data-index="3"] {
       grid-row: 2;
       grid-column: 1 / span 2;
       aspect-ratio: 2/1;
+      @include breakpoint(small only){
+        grid-row: 5/span 2;
+        grid-column: 2;
+        aspect-ratio: inherit;
+      }
     }
     &[data-index="4"] {
       grid-row: 2;
       grid-column: 4;
+      @include breakpoint(small only){
+        grid-row: 5;
+        grid-column: 1/2;
+      }
     }
     &[data-index="5"] {
       grid-row: 2;
       grid-column: 5;
+      @include breakpoint(small only){
+        grid-row: 6;
+        grid-column: 1/2;
+      }
     }
   }
 
