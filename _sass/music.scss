@@ -10,6 +10,7 @@
     .vertical{
       writing-mode: vertical-rl;
       font-size: 15rem;
+      line-height: 1;
     }
     @include breakpoint(small only){
       display: flex;
@@ -45,6 +46,10 @@
       span{
         font-weight: $poppins-extrabold;
       }
+    }
+    @include breakpoint(small only){
+      writing-mode: vertical-rl;
+      font-size: 2em;
     }
   }
   .list-wrapper{
