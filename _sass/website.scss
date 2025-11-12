@@ -111,13 +111,20 @@ $web-orange: #FF8D3D;
       }
     .stat-card{
       @include frosted-surface;
-      padding: 0.5rem 1rem;
+      padding: 1em 1.5em;
       border-radius: $tile-radius;
       //Number of cards per row = --numb-cards
       --numb-cards: 4;
       //The sum of the gaps between all items in the row (--numb-cards)
       --gap-total: calc((var(--numb-cards) - 1) * var(--card-gap));
       width: calc((100% - var(--gap-total)) / var(--numb-cards));
+      p{
+        line-height: normal;
+      }
+      .stat-title{
+        font-size: 1.5em;
+        font-weight: $space-grotesk-bold;
+      }
       @include breakpoint(small only){
         --numb-cards: 2;
       }
