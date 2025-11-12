@@ -1,9 +1,11 @@
 .travel{
   --mobile-overlap: -10em;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10rem;
   @include breakpoint(small only) {
     margin-top: 1rem;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
   }
   font-family: $poppins;
   font-weight: $poppins-regular;

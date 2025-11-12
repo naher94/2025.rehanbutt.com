@@ -411,8 +411,7 @@
     }
 
     .the-grid {
-      // TODO could probs make it 7
-      grid-template-rows: repeat(8, [row-start] 1fr [row-end]);
+      grid-template-rows: repeat(7, [row-start] 1fr [row-end]);
       @include breakpoint(small only){
         grid-template-rows: repeat(17, [row-start] 1fr [row-end]);
       }

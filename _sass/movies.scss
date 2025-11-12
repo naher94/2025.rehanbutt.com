@@ -6,7 +6,7 @@ $card-padding: 2em;
 $card-border-radius: $tile-radius-big; //TODO check this radius is right
 
 .movies{
-  margin-top: 15rem;
+  margin-top: 10rem;
   --card-padding: 2rem;
   @include breakpoint(small only) {
     --card-padding: 1rem;
