@@ -7,6 +7,23 @@
     text-transform: uppercase;
     line-height: 2;
     margin-bottom: 0;
+    .vertical{
+      writing-mode: vertical-rl;
+      font-size: 15rem;
+    }
+    @include breakpoint(small only){
+      display: flex;
+      justify-content: center;
+      letter-spacing: 4rem;
+      .text-fit{
+        display: none;
+      }
+    }
+    @include breakpoint(medium up){
+      .vertical{
+        display: none;
+      }
+    }
   }
   .total-listen{
     background-color: semantic-color(music-total-bg);
@@ -36,12 +53,22 @@
     left: 0;
     height: 100%;
     padding-inline: 2em;
+    @include breakpoint(small only){
+      padding-inline: 1.5em;
+      margin-block-start: -3em;
+    }
   }
   .song-container{
     width: 20%;
     align-self: flex-start;
     @include breakpoint(small only){
-      width: 45%;
+      width: 100%;
+      &:nth-of-type(even){
+        justify-content: flex-end;
+      }
+      a{
+        width: 45%;
+      }
     }
     &:nth-of-type(even){
       align-self: flex-end;
