@@ -64,6 +64,20 @@ $web-orange: #FF8D3D;
   .main-content{
     padding-inline: var(--content-padding);
     padding-block: calc(var(--content-padding) * 2);
+    .description{
+      font-size: 1.125rem;
+      text-wrap: pretty;
+      &:last-of-type{
+        margin-block-start: 1em;
+      }
+      a{
+        text-decoration: underline;
+        &:hover{
+          color: initial;
+          text-decoration-style: double;
+        }
+      }
+    }
     .callouts{
       $icon-padding: 0.75rem;
       $icon-size: 2rem;
