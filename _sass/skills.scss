@@ -13,6 +13,7 @@
   --row-color-4: #E19B23;
   --row-color-5: #23B6E1;
   --accent-color: #{semantic-color(skills-accent)};
+  --mobile-skill-font-size: 1.8rem;
 
   @include breakpoint(small only) {
     margin-block: 3rem;
@@ -36,7 +37,7 @@
     @include breakpoint(small only){
       grid-template-columns: 1fr 350px 1fr;
       // TODO calculate the height
-      height: 7.5lh;
+      // height: ;
     }
 
     .stripe {
@@ -79,7 +80,7 @@
         font-size: 3em;
         line-height: 1;
         @include breakpoint(small only){
-          font-size: 1.8em;
+          font-size: var(--mobile-skill-font-size);
         }
         &:first-of-type, &:last-of-type{
           .image-wrapper{
@@ -162,6 +163,7 @@
           font-weight: $poppins-regular;
           text-transform: none;
           margin-bottom: 0;
+          text-wrap: pretty;
         }
       }
       .icon-wrapper{

@@ -1,15 +1,14 @@
 <section class="skills" id="skills" aria-label="New Skills Section">
-  {% assign skills-list = "Public Speaking,Mentoring,Design Operations,Systems Design,Design Evangelism" | split: ',' %}
-  {%- assign skills-list2 = site.skills | sort: "sort-order" -%}
+  {%- assign skills-list = site.skills | sort: "sort-order" -%}
   <div class="stripe-container">
-    {%- for item in skills-list2 -%}
+    {%- for item in skills-list -%}
       <div class="stripe stripe__{{ forloop.index0 }}"></div>
     {%- endfor -%}
   </div>
   <div class="grid-container">
     <div class="grid-x content-area">
       <div class="cell skill-tags-container medium-shrink">
-        {%- for item in skills-list2 -%}
+        {%- for item in skills-list -%}
           <div class="skill-tag skill-tag__{{ forloop.index0 }}">
             <div class="skill-wrapper">
               <div class="skill skill__{{ forloop.index0 }}">
@@ -29,7 +28,7 @@
             <span>Knowledge</span>
             <span>Skills</span>
           </h2>
-          <p>This is where the description goes do do do. TODO update this text.</p>
+          <p>Building the systems and skills that scale design, shaping the people and processes that make it thrive.</p>
         </div>
         <div class="icon-wrapper">+</div>
       </div>
