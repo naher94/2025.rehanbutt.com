@@ -140,7 +140,9 @@
     /* Example satellites */
     .satellite[data-label="X"] {
       --satellite-radius: 2.25rem;
+      // TODO update color
       background: #09dd6c;
+      background: #9cffb3;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
       @include breakpoint(small only){
@@ -150,21 +152,35 @@
 
     .satellite[data-label="Y"] {
       --satellite-radius: 3.5rem;
-      background: #f33;
+      background: #ffd38b;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
       @include breakpoint(small only){
         --satellite-radius: 2rem;
       }
+      .satellite-content{
+        align-items: end;
+      }
+      img{
+        width: 3.25rem;
+        rotate: 14deg;
+        transform-origin: bottom;
+        margin-left: -1.5rem;
+      }
     }
 
     .satellite[data-label="A"] {
       --satellite-radius: 5rem;
+      // TODO fix this color
       background: #fa0;
+      background: #bfe8f9;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
       @include breakpoint(small only){
         --satellite-radius: 2.75rem;
+      }
+      .satellite-content{
+        align-items: end;
       }
     }
 
