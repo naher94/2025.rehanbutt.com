@@ -251,27 +251,22 @@
   .collection-cta {
     padding-inline: 0.75em 0.5em;
     padding-block: 0.25em;
-    background-color: rgba($pure-black, 0.05);
     border-radius: $pill-radius;
     color: $pure-black;
     font-size: 0.8em;
     transition: $sprint;
     text-align: left;
-
-    background-color: rgba(255, 255, 255, 0.25);
-    border: solid 5px #ffffff;
+    background-color: rgba($pure-white, 0.25);
+    border: solid 5px $pure-white;
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
-
     @media(prefers-color-scheme:dark) {
       background-color: rgba($pure-white, 0.05);
       color: $pure-white;
-
       svg {
         fill: $pure-white;
       }
     }
-
     svg {
       margin-inline-start: 0.25em;
       height: 1.5em;
