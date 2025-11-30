@@ -41,7 +41,9 @@
       position: absolute;
       inset: 0;
       border-radius: 50%;
+      // TODO color update
       background: #00bfff;
+      background: #ffaacc;
       align-items: center;
       justify-content: center;
       display: flex;
@@ -181,6 +183,28 @@
       }
       .satellite-content{
         align-items: end;
+        // position: absolute;
+        // left: 0;
+        // bottom: 0;
+        opacity: 0.5;
+        height: 130%;
+        // aspect-ratio: 138/206;
+        // TODO update the masking logic
+        // border-radius: 0;
+        mask-image: url('../img/film-credit/satelite-mask.svg');
+        mask-repeat: no-repeat;
+        mask-size: cover; /* scales mask to full width */
+        // mask-size: 100% auto;
+        mask-position: bottom center;
+
+        background-image: url('../img/film-credit/satelite-mask.svg');
+        // background-size: 100% auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+      }
+      img{
+        width: 7.75em;
       }
     }
 
