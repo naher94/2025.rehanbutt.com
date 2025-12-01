@@ -1,8 +1,6 @@
 ---
 title: Systems Design
 sort-order: 4
-image: lily-me.jpg
-image-alt: "Lily and I"
+image: systems-design.jpeg
+image-alt: "Illustration of interconnected systems"
 ---
-
-TODO update image and alt text

@@ -6,3 +6,4 @@ image-alt: "Lily and I"
 ---
 
 TODO update image and alt text
+Maybe a picture of me at a whiteboard or a workshop
