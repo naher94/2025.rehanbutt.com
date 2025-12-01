@@ -41,7 +41,9 @@
       position: absolute;
       inset: 0;
       border-radius: 50%;
+      // TODO update color
       background: #00bfff;
+      background: #ffbee2;
       align-items: center;
       justify-content: center;
       display: flex;
@@ -123,6 +125,7 @@
       width: 100%;
       height: 100%;
       transition: $sprint;
+      align-items: end;
       &:hover{
         animation: springRotate var(--spring-duration) var(--spring-ease) both;
       }
@@ -143,10 +146,25 @@
       // TODO update color
       background: #09dd6c;
       background: #9cffb3;
+      background: #cbaffe;
       width: calc(var(--satellite-radius) * 2);
       height: calc(var(--satellite-radius) * 2);
       @include breakpoint(small only){
         --satellite-radius: 1.5rem;
+      }
+      overflow: hidden;
+      img{
+        position: absolute;
+        bottom: -5rem;
+        right: -5rem;
+        transition: $run;
+        rotate: -45deg;
+      }
+      &:hover{
+        img{
+          bottom: -1rem;
+          right: -1rem;
+        }
       }
     }
 
@@ -157,15 +175,6 @@
       height: calc(var(--satellite-radius) * 2);
       @include breakpoint(small only){
         --satellite-radius: 2rem;
-      }
-      .satellite-content{
-        align-items: end;
-      }
-      img{
-        width: 3.25rem;
-        rotate: 14deg;
-        transform-origin: bottom;
-        margin-left: -1.5rem;
       }
     }
 
@@ -178,9 +187,6 @@
       height: calc(var(--satellite-radius) * 2);
       @include breakpoint(small only){
         --satellite-radius: 2.75rem;
-      }
-      .satellite-content{
-        align-items: end;
       }
     }
 
@@ -195,6 +201,7 @@
       .satellite-content{
         padding: 1.5rem;
         padding-bottom: 2.25rem;
+        align-items: center;
         @include breakpoint(small only){
           padding: 1rem;
           padding-bottom: 1.5rem;
