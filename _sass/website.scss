@@ -13,6 +13,7 @@ $web-orange: #FF8D3D;
   margin-top: 2rem;
   overflow-x: hidden;
   font-family: $space-grotesk;
+  overflow-x: hidden; //To handle the negative margin on the footer
   @include breakpoint(small only){
     overflow-x: clip;
     overflow-y: visible;
