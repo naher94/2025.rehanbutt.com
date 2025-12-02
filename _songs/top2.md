@@ -1,7 +1,7 @@
 ---
-album-cover: "jt-everything-i-thought-it-was.png"
-song-name: Liar (feat. Fireboy DML)
-artist: Justin Timberlake
-play-count: 24
-link: "https://www.youtube.com/watch?v=yB5MFBTXl-s"
+album-cover: "here-all-night.jpg"
+song-name: Here All Night
+artist: Demi Lovato
+play-count: 28
+link: "https://youtu.be/AeJZe6eHBEA?si=8iV4rCT7e5RuCeYW"
 ---

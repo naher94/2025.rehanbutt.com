@@ -8,8 +8,8 @@
   </h2>
 
   <div class="total-listen">
-    <!-- TODO update the numbers -->
-    <p><span>212</span>hrs</p>
+    <!-- TODO fix the layout on mobile -->
+    <p><span>17,957</span>mins</p>
     <p>of music listened to</p>
   </div>
   
@@ -19,7 +19,7 @@
       {% capture song-content %}
       <div class="text-container cell grid-x">
         <div class="cell grid-x align-middle">
-          <h3 class="shrink">{{ song.title }}</h3>
+          <h3 class="shrink">{{ song.song-name }}</h3>
           <div class="shrink">
             {%- include_relative img/music/share-arrow.svg -%}
           </div>

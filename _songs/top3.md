@@ -1,7 +1,7 @@
 ---
-album-cover: "california-lullaby.jpg"
-song-name: California Lullaby
-artist: Evangelia
-play-count: 22
-link: "https://www.youtube.com/watch?v=mO8A5dyh5Ks"
+album-cover: "play.jpg"
+song-name: Azizam
+artist: Ed Sheeran
+play-count: 28
+link: "https://youtu.be/MI9ZpIKgyf0?si=4H0wOuLvzUMoQQeK"
 ---
