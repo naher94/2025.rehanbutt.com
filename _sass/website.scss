@@ -11,9 +11,9 @@ $web-orange: #FF8D3D;
   --color-link: #000000;
   background: linear-gradient(180deg,rgba($web-orange, 0.4) 0%, rgba($web-orange, 0.1) 100%);
   margin-top: 2rem;
-  overflow-x: hidden;
-  font-family: $space-grotesk;
+  // TODO this overflow-x is not working
   overflow-x: hidden; //To handle the negative margin on the footer
+  font-family: $space-grotesk;
   @include breakpoint(small only){
     overflow-x: clip;
     overflow-y: visible;
