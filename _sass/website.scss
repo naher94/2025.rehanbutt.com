@@ -12,10 +12,11 @@ $web-orange: #FF8D3D;
   background: linear-gradient(180deg,rgba($web-orange, 0.4) 0%, rgba($web-orange, 0.1) 100%);
   margin-top: 2rem;
   // TODO this overflow-x is not working
-  overflow-x: hidden; //To handle the negative margin on the footer
+  // overflow-x: hidden; //To handle the negative margin on the footer
   font-family: $space-grotesk;
   @include breakpoint(small only){
-    overflow-x: clip;
+    // TODO this overflow-x is not working
+    // overflow-x: clip;
     overflow-y: visible;
     --content-padding: 1rem;
   }
@@ -167,9 +168,41 @@ $web-orange: #FF8D3D;
         }
       }
       .detail-body{
+        --border: 1px solid rgb(255, 0, 174);
         margin-inline-end: 0.25em;
-        border-top: 1px solid rgb(255, 0, 174);
+        border-top: var(--border);
         font-size: 0.8em;
+        .data-section{
+          border-bottom: var(--border);
+          padding-bottom: 1em;
+          margin-bottom: 1em;
+        }
+        .data-value{
+          font-weight: $space-grotesk-bold;
+          font-size: 1.125em;
+        }
+        .pv-country{
+          margin-block-end: 0.75em;
+          font-weight: $space-grotesk-bold;
+        }
+        .visit-number{
+          font-weight: $space-grotesk-bold;
+        }
+        .country-item{
+          margin-block-end: 0.25em;
+        }
+        .referrer-item{
+          margin-block-end: 0.5em;
+        }
+        .separation-dot{
+          width: 0.3em;
+          height: 0.3em;
+          aspect-ratio: 1/1;
+          background-color: semantic-color(text);
+          display: inline-block;
+          border-radius: $pill-radius;
+          margin-inline: 0.5em;
+        }
       }
     }
   }
