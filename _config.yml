@@ -33,3 +33,5 @@ collections:
     output: false
   skills:
     output: false
+  web-stats:
+    output: false

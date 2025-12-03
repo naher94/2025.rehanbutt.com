@@ -1,7 +1,7 @@
 ---
-album-cover: "jt-everything-i-thought-it-was.png"
-song-name: Infinity Sex
-artist: Justin Timberlake
-play-count: 17
-link: "https://www.youtube.com/watch?v=zHHhLLlrEco"
+album-cover: "kamli.jpg"
+song-name: Kamli
+artist: Ezu
+play-count: 26
+link: "https://youtu.be/PxTygYDZzik?si=ffMARju1SUg8awo_"
 ---
