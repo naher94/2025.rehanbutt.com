@@ -168,7 +168,7 @@ $web-orange: #FF8D3D;
         }
       }
       .detail-body{
-        --border: 1px solid rgb(255, 0, 174);
+        --border: 1px solid #{$navy-black-l8};
         margin-inline-end: 0.25em;
         border-top: var(--border);
         font-size: 0.8em;
