@@ -175,7 +175,9 @@ $web-orange: #FF8D3D;
           margin-left: 0.25em;
           display: inline-block;
           background: url('../img/website/chevron-up.svg') no-repeat center;
-          // transition: $sprint;
+          @media (prefers-color-scheme: dark){
+            background: url('../img/website/chevron-up-light.svg') no-repeat center;
+          }
         }
       }
       .detail-body{
