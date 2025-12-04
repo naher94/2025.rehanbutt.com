@@ -4,11 +4,11 @@ stat-name: Total Site Visits
 sort-order: 1
 ---
 
+<!-- TODO update the values below with actual data -->
 <div class="data-section">
   <div class="data-value">March 10th</div>
   <div class="data-label">Busiest Visit Day</div>
 </div>
-<!-- TODO update the values below with actual data -->
 <div class="grid-x">
   <div class="cell pv-country">Page Views by Country</div>
   <div class="cell grid-x align-justify country-item">
