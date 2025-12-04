@@ -183,6 +183,9 @@ $web-orange: #FF8D3D;
         margin-inline-end: 0.25em;
         border-top: var(--border);
         font-size: 0.8em;
+        @media (prefers-color-scheme: dark){
+          --border: 1px solid #ffffff31;
+        }
         .data-section{
           &:not(:last-of-type){
             border-bottom: var(--border);
@@ -220,7 +223,6 @@ $web-orange: #FF8D3D;
               background-color: var(--hover-color);
               outline: 5px solid var(--hover-color);
               @media (prefers-color-scheme: dark) {
-                // --hover-color: #{$navy-black-d5};
                 --hover-color: #ffffff17;
               }
             }
