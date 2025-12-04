@@ -150,7 +150,7 @@ $web-orange: #FF8D3D;
         font-weight: $space-grotesk-bold;
       }
       @include breakpoint(small only){
-        --numb-cards: 2;
+        --numb-cards: 1;
       }
       summary {
         list-style: none;
@@ -173,9 +173,11 @@ $web-orange: #FF8D3D;
         border-top: var(--border);
         font-size: 0.8em;
         .data-section{
-          border-bottom: var(--border);
-          padding-bottom: 1em;
-          margin-bottom: 1em;
+          &:not(:last-of-type){
+            border-bottom: var(--border);
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+          }
         }
         .data-value{
           font-weight: $space-grotesk-bold;
@@ -194,10 +196,27 @@ $web-orange: #FF8D3D;
         .referrer-item{
           margin-block-end: 0.5em;
         }
+        a{
+          display: block;
+          color: inherit;
+          &.link-item{
+            border-radius: 1px;
+            &:not(:last-of-type){
+              margin-block-end: 0.5em;
+            }
+            &:hover{
+              background-color: red;
+              outline: 5px solid red;
+            }
+          }
+        }
         .data-item{
           &:not(:last-of-type){
             margin-block-end: 0.5em;
           }
+        }
+        .intro-text{
+          margin-block-end: 1em;
         }
         .separation-dot{
           width: 0.3em;
