@@ -80,7 +80,9 @@ $web-orange: #FF8D3D;
       }
       a{
         &:hover{
-          color: $navy-black;
+          @media (prefers-color-scheme: dark) {
+            color: $navy-black;
+          }
         }
       }
     }
