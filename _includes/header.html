@@ -14,16 +14,16 @@
         <!-- name, icon-file, html-file-name -->
         <div class="nav-wrapper cell medium-auto grid-x">
         {% assign section-order = 
-          "(movies|movie|movies),
-          (music|music|music),
-          (speaking|speaking|speaking),
-          (speaking|speaking|speaking),
-          (favorites|speaking|speaking),
-          (Film Credit|speaking|speaking),
-          (events|speaking|speaking),
-          (favorite things|speaking|speaking),
-          (speaking|speaking|speaking),
-          (travel|plane|travel)"
+          "(Industry Events|calendar|events),
+          (Travel|plane|travel),
+          (Speaking|speaking|speaking),
+          (Music|music|music),
+          (Movies|movie|movies),
+          (Film Credit|film-credit|film-credit),
+          (Website|web|website),
+          (Skills|brain|skills),
+          (Favorite Things|heart|favorite-things),
+          (Wrap Up|wave|wrap-up)"
           | remove: "(" | remove: ")" | split: ',' %}
         {%- for section in section-order -%}
         {% assign each-section = section | split: '|' %}
