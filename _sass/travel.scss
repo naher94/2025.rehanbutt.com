@@ -3,7 +3,8 @@
   margin-top: 2rem;
   margin-bottom: 10rem;
   @include breakpoint(small only) {
-    margin-top: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
     padding-right: 0.625rem;
     padding-left: 0.625rem;
   }
