@@ -552,10 +552,16 @@
         }
       }
       .duo-smile{
-        grid-column-start: col-start;
-        grid-column-end: var(--col-middle);
-        grid-row-start: 3;
-        grid-row-end: span 5;
+        // grid-column-start: col-start;
+        // grid-column-end: var(--col-middle);
+        // grid-row-start: 3;
+        // grid-row-end: span 5;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        grid-row-start: 14;
+        grid-row-end: 17;
+        // aspect-ratio: auto;
+        
         aspect-ratio: 1400/1048;
         @include breakpoint(small only){
           grid-column-end: -1;
@@ -590,13 +596,18 @@
       }
       .dss-me{
         grid-column-start: col-start;
-        grid-column-end: 6;
-        grid-row-start: 14;
-        grid-row-end: 17;
-        aspect-ratio: auto;
-        // TODO figure out how to remove this height
-        height: 277.5px;
-        // aspect-ratio: 1400/933;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 3;
+        grid-row-end: span 5;
+
+        // grid-column-start: col-start;
+        // grid-column-end: 6;
+        // grid-row-start: 14;
+        // grid-row-end: 17;
+        // aspect-ratio: auto;
+        // // TODO figure out how to remove this height
+        // height: 277.5px;
+        aspect-ratio: 1400/933;
         display: flex;
         img{
           align-self: end;
