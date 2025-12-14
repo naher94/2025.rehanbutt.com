@@ -2,9 +2,7 @@
   --spring-duration: 600ms;  /* animation length */
   --spring-angle: 2deg;     /* max overshoot */
   --spring-ease: cubic-bezier(.18,.9,.32,1.15); /* springy easing (slight overshoot) */
-  
-  margin-block: 10em;
-
+  margin-block: 10em 15em;
   @include breakpoint(small only) {
     margin-block-end: 12em;
     overflow-x: clip;
