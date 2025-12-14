@@ -17,3 +17,10 @@ async function loop() {
   }
 }
 loop();
+
+const el = document.querySelector('.skill.skill__0');
+
+if (el) {
+  const computedHeight = getComputedStyle(el).height;
+  document.documentElement.style.setProperty('--skill-height-ref', computedHeight);
+}

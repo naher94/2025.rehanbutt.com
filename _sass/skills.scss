@@ -14,6 +14,7 @@
   --row-color-5: #23B6E1;
   --accent-color: #{semantic-color(skills-accent)};
   --mobile-skill-font-size: 1.8rem;
+  --skill-height-ref: 42.375px; //Only used as a fallback if the JS fails
 
   @include breakpoint(small only) {
     margin-block: 3rem;
@@ -22,7 +23,6 @@
   }
 
   .stripe-container {
-    // TODO figure out a way to sort the hover state in conflict with the outline
     position: absolute;
     top: 0;
     left: 0;
@@ -30,14 +30,11 @@
     bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1170px 1fr;
-    // TODO update rows to the number of skills
     grid-template-rows: repeat(5, 1fr);
-    // grid-template-rows: repeat(4, calc(2 * var(--skill-padding) + var(--skill-height)));
     margin-block: calc(-1 * var(--outline-thickness));
     @include breakpoint(small only){
       grid-template-columns: 1fr 350px 1fr;
-      // TODO calculate the height
-      // height: ;
+      grid-template-rows: repeat(5, var(--skill-height-ref));
     }
 
     .stripe {
