@@ -14,11 +14,12 @@
           {% endfor %}
         </div>
       </div>
-      <div class="medium-4 cell travel-card">
+      <div class="medium-4 cell travel-card us-card">
         <h3>United States</h3>
         <div class="tag-wrapper">
           <!-- TODO figure out sort -->
-          {%- assign city-array = "Los Angeles, New York, Washington DC, Philadelphia, San Francisco" | split:',' | sort -%}
+          <!-- TODO add grand canyon cities & winter trip -->
+          {%- assign city-array = "Los Angeles, New York, Washington DC, Philadelphia, San Francisco, Orlando, San Diego" | split:',' | sort -%}
           {%- for city in city-array -%}
             <div class="city-tag">{{city}}</div>
           {%- endfor -%}

@@ -23,6 +23,12 @@
     box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.5);
     background-size: cover;
     background-position: center;
+    &.us-card{
+      @include breakpoint(small only){
+        margin-top: 1.25rem; //0.625rem*2
+        margin-bottom: 1.25rem; //0.625rem*2
+      }
+    }
     &.canada-card{
       background-color: #E02020;
       background-color: color-mix(in srgb, #E02020 90%, $pure-white 10%);
