@@ -2,8 +2,8 @@
   margin-top: 10rem;
   margin-bottom: 10rem;
   @include breakpoint(small only){
-    margin-top: 0;
-    margin-bottom: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 0;
     font-size: 1.25em;
   }
   .text-card{
