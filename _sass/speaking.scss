@@ -34,7 +34,6 @@
     }
     .tag-wrapper {
       margin-block-start: 0.5rem;
-
       .tag {
         display: inline-block;
         background-color: rgba($pure-white, 0.2);
@@ -60,7 +59,6 @@
     @include breakpoint(small only){
       padding-block: 2em;
     }
-
     .the-grid {
       grid-template-rows: repeat(32, [row-start] 1fr [row-end]);
       @include breakpoint (small only){
@@ -81,7 +79,6 @@
           margin-block-start: 0.5em;
         }
       }
-
       .config {
         grid-column-start: var(--col-middle);
         grid-column-end: span 3;
@@ -93,13 +90,11 @@
           grid-column-start: 3;
           grid-column-end: span 4;
         }
-
         .image-wrapper {
           background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 78% 17%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 24% 94%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
           // TODO follow what is happening from the events section
         }
       }
-
       .figma-logo {
         grid-column-start: 10;
         grid-column-end: span 2;
@@ -121,7 +116,6 @@
           }
         }
       }
-
       .team-photo {
         grid-column-start: 10;
         grid-column-end: span 3;
@@ -132,7 +126,6 @@
           grid-row-start: 19;
         }
       }
-
       .stage-photo {
         grid-column-start: span 5;
         grid-column-end: var(--col-middle);
@@ -143,12 +136,10 @@
           grid-column-end: 7;
           grid-row-start: 23;
         }
-
         .image-wrapper {
           aspect-ratio: 3/2;
         }
       }
-
       .thank-you {
         grid-column-start: var(--col-middle);
         grid-column-end: span 5;
@@ -163,17 +154,14 @@
           grid-row-start: 26;
           grid-row-end: span 7;
         }
-
         .text-wrapper {
           grid-column: 1 / -1; // Span all columns (full width)
         }
-
         .image-wrapper {
           grid-column-start: auto;
           grid-column-end: span 3;
         }
       }
-
       .anyone-design {
         grid-column-start: col-start;
         grid-column-end: span 7;
@@ -186,7 +174,6 @@
           grid-row-end: span 4;
         }
       }
-
       .beauty-beast {
         grid-column-start: 8;
         grid-column-end: -1;
@@ -200,7 +187,6 @@
           grid-row-end: span 3;
         }
       }
-
       .audience-comments {
         grid-column-start: col-start;
         grid-column-end: span 6;
@@ -212,14 +198,11 @@
           grid-row-start: 42;
           grid-row-end: span 10;
         }
-
         .text-wrapper {
           grid-column: 1 / -1; // To span all columns (full width)
         }
-
         p {
           hanging-punctuation: first;
-
           span {
             font-weight: $space-grotesk-bold;
             --blur: 1em;
@@ -244,7 +227,6 @@
           }
         }
       }
-
       .closing {
         grid-column-start: col-start;
         grid-column-end: -1;
@@ -256,12 +238,10 @@
           grid-row-start: 50;
           grid-row-end: span 6;
         }
-
         .moscone {
           grid-column-start: 1;
           grid-column-end: span 3;
         }
-
         .stage {
           // aspect-ratio: 2/1;
           aspect-ratio: auto;
@@ -275,7 +255,6 @@
             height: initial;
           }
         }
-
         .text-cell {
           grid-row: 1 / -1;
           grid-column: 10 / -1;
@@ -290,7 +269,6 @@
           @include breakpoint(small only){
             grid-column: 4/-1;
           }
-
           h3 {
             font-size: 1.75em;
             line-height: 1.2;
@@ -299,7 +277,6 @@
         }
       }
     }
-
     .config-footer {
       margin-block-start: 5em;
       @include breakpoint(small only){
@@ -313,13 +290,11 @@
       }
     }
   }
-
   .speaking-siggraph {
     padding-block: 5em;
     @include breakpoint(small only){
       padding-block: 2em;
     }
-
     .the-grid {
       grid-template-rows: repeat(7, [row-start] 1fr [row-end]);
       @include breakpoint(small only){
