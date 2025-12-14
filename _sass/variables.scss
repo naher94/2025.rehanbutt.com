@@ -82,6 +82,7 @@ $navy-black-l9: mix($pure-white, $navy-black, 90%);
 //// This method allows for several flavors of a color to be added such as a dark mode or a high contrast for example
 $semantic-colors:(
   light:(
+    selection-background: $signature-teal-l6,
     page-bg: $pure-white,
     text: $navy-black,
     text-inverted: $pure-white,
@@ -96,6 +97,7 @@ $semantic-colors:(
     wrap-up-card-bg: $pure-white,
   ),
   dark:(
+    selection-background: $signature-teal-d3,
     page-bg: $navy-black-d3,
     text: $pure-white,
     text-inverted: $navy-black,
