@@ -14,16 +14,12 @@ $web-orange: #FF8D3D;
   --color-link: #{$navy-black};
   background: linear-gradient(180deg,rgba($web-orange, 0.4) 0%, rgba($web-orange, 0.1) 100%);
   margin-top: 2rem;
-  // TODO this overflow-x is not working
-  // overflow-x: hidden; //To handle the negative margin on the footer
+  overflow: hidden;
   font-family: $space-grotesk;
   @media (prefers-color-scheme: dark) {
     --color-link: #{$pure-white};
   }
   @include breakpoint(small only){
-    // TODO this overflow-x is not working
-    // overflow-x: clip;
-    overflow-y: visible;
     --content-padding: 1rem;
   }
   p{
@@ -46,7 +42,6 @@ $web-orange: #FF8D3D;
       font-size: 25rem;
       font-weight: $space-grotesk-bold;
       color: rgba($web-orange, 0.07);
-      // color: red;
       filter: blur(2px);
       line-height: 1;
       margin-top: -7%;
