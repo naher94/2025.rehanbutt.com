@@ -31,18 +31,6 @@
       border-radius: var(--photo-radius);
       box-shadow: var(--image-wrapper-shadow);
       overflow: hidden;
-
-      // clip-path: inset(0 round var(--photo-radius));
-      // mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
-      // TODO add a wrapper around this to make sure the box shadow actually shows
-      svg,
-      img {
-        // animation: image-anim linear both;
-        animation-timeline: view(block);
-        // animation-range: contain 25% contain 75%;
-        // animation-range: contain 0% contain 25%;
-        animation-range: entry 0% entry-crossing 100%;
-      }
     }
     .tag-wrapper {
       margin-block-start: 0.5rem;
@@ -68,74 +56,16 @@
   .speaking-config {
     background: linear-gradient(to bottom right, #1D2127, #373C43);
     color: white;
-    // font-family: $space-grotesk;
     padding-block: 5em;
     @include breakpoint(small only){
       padding-block: 2em;
     }
 
     .the-grid {
-      // display: grid;
-      // grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
       grid-template-rows: repeat(32, [row-start] 1fr [row-end]);
-      // gap: 1em;
-      // --col-middle: 7;
-      // --photo-radius: 30px;
-      // --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
       @include breakpoint (small only){
         grid-template-rows: repeat(55, [row-start] 1fr [row-end]);
       }
-
-      @keyframes image-anim {
-        from {
-          // filter: blur(20px) grayscale(80%);
-          filter: blur(10px);
-          scale: 1.25;
-        }
-
-        to {
-          // filter: blur(0) grayscale(0%);
-          filter: blur(0);
-          scale: 1;
-          // rotate: -2deg;
-          // TODO figure out a cool animation here
-        }
-      }
-
-      // p {
-      //   margin: 0;
-      //   padding: 0;
-      //   font-size: 1rem;
-      //   margin-block-end: 0.5rem;
-      // }
-
-      // h3 {
-      //   font-family: $space-grotesk;
-      //   font-weight: $space-grotesk-bold;
-      //   text-wrap: pretty;
-      //   font-size: 2em;
-      // }
-
-      // .image-wrapper {
-      //   aspect-ratio: 1/1;
-      //   background-color: $pure-black;
-      //   border-radius: var(--photo-radius);
-      //   box-shadow: var(--image-wrapper-shadow);
-      //   overflow: hidden;
-
-      //   // clip-path: inset(0 round var(--photo-radius));
-      //   // mask-image: radial-gradient(circle at 50% 50%, white 99%, transparent 100%);
-      //   // TODO add a wrapper around this to make sure the box shadow actually shows
-      //   svg,
-      //   img {
-      //     // animation: image-anim linear both;
-      //     animation-timeline: view(block);
-      //     // animation-range: contain 25% contain 75%;
-      //     // animation-range: contain 0% contain 25%;
-      //     animation-range: entry 0% entry-crossing 100%;
-      //   }
-      // }
-
       .talk-intro {
         grid-column-start: col-start;
         grid-column-end: var(--col-middle);
@@ -168,27 +98,6 @@
           background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 78% 17%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 24% 94%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
           // TODO follow what is happening from the events section
         }
-
-        // .logo-wrapper {
-        //   padding: 1em;
-        //   display: flex;
-        //   justify-content: center; // centers horizontally
-        //   align-items: center; // centers vertically
-        // }
-
-        // .tag-wrapper {
-        //   margin-block-start: 0.5rem;
-
-        //   .tag {
-        //     display: inline-block;
-        //     background-color: rgba($pure-white, 0.2);
-        //     padding: 0.25em 0.5em;
-        //     border-radius: 0.5em;
-        //     font-weight: $space-grotesk-bold;
-        //     font-size: 1rem;
-        //     margin-block: 0.25rem;
-        //   }
-        // }
       }
 
       .figma-logo {
@@ -313,8 +222,6 @@
 
           span {
             font-weight: $space-grotesk-bold;
-            // --blur: 20px;
-            // --orbit-radius: 10px;
             --blur: 1em;
             --orbit-radius: 0.75em;
             --angle1: 0deg;
@@ -491,8 +398,6 @@
         grid-column-end: 13;
         grid-row-start: 5;
         grid-row-end: span 4;
-        // grid-row-start: 2;
-        // grid-row-end: span 3;
         @include breakpoint(small only){
           grid-column-start: 1;
           grid-column-end: -1;
@@ -665,7 +570,6 @@
   to {
     --angle2: 480deg;
   }
-
   /* 360 + 120 to keep offset */
 }
 
@@ -673,7 +577,6 @@
   to {
     --angle3: 600deg;
   }
-
   /* 360 + 240 */
 }
 
