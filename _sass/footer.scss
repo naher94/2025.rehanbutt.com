@@ -48,8 +48,7 @@ footer{
       // TODO make this computed value scaling 8px is half of 1rem
       animation: clock-flip 6s linear 2s 1 alternate forwards;
       animation-timeline: view(block);
-      animation-range: contain 25% contain 50%;
-      // TODO figure out the fall back for this scroll animation
+      animation-range: contain 25% contain 50%; // animation-range not supported in Firefox
     }
     .face {
       backface-visibility: hidden;
