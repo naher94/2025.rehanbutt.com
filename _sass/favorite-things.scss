@@ -24,7 +24,7 @@
     background-color: semantic-color(fave-border);
     outline: solid 0.25em semantic-color(fave-border);
     @include breakpoint(small only){
-      grid-template-rows: repeat(12, [row-start] 1fr [row-end]);
+      grid-template-rows: repeat(8, [row-start] 1fr [row-end]);
       grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
     }
     .grid-cell{
@@ -56,6 +56,7 @@
         grid-column-start: 1;
         grid-column-end: 4;
         grid-row-start: 1;
+        aspect-ratio: auto;
       }
       h2{
         font-family: $big-shoulders;
@@ -66,6 +67,11 @@
         rotate: -5deg;
         margin-bottom: 0;
         margin-inline-start: -0.05em;
+        @include breakpoint(small only){
+          margin-inline-start: -0.1em;
+          margin-top: 0.25em;
+          font-size: 7.5em;
+        }
         span{
           letter-spacing: 0.14em;
         }
@@ -79,13 +85,27 @@
       // aspect-ratio: 1/1;
       overflow: hidden;
       position: relative;
+      @include breakpoint(small only){
+        grid-column-start: 2;
+        grid-column-end: span 2;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+      }
       svg{
         width: 49rem;
         position: absolute;
         top: -4rem;
         left: -2rem;
+        @include breakpoint(small only){
+          width: 25rem;
+          top: 0rem;
+          left: -1rem;
+        }
         path{
           stroke-width: 8px;
+          @include breakpoint(small only){
+            stroke-width: 6px;
+          }
         }
       }
     }
@@ -137,35 +157,62 @@
       &.airpods{
         grid-row-start: 1;
         grid-column-start: 2;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 3;
+        }
       }
       &.jenis{
         grid-row-start: 1;
         grid-column-start: 6;
         @include flip;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 4;
+        }
       }
       &.zankou{
         grid-row-start: 5;
         grid-column-start: 8;
         // @include flip;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 7;
+        }
       }
       &.stuffmadehere{
         grid-row-start: 3;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 5;
+        }
       }
       &.wrexham{
         grid-row-start: 4;
         grid-column-start: 3;
         @include flip;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 6;
+        }
       }
       &.z85{
         grid-row-start: 6;
         grid-column-start: 5;
         @include flip;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 8;
+        }
       }
     }
     .seat-filler{
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
       // aspect-ratio: 1/1;
+      @include breakpoint(small only){
+        display: none;
+      }
       &__0{
         grid-row-start: 1;
         grid-column-start: 1;
