@@ -71,7 +71,6 @@
         grid-row-end: span 10;
         font-family: $space-grotesk;
         @include breakpoint(small only){
-          grid-column-end: col-end; // TODO why is this not working?
           grid-column-end: 7;
           grid-row-end: span 12;
         }
@@ -110,7 +109,6 @@
           justify-content: center; // centers horizontally
           align-items: center; // centers vertically
           background-color: $pure-black;
-
           svg {
             width: 3em;
           }
@@ -368,8 +366,6 @@
       }
       .talk-intro{
         grid-column-start: var(--col-middle);
-        // TODO figure out why this is not working
-        // grid-column-end: col-end;
         grid-column-end: 13;
         grid-row-start: 5;
         grid-row-end: span 4;
@@ -514,21 +510,18 @@
   inherits: false;
   initial-value: 0deg;
 }
-
 @property --angle2 {
   syntax: "<angle>";
   inherits: false;
   initial-value: 120deg;
   /* 1/3 of 360 */
 }
-
 @property --angle3 {
   syntax: "<angle>";
   inherits: false;
   initial-value: 240deg;
   /* 2/3 of 360 */
 }
-
 @property --blur {
   syntax: "<length>";
   inherits: false;
@@ -540,21 +533,18 @@
     --angle1: 360deg;
   }
 }
-
 @keyframes orbit2 {
   to {
     --angle2: 480deg;
   }
   /* 360 + 120 to keep offset */
 }
-
 @keyframes orbit3 {
   to {
     --angle3: 600deg;
   }
   /* 360 + 240 */
 }
-
 @keyframes blur-pulse {
   to {
     --blur: 1.25em;
