@@ -125,10 +125,6 @@
         }
       }
       // Add a class for each fave thing      
-      &.strawberries{
-        grid-column-start: 2;
-        grid-row-start: 1;
-      }
       &.bic{
         grid-row-start: 5;
         grid-column-start: 8;
