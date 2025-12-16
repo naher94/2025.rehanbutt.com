@@ -19,7 +19,7 @@
         <div class="tag-wrapper">
           <!-- TODO figure out sort -->
           <!-- TODO add grand canyon cities & winter trip -->
-          {%- assign city-array = "Los Angeles, New York, Washington DC, Philadelphia, San Francisco, Orlando, San Diego" | split:',' | sort -%}
+          {%- assign city-array = "Los Angeles, New York, Washington DC, Philadelphia, San Francisco, Orlando, San Diego, Grand Canyon, Sedona" | split:',' | sort -%}
           {%- for city in city-array -%}
             <div class="city-tag">{{city}}</div>
           {%- endfor -%}
