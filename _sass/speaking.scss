@@ -286,6 +286,33 @@
         text-wrap: pretty;
         text-align: center;
       }
+      .email-container{
+        @include link-expand(white,$navy-black);
+        cursor: pointer;
+        position: relative;
+        &::after{
+          z-index: initial;
+        }
+        p{
+          z-index: 2;
+          position: relative;
+        }
+        .copied{
+          z-index: 3;
+          background-color: $signature-teal;
+          box-shadow: $recessed-shadow $pure-black;
+          color: $pure-white;
+          border-radius: $pill-radius;
+          padding: 0.25em 0.5em;
+          rotate: -15deg;
+          visibility: hidden;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin-top: -0.5em;
+        }
+      }
     }
   }
   .speaking-siggraph {

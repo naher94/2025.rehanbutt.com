@@ -4,6 +4,28 @@ const flipCardWidth = document.querySelector('.static-number').getBoundingClient
 footer.style.setProperty('--flip-card-width', `${flipCardWidth}px`);
 
 
+///////////////////////////////////////////// Start of Copy to Clipboard
+function copyToClipboard(link,clickedItem) {
+	if (navigator && navigator.clipboard && navigator.clipboard.writeText){
+		var copyBadge = document.createElement("span");
+		copyBadge.classList.add("copied");
+		copyBadge.setAttribute("id", "copy-confirmation");
+		copyBadge.innerText = "Copied!";
+		clickedItem.appendChild(copyBadge);
+
+    copyBadge.style.visibility = 'visible';
+    navigator.clipboard.writeText(link);  
+    setTimeout(function(){copyBadge.style.visibility = 'hidden';}, 1500);
+		setTimeout(function(){copyBadge.remove();}, 1600);
+    return;
+	}
+  return Promise.reject('The Clipboard API is not available.');
+}
+///////////////////////////////////////////// End of Copy to Clipboard
+
+
+
+
 // Add this near your images array:
 const captions = [
   "Caption for image 1",
