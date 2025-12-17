@@ -117,6 +117,10 @@
       .image-wrapper, .description-wrapper{
         background-color: semantic-color(page-bg);
       }
+      // TODO check this
+      .image-wrapper{
+        aspect-ratio: 1/1;
+      }
       .description-wrapper{
         grid-column-start: 2;
         grid-column-end: span 2;
@@ -214,6 +218,8 @@
     .seat-filler{
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
+      // TODO check this
+      // why does this being 1/1 break the grid???
       // aspect-ratio: 1/1;
       @include breakpoint(small only){
         display: none;
