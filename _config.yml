@@ -35,3 +35,5 @@ collections:
     output: false
   web-stats:
     output: false
+  berries:
+    output: false
