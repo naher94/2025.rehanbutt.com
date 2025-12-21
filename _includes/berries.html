@@ -1,0 +1,47 @@
+<section class="berries" id="berries" aria-label="Berries Section">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+    {%- assign month-sort = site.berries | sort: "month" -%}
+    {%- for month in month-sort -%}
+      <div class="cell medium-3">
+        <div class="header cell grid-x align-justify">
+          <div class="cell shrink month-name">
+            {{month.name}}
+          </div>
+          <div class="cell shrink month-total">
+            {% assign total = 0 | plus: month.raspberry | plus: month.blueberry | plus: month.blackberry | plus: month.strawberry %}
+            <!-- TODO this is not working -->
+            {{total}}oz
+          </div>
+        </div>
+        <div class="month-dots cell">
+          {%- assign rasp-dots = month.raspberry | divided_by: 10 -%}
+          {%- assign blue-dots = month.blueberry | divided_by: 10 -%}
+          {%- assign black-dots = month.blackberry | divided_by: 10 -%}
+          {%- assign straw-dots = month.strawberry | divided_by: 10 -%}
+          {%- for berry in (1..rasp-dots) -%}
+            <div class="raspberry berry-dot"></div>
+          {%- endfor -%}
+          {%- for berry in (1..blue-dots) -%}
+            <div class="blueberry berry-dot"></div>
+          {%- endfor -%}
+          {%- for berry in (1..black-dots) -%}
+            <div class="blackberry berry-dot"></div>
+          {%- endfor -%}
+          {%- for berry in (1..straw-dots) -%}
+            <div class="strawberry berry-dot"></div>
+          {%- endfor -%}
+          <!-- Rasp: {{month.raspberry}} -->
+          <!-- Blue: {{month.blueberry}} -->
+          <!-- Black: {{month.blackberry}} -->
+          <!-- Straw: {{month.strawberry}} -->
+          
+          <!-- define upper limit of dots and then make sure to round the value.. / mod the value? -->
+          <!-- dots go here -->
+          <!-- at the class to the specific berry -->
+        </div>
+      </div>
+    {%- endfor -%}
+    </div>
+  </div>
+</section>

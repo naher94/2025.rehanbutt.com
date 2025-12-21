@@ -1,0 +1,27 @@
+.berries{
+  .month-dots{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1em;
+    .berry-dot{
+      display: inline-block;
+      border-radius: $pill-radius;
+      aspect-ratio: 1/1;
+      width: 1em;
+      height: 1em;
+      background-color: red;
+      &.raspberry{
+        background-color: #C63863;
+      }
+      &.blueberry{
+        background-color: #513880;
+      }
+      &.blackberry{
+        background-color: #2F2538;
+      }
+      &.strawberry{
+        background-color: #ED5151;
+      }
+    }
+  }
+}
