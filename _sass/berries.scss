@@ -1,6 +1,10 @@
 .berries{
+  --raspberry: #C63863;
+  --blueberry: #513880;
+  --blackberry: #2F2538;
+  --strawberry: #ED5151;
   .header{
-    margin-block-end: 0.25em;
+    margin-block-end: 0.5em;
     .month-name{
       font-weight: $lato-bold;
     }
@@ -10,9 +14,9 @@
   }
   .totals-card{
     border-radius: $tile-radius;
-    background-color: lightblue;
     padding: 1.25em;
     aspect-ratio: 5/3;
+    color: $pure-white;
     p{
       margin-bottom: 0;
       line-height: 1;
@@ -20,6 +24,18 @@
     .total-number{
       font-size: 2.25em;
       font-weight: $lato-black;
+    }
+    &.raspberry{
+      background-color: var(--raspberry);
+    }
+    &.blueberry{
+      background-color: var(--blueberry);
+    }
+    &.blackberry{
+      background-color: var(--blackberry);
+    }
+    &.strawberry{
+      background-color: var(--strawberry);
     }
   }
   .month-dots{
@@ -33,25 +49,56 @@
       display: inline-block;
       border-radius: $pill-radius;
       aspect-ratio: 1/1;
-      width: 1em;
-      height: 1em;
+      width: 1.2em;
+      height: 1.2em;
       &.raspberry{
-        background-color: #C63863;
+        background-color: var(--raspberry);
       }
       &.blueberry{
-        background-color: #513880;
+        background-color: var(--blueberry);
+        display: flex;
+        justify-content: center; /* horizontal alignment */
+        align-items: center;     /* vertical alignment */
+        .cutout{
+          // border-radius: 1px;
+          background-color: $pure-white;
+          width: 0.3em;
+          height: 0.3em;
+        }
+        // svg{
+        //   margin-bottom: 2px;
+        // }
       }
       &.blackberry{
-        background-color: #2F2538;
+        background-color: var(--blackberry);
+        display: flex;
+        justify-content: center; /* horizontal alignment */
+        align-items: center;     /* vertical alignment */
+        .cutout{
+          border-radius:$pill-radius;
+          background-color: $pure-white;
+          width: 0.35em;
+          height: 0.35em;
+        }
+        // svg{
+        //   margin-bottom: 2px;
+        // }
       }
       &.strawberry{
-        background-color: #ED5151;
+        background-color: var(--strawberry);
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        svg{
+          // margin-bottom: 2px;
+          width: 85%;
+        }
       }
     }
   }
   .test-container {
-    --gap-x: 2em;
-    --gap-y: 2em;
+    --gap-x: 2.3em;
+    --gap-y: 3em;
 
     display: flex;
     flex-wrap: wrap;
