@@ -1,8 +1,8 @@
 ---
 name: January
 month: 1
-raspberry: 10
-blueberry: 1
-blackberry: 23
-strawberry: 210
+raspberry: 186
+blueberry: 270
+blackberry: 192
+strawberry: 48
 ---
