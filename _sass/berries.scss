@@ -3,6 +3,8 @@
   --blueberry: #513880;
   --blackberry: #2F2538;
   --strawberry: #ED5151;
+  margin-block-start: 7em;
+  margin-block-end: 8em;
   .intro{
     margin-block-end: 2em;
     h2{
@@ -15,7 +17,7 @@
     }
     p{
       font-size: 1.25em;
-      line-height: 1.4;
+      line-height: 1.2;
       font-weight: $lato-bold;
     }
   }
