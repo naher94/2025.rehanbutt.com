@@ -14,6 +14,7 @@
         {%- endfor -%}
         <p class="berry-name">Blueberries</p>
         <p class="total-number">{{blue}}oz</p>
+        <div class="cutout"></div>
       </div>
       <div class="totals-card blackberry cell test-item">
         {%- for month in site.berries -%}
@@ -21,6 +22,7 @@
         {%- endfor -%}
         <p class="berry-name">Blackberries</p>
         <p class="total-number">{{black}}oz</p>
+        <div class="cutout"></div>
       </div>
       <div class="totals-card strawberry cell test-item">
         {%- for month in site.berries -%}
@@ -28,6 +30,7 @@
         {%- endfor -%}
         <p class="berry-name">Strawberries</p>
         <p class="total-number">{{straw}}oz</p>
+        {% include_relative img/berries/strawberry-cut.svg %}
       </div>
     </div>
     <div class="grid-x test-container">
