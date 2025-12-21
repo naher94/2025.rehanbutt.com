@@ -3,6 +3,22 @@
   --blueberry: #513880;
   --blackberry: #2F2538;
   --strawberry: #ED5151;
+  .intro{
+    margin-block-end: 2em;
+    h2{
+      font-family: $big-shoulders;
+      font-weight: $big-shoulders-black;
+      text-transform: uppercase;
+      font-size: 5em;
+      line-height: 1;
+      margin-bottom: 0;
+    }
+    p{
+      font-size: 1.25em;
+      line-height: 1.4;
+      font-weight: $lato-bold;
+    }
+  }
   .header{
     margin-block-end: 0.5em;
     .month-name{
@@ -85,14 +101,10 @@
         justify-content: center; /* horizontal alignment */
         align-items: center;     /* vertical alignment */
         .cutout{
-          // border-radius: 1px;
           background-color: $pure-white;
           width: 0.3em;
           height: 0.3em;
         }
-        // svg{
-        //   margin-bottom: 2px;
-        // }
       }
       &.blackberry{
         background-color: var(--blackberry);
@@ -105,9 +117,6 @@
           width: 0.35em;
           height: 0.35em;
         }
-        // svg{
-        //   margin-bottom: 2px;
-        // }
       }
       &.strawberry{
         background-color: var(--strawberry);
@@ -115,7 +124,6 @@
         justify-content: center;
         align-items: center; 
         svg{
-          // margin-bottom: 2px;
           width: 85%;
         }
       }
