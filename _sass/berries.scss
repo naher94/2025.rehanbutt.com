@@ -1,4 +1,10 @@
 .berries{
+  .header{
+    margin-block-end: 0.25em;
+    .month-name{
+      font-weight: $lato-bold;
+    }
+  }
   .month-dots{
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +15,6 @@
       aspect-ratio: 1/1;
       width: 1em;
       height: 1em;
-      background-color: red;
       &.raspberry{
         background-color: #C63863;
       }
