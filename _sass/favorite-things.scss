@@ -117,9 +117,11 @@
       .image-wrapper, .description-wrapper{
         background-color: semantic-color(page-bg);
       }
-      // TODO check this
       .image-wrapper{
-        aspect-ratio: 1/1;
+        overflow: hidden;
+        img{
+          scale: 1.05;
+        }
       }
       .description-wrapper{
         grid-column-start: 2;
