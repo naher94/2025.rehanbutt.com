@@ -213,6 +213,10 @@
         grid-row-start: 2;
         grid-column-start: 8;
         @include flip;
+        @include breakpoint(small only){
+          grid-row-start: 5;
+          grid-column-start: 1;
+        }
       }
     }
     .seat-filler{
