@@ -1,35 +1,39 @@
 <section class="berries" id="berries" aria-label="Berries Section">
   <div class="grid-container">
-    <div class="grid-x grid-margin-x">
-    <div class="totals grid-x cell">
-      <div class="rasp-total cell medium-3">
+    <div class="totals test-container">
+      <div class="totals-card rasp-total cell test-item">
         {%- for month in site.berries -%}
           {%- assign rasp = rasp | plus: month.raspberry -%}
         {%- endfor -%}
-        raspberry total: {{rasp}}
+        <p class="berry-name">Raspberries</p>
+        <p class="total-number">{{rasp}}oz</p>
       </div>
-      <div class="blue-total cell medium-3">
+      <div class="totals-card blue-total cell test-item">
         {%- for month in site.berries -%}
           {%- assign blue = blue | plus: month.blueberry -%}
         {%- endfor -%}
-        blueberry total: {{blue}}
+        <p class="berry-name">Blueberries</p>
+        <p class="total-number">{{blue}}oz</p>
       </div>
-      <div class="black-total cell medium-3">
+      <div class="totals-card black-total cell test-item">
         {%- for month in site.berries -%}
           {%- assign black = black | plus: month.blackberry -%}
         {%- endfor -%}
-        blackberry total: {{black}}
+        <p class="berry-name">Blackberries</p>
+        <p class="total-number">{{black}}oz</p>
       </div>
-      <div class="straw-total cell medium-3">
+      <div class="totals-card straw-total cell test-item">
         {%- for month in site.berries -%}
           {%- assign straw = straw | plus: month.strawberry -%}
         {%- endfor -%}
-        strawberry total: {{straw}}
+        <p class="berry-name">Strawberries</p>
+        <p class="total-number">{{straw}}oz</p>
       </div>
     </div>
+    <div class="grid-x test-container">
     {%- assign month-sort = site.berries | sort: "month" -%}
     {%- for month in month-sort -%}
-      <div class="cell medium-3">
+      <div class="cell test-item">
         <div class="header cell grid-x align-justify">
           <div class="cell shrink month-name">
             {{month.name}}

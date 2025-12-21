@@ -5,10 +5,30 @@
       font-weight: $lato-bold;
     }
   }
+  .totals{
+    margin-block-end: 2em;
+  }
+  .totals-card{
+    border-radius: $tile-radius;
+    background-color: lightblue;
+    padding: 1.25em;
+    aspect-ratio: 5/3;
+    p{
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    .total-number{
+      font-size: 2.25em;
+      font-weight: $lato-black;
+    }
+  }
   .month-dots{
     display: flex;
     flex-wrap: wrap;
     gap: 0.1em;
+    @include breakpoint(small only){
+      gap: 0.16em;
+    }
     .berry-dot{
       display: inline-block;
       border-radius: $pill-radius;
@@ -29,4 +49,30 @@
       }
     }
   }
+  .test-container {
+    --gap-x: 2em;
+    --gap-y: 2em;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    column-gap: var(--gap-x);
+    row-gap: var(--gap-y);
+    @include breakpoint(small only){
+      --gap-x: 1em;
+    }
+  }
+
+  .test-item {
+    --column-count: 4;
+    --number-of-gaps: calc(var(--column-count) - 1);
+    flex: 0 0 calc(
+      (100% - (var(--number-of-gaps) * var(--gap-x))) / var(--column-count)
+    );
+    @include breakpoint(small only){
+      --column-count: 2;
+    }
+  }
+
+
 }
