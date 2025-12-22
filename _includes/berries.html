@@ -1,4 +1,4 @@
-<!-- TODO decide where this section goes and add to header nav -->
+<!-- TODO add section to header nav -->
 <section class="berries" id="berries" aria-label="Berries Section">
   <div class="grid-container">
     <div class="intro grid-x">
@@ -12,6 +12,10 @@
         {%- endfor -%}
         <p class="berry-name">Raspberries</p>
         <p class="total-number">{{rasp}}oz</p>
+        {% include_relative img/berries/raspberry.svg %}
+        {% include_relative img/berries/raspberry.svg %}
+        {% include_relative img/berries/raspberry.svg %}
+        {% include_relative img/berries/raspberry.svg %}
       </div>
       <div class="totals-card blueberry cell test-item">
         {%- for month in site.berries -%}

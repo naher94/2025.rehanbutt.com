@@ -36,9 +36,12 @@
     aspect-ratio: 5/3;
     color: $pure-white;
     position: relative;
+    overflow: hidden;
     p{
       margin-bottom: 0;
       line-height: 1;
+      z-index: 2;
+      position: relative;
     }
     .total-number{
       font-size: 2.25em;
@@ -46,6 +49,33 @@
     }
     &.raspberry{
       background-color: var(--raspberry);
+      svg{
+        opacity: 50%;
+        position: absolute;
+        &:nth-of-type(1){
+          width: 3.5em;
+          rotate: 167deg;
+          left: 1em;
+          bottom: -1em;
+        }
+        &:nth-of-type(2){
+          width: 2.5em;
+          left: 5em;
+          bottom: 2em;
+        }
+        &:nth-of-type(3){
+          width: 4em;
+          right: -0.5em;
+          top: 1em;
+          rotate: 100deg;
+        }
+        &:nth-of-type(4){
+          width: 2em;
+          right: 1.25em;
+          top: 5em;
+          rotate: 16deg;
+        }
+      }
     }
     &.blueberry{
       background-color: var(--blueberry);
