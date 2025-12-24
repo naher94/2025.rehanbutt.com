@@ -109,7 +109,9 @@
   }
   .thumbnail {
     position: relative;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
+    // TODO figure out why this is not a square
+    aspect-ratio: 1/1.03;
     overflow: hidden;
     border-radius: $tile-radius-big;
     z-index: 1;
@@ -117,6 +119,9 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: #2a2a2a;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    @include breakpoint(small only){
+      aspect-ratio: 1/1;
+    }
     &:hover{
       // TODO do I need this??
       // transform: scale(1.05);
