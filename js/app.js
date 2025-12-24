@@ -28,9 +28,9 @@ function copyToClipboard(link,clickedItem) {
 
 // Add this near your images array:
 const captions = [
-  "Caption for image 1",
+  "A photo of a Tori gate with cherry blossoms outside of Fiji in Japan",
   "Caption for image 2",
-  "Caption for image 3",
+  "A photo of Lumiere from Disneyland's Paint the Night Parade",
   "Caption for image 4",
   "Caption for image 5",
   "Caption for image 6"

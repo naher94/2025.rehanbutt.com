@@ -19,9 +19,9 @@ body {
 
 // Debugging visual item
 // TODO turn this off to not mess with lightbox
-img:not([alt]), img[alt=""] {
-  border: 5px dashed red;
-}
+// img:not([alt]), img[alt=""] {
+//   border: 5px dashed red;
+// }
 
 .content-wrapper{
   padding-top: 3em;
