@@ -159,6 +159,18 @@
           grid-row-start: 1;
         }
       }
+      @mixin antiflip{
+        .image-wrapper{
+          grid-column-start: 1;
+          grid-column-end: span 1;
+        }
+        .description-wrapper{
+          grid-column-start: 2;
+          grid-column-end: span 2;
+          grid-row-start: 1;
+        }
+      }
+
       // Add a class for each fave thing
       &.airpods{
         grid-row-start: 1;
@@ -180,17 +192,18 @@
       &.zankou{
         grid-row-start: 5;
         grid-column-start: 8;
-        // @include flip;
         @include breakpoint(small only){
           grid-column-start: 1;
-          grid-row-start: 7;
+          grid-row-start: 8;
+          @include flip;
         }
       }
       &.stuffmadehere{
         grid-row-start: 3;
         @include breakpoint(small only){
           grid-column-start: 1;
-          grid-row-start: 5;
+          grid-row-start: 6;
+          @include flip;
         }
       }
       &.wrexham{
@@ -199,7 +212,8 @@
         @include flip;
         @include breakpoint(small only){
           grid-column-start: 1;
-          grid-row-start: 6;
+          grid-row-start: 7;
+          @include antiflip;
         }
       }
       &.z85{
@@ -208,7 +222,8 @@
         @include flip;
         @include breakpoint(small only){
           grid-column-start: 1;
-          grid-row-start: 8;
+          grid-row-start: 9;
+          @include antiflip;
         }
       }
       &.vh{
@@ -218,6 +233,7 @@
         @include breakpoint(small only){
           grid-row-start: 5;
           grid-column-start: 1;
+          @include antiflip;
         }
       }
     }
@@ -349,6 +365,14 @@
       &__29{
         grid-row-start: 6;
         grid-column-start: 2;
+      }
+      &__30{
+        grid-row-start: 6;
+        grid-column-start: 3;
+      }
+      &__31{
+        grid-row-start: 6;
+        grid-column-start: 4;
       }
     }
   }
