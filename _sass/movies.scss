@@ -134,6 +134,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
           top: 30%;
           rotate: -10deg;
           display: none;
+          z-index: 2;
         }
       }
       .poster-kpop{
