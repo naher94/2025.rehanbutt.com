@@ -125,22 +125,22 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
       }
       .poster-1{
         &:hover{
-          .fallguy-gif{
+          .f1-gif{
             display: block;
           }
         }
-        .fallguy-gif{
+        .f1-gif{
           position: absolute;
           top: 30%;
           rotate: -10deg;
           display: none;
         }
       }
-      .poster-deadpool{
-        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='80' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>❤️</text></svg>") 16 0,auto;
+      .poster-kpop{
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='80' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🎤</text></svg>") 16 0,auto;
       }
-      .poster-wildrobot{
-        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='80' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🦆</text></svg>") 16 0,auto;
+      .poster-wicked{
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='80' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🪄</text></svg>") 16 0,auto;
       }
       .picks-list{
         h3{
@@ -190,7 +190,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
             }
           }
           &:nth-of-type(5){
-            // margin-block-end: 0; //TODO do I want this?
+            margin-block-end: 0;
             svg{
               path{
                 fill: $popcorn-yellow3;

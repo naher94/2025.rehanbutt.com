@@ -5,8 +5,7 @@
         <h2 class="cell">film log</h2>
         <div class="cell grid-x picks-list align-self-bottom">
           <h3>top picks</h3>
-          <!-- TODO update these movies -->
-          {% assign top_picks = "The Fall Guy,Deadpool & Wolverine,The Wild Robot,Inside Out 2,Rise of the Planet of the Apes" | split: ',' %}
+          {% assign top_picks = "F1,Kpop Demon Hunters,Wicked,The Fantastic 4: First Steps,Thunderbolts*" | split: ',' %}
           {%- for movie in top_picks -%}
           <div class="list-item cell grid-x align-middle">
             <div class="popcorn-number cell shrink align-middle align-center">
@@ -26,14 +25,14 @@
           {% include_relative img/movies/popcorn.svg %}
         </div>
         <div class="poster-box first-poster poster-1 poster">
-          <img class="poster-img" src="/img/movies/fallguy.jpg" alt="The Fall Guy Poster">
-          <img src="/img/movies/fall-guy-thumbs-up.webp" alt="Fall Guy Thumbs up animation" class="fallguy-gif">
+          <img class="poster-img" src="/img/movies/f1.jpg" alt="F1 Poster">
+          <img src="/img/movies/f1.gif" alt="F1 He's Flying animation" class="f1-gif">
         </div>
-        <div class="poster-box second-poster poster-deadpool poster">
-            <img class="poster-img" src="/img/movies/deadpool.jpg" alt="Marvel's Deadpool & Wolverine Poster">
+        <div class="poster-box second-poster poster-kpop poster">
+          <img class="poster-img" src="/img/movies/kpop.jpg" alt="Kpop Demon Hunter Poster">
         </div>
-        <div class="poster-box third-poster poster-wildrobot poster">
-          <img class="poster-img" src="/img/movies/wildrobot.jpg" alt="The Wild Robot Poster">
+        <div class="poster-box third-poster poster-wicked poster">
+          <img class="poster-img" src="/img/movies/wicked.jpg" alt="Wicked Poster">
         </div>
 
       </div>
@@ -48,9 +47,8 @@
           {% include_relative img/movies/film.svg %}
         </div>
         <div class="text-container">
-          <!-- TODO update these stats -->
           <!-- Stats as of Dec 31th -->
-          <p class="number">119</p>
+          <p class="number">81</p>
           <p>featured films watched</p>
         </div>
       </div>
@@ -60,7 +58,7 @@
           {% include_relative img/movies/history.svg %}
         </div>
         <div class="text-container">
-          <p class="number">43%</p>
+          <p class="number">54%</p>
           <p>were rewatches</p>
         </div>
       </div>
@@ -70,7 +68,7 @@
           {% include_relative img/movies/timer.svg %}
         </div>
         <div class="text-container cell shrink">
-          <p class="number">Jan 1<sup>st</sup> & Aug 2<sup>nd</sup></p> 
+          <p class="number">Jan 5<sup>th</sup> & Aug 2<sup>nd</sup></p> 
           <p>busiest watch days with 5 movies</p>
         </div>
       </div>
@@ -135,11 +133,11 @@
       </div>
       <div class="cell small-6 medium-3 poster-stack">
         <!-- TODO replace this image set -->
-        <p class="visually-hidden">Deadpool & Wolverine</p>
-        <img class="sequel-poster" src="../img/movies/deadpool.jpg" alt="Deadpool Poster">
+        <p class="visually-hidden">Spider-Man: No Way Home</p>
+        <img class="sequel-poster" src="../img/movies/spiderman-no-home.jpg" alt="Spider-Man: No Way Home Poster">
         <div class="first-film">
           {% include_relative img/movies/popcorn.svg %}
-          <img src="../img/movies/deadpool1.jpg" alt="Deadpool Poster">
+          <img src="../img/movies/spiderman.jpg" alt="Spiderman Homecoming Poster">
           {% include_relative img/movies/popcorn.svg %}
         </div>
       </div>
