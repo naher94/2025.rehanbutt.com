@@ -60,7 +60,6 @@ body {
   position: relative;
   text-decoration: none;
   display: inline-block;
-  // TODO this line isnt working
   color: $link-color;
   padding: 0 1px;
   transition: $run;
@@ -74,7 +73,6 @@ body {
     height: 7%;
     left: 0;
     bottom: 0;
-    // TODO this line isnt working
     background-color: $link-color;
     transition: $run;
     border-radius: 5px;
