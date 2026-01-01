@@ -4,7 +4,7 @@
       <div class="medium-4 cell grid-x stat-wrapper">
         <h2>Travel Log</h2>
         <div class="stats grid-x cell align-self-bottom">
-          {% assign array-list = "(4D 5H|Flight Time),(D|F),(H|J),(a|2),(a|2)" | remove: "(" | remove: ")" | split: ',' %}
+          {% assign array-list = "(3D 15H|Flight Time),(40877 mi|Miles Flown),(1.6x|Times around the Globe),(4000+ mi|Miles Driven)" | remove: "(" | remove: ")" | split: ',' %}
           {% for item in array-list %}
           {% assign each = item | split: '|' %}
           <div class="line-item cell grid-x align-justify">
@@ -17,9 +17,8 @@
       <div class="medium-4 cell travel-card us-card">
         <h3>United States</h3>
         <div class="tag-wrapper">
-          <!-- TODO figure out sort -->
           <!-- TODO add grand canyon cities & winter trip -->
-          {%- assign city-array = "Los Angeles, New York, Washington DC, Philadelphia, San Francisco, Orlando, San Diego, Grand Canyon, Sedona, Savannah, Charleston" | split:',' | sort -%}
+          {%- assign city-array = "Los Angeles, Washington DC, Philadelphia, San Francisco, New York, San Diego, Sedona, Grand Canyon, Page, Las Vegas, Orlando, Charleston, Savannah" | split:',' -%}
           {%- for city in city-array -%}
             <div class="city-tag">{{city}}</div>
           {%- endfor -%}
@@ -48,9 +47,9 @@
         <div class="travel-card cell japan-card">
           <h3>Japan</h3>
           <div class="tag-wrapper">
+            <div class="city-tag">Tokyo</div>
             <div class="city-tag">Kyoto</div>
             <div class="city-tag">Osaka</div>
-            <div class="city-tag">Tokyo</div>
           </div>
         </div>
       </div>
