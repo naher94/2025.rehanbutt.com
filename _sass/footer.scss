@@ -6,6 +6,11 @@ footer{
   $flip-clock-spacing: 1rem;
   $flip-clock-perspective: 1200px;
   --flip-card-width: 100%;
+  --flip-number-bg: #F8F0E3;
+  @media (prefers-color-scheme: dark) {
+    background-color: $navy-black-d6;
+    --flip-number-bg: #{$navy-black-l1};
+  }
   @include breakpoint(small only){
     margin-top: 15em;
   }
@@ -24,7 +29,7 @@ footer{
     position: relative;
     width: 100%;
     .number-top, .number-bottom{
-      background-color: #F8F0E3;
+      background-color: var(--flip-number-bg);
       aspect-ratio: 1/1;
       border-radius: $tile-radius-big;
       overflow: hidden;
@@ -63,7 +68,7 @@ footer{
         height: var(--flip-card-width); // Set explicitly to fix an issue in Safari
         aspect-ratio: 1 / 1;
         transform: rotateX(.5turn);
-        background-color: #F8F0E3;
+        background-color: var(--flip-number-bg);
         z-index: 2;
         .text-fit{
           transform: translate(0, -50%);
