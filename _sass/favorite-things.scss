@@ -38,7 +38,6 @@
     @mixin ripple {
       transition: --stop 0.5s, --stop1 1s;
       background: radial-gradient(circle at bottom left,rgba(255, 255, 255, 1) var(--stop1), rgb(82, 148, 253) var(--stop1), rgba(82, 148, 253, 1) var(--stop), rgba(255, 255, 255, 1) var(--stop));
-      // TODO darkmode these colors
       @media (prefers-color-scheme: dark) {
         background: radial-gradient(circle at bottom left,rgba(22, 29, 39, 1) var(--stop1), rgb(45, 98, 183) var(--stop1), rgba(45, 98, 183, 1) var(--stop), rgba(22, 29, 39, 1) var(--stop));
       }
