@@ -3,6 +3,8 @@
   --blueberry: #513880;
   --blackberry: #2F2538;
   --strawberry: #ED5151;
+  --gap-x: 2.3em;
+  --gap-y: 3em;
   margin-block-start: 7em;
   margin-block-end: 8em;
   .intro{
@@ -29,6 +31,11 @@
   }
   .totals{
     margin-block-end: 3em;
+    &.test-container{
+      @include breakpoint(small only){
+        --gap-y: 1em;
+      }
+    }
   }
   .totals-card{
     border-radius: $tile-radius;
@@ -230,9 +237,6 @@
     }
   }
   .test-container {
-    --gap-x: 2.3em;
-    --gap-y: 3em;
-
     display: flex;
     flex-wrap: wrap;
 
