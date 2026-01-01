@@ -1,10 +1,10 @@
 ---
-stat-title: 19.7K
+stat-title: 18.7K
 stat-name: Total Site Visits
 sort-order: 1
 ---
 
-<!-- TODO update the values below with actual data -->
+<!-- Stats updated as of Dec 31st -->
 <!-- event count -> page_views -->
 <div class="data-section">
   <div class="data-value">February 17th</div>
@@ -14,22 +14,22 @@ sort-order: 1
   <div class="cell pv-country">Page Views by Country</div>
   <div class="cell grid-x align-justify country-item">
     <div class="country-name cell shrink">🇺🇸 United States</div>
-    <div class="visit-number cell shrink">13520</div>
+    <div class="visit-number cell shrink">13182</div>
   </div>
   <div class="cell grid-x align-justify country-item">
     <div class="country-name cell shrink">🇨🇳 China</div>
-    <div class="visit-number cell shrink">13520</div>
+    <div class="visit-number cell shrink">1625</div>
   </div>
   <div class="cell grid-x align-justify country-item">
     <div class="country-name cell shrink">🇬🇧 United Kingdom</div>
-    <div class="visit-number cell shrink">13520</div>
+    <div class="visit-number cell shrink">438</div>
   </div>
   <div class="cell grid-x align-justify country-item">
     <div class="country-name cell shrink">🇩🇪 Germany</div>
-    <div class="visit-number cell shrink">13520</div>
+    <div class="visit-number cell shrink">403</div>
   </div>
   <div class="cell grid-x align-justify country-item">
     <div class="country-name cell shrink">🇮🇳 India</div>
-    <div class="visit-number cell shrink">13520</div>
+    <div class="visit-number cell shrink">298</div>
   </div>
 </div>
