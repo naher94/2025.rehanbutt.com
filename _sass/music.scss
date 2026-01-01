@@ -36,6 +36,7 @@
     border-radius: $pill-radius;
     display: inline-block;
     position: absolute;
+    // TODO this top positioning is causing issues on the height of the element on mobile
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
