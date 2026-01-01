@@ -6,7 +6,7 @@
         <p class="watermark cell auto">Web</p>
         <p class="watermark cell auto">Web</p>
       </div>
-
+      <!-- Stats as of Dec 31st -->
       <div class="header cell grid-x">
         <div class="content cell grid-x align-justify">
           <div class="cell shrink">
@@ -18,13 +18,10 @@
       <div class="main-content grid-x cell align-justify">
         <div class="cell medium-6">
           <h2>Web Updates</h2>
-          <!-- TODO update this copy -->
           <!-- TODO add links -->
-          <p class="description">This year, as part of my website updates, the {% include external-link.html link="https://rehanbutt.com/speaking" content="Speaking Engagements" css-class="" %} section received a major upgrade. I also formalized the CI/CD pipeline, streamlining deployment and ongoing maintenance. Plus, I launched {% include external-link.html link="https://css-playground.rehanbutt.com" content="CSS Playground" css-class="" %}, a set of small, interactive tools that make working with CSS more fun and approachable. Explore these updates and more on the site!</p>
-          <!-- TODO update this number -->
-          <p class="description">This year, curious visitors uncovered easter eggs 194 times!</p>
+          <p class="description">This year I gave the site a few meaningful upgrades: a revamped {% include external-link.html link="https://rehanbutt.com/speaking" content="Speaking Engagements" css-class="" %} section, a more streamlined CI/CD pipeline, and the launch of {% include external-link.html link="https://css-playground.rehanbutt.com" content="CSS Playground" css-class="" %}, a series of small, interactive tools that make working with CSS more fun and approachable. Take a look around to see what's new.</p>
+          <p class="description">This year, curious visitors uncovered {% include external-link.html link="https://rehanbutt.com/easter-eggs" content="easter eggs" css-class="" %} 196 times! See if you can find them all!</p>
         </div>
-        <!-- TODO figure out why medium-shrink is not working here -->
         <div class="callouts cell grid-x medium-4 align-top">
           <div class="feature-container grid-x align-middle cell">
             <div class="icon cell shrink">
@@ -54,7 +51,6 @@
         </div>
       </div>
       <div class="footer grid-x cell">
-        <!-- TODO update these stats -->
         {%- assign stats-list = site.web-stats | sort: "sort-order" -%}
         {%- for stat in stats-list -%}
         <details id="details" class="stat-card cell">
