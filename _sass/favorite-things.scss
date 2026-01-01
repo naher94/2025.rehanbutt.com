@@ -35,10 +35,10 @@
       }
     }
 
-    // TODO make this a mixin?
-    .ripple {
+    @mixin ripple {
       transition: --stop 0.5s, --stop1 1s;
-      background: radial-gradient(circle at bottom left,rgba(255, 255, 255, 1) var(--stop1), rgba(33, 105, 222, 1) var(--stop1), rgba(33, 105, 222, 1) var(--stop), rgba(255, 255, 255, 1) var(--stop));
+      background: radial-gradient(circle at bottom left,rgba(255, 255, 255, 1) var(--stop1), rgb(82, 148, 253) var(--stop1), rgba(82, 148, 253, 1) var(--stop), rgba(255, 255, 255, 1) var(--stop));
+      // TODO darkmode these colors
       &:hover {
         --stop: 100%;
         --stop1: 100%;
@@ -109,6 +109,13 @@
         }
       }
     }
+    a{
+      &:hover{
+        .description-wrapper{
+          @include ripple;
+        }
+      }
+    }
     .item-container{
       grid-column-end: span 3;
       grid-row-end: span 1;
@@ -130,6 +137,8 @@
         padding: 0.5em;
         display: flex;
         align-items: center;
+        z-index: 2; // This is to remove the conflict with the heart
+        color: semantic-color(text);
         div{
           display: -webkit-box;
           -webkit-line-clamp: 4;

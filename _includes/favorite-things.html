@@ -6,7 +6,7 @@
       </div>
 
       {%- for item in site.fave-things -%}
-      <div class="grid-cell item-container {{item.css-class}}">
+      <a href="{{item.link}}" class="grid-cell item-container {{item.css-class}}" target="_blank" rel="noopener">
         <div class="image-wrapper">
           <img src="../img/fave-things/{{item.image}}" alt="{{item.image-alt}}">
         </div>
@@ -16,7 +16,7 @@
             <p>{{item.description}}</p>
           </div>
         </div>
-      </div>
+      </a>
       {%- endfor -%}
 
       {% for i in (1..32) %}
