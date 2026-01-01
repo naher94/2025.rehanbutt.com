@@ -34,7 +34,7 @@ const captions = [
   "Horseshoe Bend in Page, Arizona",
   "Caption for image 5",
   "Caption for image 6"
-  // Add more captions as needed, matching the number/order of your images
+  // TODO Add more captions as needed, matching the number/order of your images
 ];
 
 let currentImageIndex = 0;
