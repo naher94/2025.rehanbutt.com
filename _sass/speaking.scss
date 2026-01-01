@@ -375,6 +375,9 @@
       .tag-wrapper{
         .tag{
           background-color: rgba($pure-black, 0.1);
+          @media (prefers-color-scheme: dark) {
+            background-color: rgba(0, 0, 0, 0.4);
+          }
         }
       }
     }

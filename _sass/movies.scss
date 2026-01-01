@@ -3,7 +3,7 @@ $popcorn-yellow1: #F4F8C7;
 $popcorn-yellow2: #EFE8A5;
 $popcorn-yellow3: #F6F0C9;
 $card-padding: 2em;
-$card-border-radius: $tile-radius-big; //TODO check this radius is right
+$card-border-radius: $tile-radius-big;
 
 .movies{
   margin-top: 10rem;
@@ -204,17 +204,21 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     }
   }
   .card2{
-    background-color: #EFEFEF; //TODO make semantic
+    background-color: #EFEFEF;
     padding: var(--card-padding);
     border-radius: $card-border-radius;
     margin-block: 2em;
+    @media (prefers-color-scheme: dark) {
+      background-color: #222222;
+    }
     @include breakpoint(small only){
       margin-block: 1em;
     }
     .stats-container{
       font-size: 1.35em;
-      // padding-inline: $content-padding;
-      // text-shadow: 0 0 20px black;
+      @media (prefers-color-scheme: dark) {
+        text-shadow: 0 0 10px black;
+      }
       @include breakpoint(small only) {
         font-size: 1em;
       }
@@ -345,7 +349,7 @@ $card-border-radius: $tile-radius-big; //TODO check this radius is right
     }
   }
   .card3{
-    background-color: #313131; //TODO make semantic
+    background-color: #313131;
     padding: var(--card-padding);
     border-radius: $card-border-radius;
     color: $pure-white;
