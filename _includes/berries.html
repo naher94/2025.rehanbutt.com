@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="month-dots cell">
-          <!-- define upper limit of dots and then make sure to round the value.. / mod the value? -->
+          {%- comment -%}divide by value is to scale all the dots{%- endcomment -%}
           {%- assign rasp-dots = month.raspberry | divided_by: 10 -%}
           {%- assign blue-dots = month.blueberry | divided_by: 10 -%}
           {%- assign black-dots = month.blackberry | divided_by: 10 -%}
