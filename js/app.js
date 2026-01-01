@@ -28,10 +28,10 @@ function copyToClipboard(link,clickedItem) {
 
 // Add this near your images array:
 const captions = [
-  "A photo of a Tori gate with cherry blossoms outside of Fiji in Japan",
+  "A tori gate with cherry blossoms outside of Fiji in Japan",
   "Caption for image 2",
-  "A photo of Lumiere from Disneyland's Paint the Night Parade",
-  "Caption for image 4",
+  "Lumiere from Disneyland's Paint the Night Parade",
+  "Horseshoe Bend in Page, Arizona",
   "Caption for image 5",
   "Caption for image 6"
   // Add more captions as needed, matching the number/order of your images
