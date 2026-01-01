@@ -123,9 +123,6 @@
       aspect-ratio: 1/1;
     }
     &:hover{
-      // TODO do I need this??
-      // transform: scale(1.05);
-      // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       img {
         transform: scale(1.1);
       }
@@ -187,8 +184,6 @@
   }
 
   .lightbox {
-    // TODO Check if this will resolve the slight shift when the thumbnail closes
-    // scrollbar-gutter: stable;
     position: fixed;
     top: 0;
     left: 0;

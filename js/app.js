@@ -158,7 +158,6 @@ function closeLightbox() {
   animatingImg.src = images[currentImageIndex];
   animatingImg.className = "animating-image";
   // Set initial position and size to match current lightbox image
-  // TODO sort out the shift that is happening on close i'm guessing its related to the calculation not considering the scrollbar
   animatingImg.style.left = lightboxRect.left + "px";
   animatingImg.style.top = lightboxRect.top + "px";
   animatingImg.style.width = lightboxRect.width + "px";
