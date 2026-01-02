@@ -32,7 +32,7 @@ const captions = [
   "Caption for image 2",
   "Lumiere from Disneyland's Paint the Night Parade",
   "Horseshoe Bend in Page, Arizona",
-  "Caption for image 5",
+  "Interior of the National Art Center in Tokyo",
   "Caption for image 6"
   // TODO Add more captions as needed, matching the number/order of your images
 ];
