@@ -84,7 +84,6 @@
       grid-column-end: span 4;
       grid-row-start: 3;
       grid-row-end: span 4;
-      // aspect-ratio: 1/1;
       overflow: hidden;
       position: relative;
       @include breakpoint(small only){
@@ -252,8 +251,7 @@
     .seat-filler{
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
-      // TODO check this
-      // why does this being 1/1 break the grid???
+      // TODO check this: why does this being 1/1 break the grid???
       // aspect-ratio: 1/1;
       @include breakpoint(small only){
         display: none;
