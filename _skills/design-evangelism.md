@@ -1,9 +1,6 @@
 ---
 title: Design Evangelism
 sort-order: 5
-image: lily-me.jpg
-image-alt: "Lily and I"
+image: me-chat.jpg
+image-alt: "Rehan Butt chatting with the team"
 ---
-
-TODO update image and alt text
-Maybe a picture of me at a whiteboard or a workshop
