@@ -1,0 +1,209 @@
+.film-credit {
+  --spring-duration: 600ms;  /* animation length */
+  --spring-angle: 2deg;     /* max overshoot */
+  --spring-ease: cubic-bezier(.18,.9,.32,1.15); /* springy easing (slight overshoot) */
+  margin-block: 10em 15em;
+  @include breakpoint(small only) {
+    margin-block-end: 12em;
+    overflow-x: clip;
+  }
+
+  .content-card {
+    .container {
+      --center-radius: 18rem;
+      --buffer: 3rem;
+      --start-angle: 130deg;
+      --edge-spacing: 2rem;
+
+      position: relative;
+      width: calc(var(--center-radius) * 2);
+      height: calc(var(--center-radius) * 2);
+      margin-inline-start: -10rem;
+
+      @include breakpoint(small only){
+        --center-radius: 8rem;
+        --buffer: 1rem;
+        --edge-spacing: 1rem;
+        margin-inline-start: -5rem;
+      }
+    }
+
+    .center-circle {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #ffbee2;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      margin-inline-start: -2rem;
+      z-index: 2;
+      @media (prefers-color-scheme: dark) {
+        background: rgba(#ffbee2, 0.7);
+      }
+      @include breakpoint(small only){
+        margin-inline-start: 0;
+      }
+      .poster-wrapper{
+        align-items: center;
+        display: flex;
+      }
+      .main-wrapper{
+        rotate: 6deg;
+        width: 27rem;
+        margin-block-start: var(--credit-description-height);
+        @include breakpoint(small only){
+          width: 12rem;
+        }
+        p{
+          margin-block-start: 1rem;
+          margin-bottom: 0;
+          margin-inline: 0.5rem;
+          line-height: 1.3;
+          text-wrap: pretty;
+          @include breakpoint(small only){
+            width: 160%;
+          }
+        }
+      }
+      img{
+        border-radius: $tile-radius-medium;
+        box-shadow: $pure-black $soft-shadow;
+        overflow: hidden;
+        @include breakpoint(small only){
+          border-radius: $tile-radius;
+        }
+        &.main{
+          width: 27rem;
+          @include breakpoint(small only){
+            width: 12rem;
+          }
+        }
+        &.secondary{
+          position: absolute;
+          rotate: -4deg;
+          width: 21rem;
+          margin-inline-start: -8rem;
+          margin-block-end: 3rem;
+          transform-origin: bottom right;
+          transition: $sprint;
+          @include breakpoint(small only){
+            width: 9rem;
+            margin-inline-start: -2rem;
+            margin-block-end: 2rem;
+          }
+        }
+      }
+    }
+
+    .satellite {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc((var(--center-radius) + var(--buffer) + var(--satellite-radius)) * -1));
+      transform-origin: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* keep content level */
+    .satellite-content {
+      transform: rotate(calc(var(--angle) * -1));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transition: $sprint;
+      align-items: end;
+      &:hover{
+        animation: springRotate var(--spring-duration) var(--spring-ease) both;
+      }
+    }
+
+    @keyframes springRotate {
+      0%   { rotate:0; }
+      20%  { rotate: var(--spring-angle); }   /* first overshoot */
+      45%  { rotate:calc(var(--spring-angle) * -0.75); } /* counter-overshoot */
+      70%  { rotate:calc(var(--spring-angle) * 0.35); }  /* smaller bounce */
+      100%  { rotate:calc(var(--spring-angle) * -0.12); } /* tiny bounce */
+    /*   100% { transform: rotate(0); } */
+    }
+
+    /* Example satellites */
+    .satellite[data-label="X"] {
+      --satellite-radius: 2.25rem;
+      background: #cbaffe;
+      @media (prefers-color-scheme: dark) {
+        background: rgba(#cbaffe, 0.7);
+      }
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+      @include breakpoint(small only){
+        --satellite-radius: 1.5rem;
+      }
+      overflow: hidden;
+      img{
+        position: absolute;
+        bottom: -5rem;
+        right: -5rem;
+        transition: $run;
+        rotate: -45deg;
+      }
+      &:hover{
+        img{
+          bottom: -0.5rem;
+          right: -0.5rem;
+        }
+      }
+    }
+
+    .satellite[data-label="Y"] {
+      --satellite-radius: 3.5rem;
+      background: #ffd38b;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+      @media (prefers-color-scheme: dark) {
+        background: rgba(#ffd38b, 0.7);
+      }
+      @include breakpoint(small only){
+        --satellite-radius: 2rem;
+      }
+    }
+
+    .satellite[data-label="A"] {
+      --satellite-radius: 5rem;
+      background: #bfe8f9;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+      @media (prefers-color-scheme: dark) {
+        background: rgba(#bfe8f9, 0.7);
+      }
+      @include breakpoint(small only){
+        --satellite-radius: 2.75rem;
+      }
+    }
+
+    .satellite[data-label="B"] {
+      --satellite-radius: 7rem;
+      background: $pure-black;
+      width: calc(var(--satellite-radius) * 2);
+      height: calc(var(--satellite-radius) * 2);
+      @include breakpoint(small only){
+        --satellite-radius: 4rem;
+      }
+      .satellite-content{
+        padding: 1.5rem;
+        padding-bottom: 2.25rem;
+        align-items: center;
+        @include breakpoint(small only){
+          padding: 1rem;
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+
+  }
+}

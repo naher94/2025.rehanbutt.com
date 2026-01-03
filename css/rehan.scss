@@ -1,0 +1,54 @@
+---
+  # Front matter comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+@import 'app';
+@import 'variables';
+@import 'design-system';
+@import 'header';
+@import 'hero';
+@import 'footer';
+
+@import 'events';
+@import 'music';
+@import 'skills';
+@import 'wrap-up';
+@import 'travel';
+@import 'movies';
+@import 'film-credit';
+@import 'speaking';
+@import 'website';
+@import 'favorite-things';
+@import 'berries';
+
+.no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+// Visually hide any element (mostly text) accessibly.
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.8);
+  }
+}

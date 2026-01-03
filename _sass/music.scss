@@ -1,0 +1,299 @@
+.music{
+  font-family: $poppins;
+  position: relative;
+  margin-top: 10rem;
+  h2{
+    font-family: $poppins;
+    font-weight: $poppins-extrabold;
+    text-transform: uppercase;
+    line-height: 2;
+    margin-bottom: 0;
+    .vertical{
+      writing-mode: vertical-rl;
+      font-size: 15rem;
+      line-height: 1;
+    }
+    @include breakpoint(small only){
+      display: flex;
+      justify-content: center;
+      letter-spacing: 4rem;
+      .text-fit{
+        display: none;
+      }
+    }
+    @include breakpoint(medium up){
+      .vertical{
+        display: none;
+      }
+    }
+  }
+  .total-listen{
+    background-color: semantic-color(music-total-bg);
+    backdrop-filter: blur(10px);
+    padding-inline: 1em;
+    padding-block: 0.25em;
+    border: 2px solid semantic-color(music-total-border);
+    border-radius: $pill-radius;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25em;
+    p{
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      span{
+        font-weight: $poppins-extrabold;
+      }
+    }
+    @include breakpoint(small only){
+      writing-mode: vertical-rl;
+      font-size: 2em;
+      top: 45%;
+      transform: translate(-50%, -45%);
+    }
+  }
+  .list-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-inline: 2em;
+    @include breakpoint(small only){
+      padding-inline: 1.5em;
+      margin-block-start: -3em;
+    }
+  }
+  .song-container{
+    width: 20%;
+    align-self: flex-start;
+    @include breakpoint(small only){
+      width: 100%;
+      &:nth-of-type(even){
+        justify-content: flex-end;
+      }
+      a{
+        width: 45%;
+      }
+    }
+    &:nth-of-type(even){
+      align-self: flex-end;
+      .text-container{
+        order: 2;
+        margin-block-start: 0.5em;
+        margin-block-end: 0;
+      }
+    }
+    &:nth-of-type(1){
+      rotate: -5deg;
+      --cd-case-color: rgba(157, 29, 134, 0.4);
+    }
+    &:nth-of-type(2){
+      rotate: -10deg;
+      --cd-case-color: rgba(154, 24, 24, 0.4);
+    }
+    &:nth-of-type(3){
+      rotate: 13deg;
+      --cd-case-color: rgba(157, 29, 134, 0.4);
+
+    }
+    &:nth-of-type(4){
+      rotate: 8deg;
+      --cd-case-color: rgba(29, 106, 157, 0.4);
+    }
+    &:nth-of-type(5){
+      rotate: -16deg;
+      --cd-case-color: rgba(60, 67, 92, 0.4);
+    }
+    a{
+      color: semantic-color(text);
+      &:hover{
+        .cover{
+          transform: rotateY(-40deg);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    .text-container{
+      background-color: semantic-color(music-text-bg);
+      padding: 0.5em;
+      border-radius: 15px;
+      box-shadow: $centered-shadow rgba($pure-black, 0.25);
+      margin-block-end: 0.5em;
+      backdrop-filter: blur(10px);
+      h3{
+        font-size: 1em;
+        font-weight: $poppins-bold;
+        margin-bottom: 0;
+        margin-inline-end: 0.5em;
+      }
+      p{
+        padding: 0;
+        margin: 0;
+        font-size: 0.75em;
+      }
+      .play-count{
+        font-weight: $poppins-light;
+      }
+      svg{
+        g{
+          g{
+            fill: semantic-color(text);
+          }
+        }
+      }
+    }
+    .cd-case {
+      perspective: 900px;
+      -webkit-perspective: 900px;
+      box-shadow: $centered-shadow rgba($pure-black, 0.25),
+        inset 0px 0px 20px 2px rgba(0, 0, 0, 0.2),
+        inset 0px 0px 5px 1px rgba(255, 255, 255, 0.6),
+        inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2);
+      padding: 0.5em;
+      padding-left: 0em;
+      display: flex;
+      border-radius: 15px;
+      align-items: center;
+      background-color: var(--cd-case-color);
+      // NOTE .blur-container is only needed due to a Safari bug when you use backdrop-filter / other filters on a parent element, it can break 3D transforms like rotateY() on child elements.
+      .blur-container{
+        backdrop-filter: blur(10px);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 15px;
+      }
+      .cd{
+        width: calc(100% - 1.5em - 0.5em - 1em);
+        aspect-ratio: 1/1;
+        position: absolute;
+        right: 1em;
+        --diameter: 200px;
+        --c-white: #fff;
+        /* naming things is hard */
+        /* https://www.color-name.com */
+        --c-anti-flash-white: #f3f3f3;
+        --c-gainsboro: #ddd;
+        --c-mid-gray: #bbb;
+        --c-dark-gray: #aaa;
+        --c-granite-gray: #666;
+        --c-light-periwinkle: #c0c8e3;
+        --c-platinum: #e8d4e9;
+        --c-violet-100: #d9ccee;
+        --c-pink-lavender: #d7b0c5;
+        --c-languid-lavender: #cec0e3;
+        --c-violet-150: #ccbccd;
+        --c-black-shadows: #c6b1bc;
+        --c-stale-beige: #eef6d3;
+        --c-light-moss-green: #a7dda7;
+        flex: 0 0 auto;
+        border-radius: 9999px;
+        border: 5px solid var(--c-gainsboro);
+        bacground-color: var(--c-mid-gray);
+        background-image: conic-gradient(
+          var(--c-white),
+          var(--c-anti-flash-white),
+          var(--c-gainsboro),
+          var(--c-mid-gray),
+          var(--c-dark-gray),
+          var(--c-black-shadows),
+          var(--c-pink-lavender),
+          var(--c-white),
+          var(--c-stale-beige),
+          var(--c-light-moss-green),
+          var(--c-languid-lavender),
+          var(--c-platinum),
+          var(--c-pink-lavender),
+          var(--c-gainsboro),
+          var(--c-anti-flash-white),
+          var(--c-white),
+          var(--c-gainsboro),
+          var(--c-mid-gray),
+          var(--c-dark-gray),
+          var(--c-black-shadows),
+          var(--c-pink-lavender),
+          var(--c-white),
+          var(--c-stale-beige),
+          var(--c-light-moss-green),
+          var(--c-light-periwinkle),
+          var(--c-languid-lavender),
+          var(--c-platinum),
+          var(--c-pink-lavender),
+          var(--c-mid-gray),
+          var(--c-gainsboro),
+          var(--c-white)
+        );
+        animation-name: spin;
+        animation-duration: 4000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        &::before {
+          --diameter: 84px;
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 1;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          background: transparent;
+          height: var(--diameter);
+          width: var(--diameter);
+          border: 19px solid var(--c-granite-gray);
+          border-radius: inherit;
+          opacity: 0.8;
+          mix-blend-mode: hard-light;
+          box-sizing: border-box;
+        }
+        .center-circle{
+          width: 2em;
+          aspect-ratio: 1/1;
+          background-color: var(--cd-case-color);
+          backdrop-filter: blur(10px);
+          border-radius: 10000px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(720deg);
+          }
+        }
+      }
+    }
+    .cover {
+      transition: all 0.8s;
+      transform-origin: left;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      background-color: black;
+      width: 100%;
+      aspect-ratio: 1/1;
+      z-index: 1;
+    }
+    .spine {
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      box-shadow: 1px 0 7px -1px rgba(0, 0, 0, 0.1) inset;
+      background-color: var(--cd-case-color);
+      width: 1em;
+      height: 70%;
+      margin-right: 0.5em;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}

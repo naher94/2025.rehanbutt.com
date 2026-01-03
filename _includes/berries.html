@@ -1,0 +1,96 @@
+<section class="berries" id="berries" aria-label="Berries Section">
+  <div class="grid-container">
+    <div class="intro grid-x">
+      <h2 class="cell">Berry Budget</h2>
+      <p class="cell medium-6">I'm a big fan of berries! So this year I decided to track how many got consumed, at least approximately.</p>
+    </div>
+    <div class="totals test-container">
+      <div class="totals-card raspberry cell test-item">
+        {%- for month in site.berries -%}
+          {%- assign rasp = rasp | plus: month.raspberry -%}
+        {%- endfor -%}
+        <p class="berry-name">Raspberries</p>
+        <p class="total-number">{{rasp}}oz</p>
+        {% include_relative img/berries/raspberry.svg %}
+        {% include_relative img/berries/raspberry.svg %}
+        {% include_relative img/berries/raspberry.svg %}
+        {% include_relative img/berries/raspberry.svg %}
+      </div>
+      <div class="totals-card blueberry cell test-item">
+        {%- for month in site.berries -%}
+          {%- assign blue = blue | plus: month.blueberry -%}
+        {%- endfor -%}
+        <p class="berry-name">Blueberries</p>
+        <p class="total-number">{{blue}}oz</p>
+        <div class="cutout"></div>
+        {% include_relative img/berries/blueberry.svg %}
+        {% include_relative img/berries/blueberry.svg %}
+        {% include_relative img/berries/blueberry.svg %}
+      </div>
+      <div class="totals-card blackberry cell test-item">
+        {%- for month in site.berries -%}
+          {%- assign black = black | plus: month.blackberry -%}
+        {%- endfor -%}
+        <p class="berry-name">Blackberries</p>
+        <p class="total-number">{{black}}oz</p>
+        <div class="cutout"></div>
+        {% include_relative img/berries/blackberry.svg %}
+        {% include_relative img/berries/blackberry.svg %}
+        {% include_relative img/berries/blackberry.svg %}
+        {% include_relative img/berries/blackberry.svg %}
+      </div>
+      <div class="totals-card strawberry cell test-item">
+        {%- for month in site.berries -%}
+          {%- assign straw = straw | plus: month.strawberry -%}
+        {%- endfor -%}
+        <p class="berry-name">Strawberries</p>
+        <p class="total-number">{{straw}}oz</p>
+        {% include_relative img/berries/strawberry-cut.svg %}
+        {% include_relative img/berries/strawberry.svg %}
+        {% include_relative img/berries/strawberry.svg %}
+        {% include_relative img/berries/strawberry.svg %}
+      </div>
+    </div>
+    <div class="grid-x test-container">
+    {%- assign month-sort = site.berries | sort: "month" -%}
+    {%- for month in month-sort -%}
+      <div class="cell test-item">
+        <div class="header cell grid-x align-justify">
+          <div class="cell shrink month-name">
+            {{month.name}}
+          </div>
+          <div class="cell shrink month-total">
+            {% assign total = 0 | plus: month.raspberry | plus: month.blueberry | plus: month.blackberry | plus: month.strawberry %}
+            {{total}}oz
+          </div>
+        </div>
+        <div class="month-dots cell">
+          {%- comment -%}divide by value is to scale all the dots{%- endcomment -%}
+          {%- assign rasp-dots = month.raspberry | divided_by: 10 -%}
+          {%- assign blue-dots = month.blueberry | divided_by: 10 -%}
+          {%- assign black-dots = month.blackberry | divided_by: 10 -%}
+          {%- assign straw-dots = month.strawberry | divided_by: 10 -%}
+          {%- for berry in (1..rasp-dots) -%}
+            <div class="raspberry berry-dot"></div>
+          {%- endfor -%}
+          {%- for berry in (1..blue-dots) -%}
+            <div class="blueberry berry-dot">
+              <div class="cutout"></div>
+            </div>
+          {%- endfor -%}
+          {%- for berry in (1..black-dots) -%}
+            <div class="blackberry berry-dot">
+              <div class="cutout"></div>
+            </div>
+          {%- endfor -%}
+          {%- for berry in (1..straw-dots) -%}
+            <div class="strawberry berry-dot">
+              {% include_relative img/berries/strawberry-cut.svg %}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endfor -%}
+    </div>
+  </div>
+</section>

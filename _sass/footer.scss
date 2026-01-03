@@ -1,0 +1,117 @@
+footer{
+  color: semantic-color(footer-text);
+  padding-bottom: 5rem;
+  margin-top: 20em;
+  background-color: #F7F7F7;
+  $flip-clock-spacing: 1rem;
+  $flip-clock-perspective: 1200px;
+  --flip-card-width: 100%;
+  --flip-number-bg: #F8F0E3;
+  @media (prefers-color-scheme: dark) {
+    background-color: $navy-black-d6;
+    --flip-number-bg: #{$navy-black-l1};
+  }
+  @include breakpoint(small only){
+    margin-top: 15em;
+  }
+  .number-container{
+    margin-block-start: -9em;
+    @include breakpoint(small only){
+      gap: 2rem 0;
+    }
+  }
+  .static-number{
+    font-family: $big-shoulders;
+    font-weight: $big-shoulders-black;
+    font-size: 15rem;
+    border-radius: $tile-radius-big;
+    line-height: 1;
+    position: relative;
+    width: 100%;
+    .number-top, .number-bottom{
+      background-color: var(--flip-number-bg);
+      aspect-ratio: 1/1;
+      border-radius: $tile-radius-big;
+      overflow: hidden;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    }
+    .number-bottom{
+      margin-block-start: $flip-clock-spacing;
+      .text-fit{
+        transform: translate(0, -50%);
+      }
+    }
+    .number-top2{
+      position: absolute;
+      top: 0;
+      transform-style: preserve-3d;
+      transform: perspective($flip-clock-perspective) rotateX(0deg);
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: initial;
+      transform-origin: 50% calc(var(--flip-card-width) + 8px);
+      // TODO make this computed value scaling 8px is half of 1rem
+      animation: clock-flip 6s linear 2s 1 alternate forwards;
+      animation-timeline: view(block);
+      animation-range: contain 25% contain 50%; // animation-range not supported in Firefox
+    }
+    .face {
+      backface-visibility: hidden;
+      border-radius: $tile-radius-big;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 1/1;    
+      &:last-of-type {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: var(--flip-card-width); // Set explicitly to fix an issue in Safari
+        aspect-ratio: 1 / 1;
+        transform: rotateX(.5turn);
+        background-color: var(--flip-number-bg);
+        z-index: 2;
+        .text-fit{
+          transform: translate(0, -50%);
+        }
+      }
+    }
+
+    @keyframes clock-flip {
+      from {
+        transform: perspective($flip-clock-perspective) rotateX(0deg);
+      }
+
+      to {
+        transform: perspective($flip-clock-perspective) rotateX(-180deg);
+      }
+    }
+  }
+  .footer-footer{
+    font-family: $montserrat;
+    font-weight: $montserrat-bold;
+    margin-block-start: 6rem;
+    @include breakpoint(small only){
+      text-align: center;
+    }
+    p{
+      margin-bottom: 0;
+      font-size: 1.25em;
+    }
+    .logo{
+        #rehan-logo-footer{
+          height: 30px;
+          transition: $sprint;
+          &:hover{
+            transform: scale(1.1);
+          }
+          g{
+            fill: semantic-color(text); //Changes the color of my logo inline
+          }
+          @include breakpoint(small only){
+            height: 40px;
+            margin-block-start: 1rem;
+          }
+        }
+      }
+  }
+}

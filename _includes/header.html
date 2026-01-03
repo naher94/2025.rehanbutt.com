@@ -1,0 +1,54 @@
+<!-- TODO may need a special layout for tablet that is different from desktop and mobile -->
+<header>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x grid-margin-y">
+      <div class="cell medium-shrink number-container">
+        <h1>25</h1>
+        {% include_relative img/header/25.svg %}
+      </div>
+      <div class="grid-y cell medium-auto content-container">
+        <div class="description cell">
+          {{site.description}}
+        </div>
+        <!-- name, icon-file, html-file-name -->
+        <div class="nav-wrapper cell medium-auto grid-x">
+        {% assign section-order = 
+          "(Industry Events|calendar|events),
+          (Travel|plane|travel),
+          (Speaking|speaking|speaking),
+          (Music|music|music),
+          (Movies|movie|movies),
+          (Film Credit|film-credit|film-credit),
+          (Website|web|website),
+          (Berry Budget|berry|berries),
+          (Skills|brain|skills),
+          (Favorite Things|heart|favorite-things),
+          (Wrap Up|wave|wrap-up)"
+          | remove: "(" | remove: ")" | split: ',' %}
+        {%- for section in section-order -%}
+        {% assign each-section = section | split: '|' %}
+        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify cell medium-auto">
+          <div class="cell shrink">{{each-section[0]}}</div>
+          <div class="cell shrink icon-wrapper">
+            {% assign icon_path = "img/header/" | append: each-section[1] | append: ".svg" %}
+            {% include_relative {{ icon_path }} %}
+          </div>
+        </a>
+        {%- endfor -%}
+        </div>
+      </div>
+      <div class="cell medium-shrink title-container grid-x align-justify">
+        <div class="logo cell shrink">
+          <a target="_blank" rel="noopener" href="{{ site.mainurl }}/">
+            {% capture location %}header{% endcapture %}
+            {% include_relative img/rehan-logo.svg %}
+            <span class="visually-hidden">Opens a new window</span>
+          </a>
+        </div>
+        <div class="cell subtitle shrink">
+          2025 year in review
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

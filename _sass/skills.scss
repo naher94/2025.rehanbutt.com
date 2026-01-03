@@ -1,0 +1,192 @@
+.skills {
+  position: relative;
+  --skill-height: 3em;
+  --skill-padding: 0.25em;
+  --outline-thickness: 10px;
+  font-family: $poppins;
+  font-weight: $poppins-bold;
+  text-transform: uppercase;
+  margin-block: 5rem;
+  --row-color-1: #C02929;
+  --row-color-2: #5238F0;
+  --row-color-3: #47BE16;
+  --row-color-4: #E19B23;
+  --row-color-5: #23B6E1;
+  --accent-color: #{semantic-color(skills-accent)};
+  --mobile-skill-font-size: 1.8rem;
+  --skill-height-ref: 42.375px; //Only used as a fallback if the JS fails
+
+  @include breakpoint(small only) {
+    margin-block: 3rem;
+    margin-block-start: 5em;
+    --outline-thickness: 5px;
+  }
+
+  .stripe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1170px 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    margin-block: calc(-1 * var(--outline-thickness));
+    @include breakpoint(small only){
+      grid-template-columns: 1fr 350px 1fr;
+      grid-template-rows: repeat(5, var(--skill-height-ref));
+    }
+
+    .stripe {
+      grid-column-start: 1;
+      grid-column-end: span 1;
+      &__0 {
+        grid-row: 1 / span 1;
+        background-color: var(--row-color-1);
+      }
+      &__1 {
+        grid-row: 2 / span 1;
+        background-color: var(--row-color-2);
+      }
+      &__2 {
+        grid-row: 3 / span 1;
+        background-color: var(--row-color-3);
+      }
+      &__3 {
+        grid-row: 4 / span 1;
+        background-color: var(--row-color-4);
+      }
+      &__4 {
+        grid-row: 5 / span 1;
+        background-color: var(--row-color-5);
+      }
+    }
+  }
+  .content-area {
+    outline: solid var(--accent-color) var(--outline-thickness);
+    border-radius: $tile-radius-big;
+    border-radius: 56px;
+    @include breakpoint(small only){
+      border-radius: 32px;
+    }
+    .skill-tags-container{
+      position: relative; // create a stacking context for child z-index values
+      z-index: 2;
+      margin-block: calc(-1 * var(--outline-thickness));
+      .skill-tag{
+        font-size: 3em;
+        line-height: 1;
+        @include breakpoint(small only){
+          font-size: var(--mobile-skill-font-size);
+        }
+        &:first-of-type, &:last-of-type{
+          .image-wrapper{
+            outline: solid semantic-color(page-bg) var(--outline-thickness);
+            box-shadow: -0.8em -0.25em 0 0 semantic-color(page-bg);
+          }
+        }
+        &:last-of-type{
+          .image-wrapper{
+            box-shadow: -0.8em 0.25em 0 0 semantic-color(page-bg);
+          }
+        }
+        .skill-wrapper{
+          display: inline-block;
+          position: relative;
+          .image-wrapper{
+            display: flex;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: $pill-radius;
+            overflow: hidden;
+          }
+        }
+        .skill{
+          display: inline-block;
+          border-radius: 0 $pill-radius $pill-radius 0;
+          padding-inline: 0.5em;
+          padding-block: var(--skill-padding);
+          transition: $jog;
+          z-index: 2;
+          position: relative;
+          @include breakpoint(small only){
+            padding-inline: 1rem 0.5em;
+          }
+          &__0 {
+            background-color: var(--row-color-1);
+          }
+          &__1 {
+            background-color: var(--row-color-2);
+          }
+          &__2 {
+            background-color: var(--row-color-3);
+          }
+          &__3 {
+            background-color: var(--row-color-4);
+          }
+          &__4{
+            background-color: var(--row-color-5);
+          }
+        }
+      }
+    }
+    .hero-text-container{
+      padding: 1rem;
+      z-index: 2;
+      position: relative;
+      @include breakpoint(small only){
+        position: initial;
+      }
+      .hero-text{
+        h2{
+          font-family: $poppins;
+          font-weight: $poppins-extrabold;
+          span{
+            display: block;
+            line-height: 1;
+            &:first-of-type{
+              font-size: 0.7em;
+            }
+            &:nth-of-type(3){
+              line-height: .8;
+              font-size: 2.5em;
+            }
+          }
+        }
+        p{
+          line-height: 1.2;
+          font-weight: $poppins-regular;
+          text-transform: none;
+          margin-bottom: 0;
+          text-wrap: pretty;
+        }
+      }
+      .icon-wrapper{
+        aspect-ratio: 1/1;
+        background-color: var(--accent-color);
+        position: absolute;
+        width: 5rem;
+        top: 1rem;
+        right: 1rem;
+        border-radius: $pill-radius;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-size: 2.5em;
+        line-height: normal;
+        transition: $run;
+        cursor: pointer;
+        @include breakpoint(small only){
+          font-size: 1.5em;
+          width: 3rem;
+          top: 0.5rem;
+        }
+        &:hover{
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+}

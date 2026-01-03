@@ -1,0 +1,290 @@
+.events {
+  margin-top: 20rem;
+  margin-block-end: 15rem;
+  color: semantic-color(events-h2);
+  font-family: $poppins;
+  @include breakpoint(small only) {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  .content-area{
+    display: grid;
+    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(1, 1fr);
+    --col-middle: 4;
+    height: 40rem;
+    @include breakpoint(small only){
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .bubbles-left{
+      grid-column-start: col-start;
+      grid-column-end: 4;
+      grid-row: 1/1;
+      position: relative;
+      @include breakpoint(small only){
+        grid-column-end: -1;
+      }
+      .bubble{
+        &__large{
+          left: -3rem;
+          overflow: hidden;
+          @include breakpoint(small only){
+            bottom: -2rem;
+            left: 1rem;
+          }
+          &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: saturate(1.15);
+            z-index: -1;
+            background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 78% 17%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 24% 94%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
+            scale: 1.1;
+          }
+        }
+        &__medium{
+          right: 5rem;
+          top: -10rem;
+          padding: 3.25rem;
+          background:
+                    radial-gradient(circle at 50% 0%, rgba(243, 181, 2, 1), rgba(243, 181, 2, 0)),
+                    radial-gradient(circle at 30% 30%, rgba(254, 254, 255, 0.5), rgba(254, 254, 255, 0) 50%),
+                    #151F2B;
+          @include breakpoint(small only){
+            padding: 1.6rem;
+            top: initial;
+            right: 1rem;
+            bottom: 1rem;
+          }
+        }
+        &__small{
+          bottom: 3rem;
+          left: 37%;
+          background: linear-gradient(215deg, rgba(221, 233, 255, 0) 55%, #dde9ff),
+                      linear-gradient(to bottom right, #ef4f85 30%, #a98be6 70%);
+          @include breakpoint(small only){
+            padding: 1rem;
+            bottom: 8rem;
+            left: 60%;
+          }
+        }
+      }
+    }
+    .bubbles-right{
+      grid-column-start: 4;
+      grid-column-end: 7;
+      grid-row: 1/1;
+      position: relative;
+      @include breakpoint(small only){
+        grid-column-start: 1;
+        grid-row: 3/4;
+      }
+      .bubble{
+        &__large{
+          right: -3rem;
+          top: 25%;
+          overflow: hidden;
+          padding: 3.75rem;
+          @include breakpoint(small only){
+            padding: 2rem;
+            right: 1rem;
+            top: 0%;
+          }
+          &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: saturate(1.15);
+            z-index: -1;
+            background:
+              radial-gradient(circle at 30% 90%, rgb(255, 208, 67) 0%, rgba(255, 221, 122, 0) 70%),
+              radial-gradient(circle at 20% 30%, rgb(101, 255, 216) 0.42%,rgba(158, 240, 220, 0) 60%),   
+              radial-gradient(circle at 35% 20%, rgb(106, 205, 255), rgba(140, 216, 255, 0) 60%),
+              radial-gradient(circle at 60% 35%, rgb(144, 117, 255), rgba(176, 156, 255, 0) 60%),
+              radial-gradient(circle at 75% 55%, rgb(240, 44, 230), rgba(214, 124, 255, 0) 70%),
+              radial-gradient(circle at 60% 80%, rgb(255, 94, 177) 0%, rgba(255, 136, 197, 0) 70%);
+            scale: 1.1;
+            }
+          }
+        &__medium{
+          bottom: -4rem;
+          left: 15%;
+          background: radial-gradient(circle at 5% 50%, rgb(0, 205, 236) 10%, rgb(0, 0, 0) 100%);
+          padding: 2.75rem;
+          svg{
+            fill: white;
+          }
+          @include breakpoint(small only){
+            padding: 1.25rem;
+            top: 1rem;
+            bottom: initial;
+            left: 1rem;
+          }
+        }
+        &__small{
+          top: -1rem;
+          left: 12rem;
+          padding: 2.25rem;
+          background: radial-gradient(circle at 50% 80% in oklch, #f9b116, #376cc9 160%);
+          @include breakpoint(small only){
+            padding: 1.25rem;
+            top: 8rem;
+            left: 6rem;
+          }
+        }
+      }
+    }
+    .bubble{
+      border-radius: $pill-radius;
+      background-color: $pure-white;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      padding: 1.5rem;
+      animation: float 10s ease-in-out infinite;
+      box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.25),
+                  0px 1px 5px -5px rgba(0, 0, 0, 0.25);
+      &__large{
+        width: 20rem;
+        @include breakpoint(small only){
+          width: 10rem;
+        }
+      }
+      &__medium{
+        width: 14rem;
+        animation-delay: 3s;
+        @include breakpoint(small only){
+          width: 7rem;
+        }
+      }
+      &__small{
+        width: 10rem;
+        animation-delay: 5s;
+        @include breakpoint(small only){
+          width: 5rem;
+        }
+      }
+    }
+  }
+  .text-container{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    z-index: 2;
+    position: relative;
+    grid-row: 1/1;
+    align-self: center;
+    margin-block-start: -2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include breakpoint(small only){
+      grid-column-start: 1;
+      grid-column-end: -1;
+      grid-row: 2/3;
+      margin-block-start: 0;
+    }
+    .header-container{
+      order: 2;
+      display: inline-block;
+      background-color: rgba($pure-white, 0.25);
+      border: solid 5px $pure-white;
+      border-radius: $pill-radius;
+      backdrop-filter: blur(10px);
+      padding: 1em 2.75em;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+      @include breakpoint(small only){
+        padding: 1.5em 1.5em;
+      }
+    }
+    h2{
+      font-family: $poppins;
+      font-weight: $poppins-extrabold;
+      margin-bottom: 0;
+      font-size: 4em;
+      @include breakpoint(small only){
+        line-height: 1;
+        font-size: 2.5em;
+      }
+    }
+    .description-container{
+      order: 3;
+      background-color: rgba($pure-white, 0.25);
+      border: solid 5px $pure-white;
+      border-radius: $pill-radius;
+      backdrop-filter: blur(10px);
+      padding: 0.5em 1em;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+      width: 30rem;
+      margin-block-start: -1.5rem;
+      @include breakpoint(small only){
+        margin-block-start: -1rem;
+        width: 80%;
+      }
+      p{
+        margin: 0;
+        line-height: 1.25;
+      }
+    }
+  }
+  a {
+    &:hover {
+      .collection-cta {
+        background-color: rgba(#000000, 0.1);
+        border-color: rgba(#000000, 0.15);
+      }
+    }
+
+    @include breakpoint(small only) {
+      order: 1;
+      width: 100%;
+    }
+  }
+  .link-container{
+    z-index: 3;
+    margin-block-end: -1em;
+    order: 1;
+  }
+
+  .collection-cta {
+    padding-inline: 0.75em 0.5em;
+    padding-block: 0.25em;
+    border-radius: $pill-radius;
+    color: $pure-black;
+    font-size: 0.8em;
+    transition: $sprint;
+    text-align: left;
+    background-color: rgba($pure-white, 0.25);
+    border: solid 5px $pure-white;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+    @media(prefers-color-scheme:dark) {
+      background-color: rgba($pure-white, 0.05);
+      color: $pure-white;
+      svg {
+        fill: $pure-white;
+      }
+    }
+    svg {
+      margin-inline-start: 0.25em;
+      height: 1.5em;
+      display: flex;
+    }
+    @include breakpoint(small only){
+      padding-inline: 1em 0.5em;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+      rotate: 0deg;
+    }
+    50% {
+      transform: translateY(-15px);
+      rotate: -10deg;
+    }
+  }
+}

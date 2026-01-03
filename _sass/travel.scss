@@ -1,0 +1,123 @@
+.travel{
+  --mobile-overlap: -10em;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+  @include breakpoint(small only) {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+  font-family: $poppins;
+  font-weight: $poppins-regular;
+  h2, h3{
+    font-family: $poppins;
+    font-weight: $poppins-bold;
+    font-size: 2em;
+    color: $pure-white;
+  }
+  .travel-card{
+    background-color: rebeccapurple;
+    border-radius: $tile-radius-medium;
+    padding: 1rem;
+    box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    @include breakpoint(small only){
+      aspect-ratio: 5/3;
+    }
+    &.us-card{
+      background-color: rgb(81, 198, 218);
+      background-image: url('/img/travel/slot-canyon.jpg');
+      background-blend-mode: multiply;
+      @include breakpoint(small only){
+        margin-top: 1.25rem; //0.625rem*2
+        margin-bottom: 1.25rem; //0.625rem*2
+        aspect-ratio: 3/4;
+      }
+    }
+    &.canada-card{
+      background-color: color-mix(in srgb, #ca3737 90%, $pure-white 10%);
+      background-image: url('/img/travel/van-skyline.jpg');
+      background-blend-mode: multiply;
+    }
+    &.japan-card{
+      background-color: rgb(156 111 200);
+      background-image: url('/img/travel/fuji-cap.jpg');
+      background-blend-mode: multiply;
+    }
+    a{
+      font-size: 1rem;
+      &:hover{
+        .tag{
+          background-color: rgba($pure-black, 0.25);
+        }
+      }
+      .tag{
+        display: inline-block;
+        background-color: rgba($pure-black, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: $tile-radius;
+        padding: 0.25em 0.5em;
+        color: $pure-white;
+        transition: $sprint;
+        svg{
+          width: 12px;
+          height: 12px;
+          &:first-of-type{
+            margin-inline-end: 0.15rem;
+          }
+          &:last-of-type{
+            margin-inline-start: 0.15rem;
+          }
+          path{
+            fill: $pure-white;
+          }
+        }
+        #camera-icon{
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+  .overview{
+    background-color: #1E1E1E;
+    padding-inline: 0.9375rem;
+    padding-block: calc(0.9375rem * 2);
+    border-radius: 50px;
+  }
+  .stat-wrapper{
+    min-height: 30rem;
+    @include breakpoint(small only) {
+      min-height: initial;
+    }
+  }
+  .stats{
+    .line-item{
+      color: $pure-white;
+      border-bottom: 1px solid rgba($pure-white, 0.25);
+      padding-block: 0.25rem;
+      .value{
+        font-weight: $poppins-bold;
+      }
+      .label{
+        color: rgba($pure-white, 0.5);
+      }
+    }
+  }
+  .tag-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    .city-tag{
+      display: inline-block;
+      padding: 0.25em 0.5em;
+      border-radius: $tile-radius;
+      backdrop-filter: blur(20px);
+      font-size: 1rem;
+      color: $pure-white;
+      background-color: rgba(150, 150, 150, 0.25);
+    }
+  }
+}

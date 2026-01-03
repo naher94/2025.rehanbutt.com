@@ -1,0 +1,66 @@
+<section class="wrap-up" id="wrap-up" aria-label="Wrap Up Section">
+  <div class="grid-container">
+    <div class="grid-x gallery" id="gallery">
+      <div class="text-card grid-x">
+        <div class="cell">
+          <h2>That's a Wrap</h2>
+          Goodbye, 2025 — thank you for the lessons, the memories, and the moments that shaped me. As we welcome 2026, may the new year be filled with exciting opportunities, happiness, and adventures that inspire. Wishing you success, laughter, and memories to hold close. Here's to what's ahead, Happy New Year!
+        </div>
+        <div class="share-area cell grid-x align-middle align-justify">
+          <div class="words cell medium-shrink">
+            <p class="enjoyed">Enjoyed my year in review?</p>
+            <p>Share it with your network.</p>
+          </div>
+          <div class="icon-wrapper cell grid-x shrink">
+            <div class="link-wrapper cell small-6">
+              <a rel="noopener" target="_blank" href="https://www.threads.net/intent/post?text=Check%20out%20%40naher94%20awesome%20year%20in%20review!%20{{ site.url }}">
+                <div class="share-item">
+                  {%- include_relative img/lastly/threads.svg -%}
+                </div>
+                <span class="visually-hidden">Opens a new window</span>
+              </a>
+            </div>
+            <div class="link-wrapper cell  small-6">
+              <a rel="noopener" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}" target="_blank">
+                <div class="share-item">
+                  {%- include_relative img/lastly/linkedin.svg -%}
+                </div>
+                <span class="visually-hidden">Opens a new window</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="thumbnail" data-index="0">
+        <img src="../img/lastly/tori.jpg" alt="A photo of a Tori gate with cherry blossoms outside of Fiji in Japan">
+      </div>
+      <div class="thumbnail" data-index="1">
+        <img src="../img/lastly/neon.jpg" alt="Overlapping Neon Lights">
+      </div>
+      <div class="thumbnail" data-index="2">
+        <img src="../img/lastly/lumiere.jpg" alt="A photo of Lumiere from Disneyland's Paint the Night Parade">
+      </div>
+      <div class="thumbnail" data-index="3">
+        <img src="../img/lastly/horseshoe-bend.jpg" alt="Horseshoe Bend">
+      </div>
+      <div class="thumbnail" data-index="4">
+        <img src="../img/lastly/national-art-center.jpg" alt="Interior of the National Art Center in Tokyo">
+      </div>
+      <div class="thumbnail" data-index="5">
+        <img src="../img/lastly/tron.jpg" alt="Roller coaster canopy lit at night at Magic Kingdom World Disney World">
+      </div>
+    </div>
+    <!-- Animation overlay for background fade -->
+    <div class="animation-overlay" id="animationOverlay"></div>
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="close-btn" id="closeBtn">{%- include_relative img/lastly/times.svg -%}</button>
+        <button class="nav-btn prev-btn" id="prevBtn">{%- include_relative img/lastly/chevron-left.svg -%}</button>
+        <button class="nav-btn next-btn" id="nextBtn">{%- include_relative img/lastly/chevron-right.svg -%}</button>
+        <img id="lightboxImg" src="" alt="">
+        <div class="counter" id="counter"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,581 @@
+.speaking {
+  font-family: $space-grotesk;
+  .the-grid {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+    gap: 1em;
+    --photo-radius: 30px;
+    --image-wrapper-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    --col-middle: 7;
+    @include breakpoint(small only){
+      grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+      --col-middle: 4;
+      --photo-radius: 20px;
+    }
+    h3 {
+      font-family: $space-grotesk;
+      font-weight: $space-grotesk-bold;
+      text-wrap: pretty;
+      font-size: 2em;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      margin-block-end: 0.5rem;
+      text-wrap: pretty;
+    }
+    .image-wrapper {
+      aspect-ratio: 1/1;
+      background-color: $pure-black;
+      border-radius: var(--photo-radius);
+      box-shadow: var(--image-wrapper-shadow);
+      overflow: hidden;
+    }
+    .tag-wrapper {
+      margin-block-start: 0.5rem;
+      .tag {
+        display: inline-block;
+        background-color: rgba($pure-white, 0.2);
+        padding: 0.25em 0.5em;
+        border-radius: 0.5em;
+        font-weight: $space-grotesk-bold;
+        font-size: 1rem;
+        margin-block: 0.25rem;
+      }
+    }
+    .logo-wrapper {
+      padding: 1em;
+      display: flex;
+      justify-content: center; // centers horizontally
+      align-items: center; // centers vertically
+    }
+  }
+
+  .speaking-config {
+    background: linear-gradient(to bottom right, #1D2127, #373C43);
+    color: white;
+    padding-block: 5em;
+    @include breakpoint(small only){
+      padding-block: 2em;
+    }
+    .the-grid {
+      grid-template-rows: repeat(32, [row-start] 1fr [row-end]);
+      @include breakpoint (small only){
+        grid-template-rows: repeat(55, [row-start] 1fr [row-end]);
+      }
+      .talk-intro {
+        grid-column-start: col-start;
+        grid-column-end: var(--col-middle);
+        grid-row-start: row-start;
+        grid-row-end: span 10;
+        font-family: $space-grotesk;
+        @include breakpoint(small only){
+          grid-column-end: 7;
+          grid-row-end: span 12;
+        }
+        h3 {
+          margin-block-start: 0.5em;
+        }
+      }
+      .config {
+        grid-column-start: var(--col-middle);
+        grid-column-end: span 3;
+        grid-row-start: row-start;
+        grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-row-start: 14;
+          grid-row-end: span 6;
+          grid-column-start: 3;
+          grid-column-end: span 4;
+        }
+        .image-wrapper {
+          background: radial-gradient(circle farthest-corner at 89% 72% in oklch shorter hue, #FF7237ff 0%, #ff743800 64%), radial-gradient(circle farthest-corner at 78% 17%, #874FFFff 17%, #8952ff00 57%), radial-gradient(circle farthest-corner at 24% 94%, #24CB71ff 5%, #25cb7200 59%), radial-gradient(circle farthest-corner at 72% 94%, #ffbf00ff 0%, #ffbf0000 55%), radial-gradient(farthest-corner at 100% 100%, #00B6FFff 0%, #00B6FFff 100%);
+        }
+      }
+      .figma-logo {
+        grid-column-start: 10;
+        grid-column-end: span 2;
+        grid-row-start: 3;
+        grid-row-end: span 2;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 13;
+        }
+        .logo-wrapper {
+          padding: 1em;
+          display: flex;
+          justify-content: center; // centers horizontally
+          align-items: center; // centers vertically
+          background-color: $pure-black;
+          svg {
+            width: 3em;
+          }
+        }
+      }
+      .team-photo {
+        grid-column-start: 10;
+        grid-column-end: span 3;
+        grid-row-start: 7;
+        grid-row-end: span 3;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: 19;
+        }
+      }
+      .stage-photo {
+        grid-column-start: span 5;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 11;
+        grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-column-start: 2;
+          grid-column-end: 7;
+          grid-row-start: 23;
+        }
+        .image-wrapper {
+          aspect-ratio: 3/2;
+        }
+      }
+      .thank-you {
+        grid-column-start: var(--col-middle);
+        grid-column-end: span 5;
+        grid-row-start: 12;
+        grid-row-end: span 6;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: repeat(4, [row-start] auto [row-end]);
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: span 6;
+          grid-row-start: 26;
+          grid-row-end: span 7;
+        }
+        .text-wrapper {
+          grid-column: 1 / -1; // Span all columns (full width)
+        }
+        .image-wrapper {
+          grid-column-start: auto;
+          grid-column-end: span 3;
+        }
+      }
+      .anyone-design {
+        grid-column-start: col-start;
+        grid-column-end: span 7;
+        grid-row-start: 20;
+        grid-row-end: span 5;
+        aspect-ratio: 3/2;
+        @include breakpoint(small only){
+          grid-column-end: span 6;
+          grid-row-start: 34;
+          grid-row-end: span 4;
+        }
+      }
+      .beauty-beast {
+        grid-column-start: 8;
+        grid-column-end: -1;
+        grid-row-start: 25;
+        grid-row-end: span 4;
+        aspect-ratio: 3/2;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: 5;
+          grid-row-start: 38;
+          grid-row-end: span 3;
+        }
+      }
+      .audience-comments {
+        grid-column-start: col-start;
+        grid-column-end: span 6;
+        grid-row-start: 25;
+        grid-row-end: span 5;
+        display: grid;
+        grid-template-columns: subgrid;
+        @include breakpoint(small only){
+          grid-row-start: 42;
+          grid-row-end: span 10;
+        }
+        .text-wrapper {
+          grid-column: 1 / -1; // To span all columns (full width)
+        }
+        p {
+          hanging-punctuation: first;
+          span {
+            font-weight: $space-grotesk-bold;
+            --blur: 1em;
+            --orbit-radius: 0.75em;
+            --angle1: 0deg;
+            --angle2: 120deg;
+            --angle3: 240deg;
+            --opacity: 0.9;
+            $color1: #32C5FF;
+            $color2: #FFC800;
+            $color3: #FF0000;
+            animation:
+              orbit1 6s linear infinite,
+              orbit2 6s linear infinite,
+              orbit3 6s linear infinite,
+              blur-pulse 2s ease-in-out infinite alternate;
+            color: white;
+            text-shadow:
+              calc(cos(var(--angle1)) * var(--orbit-radius)) calc(sin(var(--angle1)) * var(--orbit-radius)) var(--blur) rgba($color1, var(--opacity)),
+              calc(cos(var(--angle2)) * var(--orbit-radius)) calc(sin(var(--angle2)) * var(--orbit-radius)) var(--blur) rgba($color2, var(--opacity)),
+              calc(cos(var(--angle3)) * var(--orbit-radius)) calc(sin(var(--angle3)) * var(--orbit-radius)) var(--blur) rgba($color3, var(--opacity));
+          }
+        }
+      }
+      .closing {
+        grid-column-start: col-start;
+        grid-column-end: -1;
+        grid-row-start: 30;
+        grid-row-end: -1;
+        display: grid;
+        grid-template-columns: subgrid;
+        @include breakpoint(small only){
+          grid-row-start: 50;
+          grid-row-end: span 6;
+        }
+        .moscone {
+          grid-column-start: 1;
+          grid-column-end: span 3;
+        }
+        .stage {
+          // aspect-ratio: 2/1;
+          aspect-ratio: auto;
+          grid-row: 1 / -1;
+          grid-column: 4 / 10;
+          // TODO figure out how to remove the height
+          height: 277.5px;
+          @include breakpoint(small only){
+            grid-row: 2/3;
+            grid-column: 1/7;
+            height: initial;
+          }
+        }
+        .text-cell {
+          grid-row: 1 / -1;
+          grid-column: 10 / -1;
+          aspect-ratio: 1/1;
+          background-color: $pure-black;
+          border-radius: var(--photo-radius);
+          box-shadow: var(--image-wrapper-shadow);
+          justify-content: center; // centers horizontally
+          align-items: center;
+          display: flex;
+          padding: 1.5em;
+          @include breakpoint(small only){
+            grid-column: 4/-1;
+          }
+          h3 {
+            font-size: 1.75em;
+            line-height: 1.2;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .config-footer {
+      margin-block-start: 5em;
+      @include breakpoint(small only){
+        margin-block-start: 2em;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+        text-wrap: pretty;
+        text-align: center;
+      }
+      .email-container{
+        @include link-expand(white,$navy-black);
+        cursor: pointer;
+        position: relative;
+        &::after{
+          z-index: initial;
+        }
+        p{
+          z-index: 2;
+          position: relative;
+        }
+        .copied{
+          z-index: 3;
+          background-color: $signature-teal;
+          box-shadow: $recessed-shadow $pure-black;
+          color: $pure-white;
+          border-radius: $pill-radius;
+          padding: 0.25em 0.5em;
+          rotate: -15deg;
+          visibility: hidden;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin-top: -0.5em;
+        }
+      }
+    }
+  }
+  .speaking-siggraph {
+    padding-block: 5em;
+    @include breakpoint(small only){
+      padding-block: 2em;
+    }
+    .the-grid {
+      grid-template-rows: repeat(7, [row-start] 1fr [row-end]);
+      @include breakpoint(small only){
+        grid-template-rows: repeat(17, [row-start] 1fr [row-end]);
+      }
+      .talk-intro {
+        grid-column-start: 5;
+        grid-column-end: span 8;
+        grid-row-start: 4;
+        grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: -1;
+          grid-row-start: 5;
+          grid-row-end: span 10;
+        }
+      }
+      .siggraph-logo{
+        grid-column-start: span 2;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        background: linear-gradient(180deg,rgba(106, 255, 232, 1) 0%, rgba(0, 205, 236, 1) 100%);
+        @include breakpoint(small only){
+          grid-column-end: 3;
+        }
+      }
+      .sketch-mockup{
+        grid-column-start: col-start;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: span 3;
+        aspect-ratio: 500/333;
+        @include breakpoint(small only){
+          grid-column-start: 3;
+          grid-column-end: 7;
+          grid-row-start: 2;
+        }
+      }
+      .qa{
+        grid-column-start: 5;
+        grid-column-end: span 5;
+        grid-row-start: span 3;
+        grid-row-end: 4;
+        aspect-ratio: 1462/688;
+        align-self: end;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-row-start: span 3;
+          grid-row-end: -1;
+        }
+      }
+      .tag-wrapper{
+        .tag{
+          background-color: rgba($pure-black, 0.1);
+          @media (prefers-color-scheme: dark) {
+            background-color: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+    }
+  }
+  .speaking-design-summit{
+    background: linear-gradient(to bottom right, #1D2127, #373C43);
+    color: white;
+    padding-block: 5em;
+    @include breakpoint(small only){
+      padding-block: 2em;
+    }
+    .the-grid {
+      grid-template-rows: repeat(16, [row-start] 1fr [row-end]);
+      @include breakpoint(small only){
+        grid-template-rows: repeat(24, [row-start] 1fr [row-end]);
+      }
+      .talk-intro{
+        grid-column-start: var(--col-middle);
+        grid-column-end: 13;
+        grid-row-start: 5;
+        grid-row-end: span 4;
+        @include breakpoint(small only){
+          grid-column-start: 1;
+          grid-column-end: -1;
+          grid-row-end: span 6;
+        }
+      }
+      .dds-logo{
+        padding: 2em;
+        grid-column-start: var(--col-middle);
+        grid-column-end: span 3;
+        grid-row-start: 2;
+        grid-row-end: span 3;
+        @include breakpoint(small only){
+          align-self: end;
+        }
+        position: relative;
+        &::before{
+          content: "";
+          position: absolute;
+          inset: 0;
+          filter: saturate(1.15);
+          background:
+            radial-gradient(circle at 15% 90%, rgb(255, 208, 67) 0%, rgba(255, 221, 122, 0) 70%),
+            radial-gradient(circle at 20% 30%, rgb(101, 255, 216) 0.42%,rgba(158, 240, 220, 0) 60%),   
+            radial-gradient(circle at 35% 20%, rgb(106, 205, 255), rgba(140, 216, 255, 0) 60%),
+            radial-gradient(circle at 75% 10%, rgb(144, 117, 255), rgba(176, 156, 255, 0) 60%),
+            radial-gradient(circle at 75% 55%, rgb(240, 44, 230), rgba(214, 124, 255, 0) 70%),
+            radial-gradient(circle at 90% 80%, rgb(255, 94, 177) 0%, rgba(255, 136, 197, 0) 70%);
+        }
+        svg{
+          z-index: 2;
+        }
+      }
+      .disney-d-logo{
+        padding: 1.5em;
+        background: linear-gradient(180deg,rgba(7, 7, 41, 1) 0%, rgba(20, 76, 163, 1) 100%);
+        grid-column-start: span 2;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        @include breakpoint(small only){
+          grid-column-start: 2;
+          grid-column-end: span 2;
+          align-self: end;
+        }
+      }
+      .tag-wrapper{
+        grid-column-start: span 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        align-self: end;
+        justify-self: end;
+        text-align: right;
+        text-wrap: pretty;
+        @include breakpoint(small only){
+          margin-top: 0;
+          grid-column-end: 4;
+          grid-row-start: 3;
+        }
+      }
+      .duo-smile{
+        grid-column-start: col-start;
+        grid-column-end: var(--col-middle);
+        grid-row-start: 3;
+        grid-row-end: span 5;
+        aspect-ratio: 1400/1048;
+        @include breakpoint(small only){
+          grid-column-end: -1;
+          grid-row-start: 11;
+        }
+      }
+      .thank-you{
+        grid-column-start: col-start;
+        grid-column-end: 6;
+        grid-row-start: 11;
+        grid-row-end: span 3;
+        text-align: right;
+        @include breakpoint(small only){
+          grid-column-end: 7;
+          grid-row-start: 16;
+          grid-row-end: span 5;
+        }
+      }
+      .dss-bb{
+        grid-column-start: 6;
+        grid-column-end: span 5;
+        grid-row-start: 10;
+        grid-row-end: span 4;
+        aspect-ratio: 1400/933;
+        align-self: end;
+        @include breakpoint(small only){
+          grid-column-start: 3;
+          grid-column-end: 6;
+          grid-row-start: span 3;
+          grid-row-end: 23;
+        }
+      }
+      .dss-me{
+        grid-column-start: col-start;
+        grid-column-end: 6;
+        grid-row-start: 14;
+        grid-row-end: 17;
+        aspect-ratio: auto;
+        // TODO figure out how to remove this height
+        height: 277.5px;
+        // aspect-ratio: 1400/933;
+        display: flex;
+        img{
+          align-self: end;
+          // height: 100%;
+        }
+        @include breakpoint(small only){
+          grid-column-end: 4;
+          grid-row-start: 23;
+          grid-row-end: span 3;
+          aspect-ratio: 3/2;
+          height: 118px;
+        }
+      }
+      .dss-team{
+        grid-column-start: span 3;
+        grid-column-end: 13;
+        grid-row-start: 14;
+        grid-row-end: span 3;
+        @include breakpoint(small only){
+          grid-row-start: 23;
+          grid-row-end: span 3;
+          grid-column-start: span 2;
+          grid-column-end: -1;
+        }
+      }
+    }
+  }
+}
+
+@property --angle1 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --angle2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 120deg;
+  /* 1/3 of 360 */
+}
+@property --angle3 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 240deg;
+  /* 2/3 of 360 */
+}
+@property --blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 60px;
+}
+
+@keyframes orbit1 {
+  to {
+    --angle1: 360deg;
+  }
+}
+@keyframes orbit2 {
+  to {
+    --angle2: 480deg;
+  }
+  /* 360 + 120 to keep offset */
+}
+@keyframes orbit3 {
+  to {
+    --angle3: 600deg;
+  }
+  /* 360 + 240 */
+}
+@keyframes blur-pulse {
+  to {
+    --blur: 1.25em;
+  }
+}

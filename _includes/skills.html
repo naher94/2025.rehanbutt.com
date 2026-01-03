@@ -1,0 +1,37 @@
+<section class="skills" id="skills" aria-label="New Skills Section">
+  {%- assign skills-list = site.skills | sort: "sort-order" -%}
+  <div class="stripe-container">
+    {%- for item in skills-list -%}
+      <div class="stripe stripe__{{ forloop.index0 }}"></div>
+    {%- endfor -%}
+  </div>
+  <div class="grid-container">
+    <div class="grid-x content-area">
+      <div class="cell skill-tags-container medium-shrink">
+        {%- for item in skills-list -%}
+          <div class="skill-tag skill-tag__{{ forloop.index0 }}">
+            <div class="skill-wrapper">
+              <div class="skill skill__{{ forloop.index0 }}">
+                {{ item.title }}
+              </div>
+              <div class="image-wrapper">
+                <img src="../img/skills/{{item.image}}" alt="{{item.image-alt}}">
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="hero-text-container cell auto grid-x align-center align-middle">
+        <div class="hero-text cell medium-10">
+          <h2>
+            <span>Learning</span>
+            <span>Knowledge</span>
+            <span>Skills</span>
+          </h2>
+          <p>Building the systems and skills that scale design, shaping the people and processes that make it thrive.</p>
+        </div>
+        <div class="icon-wrapper">+</div>
+      </div>
+    </div>
+  </div>
+</section>

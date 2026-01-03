@@ -1,0 +1,262 @@
+.berries{
+  --raspberry: #C63863;
+  --blueberry: #513880;
+  --blackberry: #2F2538;
+  --strawberry: #ED5151;
+  --gap-x: 2.3em;
+  --gap-y: 3em;
+  margin-block-start: 7em;
+  margin-block-end: 8em;
+  .intro{
+    margin-block-end: 2em;
+    h2{
+      font-family: $big-shoulders;
+      font-weight: $big-shoulders-black;
+      text-transform: uppercase;
+      font-size: 5em;
+      line-height: 1;
+      margin-bottom: 0;
+    }
+    p{
+      font-size: 1.25em;
+      line-height: 1.2;
+      font-weight: $lato-bold;
+    }
+  }
+  .header{
+    margin-block-end: 0.5em;
+    .month-name{
+      font-weight: $lato-bold;
+    }
+  }
+  .totals{
+    margin-block-end: 3em;
+    &.test-container{
+      @include breakpoint(small only){
+        --gap-y: 1em;
+      }
+    }
+  }
+  .totals-card{
+    border-radius: $tile-radius;
+    padding: 1.25em;
+    aspect-ratio: 5/3;
+    color: $pure-white;
+    position: relative;
+    overflow: hidden;
+    p{
+      margin-bottom: 0;
+      line-height: 1;
+      z-index: 2;
+      position: relative;
+    }
+    .total-number{
+      font-size: 2.25em;
+      font-weight: $lato-black;
+    }
+    svg{
+      &:not(.cut-shape){
+        opacity: 50%;
+        position: absolute;
+      }
+    }
+    &.raspberry{
+      background-color: var(--raspberry);
+      svg{
+        &:nth-of-type(1){
+          width: 3.5em;
+          rotate: 167deg;
+          left: 1em;
+          bottom: -1em;
+        }
+        &:nth-of-type(2){
+          width: 2.5em;
+          left: 5em;
+          bottom: 2em;
+        }
+        &:nth-of-type(3){
+          width: 4em;
+          right: -0.5em;
+          top: 1em;
+          rotate: 100deg;
+        }
+        &:nth-of-type(4){
+          width: 2em;
+          right: 1.25em;
+          top: 5em;
+          rotate: 16deg;
+        }
+      }
+    }
+    &.blueberry{
+      background-color: var(--blueberry);
+      .cutout{
+        position: absolute;
+        background-color: $pure-white;
+        width: 0.5em;
+        height: 0.5em;
+        bottom: 1.25em;
+        right: 1.25em;
+        z-index: 2;
+      }
+      svg{
+        &:nth-of-type(1){
+          width: 4em;
+          left: 3em;
+          bottom: -1em;
+        }
+        &:nth-of-type(2){
+          width: 8em;
+          left: -3em;
+          top: -2em;
+          rotate: 177deg;
+        }
+        &:nth-of-type(3){
+          right: 1em;
+          width: 3em;
+          top: 3em;
+          rotate: -26deg;
+        }
+      }
+    }
+    &.blackberry{
+      background-color: var(--blackberry);
+      .cutout{
+        position: absolute;
+        background-color: $pure-white;
+        border-radius: $pill-radius;
+        width: 0.5em;
+        height: 0.5em;
+        bottom: 1.25em;
+        right: 1.25em;
+        z-index: 2;
+      }
+      svg{
+        &:nth-of-type(1){
+          width: 5em;
+          bottom: -1em;
+          right: 3em;
+        }
+        &:nth-of-type(2){
+          width: 3em;
+          top: 1em;
+          left: -1em;
+        }
+        &:nth-of-type(3){
+          width: 2em;
+          top: 2em;
+          right: 1em;
+          rotate: 60deg;
+        }
+        &:nth-of-type(4){
+          width: 3.5em;
+          top: -1.75em;
+          right: 2em;
+          rotate: 87deg;
+        }
+      }
+    }
+    &.strawberry{
+      background-color: var(--strawberry);
+      svg{
+        &:nth-of-type(1){
+          // this is for the triangle
+          position: absolute;
+          width: 1.25em;
+          height: 1.25em;
+          bottom: 1em;
+          right: 1em;
+          z-index: 2;
+        }
+        &:nth-of-type(2){
+          width: 6em;
+          right: -1em;
+        }
+        &:nth-of-type(3){
+          width: 4em;
+          right: 4em;
+          top: -2em;
+          rotate: 50deg;
+        }
+        &:nth-of-type(4){
+          width: 3em;
+          left: 2em;
+          top: 3em;
+        }
+      }
+    }
+  }
+  .month-dots{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1em;
+    @include breakpoint(small only){
+      gap: 0.16em;
+    }
+    .berry-dot{
+      display: inline-block;
+      border-radius: $pill-radius;
+      aspect-ratio: 1/1;
+      width: 1.2em;
+      height: 1.2em;
+      &.raspberry{
+        background-color: var(--raspberry);
+      }
+      &.blueberry{
+        background-color: var(--blueberry);
+        display: flex;
+        justify-content: center; /* horizontal alignment */
+        align-items: center;     /* vertical alignment */
+        .cutout{
+          background-color: $pure-white;
+          width: 0.3em;
+          height: 0.3em;
+        }
+      }
+      &.blackberry{
+        background-color: var(--blackberry);
+        display: flex;
+        justify-content: center; /* horizontal alignment */
+        align-items: center;     /* vertical alignment */
+        .cutout{
+          border-radius: $pill-radius;
+          background-color: $pure-white;
+          width: 0.35em;
+          height: 0.35em;
+        }
+      }
+      &.strawberry{
+        background-color: var(--strawberry);
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        svg{
+          width: 85%;
+        }
+      }
+    }
+  }
+  .test-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    column-gap: var(--gap-x);
+    row-gap: var(--gap-y);
+    @include breakpoint(small only){
+      --gap-x: 1em;
+    }
+  }
+
+  .test-item {
+    --column-count: 4;
+    --number-of-gaps: calc(var(--column-count) - 1);
+    flex: 0 0 calc(
+      (100% - (var(--number-of-gaps) * var(--gap-x))) / var(--column-count)
+    );
+    @include breakpoint(small only){
+      --column-count: 2;
+    }
+  }
+
+
+}

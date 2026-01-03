@@ -1,0 +1,155 @@
+header{
+  margin-block-start: 5rem;
+  margin-block-end: 5rem;
+  --foundation-padding-x: 0.9375rem;
+  --foundation-padding-y: 0.625rem;
+  @include breakpoint(small only){
+    margin-block-start: 2rem;
+  }
+  .grid-container{
+    max-width: 100rem;
+    background: radial-gradient(circle at 0% 50%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
+    @include breakpoint(small only){
+      background: radial-gradient(circle at 50% 0%,rgba(239, 213, 255, 1) 0%, rgba(81, 90, 218, 1) 100%);
+    }
+  }
+  .number-container, .content-container, .title-container{
+    border-radius: $tile-radius-medium;
+    outline: solid semantic-color(page-bg) calc(var(--foundation-padding-x) * 2);
+    padding: 1.5rem;
+    color: semantic-color(page-bg);
+    @include breakpoint(small only){
+      outline: solid semantic-color(page-bg) calc(var(--foundation-padding-y) * 2);
+      border-radius: $tile-radius;
+    }
+  }
+  .number-container{
+    padding: 0;
+    overflow: hidden;
+    aspect-ratio: 424 / 464; 
+    @include breakpoint (large up){
+      height: 30rem !important;
+    }
+    h1{
+      display: none;
+    }
+    svg{
+      aspect-ratio: 424/464;
+      width: 100%;
+      fill: semantic-color(page-bg);
+    }
+    @include breakpoint(small only){
+      order: 2;
+    }
+  }
+  .content-container{
+    padding: 0;
+    overflow: hidden;
+    .description, .section-link{
+      padding: 1.5rem;
+    }
+    .description{
+      @include breakpoint(small only){
+        font-size: 1.25em;
+      }
+    }
+    .nav-wrapper{
+      @include breakpoint(medium up){
+        border-top: solid 2px semantic-color(page-bg);
+      }
+    }
+    a{
+      color: semantic-color(page-bg);
+    }
+    .section-link{
+      font-family: $poppins;
+      font-weight: $poppins-bold;
+      text-transform: uppercase;
+      padding-block: 0.5em;
+      transition: $sprint;
+      font-size: 1rem;
+      align-items: center;
+      border-top: solid 2px semantic-color(page-bg);
+      svg{
+        fill: semantic-color(page-bg);
+        transition: $sprint;
+      }
+      &:hover{
+        background-color: rgba($pure-black, 0.1);
+        letter-spacing: 0.2rem;
+        svg{
+          rotate: -10deg;
+          scale: 1.1;
+        }
+      }
+      .icon-wrapper{
+        height: 1lh;
+        width: 1lh;
+        margin-bottom: 1em;
+        svg{
+          height: 1lh;
+        }
+        @include breakpoint(small only){
+          margin-left: 1em;
+          margin-bottom: 0;
+        }
+      }
+      @include breakpoint(small only){
+        padding-block: 1em;
+      }
+      @include breakpoint(medium up){
+        writing-mode: sideways-lr;
+        &:not(:first-of-type){
+          border-left: solid 2px semantic-color(page-bg);
+        }
+        border-top: none;
+      }
+    }
+    @include breakpoint(small only){
+      order: 3;
+    }
+  }
+  .title-container{
+    display: flex;
+    .logo{
+      #rehan-logo-header{
+        transition: $sprint;
+        &:hover{
+          transform: scale(1.1);
+        }
+        g{
+          fill:semantic-color(page-bg);; //Changes the color of my logo inline
+        }
+        @include breakpoint(small only){
+          height: 22px;
+        }
+      }
+      @include breakpoint(small only){
+        order: 2;
+      }
+    }
+    .subtitle{
+      font-family: $poppins;
+      font-weight: $poppins-bold;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      @include breakpoint(medium up){
+        width: 6rem;
+      }
+      @include breakpoint(small only){
+        order: 1;
+        font-size: 1rem;
+      }
+    }
+    @include breakpoint(small only){
+      order: 1;
+      align-items: center;
+    }
+    @include breakpoint(medium up){
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
+    }
+  }
+}

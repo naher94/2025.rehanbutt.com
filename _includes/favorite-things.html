@@ -1,0 +1,32 @@
+<section class="favorite-things" id="favorite-things" aria-label="Favorite Things Section">
+  <div class="grid-container">
+    <div class="fave-grid">
+      <div class="title-cell grid-cell">
+        <h2>Favorite <span>Things</span></h2>
+      </div>
+
+      {%- for item in site.fave-things -%}
+      <a href="{{item.link}}" class="grid-cell item-container {{item.css-class}}" target="_blank" rel="noopener">
+        <div class="image-wrapper">
+          <img src="../img/fave-things/{{item.image}}" alt="{{item.image-alt}}">
+        </div>
+        <div class="description-wrapper">
+          <div>
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </a>
+      {%- endfor -%}
+
+      {% for i in (1..32) %}
+        <div class="grid-cell seat-filler seat-filler__{{ forloop.index0 }}"></div>
+      {% endfor %}
+      
+      <div class="heart-wrapper">
+      {%- include_relative img/fave-things/heart.svg -%}
+      </div>
+
+    </div>
+  </div>
+</section>

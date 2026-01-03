@@ -1,0 +1,48 @@
+<section class="music grid-container align-middle" id="music" aria-label="Music Section">
+  <h2>
+    <span class="text-fit">
+      <span><span>music</span></span>
+      <span aria-hidden="true">music</span>
+    </span>
+    <span class="vertical">music</span>
+  </h2>
+
+  <div class="total-listen">
+    <!-- Stats as of Dec 31st -->
+    <p><span>19,046</span>mins</p>
+    <p>of music listened to</p>
+  </div>
+  
+  <div class="grid-x list-wrapper align-justify">
+  {%- for song in site.songs -%}
+    <div class="song-container cell grid-x">
+      {% capture song-content %}
+      <div class="text-container cell grid-x">
+        <div class="cell grid-x align-middle">
+          <h3 class="shrink">{{ song.song-name }}</h3>
+          <div class="shrink">
+            {%- include_relative img/music/share-arrow.svg -%}
+          </div>
+        </div>
+        <div class="cell grid-x align-justify">
+          <p class="artist cell shrink">{{ song.artist }}</p>
+          <p class="play-count cell shrink">{{ song.play-count }} plays</p>
+        </div>
+      </div>
+      <div class="cd-case">
+        <div class="blur-container"></div>
+        <div class="spine"></div>
+        <div class="cd">
+          <div class="center-circle"></div>
+        </div>
+        <div class="cover">
+          <img src="../img/music/{{ song.album-cover }}" alt="Album cover for {{ song.title }} by {{ song.artist }}">
+        </div>
+      </div>
+      {% endcapture %}
+      {%- include external-link.html link=song.link content=song-content css-class="grid-x cell" -%}
+    </div>
+  {%- endfor -%}
+  </div>
+
+</section>

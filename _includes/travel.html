@@ -1,0 +1,70 @@
+<section class="travel" id="travel" aria-label="Travel Section">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x overview">
+      <div class="medium-4 cell grid-x stat-wrapper">
+        <h2>Travel Log</h2>
+        <div class="stats grid-x cell align-self-bottom">
+          {% assign array-list = "(3D 15H|Flight Time),(40877 mi|Miles Flown),(1.6x|Times around the Globe),(4000+ mi|Miles Driven)" | remove: "(" | remove: ")" | split: ',' %}
+          {% for item in array-list %}
+          {% assign each = item | split: '|' %}
+          <div class="line-item cell grid-x align-justify">
+            <div class="value cell shrink">{{each[0]}}</div>
+            <div class="label cell shrink">{{each[1]}}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="medium-4 cell travel-card us-card">
+        <h3>United States</h3>
+        <div class="tag-wrapper">
+        {%- assign city-array = "Los Angeles, Washington DC, Philadelphia, San Francisco, New York, San Diego, Sedona, Grand Canyon, Page, Las Vegas, Orlando, Charleston, Savannah" | split:',' -%}
+        {%- for city in city-array -%}
+          <div class="city-tag">{{city}}</div>
+        {%- endfor -%}
+        </div>
+        <!-- TODO add photo tag link -->
+      </div>
+      <div class="medium-4 cell grid-x grid-margin-y">
+        
+        <div class="travel-card cell grid-x canada-card">
+          <div class="cell">
+            <h3>Canada</h3>
+            <div class="tag-wrapper">
+              <div class="city-tag">Vancouver</div>
+            </div>
+          </div>
+          <div class="cell align-self-bottom">
+            <!-- TODO add link -->
+            <!-- <a href="#" target="_blank" rel="noopener">
+              <div class="tag">
+                {% include_relative img/travel/utensils.svg %}
+                Recommended Eateries
+                {% include_relative img/travel/arrow-right.svg %}
+              </div>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="travel-card cell grid-x japan-card">
+          <div class="cell">
+            <h3>Japan</h3>
+            <div class="tag-wrapper">
+              <div class="city-tag">Tokyo</div>
+              <div class="city-tag">Kyoto</div>
+              <div class="city-tag">Osaka</div>
+            </div>
+          </div>
+          <div class="cell align-self-bottom">
+            <a href="https://rehanbutt.com/photography/japan.html" target="_blank" rel="noopener">
+              <div class="tag">
+                {% include_relative img/travel/camera.svg %}
+                Explore Photos
+                {% include_relative img/travel/arrow-right.svg %}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

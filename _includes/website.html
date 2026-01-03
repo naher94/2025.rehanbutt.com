@@ -1,0 +1,69 @@
+<section class="website" id="website" aria-label="Website Update Section">
+  <div class="grid-container">
+    <div class="grid-x grid-content">
+      <div class="watermark-wrapper grid-y">
+        <p class="watermark cell auto">Web</p>
+        <p class="watermark cell auto">Web</p>
+        <p class="watermark cell auto">Web</p>
+      </div>
+      <!-- Stats as of Dec 31st -->
+      <div class="header cell grid-x">
+        <div class="content cell grid-x align-justify">
+          <div class="cell shrink">
+            {%- include external-link.html link="https://rehanbutt.com/" content="rehanbutt.com" css-class="" -%}
+          </div>
+          <div class="cell shrink">imbe v9</div>
+        </div>
+      </div>
+      <div class="main-content grid-x cell align-justify">
+        <div class="cell medium-6">
+          <h2>Web Updates</h2>
+          <p class="description">Take a look at this year's upgrades: a revamped {% include external-link.html link="https://rehanbutt.com/speaking" content="Speaking Engagements" css-class="" %} section, a more streamlined CI/CD pipeline, and the launch of {% include external-link.html link="https://css-playground.rehanbutt.com" content="CSS Playground" css-class="" %}, a series of small, interactive tools that make working with CSS more fun and approachable!</p>
+          <p class="description">This year, curious visitors uncovered {% include external-link.html link="https://rehanbutt.com/easter-eggs" content="easter eggs" css-class="" %} 196 times! See if you can find them all!</p>
+        </div>
+        <div class="callouts cell grid-x medium-4 align-top">
+          <div class="feature-container grid-x align-middle cell">
+            <div class="icon cell shrink">
+              {%- include_relative img/website/podium.svg -%}
+            </div>
+            <p class="cell auto">Speaking Section Added</p>
+          </div>
+          <div class="connector-wrapper grid-x align-center">
+            <div class="connector"></div>
+          </div>
+          <div class="feature-container grid-x align-middle cell">
+            <div class="icon cell shrink">
+              {%- include_relative img/website/ferris-wheel.svg -%}
+            </div>
+            <p class="cell auto">Launched CSS Playground</p>
+          </div>
+          <div class="connector-wrapper grid-x align-center">
+            <div class="connector"></div>
+          </div>
+          <div class="feature-container grid-x align-middle cell">
+            <div class="icon cell shrink">
+              {%- include_relative img/website/code-pull-request.svg -%}
+            </div>
+            <p class="cell auto">CI/CD Formalized</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer grid-x cell">
+        {%- assign stats-list = site.web-stats | sort: "sort-order" -%}
+        {%- for stat in stats-list -%}
+        <details id="details" class="stat-card cell">
+          <summary class="grid-x align-justify cell">
+            <div class="stat-header cell shrink">
+              <p class="stat-title">{{stat.stat-title}}</p>
+              <p class="stat-name">{{stat.stat-name}}</p>
+            </div>
+          </summary>
+          <div class="detail-body">
+            {{stat.content}}
+          </div>
+        </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>

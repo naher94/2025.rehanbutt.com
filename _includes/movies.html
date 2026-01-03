@@ -1,0 +1,146 @@
+<section class="movies grid-container" id="movies" aria-label="Movies Section">
+  <div class="grid-x card1">
+    <div class="top-picks grid-x cell align-justify">
+      <div class="cell grid-x small-12 medium-4">
+        <h2 class="cell">film log</h2>
+        <div class="cell grid-x picks-list align-self-bottom">
+          <h3>top picks</h3>
+          {% assign top_picks = "F1,Kpop Demon Hunters,Wicked,The Fantastic 4: First Steps,Thunderbolts*" | split: ',' %}
+          {%- for movie in top_picks -%}
+          <div class="list-item cell grid-x align-middle">
+            <div class="popcorn-number cell shrink align-middle align-center">
+              {% include_relative img/movies/popcorn.svg %}
+              <p class="cell">{{forloop.index}}</p>
+            </div>
+            <p class="cell shrink">{{movie}}</p>
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="poster-container cell auto">
+        <div class="kernel-container">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/popcorn.svg %}
+        </div>
+        <div class="poster-box first-poster poster-1 poster">
+          <img class="poster-img" src="/img/movies/f1.jpg" alt="F1 Poster">
+          <img src="/img/movies/f1.gif" alt="F1 He's Flying animation" class="f1-gif">
+        </div>
+        <div class="poster-box second-poster poster-kpop poster">
+          <img class="poster-img" src="/img/movies/kpop.jpg" alt="Kpop Demon Hunter Poster">
+        </div>
+        <div class="poster-box third-poster poster-wicked poster">
+          <img class="poster-img" src="/img/movies/wicked.jpg" alt="Wicked Poster">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x card2 align-center">
+    <div class="stats-container grid-x cell medium-10">
+      <div class="statistic total-watched cell medium-shrink grid-x align-middle">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/film.svg %}
+        </div>
+        <div class="text-container">
+          <!-- Stats as of Dec 31th -->
+          <p class="number">82</p>
+          <p>featured films watched</p>
+        </div>
+      </div>
+      <div class="statistic rewatched cell medium-shrink grid-x align-middle">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/history.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">55%</p>
+          <p>were rewatches</p>
+        </div>
+      </div>
+      <div class="statistic busy-day cell medium-shrink grid-x">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/timer.svg %}
+        </div>
+        <div class="text-container cell shrink">
+          <p class="number">Jan 5<sup>th</sup> & Aug 2<sup>nd</sup></p> 
+          <p>busiest watch days with 5 movies</p>
+        </div>
+      </div>
+      <div class="statistic first-watch cell medium-shrink grid-x">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/ranking-star.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">Moana 2</p> 
+          <p>1st watched</p>
+        </div>
+      </div>
+      <div class="statistic watch-gap cell medium-shrink grid-x">
+        <div class="cell shrink icon-container align-center align-middle">
+          {% include_relative img/movies/popcorn.svg %}
+          {% include_relative img/movies/gap.svg %}
+        </div>
+        <div class="text-container">
+          <p class="number">58 days</p> 
+          <p>biggest watch gap</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x card3">
+    <span class="watermark no-select">2</span>
+    <span class="watermark no-select">3</span>
+    <div class="cell medium-6">
+      <h2>Sequels</h2>
+      <h3>Better than the original</h3>
+      <p>Unlike popular believe, there are some sequels that are better than the original. Here are my favorite sequels!</p>
+    </div>
+    <div class="cell grid-x poster-stack-wrapper grid-padding-x">
+      <div class="cell small-6 medium-3 poster-stack">
+        <p class="visually-hidden">Rush Hour 2</p>
+        <img class="sequel-poster" src="../img/movies/rush-hour-2.jpg" alt="Rush Hour 2 Poster">
+        <div class="first-film">
+          {% include_relative img/movies/popcorn.svg %}
+          <img src="../img/movies/rush-hour.jpg" alt="Rush Hour Poster">
+          {% include_relative img/movies/popcorn.svg %}
+        </div>
+      </div>
+      <div class="cell small-6 medium-3 poster-stack">
+        <p class="visually-hidden">Ocean's 12</p>
+        <img class="sequel-poster" src="../img/movies/oceans-12.jpg" alt="Ocean's 12 Poster">
+        <div class="first-film">
+          {% include_relative img/movies/popcorn.svg %}
+          <img src="../img/movies/oceans-11.jpg" alt="Ocean's 11 Poster">
+          {% include_relative img/movies/popcorn.svg %}
+        </div>
+      </div>
+      <div class="cell small-6 medium-3 poster-stack">
+        <p class="visually-hidden">Top Gun Maverick</p>
+        <img class="sequel-poster" src="../img/movies/top-gun-maverick.jpg" alt="Top Gun Maverick Poster">
+        <div class="first-film">
+          {% include_relative img/movies/popcorn.svg %}
+          <img src="../img/movies/top-gun.jpg" alt="Top Gun Poster">
+          {% include_relative img/movies/popcorn.svg %}
+        </div>
+      </div>
+      <div class="cell small-6 medium-3 poster-stack">
+        <p class="visually-hidden">Spider-Man: No Way Home</p>
+        <img class="sequel-poster" src="../img/movies/spiderman-no-home.jpg" alt="Spider-Man: No Way Home Poster">
+        <div class="first-film">
+          {% include_relative img/movies/popcorn.svg %}
+          <img src="../img/movies/spiderman.jpg" alt="Spiderman Homecoming Poster">
+          {% include_relative img/movies/popcorn.svg %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
