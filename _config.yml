@@ -10,9 +10,8 @@ title: Rehan Butt
 email: me@rehanbutt.com
 year: 2025
 site-title: 2025 Year in Review
-#TODO update this description
 description: > # this means to ignore newlines until "baseurl:"
-  As 2025 comes to a close, I'm taking a moment to look back on the experiences that shaped the year. I spoke at several industry-leading conferences, sharing ideas that sparked conversations and connection across the field. I also earned my third film credit with Zootopia 2, shipped exciting new software products, and captured some of my favorite travel photos yet. Making 2025 a year of creative growth and forward momentum.
+  As 2025 comes to a close, I am taking a few moments to reflect on the experiences that shaped this year. I spoke at several industry-leading conferences, sharing ideas that sparked conversations and connection. I also earned my third film credit with Zootopia 2, shipped exciting new software products, and captured some of my favorite travel photos yet. Making 2025 a year of creative growth and forward momentum.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 mainurl: "https://rehanbutt.com"
