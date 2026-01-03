@@ -46,14 +46,26 @@
           </div>
         </div>
 
-        <div class="travel-card cell japan-card">
-          <h3>Japan</h3>
-          <div class="tag-wrapper">
-            <div class="city-tag">Tokyo</div>
-            <div class="city-tag">Kyoto</div>
-            <div class="city-tag">Osaka</div>
+        <div class="travel-card cell grid-x japan-card">
+          <div class="cell">
+            <h3>Japan</h3>
+            <div class="tag-wrapper">
+              <div class="city-tag">Tokyo</div>
+              <div class="city-tag">Kyoto</div>
+              <div class="city-tag">Osaka</div>
+            </div>
           </div>
-          <!-- TODO add photo tag link -->
+          <div class="cell align-self-bottom">
+            <!-- TODO add href -->
+            <a href="#">
+              <div class="tag">
+                <!-- TODO replace icon -->
+                {% include_relative img/travel/camera.svg %}
+                Explore Photos
+                {% include_relative img/travel/arrow-right.svg %}
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
