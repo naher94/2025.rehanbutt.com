@@ -29,7 +29,7 @@ function copyToClipboard(link,clickedItem) {
 // Add this near your images array:
 const captions = [
   "A tori gate with cherry blossoms outside of Fiji in Japan",
-  "Caption for image 2",
+  "Neon from the Neon Museum in Las Vegas",
   "Lumiere from Disneyland's Paint the Night Parade",
   "Horseshoe Bend in Page, Arizona",
   "Interior of the National Art Center in Tokyo",
