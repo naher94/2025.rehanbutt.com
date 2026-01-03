@@ -23,9 +23,6 @@ function copyToClipboard(link,clickedItem) {
 }
 ///////////////////////////////////////////// End of Copy to Clipboard
 
-
-
-
 // Add this near your images array:
 const captions = [
   "A tori gate with cherry blossoms outside of Fiji in Japan",
@@ -35,7 +32,6 @@ const captions = [
   "Interior of the National Art Center in Tokyo",
   "Tron Lightcycle canopy lit at night"
 ];
-// TODO modify the position of the caption so it can handle multiple lines of text Mobile is the biggest issue here
 
 let currentImageIndex = 0;
 let isAnimating = false;
