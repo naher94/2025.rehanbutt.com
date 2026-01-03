@@ -34,7 +34,6 @@ const captions = [
   "Horseshoe Bend in Page, Arizona",
   "Interior of the National Art Center in Tokyo",
   "Tron Lightcycle canopy lit at night"
-  // TODO Add more captions as needed, matching the number/order of your images
 ];
 // TODO modify the position of the caption so it can handle multiple lines of text Mobile is the biggest issue here
 
