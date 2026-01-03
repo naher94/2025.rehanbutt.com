@@ -17,11 +17,10 @@
       <div class="medium-4 cell travel-card us-card">
         <h3>United States</h3>
         <div class="tag-wrapper">
-          <!-- TODO add grand canyon cities & winter trip -->
-          {%- assign city-array = "Los Angeles, Washington DC, Philadelphia, San Francisco, New York, San Diego, Sedona, Grand Canyon, Page, Las Vegas, Orlando, Charleston, Savannah" | split:',' -%}
-          {%- for city in city-array -%}
-            <div class="city-tag">{{city}}</div>
-          {%- endfor -%}
+        {%- assign city-array = "Los Angeles, Washington DC, Philadelphia, San Francisco, New York, San Diego, Sedona, Grand Canyon, Page, Las Vegas, Orlando, Charleston, Savannah" | split:',' -%}
+        {%- for city in city-array -%}
+          <div class="city-tag">{{city}}</div>
+        {%- endfor -%}
         </div>
         <!-- TODO add photo tag link -->
       </div>
