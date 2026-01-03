@@ -36,6 +36,7 @@ const captions = [
   "Caption for image 6"
   // TODO Add more captions as needed, matching the number/order of your images
 ];
+// TODO modify the position of the caption so it can handle multiple lines of text Mobile is the biggest issue here
 
 let currentImageIndex = 0;
 let isAnimating = false;
