@@ -1,5 +1,5 @@
 ---
-stat-title: 85% Desktop
+stat-title: 81% Desktop
 stat-name: Top Device Category
 sort-order: 3
 ---
