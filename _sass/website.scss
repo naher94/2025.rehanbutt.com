@@ -124,7 +124,7 @@ $web-orange: #FF8D3D;
     @include frosted-surface;
     padding: var(--content-padding);
     margin-bottom: -1px;
-    border-radius: calc($tile-radius + var(--content-padding)) calc($tile-radius + var(--content-padding)) 0 0;
+    border-radius: calc(#{$tile-radius} + var(--content-padding)) calc(#{$tile-radius} + var(--content-padding)) 0 0;
     --card-gap: 1em;
     gap: var(--card-gap);
     @include breakpoint(small only){
