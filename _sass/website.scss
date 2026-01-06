@@ -54,7 +54,9 @@ $web-orange: #FF8D3D;
     @include frosted-surface;
     padding: var(--content-padding);
     margin-top: -1px;
-    border-radius: 0 0 calc($tile-radius + var(--content-padding)) calc($tile-radius + var(--content-padding));
+    border-radius: 0 0
+      calc(#{$tile-radius} + var(--content-padding))
+      calc(#{$tile-radius} + var(--content-padding));
     .content{
       @include frosted-surface;
       padding: 0.5rem 1rem;
