@@ -104,7 +104,7 @@ $web-orange: #FF8D3D;
         }
       }
       .connector-wrapper{
-        width: calc($icon-size + $icon-padding + $icon-padding);
+        width: calc(#{$icon-size} + #{$icon-padding} + #{$icon-padding});
       }
       .connector{
         width: 3px;
