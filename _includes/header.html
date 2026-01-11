@@ -2,16 +2,16 @@
 <header>
   <div class="grid-container">
     <div class="grid-x grid-margin-x grid-margin-y">
-      <div class="cell medium-shrink number-container">
+      <div class="cell large-shrink number-container">
         <h1>25</h1>
         {% include_relative img/header/25.svg %}
       </div>
-      <div class="grid-y cell medium-auto content-container">
+      <div class="grid-y cell large-auto content-container">
         <div class="description cell">
           {{site.description}}
         </div>
         <!-- name, icon-file, html-file-name -->
-        <div class="nav-wrapper cell medium-auto grid-x">
+        <div class="nav-wrapper cell large-auto grid-x">
         {% assign section-order = 
           "(Industry Events|calendar|events),
           (Travel|plane|travel),
@@ -27,7 +27,7 @@
           | remove: "(" | remove: ")" | split: ',' %}
         {%- for section in section-order -%}
         {% assign each-section = section | split: '|' %}
-        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify cell medium-auto">
+        <a href="#{{each-section[2]}}" class="section-link grid-x align-justify cell large-auto">
           <div class="cell shrink">{{each-section[0]}}</div>
           <div class="cell shrink icon-wrapper">
             {% assign icon_path = "img/header/" | append: each-section[1] | append: ".svg" %}
@@ -37,7 +37,7 @@
         {%- endfor -%}
         </div>
       </div>
-      <div class="cell medium-shrink title-container grid-x align-justify">
+      <div class="cell large-shrink title-container grid-x align-justify">
         <div class="logo cell shrink">
           <a target="_blank" rel="noopener" href="{{ site.mainurl }}/">
             {% capture location %}header{% endcapture %}
