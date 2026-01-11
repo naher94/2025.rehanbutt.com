@@ -54,7 +54,7 @@ header{
       }
     }
     .nav-wrapper{
-      @include breakpoint(medium up){
+      @include breakpoint(large up){
         border-top: solid 2px semantic-color(page-bg);
       }
     }
@@ -76,7 +76,7 @@ header{
       }
       &:hover{
         background-color: rgba($pure-black, 0.1);
-        letter-spacing: 0.2rem;
+        letter-spacing: 0.1rem;
         svg{
           rotate: -10deg;
           scale: 1.1;
@@ -85,7 +85,6 @@ header{
       .icon-wrapper{
         height: 1lh;
         width: 1lh;
-        margin-bottom: 1em;
         svg{
           height: 1lh;
         }
@@ -97,7 +96,7 @@ header{
       @include breakpoint(small only){
         padding-block: 1em;
       }
-      @include breakpoint(medium up){
+      @include breakpoint(large up){
         writing-mode: sideways-lr;
         &:not(:first-of-type){
           border-left: solid 2px semantic-color(page-bg);
@@ -120,11 +119,11 @@ header{
         g{
           fill:semantic-color(page-bg);; //Changes the color of my logo inline
         }
-        @include breakpoint(small only){
+        @include breakpoint(medium down){
           height: 22px;
         }
       }
-      @include breakpoint(small only){
+      @include breakpoint(medium down){
         order: 2;
       }
     }
@@ -134,7 +133,7 @@ header{
       text-transform: uppercase;
       font-size: 1.5rem;
       line-height: 1.2;
-      @include breakpoint(medium up){
+      @include breakpoint(large up){
         width: 6rem;
       }
       @include breakpoint(small only){
@@ -146,7 +145,7 @@ header{
       order: 1;
       align-items: center;
     }
-    @include breakpoint(medium up){
+    @include breakpoint(large up){
       flex-direction: column;
       justify-content: space-between;
       text-align: right;
