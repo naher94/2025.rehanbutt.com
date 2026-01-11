@@ -76,7 +76,7 @@ header{
       }
       &:hover{
         background-color: rgba($pure-black, 0.1);
-        letter-spacing: 0.2rem;
+        letter-spacing: 0.1rem;
         svg{
           rotate: -10deg;
           scale: 1.1;
@@ -85,7 +85,6 @@ header{
       .icon-wrapper{
         height: 1lh;
         width: 1lh;
-        margin-bottom: 1em;
         svg{
           height: 1lh;
         }
