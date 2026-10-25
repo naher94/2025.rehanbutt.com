@@ -27,9 +27,12 @@
       margin-top: -3em;
       rotate: 1deg;
       top: initial;
-      left: initial;
       transform: initial;
-      width: initial;
+      // Absolutely positioned grid item: center explicitly so it works the same in Safari/iOS
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      width: calc(100% - 1rem);
     }
     h2{
       font-family: $poppins;
